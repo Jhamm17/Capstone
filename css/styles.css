@@ -35,7 +35,8 @@
   }
 
   .cal {
-    align-content: center;
-    align-items: center;
-    border-color: #DC143C;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+        
   }
