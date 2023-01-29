@@ -33,3 +33,7 @@
     height: 60px;
     padding: 0%;
   }
+
+  .cal {
+    align-items: center;
+  }
