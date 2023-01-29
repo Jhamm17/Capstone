@@ -11,7 +11,7 @@
 <body>
     <div class="topnav">
         <a href="home.html"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
-        <a href="cal.html">Calendar</a>
+        <a href="cal.php">Calendar</a>
         <a href="chat.html">Chat</a> 
         <a href="community.html">Community</a> 
         <a href="intramural.html">Intramural Sports</a> 
