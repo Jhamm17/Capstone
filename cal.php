@@ -14,7 +14,7 @@
         <a href="cal.php">Calendar</a>  
     </div>
     <div class="cal">
-    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23D50000&ctz=America%2FIndiana%2FIndianapolis&showTitle=0&src=N2I4ZmFmMzQ4MmYyNTc0MmI3MjE2ZjA4NTg0MjZiNTRiMmVhZDI5OTRkNWQzY2Y1NTc0ZTZjMjc1OWMwMzU3OEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23D81B60&color=%230B8043" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    <iframe src="https://calendar.google.com/calendar/embed?height=1000&wkst=1&bgcolor=%23D50000&ctz=America%2FIndiana%2FIndianapolis&showTitle=0&src=N2I4ZmFmMzQ4MmYyNTc0MmI3MjE2ZjA4NTg0MjZiNTRiMmVhZDI5OTRkNWQzY2Y1NTc0ZTZjMjc1OWMwMzU3OEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23D81B60" style="border:solid 1px #777" width="1250" height="1000" frameborder="0" scrolling="no"></iframe>
     </div>
 
 
