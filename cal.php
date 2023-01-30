@@ -7,14 +7,13 @@
     <title>Calendar</title>
 </head>
 <link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="css/calendar.css">
 <body>
     <div class="topnav">
         <a href="home.html"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
         <a href="cal.php">Calendar</a>  
     </div>
     <div class="cal">
-    <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=1&bgcolor=%23D50000&ctz=America%2FIndiana%2FIndianapolis&showTitle=0&showPrint=0&showTz=0&showTabs=0&showCalendars=1&src=ODIxYzAxOTJkYzAyNGIzYjhkMWMxY2E0ZTAxNjU0OWM5MDU0NWY4N2I1ZTIzZjRhNmQzOWRiODQ1MzQzZDcwYkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23616161" style="border:solid 1px #777" width="1100" height="800" frameborder="0" scrolling="no"></iframe>
+        <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=1&bgcolor=%23D50000&ctz=America%2FIndiana%2FIndianapolis&showTitle=0&showPrint=0&showTz=0&showTabs=0&showCalendars=1&src=ODIxYzAxOTJkYzAyNGIzYjhkMWMxY2E0ZTAxNjU0OWM5MDU0NWY4N2I1ZTIzZjRhNmQzOWRiODQ1MzQzZDcwYkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23616161" style="border:solid 1px #777" width="1100" height="800" frameborder="0" scrolling="no"></iframe>
     </div>
 
 
