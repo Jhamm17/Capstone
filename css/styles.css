@@ -1,7 +1,7 @@
     .topnav {
-        padding-bottom: 0;
       background-color: #DC143C;
       overflow: hidden;
+      padding:0;
     }
     
     /* Style the links inside the navigation bar */
@@ -38,16 +38,17 @@
     }
     .sports button{
         font-size: large;
+        font-weight: 600;
         background-color: #DC143C;
-        color:#FFFDD0;
+        color: black;
         text-align: center;
     }
   .sports {
+    padding-bottom: 1rem;
     color:#DC143C;
     text-align: center;
   }
 
-  .backgrounds{
-    padding-top: 0;
+  body{
     background-color: #FFFDD0;
   }
