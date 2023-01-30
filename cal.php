@@ -16,7 +16,7 @@
     <div class="controlling">
         <h2> Sport Social Calendar </h2>
         <p> You can view or add events surrounding the Indiana Hoosiers and their sports!</p>
-        <a href='https://docs.google.com/forms/d/1dLztdNwK5YvbSH60w3znX1nBMdzClQRrriie7-a8fM4/prefill'>
+        <a href='https://docs.google.com/forms/d/e/1FAIpQLSdwCFKpNBpgJNYvLGaQr-3aKUNfiE8w0wWg8YS-9u-4D_GJpg/viewform?usp=pp_url'>
             <button>
                 Create an Event!
             </button>
