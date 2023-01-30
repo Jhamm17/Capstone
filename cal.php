@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="css/styles.css">
 <body>
     <div class="topnav">
-        <a href="home.html"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
+        <a href="home.html"><img class="homeImg" src="Images/homebutton.png" alt="Home"></img></a>
         <a href="cal.php">Calendar</a>  
     </div>
     <div class="header">
