@@ -9,6 +9,7 @@
   .topnav {
       background-color: #DC143C;
       overflow: hidden;
+      padding-bottom: 40px;
     }
     
     /* Style the links inside the navigation bar */
@@ -35,9 +36,7 @@
   }
 
   .cal {
-    padding-top: 70px;
     display:flex;
     justify-content:center;
-    align-items:center;
-        
+    align-items:center;      
   }
