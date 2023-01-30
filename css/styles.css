@@ -41,6 +41,5 @@ h2{
     justify-content: center;
 }
 .centering{
-    padding: 40px;
-    text-align: center;
+    color:red;
 }
