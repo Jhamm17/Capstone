@@ -13,8 +13,8 @@
         <a href="cal.php">Calendar</a>  
     </div>
     <div class="header">
-        <h2> Sport Social Calendar </h2>
-        You can view or add events surrounding the Indiana Hoosiers and their sports!
+        <p> Sport Social Calendar </p>
+        <p> You can view or add events surrounding the Indiana Hoosiers and their sports!</p>
     </div>
     <a href='https://docs.google.com/forms/d/e/1FAIpQLSdwCFKpNBpgJNYvLGaQr-3aKUNfiE8w0wWg8YS-9u-4D_GJpg/viewform?usp=pp_url'>
             <button>
