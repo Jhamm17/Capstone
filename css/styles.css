@@ -4,6 +4,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    background-color: #FFFDD0;
   }
   
   .topnav {
@@ -42,4 +43,9 @@
 
 .Create{
     color: #DC143C;
+}
+
+.CalHead{
+    text-align: center;
+    color: red;
 }
