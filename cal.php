@@ -12,7 +12,7 @@
         <a href="home.html"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
         <a href="cal.php">Calendar</a>  
     </div>
-    <div class="centering">
+    <div class="header">
         <h2> Sport Social Calendar </h2>
         You can view or add events surrounding the Indiana Hoosiers and their sports!
     </div>
