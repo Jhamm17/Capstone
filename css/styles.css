@@ -5,7 +5,6 @@
     padding:0;
     box-sizing:border-box;
     background-color: #FFFDD0;
-    text-align: center;
   }
   
   .topnav {
@@ -41,12 +40,6 @@
     justify-content:center;
     align-items:center;      
   }
-
-.Create{
-    color: #DC143C;
-}
-
-.CalHead{
+.centering{
     text-align: center;
-    color: red;
 }
