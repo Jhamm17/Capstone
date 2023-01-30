@@ -40,9 +40,10 @@
     align-items:center;      
   }
 
-  .control{
+  .controling{
     justify-content:center;
     align-items:center; 
+    text-align: center;
   }
 
   button{
