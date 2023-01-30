@@ -13,15 +13,13 @@
         <a href="cal.php">Calendar</a>  
     </div>
 
-    <div class="controlling">
         <h2> Sport Social Calendar </h2>
         <p> You can view or add events surrounding the Indiana Hoosiers and their sports!</p>
-        <a href='https://docs.google.com/forms/d/e/1FAIpQLSdwCFKpNBpgJNYvLGaQr-3aKUNfiE8w0wWg8YS-9u-4D_GJpg/viewform?usp=pp_url'>
-            <button>
+        <a class="Create" href='https://docs.google.com/forms/d/e/1FAIpQLSdwCFKpNBpgJNYvLGaQr-3aKUNfiE8w0wWg8YS-9u-4D_GJpg/viewform?usp=pp_url'>
+            <button class="Create">
                 Create an Event!
             </button>
         </a>
-    </div>
 
     <div class="cal">
         <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=1&bgcolor=%23D50000&ctz=America%2FIndiana%2FIndianapolis&showTitle=0&showPrint=0&showTz=0&showTabs=0&showCalendars=1&src=ODIxYzAxOTJkYzAyNGIzYjhkMWMxY2E0ZTAxNjU0OWM5MDU0NWY4N2I1ZTIzZjRhNmQzOWRiODQ1MzQzZDcwYkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23616161" style="border:solid 1px #777" width="1100" height="800" frameborder="0" scrolling="no"></iframe>

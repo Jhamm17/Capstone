@@ -40,13 +40,6 @@
     align-items:center;      
   }
 
-  .controlling{
-    display:flex;
-    justify-content:center;
-    align-items:center; 
-    text-align: center;
-  }
-
-  button{
-    color:#DC143C;
-  }
+.Create{
+    color: #DC143C;
+}
