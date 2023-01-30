@@ -1,8 +1,5 @@
-/* Add a black background color to the top navigation */
-
-
-  
-  .topnav {
+    .topnav {
+        padding-bottom: 0;
       background-color: #DC143C;
       overflow: hidden;
     }
@@ -30,12 +27,27 @@
     padding: 0%;
   }
 
-  .cal {
-    display:flex;
-    justify-content:center;
-    align-items:center;      
+    .cal {
+        display:flex;
+        justify-content:center;
+        align-items:center;      
+    }
+    .sports p {
+        color: black;
+        text-align: center;
+    }
+    .sports button{
+        font-size: large;
+        background-color: #DC143C;
+        color:#FFFDD0;
+        text-align: center;
+    }
+  .sports {
+    color:#DC143C;
+    text-align: center;
   }
 
-  .header {
-    border: solid #DC143C;
+  .backgrounds{
+    padding-top: 0;
+    background-color: #FFFDD0;
   }
