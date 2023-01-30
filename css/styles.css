@@ -1,11 +1,6 @@
 /* Add a black background color to the top navigation */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    background-color: #FFFDD0;
-  }
+
   
   .topnav {
       background-color: #DC143C;
