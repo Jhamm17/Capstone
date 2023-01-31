@@ -9,3 +9,10 @@ button{
 h1{
     margin: 25px 10px;
 }
+input{
+    width: 18%;
+}
+input[type=submit]{
+    width: 5%;
+    background-color: red;
+}
