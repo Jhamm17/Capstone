@@ -16,3 +16,11 @@ input[type=submit]{
     width: 5%;
     background-color: red;
 }
+table, th, td{
+    border: 1px solid;
+    width: 50%;
+}
+.tabledesign{
+    border: 1px solid;
+    width: 50%;
+}
