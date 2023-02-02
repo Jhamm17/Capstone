@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="css/polls.css">
 </head>
 <body>
-    <div class="topnav">
+    <div class="topnav"> 
         <a href="home.html"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
         <a href="cal.php">Calendar</a>
         <a href="chat.html">Chat</a> 
@@ -24,6 +24,7 @@
         <a href="profile.html">Profile</a>
         <a href="loign.php">Log-In</a> 
     </div>
+
     <container class="polls-title">
         <div class="dropdown">
             <button class="dropbtn">Sports</button>
@@ -43,30 +44,56 @@
         </div>
     </container>
     <container class="polls-vote">
-        <div>
-            <div class="polls-element"> Game 1 Home </div>
-            <div class="polls-element"> Game 1 Away </div>
-        </div>
-        <div>
-            <div class="polls-element"> Game 2 Home </div>
-            <div class="polls-element"> Game 2 Away </div>
-        </div>
-        <div>
-            <div class="polls-element"> Game 3 Home </div>
-            <div class="polls-element"> Game 3 Away </div>
-        </div>
-        <div>
-            <div class="polls-element"> Game 4 Home </div>
-            <div class="polls-element"> Game 4 Away </div>
-        </div>
-        <div>
-            <div class="polls-element"> Game 5 Home </div>
-            <div class="polls-element"> Game 5 Away </div>
-        </div>
-        <div>
-            <div class="polls-element"> Game 6 Home </div>
-            <div class="polls-element"> Game 6 Away </div>
-        </div>
+        <?php
+
+        $pollid = $_GET['pollid'];
+        echo $_POST['polloption'];
+        $connect = mysql_connect('h', 'u', 'p', 'poll');
+        $query = "SELECT & FROM polls WHERE pollID='$pollID'";
+        $q = mysql_query($connect, $query);
+        echo mysql_num_rows($q);
+
+        while($row = mysql_fetch_array($q)) {
+            $id = $row[0];
+            $title = $row[1];
+            $pollID = $row[2];
+            $userID = $row[3];
+            echo "<h1>$title</h1>";
+            ?>
+            <table>
+                <form action="" method="POST>
+            <?php
+                $questions = "SELECT & FROM questions WHERE pollID='$pollID'";
+                $q2 = mysql_query($connect, $questions);
+                while($r = mysql_fetch_array($q2)) {
+                $question = $r[1];
+                $votes = $r[2];
+                $newvotes = $votes + 1;
+                $newuserID = $userID."$userID,";
+
+                if (isset($_POST['vote'])) {
+                    $polloption = $_POST['polloption'];
+                    if ($polloption == "") {
+                        die("You didn't select an option.");
+                    } else {
+
+                        $userID = explode(",", $userID);
+                        if (in_array($userID, $ipaddress)) {
+                            die("You've Already voted");
+                        } else {
+                        mysql_query($connect, "UPDATE questions SET votes = '$newvotes', userID='$userID' WHERE pollid='$pollid' AND question='$polloption'")
+                        mysql_query($connect, "UPDATE polls SET userID='$newuserID' WHERE pollID='$pollID'");
+                        die("You voted Successfully");
+                    }
+                }
+                echo '<tr><td>'$question.'</td><td><input type="radio" name="polloption" value="'.$question'" /> '.$votes.' votes</td></tr>';
+                }
+
+        }
+        ?>
+        <tr><td><input type="submit" name="vote" value="Vote" /></td></tr>
+            </form>
+            </table>
     </container> 
 </body>
 </html>
