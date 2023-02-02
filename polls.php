@@ -60,6 +60,7 @@
             $title = $row[1];
             $pollID = $row[2];
             $userID = $row[3];
+        echo $title
         ?>
         <table>
                 <form action="" method="POST">
