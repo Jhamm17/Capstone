@@ -54,10 +54,10 @@
         $pollID = $_GET['pollID'];
         echo $_POST['polloption'];
         $query = "SELECT & FROM polls WHERE pollID='$pollID'";
-        $q = mysql_query($connect, $query);
-        echo mysql_num_rows($q);
+        $q = mysqli_query($connect, $query);
+        echo mysqli_num_rows($q);
         
-        while($row = mysql_fetch_array($q)) {
+        while($row = mysqli_fetch_array($q)) {
             $id = $row[0];
             $title = $row[1];
             $pollID = $row[2];
