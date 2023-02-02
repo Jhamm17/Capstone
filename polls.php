@@ -77,10 +77,12 @@
                     if ($polloption == "") {
                         die("You didn't select an option.");
                     } else {
-                        mysql_query($connect, "UPDATE questions SET votes = '$newvotes', userID='$userID' WHERE pollID='$pollID' AND question='$polloption'")
+                        mysql_query($connect, "UPDATE questions SET votes = '$newvotes', userID='$userID' WHERE pollID='$pollID' AND question='$polloption'");
+                        mysql_query($connect, "UPDATE polls SET userID='$newuserID' WHERE pollID='$pollID'");
                         die("you voted Successfully");
                     }
                 }
+
                 echo '<tr><td>'.$question.'</td><td><input type="radio" name="polloption" value="'.$question.'" /> '.$votes.' votes</td></tr>';
                 }
         }        
