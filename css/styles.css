@@ -1,14 +1,7 @@
-/* Add a black background color to the top navigation */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-  }
-  
-  .topnav {
+    .topnav {
       background-color: #DC143C;
       overflow: hidden;
+      padding:0;
     }
     
     /* Style the links inside the navigation bar */
@@ -32,4 +25,30 @@
     width: 60px;
     height: 60px;
     padding: 0%;
+  }
+
+    .cal {
+        display:flex;
+        justify-content:center;
+        align-items:center;      
+    }
+    .sports p {
+        color: black;
+        text-align: center;
+    }
+    .sports button{
+        font-size: large;
+        font-weight: 600;
+        background-color: #DC143C;
+        color: black;
+        text-align: center;
+    }
+  .sports {
+    padding-bottom: 1rem;
+    color:#DC143C;
+    text-align: center;
+  }
+
+  body{
+    background-color: #FFFDD0;
   }
