@@ -1,3 +1,11 @@
+<?php
+$con = mysqli_connect("db.luddy.indiana.edu","i494f22_team36","my+sql=i494f22_team36","i494f22_team36");
+
+if ($con->connect_error) {
+    die("connection failed: " . $con->connect_error);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,11 +53,6 @@
     </container>
     <container class="polls-vote">
         <?php
-        $con = mysqli_connect("db.luddy.indiana.edu","i494f22_team36","my+sql=i494f22_team36","i494f22_team36");
-
-        if ($con->connect_error) {
-            die("connection failed: " . $con->connect_error);
-        }
 
         $pollID = $_GET['pollID'];
         $query = "SELECT * FROM polls WHERE pollID='$pollID'";
@@ -60,7 +63,6 @@
             $title = $row[1];
             $pollID = $row[2];
             $userID = $row[3];
-        echo $title
         ?>
         <table>
                 <form action="" method="POST">
