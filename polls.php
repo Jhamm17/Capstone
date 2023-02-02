@@ -60,7 +60,6 @@
             $title = $row[1];
             $pollID = $row[2];
             $userID = $row[3];
-        }
         ?>
         <table>
                 <form action="" method="POST">
@@ -75,6 +74,7 @@
 
                 echo '<tr><td>'.$question.'</td><td><input type="radio" name="polloption" value="'.$question.'" /> '.$votes.' votes</td></tr>';
                 }
+        }        
         ?>
         <tr><td><input type="submit" name="vote" value="Vote" /></td></tr>
             </form>
