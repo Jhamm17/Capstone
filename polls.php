@@ -78,10 +78,10 @@
                     } else {
 
                         $userID = explode(",", $userID);
-                        if (in_array($userID, $ipaddress)) {
+                        if (in_array($userID)) {
                             die("You've Already voted");
                         } else {
-                        mysql_query($connect, "UPDATE questions SET votes = '$newvotes', userID='$userID' WHERE pollid='$pollid' AND question='$polloption'")
+                        mysql_query($connect, "UPDATE questions SET votes = '$newvotes', userID='$userID' WHERE pollID='$pollID' AND question='$polloption'")
                         mysql_query($connect, "UPDATE polls SET userID='$newuserID' WHERE pollID='$pollID'");
                         die("You voted Successfully");
                     }

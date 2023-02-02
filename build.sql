@@ -255,25 +255,25 @@ INSERT INTO team VALUES
 create table polls (
 id INT NOT NULL AUTO_INCREMENT,
 title VARCHAR(255) NOT NULL,
-pollID VARCHAR (32) NOT NULL,
+pollID int NOT NULL,
 userID INT NOT NULL,
 FOREIGN KEY (userID) REFERENCES user(userid),
-PRIMARY KEY (pollID),
+PRIMARY KEY (id)
 ) ENGINE=INNODB;
 
 create table questions (
 id INT NOT NULL AUTO_INCREMENT,
 question VARCHAR (50) NOT NULL,
 votes INT NOT NULL,
-pollID VARCHAR (32) NOT NULL,
-FOREIGN KEY (pollID) REFERENCES polls(pollID),
-PRIMARY KEY (id),
+pollID INT NOT NULL,
+FOREIGN KEY (pollID) REFERENCES polls(id),
+PRIMARY KEY (id)
 ) ENGINE=INNODB;
 
 INSERT INTO polls VALUES  
-(1, 'Test Poll', 'test', 1001),
-(2, 'Test Poll', 'test2', 1002),
-(3, 'Test Poll', 'test3', 1003),
+(1, 'Test Poll', 1, 1001),
+(2, 'Test Poll', 2, 1002),
+(3, 'Test Poll', 3, 1003);
 
 
 INSERT INTO questions VALUES  
@@ -281,5 +281,5 @@ INSERT INTO questions VALUES
 (2, 'Rutgers Scarlett Knights', 0, 1),
 (3, 'Michigan Wolverines', 2, 2),
 (4, 'Michigan State Spartans', 0, 2),
-(5, 'Wisconsin Badgers', 0, 3);
+(5, 'Wisconsin Badgers', 0, 3),
 (6, 'Iowa Hawkeyes', 3, 3);
