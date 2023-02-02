@@ -71,7 +71,16 @@
                 $votes = $r[2];
                 $newvotes = $votes + 1;
                 $newuserID = $userID."$userID,";
-
+                
+                if (isset($_POST['vote'])) {
+                    $polloption = $_POST['polloption'];
+                    if ($polloption == "") {
+                        die("You didn't select an option.");
+                    } else {
+                        mysql_query($connect, "UPDATE questions SET votes = '$newvotes', userID='$userID' WHERE pollID='$pollID' AND question='$polloption'")
+                        die("you voted Successfully");
+                    }
+                }
                 echo '<tr><td>'.$question.'</td><td><input type="radio" name="polloption" value="'.$question.'" /> '.$votes.' votes</td></tr>';
                 }
         }        
