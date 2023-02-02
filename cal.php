@@ -9,7 +9,10 @@
 <body>
     <div class="topnav">
         <a href="home.html"><img class="homeImg" src="Images/homebutton.png" alt="Home"></img></a>
-        <a href="cal.php">Calendar</a>  
+        <a href="loign.php">Log-In</a> 
+        <a href="cal.php">Calendar</a>
+        <a href="intramurals.php">Intramurals</a>
+        <a href="polls.php">Polls</a>   
     </div>
 
     <div class="sports">
