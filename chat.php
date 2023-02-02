@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>send message</title>
 </head>
+<link rel="stylesheet" href="css/styles.css">
+
 
 <body>
 <div class="topnav">
