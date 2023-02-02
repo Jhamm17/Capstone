@@ -1,8 +1,8 @@
 <html>
     <head>
         <title>Intramural Page</title>
-        <link rel="stylesheet" href="css/style.css">
     </head>
+    <link rel="stylesheet" href="css/style.css">
     <body>
     <div class="topnav">
         <a href="home.html"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
