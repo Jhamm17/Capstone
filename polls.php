@@ -45,10 +45,14 @@
     </container>
     <container class="polls-vote">
         <?php
+        $con = mysqli_connect("db.luddy.indiana.edu","i494f22_team36","my+sql=i494f22_team36","i494f22_team36");
 
+        if ($con->connect_error) {
+            die("connection failed: " . $con->connect_error);
+        }
+        
         $pollid = $_GET['pollid'];
         echo $_POST['polloption'];
-        $db = mysqli_connect("db.luddy.indiana.edu","i494f22_team36","my+sql=i494f22_team36","i494f22_team36") or die("Error connecting to MySQL server.");
         $query = "SELECT & FROM polls WHERE pollID='$pollID'";
         $q = mysql_query($connect, $query);
         echo mysql_num_rows($q);
