@@ -65,22 +65,7 @@
             echo "<h1>$title</h1>";
         }
         ?>
-        <table>
-                <form action="" method="POST>
-            <?php
-                $questions = "SELECT * FROM questions WHERE pollID='$pollID'";
-                $q2 = mysqli_query($connect, $questions);
-                while($r = mysqli_fetch_array($q2)) {
-                $question = $r[1];
-                $votes = $r[2];
-                $newvotes = $votes + 1;
-
-                echo '<tr><td>'$question.'</td><td><input type="radio" name="polloption" value="'.$question'" /> '.$votes.' votes</td></tr>';
-                }
-        ?>
-        <tr><td><input type="submit" name="vote" value="Vote" /></td></tr>
-        </form>
-        </table>
+        
     </container>
 </body>
 </html>
