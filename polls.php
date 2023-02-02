@@ -51,7 +51,7 @@ if ($con->connect_error) {
             <button class="leaderboard"> Leaderboard </button>
         </div>
     </container>
-    <container class="polls-vote">
+    <container>
         <?php
 
         $pollID = $_GET['pollID'];
