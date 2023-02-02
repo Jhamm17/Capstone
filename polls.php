@@ -61,7 +61,6 @@
             $pollID = $row[2];
             $userID = $row[3];
         }
-        echo "<h1 class="php-title">$title</h1>";
         ?>
         <table>
                 <form action="" method="POST">
