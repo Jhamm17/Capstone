@@ -52,18 +52,16 @@
         }
 
         $pollID = $_GET['pollID'];
-        echo $_POST['polloption'];
         $query = "SELECT * FROM polls WHERE pollID='$pollID'";
         $q = mysqli_query($connect, $query);
-        echo mysqli_num_rows($q);
         
         while($row = mysqli_fetch_array($q)) {
             $id = $row[0];
             $title = $row[1];
             $pollID = $row[2];
             $userID = $row[3];
-            echo "<h1>$title</h1>";
         }
+        echo "<h1>$title</h1>";
         ?>
         <table>
                 <form action="" method="POST">
