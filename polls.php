@@ -69,8 +69,8 @@
                 <form action="" method="POST>
             <?php
                 $questions = "SELECT & FROM questions WHERE pollID='$pollID'";
-                $q2 = mysql_query($connect, $questions);
-                while($r = mysql_fetch_array($q2)) {
+                $q2 = mysqli_query($connect, $questions);
+                while($r = mysqli_fetch_array($q2)) {
                 $question = $r[1];
                 $votes = $r[2];
                 $newvotes = $votes + 1;
@@ -86,8 +86,8 @@
                         if (in_array($userID)) {
                             die("You've Already voted");
                         } else {
-                        mysql_query($connect, "UPDATE questions SET votes = '$newvotes', userID='$userID' WHERE pollID='$pollID' AND question='$polloption'")
-                        mysql_query($connect, "UPDATE polls SET userID='$newuserID' WHERE pollID='$pollID'");
+                        mysqli_query($connect, "UPDATE questions SET votes = '$newvotes', userID='$userID' WHERE pollID='$pollID' AND question='$polloption'")
+                        mysqli_query($connect, "UPDATE polls SET userID='$newuserID' WHERE pollID='$pollID'");
                         die("You voted Successfully");
                     }
                 }
