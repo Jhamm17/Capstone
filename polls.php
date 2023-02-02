@@ -63,6 +63,7 @@
             $pollID = $row[2];
             $userID = $row[3];
             echo "<h1>$title</h1>";
+        }
         ?>
     </container>
 </body>
