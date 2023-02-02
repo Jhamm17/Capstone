@@ -65,7 +65,40 @@
             echo "<h1>$title</h1>";
         }
         ?>
-        
+        <table>
+                <form action="" method="POST">
+            <?php
+                $questions = "SELECT & FROM questions WHERE pollID='$pollID'";
+                $q2 = mysqli_query($connect, $questions);
+                while($r = mysqli_fetch_array($q2)) {
+                $question = $r[1];
+                $votes = $r[2];
+                $newvotes = $votes + 1;
+                $newuserID = $userID."$userID,";
+
+                if (isset($_POST['vote'])) {
+                    $polloption = $_POST['polloption'];
+                    if ($polloption == "") {
+                        die("You didn't select an option.");
+                    } else {
+
+                        $userID = explode(",", $userID);
+                        if (in_array($userID)) {
+                            die("You've Already voted");
+                        } else {
+                        mysqli_query($connect, "UPDATE questions SET votes = '$newvotes', userID='$userID' WHERE pollID='$pollID' AND question='$polloption'")
+                        mysqli_query($connect, "UPDATE polls SET userID='$newuserID' WHERE pollID='$pollID'");
+                        die("You voted Successfully");
+                    }
+                }
+                echo '<tr><td>'$question.'</td><td><input type="radio" name="polloption" value="'.$question'" /> '.$votes.' votes</td></tr>';
+                }
+
+        }
+        ?>
+        <tr><td><input type="submit" name="vote" value="Vote" /></td></tr>
+            </form>
+            </table>
     </container>
 </body>
 </html>
