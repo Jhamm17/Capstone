@@ -16,7 +16,7 @@ if ($con->connect_error) {
     die("connection failed: " . $con->connect_error);
 }
 
-$sql = "INSERT INTO chatMessage (userMessage) VALUES ($input)";
+$sql = "INSERT INTO chatMessage (userMessage) VALUES ('$input')";
 
 if ($con->query($sql) === TRUE) {
     header("location: chat.php");
