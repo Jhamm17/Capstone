@@ -50,20 +50,14 @@
         if ($con->connect_error) {
             die("connection failed: " . $con->connect_error);
         }
-        
-        $pollid = $_GET['pollid'];
+
+        $pollID = $_GET['pollID'];
         echo $_POST['polloption'];
         $query = "SELECT & FROM polls WHERE pollID='$pollID'";
         $q = mysql_query($connect, $query);
         echo mysql_num_rows($q);
-
-        while($row = mysql_fetch_array($q)) {
-            $id = $row[0];
-            $title = $row[1];
-            $pollID = $row[2];
-            $userID = $row[3];
-            echo "<h1>$title</h1>";
-            ?>
+        
+        ?>
     </container>
 </body>
 </html>
