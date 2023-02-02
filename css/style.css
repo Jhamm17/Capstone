@@ -1,6 +1,36 @@
+.topnav {
+    background-color: #DC143C;
+    overflow: hidden;
+    padding:0;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 14px 25px;
+    text-decoration: none;
+    font-size: 30px;
+
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #FFFDD0;
+    color: black;
+  }
+
+.homeImg{
+  width: 60px;
+  height: 60px;
+  padding: 0%;
+}
+
+
 button{
     color: white;
-    background-color: red;
+    background-color:#DC143C;
     padding: 30px 30px;
     font-size: 20px;
     margin: 150px 10px;
@@ -14,7 +44,7 @@ input{
 }
 input[type=submit]{
     width: 5%;
-    background-color: red;
+    background-color:#DC143C;
 }
 table, th, td{
     border: 1px solid;
