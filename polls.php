@@ -88,8 +88,6 @@
                 }
                 echo '<tr><td>'.$question.'</td><td><input type="radio" name="polloption" value="'.$question.'" /> '.$votes.' votes</td></tr>';
                 }
-
-        }
         ?>
         <tr><td><input type="submit" name="vote" value="Vote" /></td></tr>
             </form>
