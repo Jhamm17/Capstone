@@ -1,19 +1,9 @@
-<form method="post" action="edit-profile.php">
-
-  <label for="GradYear">Graduation Year:</label>
-  <input type="number" name="GradYear" value="<?php echo $GradYear ?>" />
-
-  <input type="submit" value="Update Profile" />
-</form>
-
 <?php
-// Connect to the database and retrieve the user's data
+// Connect to the database
 $servername = "db.luddy.indiana.edu";
 $username = "i494f22_team36";
 $password = "my+sql=i494f22_team36";
 $dbname = "i494f22_team36";
-
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
@@ -22,19 +12,49 @@ if ($conn->connect_error) {
 }
 
 // Update user data
-$sql = "UPDATE profile SET GradYear = ? WHERE userid = 1001";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("si", $_POST["GradYear"], $userid);
-$stmt->execute();
+if (isset($_POST['name']) && isset($_POST['email'])) {
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $sql = "UPDATE user SET Fname='$name', email='$email' WHERE userid=1001"; // Replace with the user's ID
+  $conn->query($sql);
+}
 
-// Close the database connection
-$conn->close();
+// Update profile data
+if (isset($_POST['favteam']) && isset($_POST['favsport']) && isset($_POST['grad']) && isset($_POST['bio'])) {
+  $favteam = $_POST['favteam'];
+  $favsport = $_POST['favsport'];
+  $grad = $_POST['grad'];
+  $bio = $_POST['bio'];
+  $sql = "UPDATE profile SET FavTeam='$favteam', FavSport='$favsport', GradYear='$grad', bio='$bio' WHERE userid=1001"; // Replace with the user's ID
+  $conn->query($sql);
+}
 
-// Redirect to the profile page
-exit;
-?>
+// Retrieve user data
+$sql = "SELECT * FROM user WHERE userid = 1001"; // Replace with the user's ID
+$result = $conn->query($sql);
 
+if ($result->num_rows > 0) {
+  // Output data of each row
+  while($row = $result->fetch_assoc()) {
+    $name = $row["Fname"];
+    $email = $row["email"];
+  }
+} else {
+  echo "0 results";
+}
 
+// Retrieve profile data
+$sql = "SELECT * FROM profile WHERE userid = 1001"; // Replace with the user's ID
+$result = $conn->query($sql);
 
-
-
+if ($result->num_rows > 0) {
+  // Output data of each row
+  while($row = $result->fetch_assoc()) {
+    $favteam = $row["FavTeam"];
+    $favsport = $row["FavSport"];
+    $grad = $row["GradYear"];
+    $bio = $row["bio"];
+  }
+} else {
+  echo "0 results";
+}
