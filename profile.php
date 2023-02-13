@@ -47,7 +47,28 @@ $conn->close();
 
 <!DOCTYPE html>
 <html>
+    <head> 
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      h1, h2 {
+        text-align: center;
+      }
+      .profile {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .profile p {
+        font-weight: bold;
+      }
+    </style>
+    </head>
   <link rel="stylesheet" href="css/styles.css">
+  
   <body>
   <div class="topnav">
         <a href="home.html"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
@@ -60,6 +81,7 @@ $conn->close();
         <a href="profile.php">Profile</a>
         <a href="loign.php">Log-In</a> 
     </div>
+    <div class="profile">
     <h1><?php echo $name ?>'s Profile</h1>
     <h2>Contact Me</h2>
     <p>Email: <?php echo $email ?></p>
@@ -67,5 +89,6 @@ $conn->close();
     <p>About Me:<?php echo $bio ?></p>
     <p>Favorite Team: <?php echo $favteam ?></p>
     <p>Favorite Sport: <?php echo $favsport ?></p>
+    </div>
   </body>
 </html>
