@@ -47,10 +47,19 @@ $conn->close();
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><?php echo $name ?>'s Profile Page</title>
-  </head>
+  <link rel="stylesheet" href="css/styles.css">
   <body>
+  <div class="topnav">
+        <a href="home.html"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
+        <a href="cal.php">Calendar</a>
+        <a href="chat.php">Chat</a> 
+        <a href="community.html">Community</a> 
+        <a href="intramurals.php">Intramural Sports</a> 
+        <a href="live.html">IU Live</a>   
+        <a href="polls.php">Polls</a>
+        <a href="profile.php">Profile</a>
+        <a href="loign.php">Log-In</a> 
+    </div>
     <h1><?php echo $name ?>'s Profile</h1>
     <h2>Contact Me</h2>
     <p>Email: <?php echo $email ?></p>
