@@ -26,6 +26,7 @@
         First Name: <input type="text" name="fname" required><br>
         Last Name: <input type="text" name="lname" required><br>
         email: <input type="text" name="email" required><br>
+
         <button type="submit" name="login">submit</button>
     </form>
 
@@ -78,7 +79,7 @@ if(isset($_POST['login'] )){
 
 if (isset($_GET["ticket"])){
     $tic = $_GET["ticket"];
-    $request = "https://idp.login.iu.edu/idp/profile/cas/serviceValidate?ticket=" . $tic . "&service=https://cgi.luddy.indiana.edu/~team36/login.php";
+    $request = "https://idp.login.iu.edu/idp/profile/cas/serviceValidate?ticket=" . $tic . "&service=https://cgi.luddy.indiana.edu/~team36/loign.php";
     $file = file_get_contents($request);
    // echo $file;
     //var_dump($file);
