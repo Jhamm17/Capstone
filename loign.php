@@ -18,7 +18,7 @@
         <a href="live.html">IU Live</a>   
         <a href="polls.php">Polls</a>
         <a href="profile.php">Profile</a>
-        <a href="loign.php">Log-In</a> 
+        <a href='https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~hstarnes/capstone-individual/home.php'>Log-In</a> 
     </div>
 
     <h3>Login</h3>
@@ -78,7 +78,7 @@ if(isset($_POST['login'] )){
 
 if (isset($_GET["ticket"])){
     $tic = $_GET["ticket"];
-    $request = "https://idp.login.iu.edu/idp/profile/cas/serviceValidate?ticket=" . $tic . "&service=https://cgi.luddy.indiana.edu/~hstarnes/capstone-individual/home.php";
+    $request = "https://idp.login.iu.edu/idp/profile/cas/serviceValidate?ticket=" . $tic . "&service=https://cgi.luddy.indiana.edu/~team36/login.php";
     $file = file_get_contents($request);
    // echo $file;
     //var_dump($file);
