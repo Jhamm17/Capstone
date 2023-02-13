@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
     $events[] = $event;
   }
 }
-$events = json_encode($events);
+$calendar = json_encode($calendar);
 
 
 // Close the database connection
