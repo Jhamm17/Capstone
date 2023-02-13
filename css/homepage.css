@@ -1,0 +1,37 @@
+/* .container {
+    font-family: sans-serif, Courier, monospace;
+    border: 4px solid #DC143C;
+    background: linear-gradient(45deg, black, grey);
+    border-radius: 10px 5px 2em / 20px 25px 30%;
+    position: relative;
+    height: 200px;
+    width: 1200px;
+    margin: 250px auto 0;
+    padding: 2.0em 2.0em 1.0em;
+  }
+  
+  .quote-text{
+    position: relative;
+  }
+  
+  .quote-text::before{
+    content: open-quote;
+    font-size: 100px;
+  }
+  p{
+    font-size: 50px;
+    color:white;
+    font-weight: 300;
+    text-shadow: -5px -5px 3px rgba(0, 0, 0, 0.3);
+  }
+  p{
+    font-style: italic;
+    font-weight: 300;
+    font-size: 40px;
+  }
+  
+  .loyal{
+    font-size: 60px;
+    font-weight: bold;
+    color:#DC143C;
+  } */

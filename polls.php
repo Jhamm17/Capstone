@@ -13,16 +13,18 @@
     <link rel="stylesheet" type="text/css" href="css/polls.css">
 </head>
 <body>
-    <div class="topnav">
+    <div class="topnav"> 
         <a href="home.html"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
-        <a href="cal.html">Calendar</a>
-        <a href="chat.html">Chat</a> 
+        <a href="cal.php">Calendar</a>
+        <a href="chat.php">Chat</a> 
         <a href="community.html">Community</a> 
-        <a href="intramural.html">Intramural Sports</a> 
+        <a href="intramurals.php">Intramural Sports</a> 
         <a href="live.html">IU Live</a>   
-        <a href="polls.html">Polls</a>
-        <a href="profile.html">Profile</a>     
+        <a href="polls.php">Polls</a>
+        <a href="profile.php">Profile</a>
+        <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/loign.php">Log-In</a> 
     </div>
+
     <container class="polls-title">
         <div class="dropdown">
             <button class="dropbtn">Sports</button>
@@ -41,31 +43,80 @@
             <button class="leaderboard"> Leaderboard </button>
         </div>
     </container>
-    <container class="polls-vote">
-        <div>
-            <div class="polls-element"> Game 1 Home </div>
-            <div class="polls-element"> Game 1 Away </div>
-        </div>
-        <div>
-            <div class="polls-element"> Game 2 Home </div>
-            <div class="polls-element"> Game 2 Away </div>
-        </div>
-        <div>
-            <div class="polls-element"> Game 3 Home </div>
-            <div class="polls-element"> Game 3 Away </div>
-        </div>
-        <div>
-            <div class="polls-element"> Game 4 Home </div>
-            <div class="polls-element"> Game 4 Away </div>
-        </div>
-        <div>
-            <div class="polls-element"> Game 5 Home </div>
-            <div class="polls-element"> Game 5 Away </div>
-        </div>
-        <div>
-            <div class="polls-element"> Game 6 Home </div>
-            <div class="polls-element"> Game 6 Away </div>
-        </div>
-    </container> 
+    <container>
+    <?php
+
+    session_start();
+
+    $servername = "db.luddy.indiana.edu";
+    $username = "i494f22_team36";
+    $password = "my+sql=i494f22_team36";
+    $dbname = "i494f22_team36";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+
+    // Check if the form has been submitted
+    if (isset($_POST["submit"])) {
+        // Check if the user has already voted
+        if (!isset($_SESSION["voted"])) {
+            // Store the user's response in the database
+            $poll_id = $_POST["poll_id"];
+            $answer = $_POST["answer"];
+            $sql = "INSERT INTO poll_responses (poll_id, answer) VALUES ($poll_id, '$answer')";
+
+            if ($conn->query($sql) === TRUE) {
+                $_SESSION["voted"] = true;
+                echo "Your vote has been recorded. Thank you for participating!";
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
+        } else {
+            echo "You have already voted.";
+        }
+    }
+
+    // Define the query to retrieve 6 polls from the database
+    $sql = "SELECT * FROM polls LIMIT 6";
+
+    // Execute the query
+    $result = $conn->query($sql);
+
+
+    // Check if the query returned any results
+    if ($result->num_rows > 0) {
+        // Loop through the result set and display each poll
+        while($row = $result->fetch_assoc()) {
+            echo "<h3>" . $row["question"] . "</h3>";
+            // Retrieve the count of votes for each answer
+            $answer_1_sql = "SELECT COUNT(*) FROM poll_responses WHERE poll_id = " . $row["id"] . " AND answer = '" . $row["answer_1"] . "'";
+            $answer_1_result = $conn->query($answer_1_sql);
+            $answer_1_count = $answer_1_result->fetch_row()[0];
+
+            $answer_2_sql = "SELECT COUNT(*) FROM poll_responses WHERE poll_id = " . $row["id"] . " AND answer = '" . $row["answer_2"] . "'";
+            $answer_2_result = $conn->query($answer_2_sql);
+            $answer_2_count = $answer_2_result->fetch_row()[0];
+            echo "<form action='#' method='post'>";
+            echo "<input type='radio' name='answer' value='" . $row["answer_1"] . "'>" . $row["answer_1"] . " (" . $answer_1_count . " votes)<br>";
+            echo "<input type='radio' name='answer' value='" . $row["answer_2"] . "'>" . $row["answer_2"] . " (" . $answer_2_count . " votes)<br>";
+            echo "<input type='hidden' name='poll_id' value='" . $row["id"] . "'>";
+            echo "<input type='submit' name='submit' value='Vote'>";
+            echo "</form>";
+        }
+    } else {
+        echo "No polls found.";
+    }
+
+    // Close the database connection
+    $conn->close();
+    ?>
+
+
+</container>
 </body>
 </html>
