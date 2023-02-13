@@ -72,6 +72,6 @@ $conn->close();
     <p>Favorite Team: <?php echo $favteam ?></p>
     <p>Favorite Sport: <?php echo $favsport ?></p>
     </div>
-    <a href="edit-profile.php">Edit Profile</a>
+    <a href="profile.php">Edit Profile</a>
   </body>
 </html>
