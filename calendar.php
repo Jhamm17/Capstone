@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
     $calendar['end'] = $row['end'];
     $calendar['description'] = $row['description'];
     // Add any other properties you want to associate with the event
-    $events[] = $event;
+    $calendar[] = $calendar;
   }
 }
 $calendar = json_encode($calendar);
