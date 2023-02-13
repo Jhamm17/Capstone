@@ -96,7 +96,7 @@
                 echo "<input type='radio' name='answer' value='" . $row["answer_1"] . "'>" . $row["answer_1"] . " (" . $answer_1_count . " votes)<br>";
                 echo "<input type='radio' name='answer' value='" . $row["answer_2"] . "'>" . $row["answer_2"] . " (" . $answer_2_count . " votes)<br>";
                 echo "<input type='hidden' name='poll_id' value='" . $row["id"] . "'>";
-    
+            }
     // Close the database connection
     $conn->close();
     ?>
