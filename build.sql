@@ -41,14 +41,14 @@ FOREIGN KEY (userID) REFERENCES user(userid),
 FOREIGN KEY (roomID) REFERENCES room(id)
 ) ENGINE=INNODB;
 
-create table calendar (
-calendarid INT NOT NULL,
-eventName VARCHAR(100),
-Year INT(4) NOT NULL,
-Month INT(2) NOT NULL,
-Day INT(2) NOT NULL,
-PRIMARY KEY (calendarid)
-) ENGINE=INNODB; 
+CREATE TABLE calendar (
+  calid INT AUTO_INCREMENT NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  start DATETIME NOT NULL,
+  end DATETIME NOT NULL,
+  description TEXT,
+  PRIMARY KEY (calid)
+)ENGINE=INNODB;
 
 create table privateEvent (
 privateEventID INT NOT NULL, 
@@ -177,6 +177,9 @@ INSERT INTO calendar VALUES
 (705, 'Softball game', 2023, 04, 05),
 (706, 'Men Baseball game', 2023, 04, 30),
 (707, 'Softball game', 2023, 05, 31);
+
+INSERT INTO calendar VALUES 
+(701,'IU Basketball', '2023-02-15 20:00:00', '2023-02-15 22:00:00', 'Indiana takes on NorthWestern');
 
 INSERT INTO privateEvent VALUES
 (801, 'Watch Party', 2023, 02, 21),
