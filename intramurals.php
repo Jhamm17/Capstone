@@ -12,8 +12,8 @@
         <a href="intramurals.php">Intramural Sports</a> 
         <a href="live.html">IU Live</a>   
         <a href="polls.php">Polls</a>
-        <a href="profile.html">Profile</a>
-        <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~hstarnes/capstone-individual/home.php">Log-In</a> 
+        <a href="profile.php">Profile</a>
+        <a href="loign.php">Log-In</a> 
     </div>
         <h1><center>Intramural Home Page!</center></h1>
         <div>

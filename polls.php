@@ -1,11 +1,3 @@
-<?php
-$con = mysqli_connect("db.luddy.indiana.edu","i494f22_team36","my+sql=i494f22_team36","i494f22_team36");
-
-if ($con->connect_error) {
-    die("connection failed: " . $con->connect_error);
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,8 +21,8 @@ if ($con->connect_error) {
         <a href="intramurals.php">Intramural Sports</a> 
         <a href="live.html">IU Live</a>   
         <a href="polls.php">Polls</a>
-        <a href="profile.html">Profile</a>
-        <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~hstarnes/capstone-individual/home.php">Log-In</a> 
+        <a href="profile.php">Profile</a>
+        <a href="loign.php">Log-In</a> 
     </div>
 
     <container class="polls-title">
@@ -51,48 +43,80 @@ if ($con->connect_error) {
             <button class="leaderboard"> Leaderboard </button>
         </div>
     </container>
-    <container class="polls-vote">
-        <?php
+    <container>
+    <?php
 
-        $pollID = $_GET['pollID'];
-        $query = "SELECT * FROM polls WHERE pollID='$pollID'";
-        $q = mysqli_query($connect, $query);
-        
-        while($row = mysqli_fetch_array($q)) {
-            $id = $row[0];
-            $title = $row[1];
-            $pollID = $row[2];
-            $userID = $row[3];
-        ?>
-        <table>
-                <form action="" method="POST">
-            <?php
-                $questions = "SELECT * FROM questions WHERE pollID='$pollID'";
-                $q2 = mysqli_query($connect, $questions);
-                while($r = mysqli_fetch_array($q2)) {
-                $question = $r[1];
-                $votes = $r[2];
-                $newvotes = $votes + 1;
-                $newuserID = $userID."$userID,";
-                
-                if (isset($_POST['vote'])) {
-                    $polloption = $_POST['polloption'];
-                    if ($polloption == "") {
-                        die("You didn't select an option.");
-                    } else {
-                        mysql_query($connect, "UPDATE questions SET votes = '$newvotes', userID='$userID' WHERE pollID='$pollID' AND question='$polloption'");
-                        mysql_query($connect, "UPDATE polls SET userID='$newuserID' WHERE pollID='$pollID'");
-                        die("you voted Successfully");
-                    }
-                }
+    session_start();
 
-                echo '<tr><td>'.$question.'</td><td><input type="radio" name="polloption" value="'.$question.'" /> '.$votes.' votes</td></tr>';
-                }
-        }        
-        ?>
-        <tr><td><input type="submit" name="vote" value="Vote" /></td></tr>
-            </form>
-            </table>
-    </container>
+    $servername = "db.luddy.indiana.edu";
+    $username = "i494f22_team36";
+    $password = "my+sql=i494f22_team36";
+    $dbname = "i494f22_team36";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+
+    // Check if the form has been submitted
+    if (isset($_POST["submit"])) {
+        // Check if the user has already voted
+        if (!isset($_SESSION["voted"])) {
+            // Store the user's response in the database
+            $poll_id = $_POST["poll_id"];
+            $answer = $_POST["answer"];
+            $sql = "INSERT INTO poll_responses (poll_id, answer) VALUES ($poll_id, '$answer')";
+
+            if ($conn->query($sql) === TRUE) {
+                $_SESSION["voted"] = true;
+                echo "Your vote has been recorded. Thank you for participating!";
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
+        } else {
+            echo "You have already voted.";
+        }
+    }
+
+    // Define the query to retrieve 6 polls from the database
+    $sql = "SELECT * FROM polls LIMIT 6";
+
+    // Execute the query
+    $result = $conn->query($sql);
+
+
+    // Check if the query returned any results
+    if ($result->num_rows > 0) {
+        // Loop through the result set and display each poll
+        while($row = $result->fetch_assoc()) {
+            echo "<h3>" . $row["question"] . "</h3>";
+            // Retrieve the count of votes for each answer
+            $answer_1_sql = "SELECT COUNT(*) FROM poll_responses WHERE poll_id = " . $row["id"] . " AND answer = '" . $row["answer_1"] . "'";
+            $answer_1_result = $conn->query($answer_1_sql);
+            $answer_1_count = $answer_1_result->fetch_row()[0];
+
+            $answer_2_sql = "SELECT COUNT(*) FROM poll_responses WHERE poll_id = " . $row["id"] . " AND answer = '" . $row["answer_2"] . "'";
+            $answer_2_result = $conn->query($answer_2_sql);
+            $answer_2_count = $answer_2_result->fetch_row()[0];
+            echo "<form action='#' method='post'>";
+            echo "<input type='radio' name='answer' value='" . $row["answer_1"] . "'>" . $row["answer_1"] . " (" . $answer_1_count . " votes)<br>";
+            echo "<input type='radio' name='answer' value='" . $row["answer_2"] . "'>" . $row["answer_2"] . " (" . $answer_2_count . " votes)<br>";
+            echo "<input type='hidden' name='poll_id' value='" . $row["id"] . "'>";
+            echo "<input type='submit' name='submit' value='Vote'>";
+            echo "</form>";
+        }
+    } else {
+        echo "No polls found.";
+    }
+
+    // Close the database connection
+    $conn->close();
+    ?>
+
+
+</container>
 </body>
 </html>
