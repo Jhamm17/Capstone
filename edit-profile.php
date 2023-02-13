@@ -52,16 +52,6 @@ if (isset($_POST["submit"])) {
 
   $sql = "UPDATE profile SET FavTeam = '$favteam', FavSport = '$favsport', GradYear = '$grad', bio = '$bio' WHERE userid = $userid";
 
-  if ($conn->query($sql) === TRUE) {
-    // Profile successfully updated
-    header("Location: profile.php");
-    exit;
-  } else {
-    echo "Error updating profile: " . $conn->error;
-  }
-}
-
-
 // Close the database connection
 $conn->close();
 ?>
@@ -91,6 +81,6 @@ $conn->close();
 
       <input type="submit" name="submit" value="Update Profile">
     </form>
-    <p>Once you have clicked Update Profile click here to return to profile view:<a href="profile.php">Profile View</a></p>
+    <p>Once you have clicked Update Profile click here to return to profile view: <a href="profile.php">Profile View</a></p>
   </div>
 </body>
