@@ -15,7 +15,7 @@
         <a href="intramurals.php">Intramural Sports</a> 
         <a href="live.html">IU Live</a>   
         <a href="polls.php">Polls</a>
-        <a href="profile.html">Profile</a>
+        <a href="profile.php">Profile</a>
         <a href="loign.php">Log-In</a> 
     </div>
 
