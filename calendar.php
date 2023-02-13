@@ -16,7 +16,7 @@
     </script>
     <style>
           #calendar {
-    width: 50%;
+    width: 75%;
   }
 
   .fc-view-container {
@@ -37,7 +37,7 @@
         <a href="profile2.php">Profile</a>
         <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/loign.php">Log-In</a> 
     </div>
-    <div id='calendar'></div>
+    <center><div id='calendar'></div></center>
   </body>
 </html>
 
