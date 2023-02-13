@@ -18,7 +18,7 @@
         <a href="live.html">IU Live</a>   
         <a href="polls.php">Polls</a>
         <a href="profile.php">Profile</a>
-        <a href='https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/login.php'>Log-In</a> 
+        <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/loignn.php">Log-In</a> 
     </div>
 
     <h3>Login</h3>
