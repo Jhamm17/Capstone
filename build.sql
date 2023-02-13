@@ -283,3 +283,33 @@ INSERT INTO questions VALUES
 (4, 'Michigan State Spartans', 0, 2),
 (5, 'Wisconsin Badgers', 0, 3),
 (6, 'Iowa Hawkeyes', 3, 3);
+
+CREATE TABLE polls (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    question VARCHAR(255) NOT NULL,
+    answer_1 VARCHAR(255) NOT NULL,
+    answer_2 VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE poll_responses (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    poll_id INT NOT NULL,
+    answer VARCHAR(255) NOT NULL,
+    FOREIGN KEY (poll_id) REFERENCES polls(id)
+);
+
+INSERT INTO polls VALUES  
+('Poll 1', 'Rutgers Scarlett Knights', 'Indiana Hoosiers'),
+('Poll 2', 'Michigan Wolverines', 'Michigan State Spartans'),
+('Poll 3', 'Wisconsin Badgers', 'Iowa Hawkeyes'),
+('Poll 4', 'Purdue Boilermakers', 'Nebraska Cornhuskers'),
+('Poll 5', 'Kansas Jayhawks', 'Oklahoma Sooners'),
+('Poll 6', 'Auburn Tigers', 'LSU Tigers');
+
+INSERT INTO poll_responses VALUES
+(1, '')
+(2, '')
+(3, '')
+(4, '')
+(5, '')
+(6, '')
