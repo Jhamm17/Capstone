@@ -34,8 +34,8 @@ if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
     $favteam = $row["FavTeam"];
     $favsport = $row["FavSport"];
-    $grad = $row["GradYear"]
-    $bio = $row["bio"]
+    $grad = $row["GradYear"];
+    $bio = $row["bio"];
   }
 } else {
   echo "0 results";
