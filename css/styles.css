@@ -52,5 +52,12 @@
   body{
     background-color: #FFFDD0;
   }
+  #calendar {
+    width: 50%;
+  }
+
+  .fc-view-container {
+    height: 200px; /* or whatever height you want */
+  }
 
   
