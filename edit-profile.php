@@ -31,5 +31,11 @@ $stmt->execute();
 $conn->close();
 
 // Redirect to the profile page
+header("Location: profile.php");
 exit;
 ?>
+
+
+
+
+
