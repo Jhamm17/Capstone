@@ -88,14 +88,23 @@
     // Execute the query
     $result = $conn->query($sql);
 
+    // Retrieve the count of votes for each answer
+    $answer_1_sql = "SELECT COUNT(*) FROM poll_responses WHERE poll_id = " . $row["id"] . " AND answer = '" . $row["answer_1"] . "'";
+    $answer_1_result = $conn->query($answer_1_sql);
+    $answer_1_count = $answer_1_result->fetch_row()[0];
+
+    $answer_2_sql = "SELECT COUNT(*) FROM poll_responses WHERE poll_id = " . $row["id"] . " AND answer = '" . $row["answer_2"] . "'";
+    $answer_2_result = $conn->query($answer_2_sql);
+    $answer_2_count = $answer_2_result->fetch_row()[0];
+
     // Check if the query returned any results
     if ($result->num_rows > 0) {
         // Loop through the result set and display each poll
         while($row = $result->fetch_assoc()) {
             echo "<h3>" . $row["question"] . "</h3>";
             echo "<form action='#' method='post'>";
-            echo "<input type='radio' name='answer' value='" . $row["answer_1"] . "'>" . $row["answer_1"] . "<br>";
-            echo "<input type='radio' name='answer' value='" . $row["answer_2"] . "'>" . $row["answer_2"] . "<br>";
+            echo "<input type='radio' name='answer' value='" . $row["answer_1"] . "'>" . $row["answer_1"] . " (" . $answer_1_count . " votes)<br>";
+            echo "<input type='radio' name='answer' value='" . $row["answer_2"] . "'>" . $row["answer_2"] . " (" . $answer_2_count . " votes)<br>";
             echo "<input type='submit' name='submit' value='Vote'>";
             echo "</form>";
         }
