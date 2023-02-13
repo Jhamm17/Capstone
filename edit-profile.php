@@ -1,4 +1,4 @@
-<form method="post" action="update-profile.php">
+<form method="post" action="edit-profile.php">
 
   <label for="GradYear">Graduation Year:</label>
   <input type="number" name="GradYear" value="<?php echo $GradYear ?>" />
