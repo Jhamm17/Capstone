@@ -60,14 +60,7 @@ if (isset($_POST["submit"])) {
     echo "Error updating profile: " . $conn->error;
   }
 }
-if ($conn->query($sql) === TRUE) {
-    // Database update was successful, redirect the user to the profile page
-    header("Location: profile.php");
-    exit();
-  } else {
-    // Handle the error case
-    echo "Error updating record: " . $conn->error;
-  }
+
 
 // Close the database connection
 $conn->close();
@@ -98,5 +91,6 @@ $conn->close();
 
       <input type="submit" name="submit" value="Update Profile">
     </form>
+    <p>Once you have clicked Update Profile click here to return to profile view:<a href="profile.php">Profile View</a></p>
   </div>
 </body>
