@@ -1,35 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>chat</title>
-    <link rel="stylesheet" href="css/styles.css">
-
-</head>
-<body>
-<div class="topnav">
-        <a href="home.html"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
-        <a href="cal.php">Calendar</a>
-        <a href="chat.php">Chat</a> 
-        <a href="community.html">Community</a> 
-        <a href="intramurals.php">Intramural Sports</a> 
-        <a href="live.html">IU Live</a>   
-        <a href="polls.php">Polls</a>
-        <a href="profile.php">Profile</a>
-        <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/loign.php">Log-In</a> 
-</div>
-
-    
-</body>
-</html>
 <?php
 if (isset($_POST['submit'])){
 /* Attempt MySQL server connection. Assuming
 you are running MySQL server with default
 setting (user 'root' with no password) */
-$con = mysqli_connect("db.luddy.indiana.edu","i494f22_team36","my+sql=i494f22_team36","i494f22_team36");
+$link = mysqli_connect("localhost",
+            "root", "", "chat_app");
   
 // Check connection
 if($link === false){
@@ -46,7 +21,7 @@ date_default_timezone_set('Asia/Kolkata');
 $ts=date('y-m-d h:ia');
   
 // Attempt insert query execution
-$sql = "INSERT INTO chatMessage (userMessage)
+$sql = "INSERT INTO chats (uname, msg, dt)
         VALUES ('$un', '$m', '$ts')";
 if(mysqli_query($link, $sql)){
     ;
@@ -349,4 +324,3 @@ endwhile;
  
 </body>
 </html>
-    
