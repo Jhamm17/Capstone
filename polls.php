@@ -62,38 +62,20 @@
         die("Connection failed: " . $conn->connect_error);
     } 
 
-    // Check if the form has been submitted
-    if (isset($_POST["submit"])) {
-        // Check if the user has already voted
-        if (!isset($_SESSION["voted"])) {
-            // Store the user's response in the database
-            $poll_id = $_POST["poll_id"];
-            $answer = $_POST["answer"];
-            $sql = "INSERT INTO poll_responses (poll_id, answer) VALUES ($poll_id, '$answer')";
-
-            if ($conn->query($sql) === TRUE) {
-                $_SESSION["voted"] = true;
-                echo "Your vote has been recorded. Thank you for participating!";
-            } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
-            }
-        } else {
-            echo "You have already voted.";
-        }
-    }
-
+    
     // Define the query to retrieve 6 polls from the database
     $sql = "SELECT * FROM polls LIMIT 6";
 
-    // Execute the query
-    $result = $conn->query($sql);
+    // Get the IDs of the polls the user has already voted in
+    $voted_polls = isset($_COOKIE['voted_polls']) ? json_decode($_COOKIE['voted_polls'], true) : [];
 
-
-    // Check if the query returned any results
+    // Display the polls
     if ($result->num_rows > 0) {
-        // Loop through the result set and display each poll
+        // Output data for each row
         while($row = $result->fetch_assoc()) {
+            echo "<form action='submit_response.php' method='post'>";
             echo "<h3>" . $row["question"] . "</h3>";
+
             // Retrieve the count of votes for each answer
             $answer_1_sql = "SELECT COUNT(*) FROM poll_responses WHERE poll_id = " . $row["id"] . " AND answer = '" . $row["answer_1"] . "'";
             $answer_1_result = $conn->query($answer_1_sql);
@@ -102,17 +84,19 @@
             $answer_2_sql = "SELECT COUNT(*) FROM poll_responses WHERE poll_id = " . $row["id"] . " AND answer = '" . $row["answer_2"] . "'";
             $answer_2_result = $conn->query($answer_2_sql);
             $answer_2_count = $answer_2_result->fetch_row()[0];
-            echo "<form action='#' method='post'>";
-            echo "<input type='radio' name='answer' value='" . $row["answer_1"] . "'>" . $row["answer_1"] . " (" . $answer_1_count . " votes)<br>";
-            echo "<input type='radio' name='answer' value='" . $row["answer_2"] . "'>" . $row["answer_2"] . " (" . $answer_2_count . " votes)<br>";
-            echo "<input type='hidden' name='poll_id' value='" . $row["id"] . "'>";
-            echo "<input type='submit' name='submit' value='Vote'>";
-            echo "</form>";
-        }
-    } else {
-        echo "No polls found.";
-    }
 
+            // Check if the user has already voted in this poll
+            if (in_array($row["id"], $voted_polls)) {
+                // Display the count of votes next to each answer
+                echo $row["answer_1"] . " (" . $answer_1_count . " votes)<br>";
+                echo $row["answer_2"] . " (" . $answer_2_count . " votes)<br>";
+                echo "You have already voted in this poll.<br>";
+            } else {
+                // Display the count of votes next to each answer and the voting options
+                echo "<input type='radio' name='answer' value='" . $row["answer_1"] . "'>" . $row["answer_1"] . " (" . $answer_1_count . " votes)<br>";
+                echo "<input type='radio' name='answer' value='" . $row["answer_2"] . "'>" . $row["answer_2"] . " (" . $answer_2_count . " votes)<br>";
+                echo "<input type='hidden' name='poll_id' value='" . $row["id"] . "'>";
+    
     // Close the database connection
     $conn->close();
     ?>
