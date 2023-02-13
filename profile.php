@@ -48,24 +48,6 @@ $conn->close();
 <!DOCTYPE html>
 <html>
     <head> 
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-      }
-      h1, h2 {
-        text-align: center;
-      }
-      .profile {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
-      .profile p {
-        font-weight: bold;
-      }
-    </style>
     </head>
   <link rel="stylesheet" href="css/styles.css">
   
