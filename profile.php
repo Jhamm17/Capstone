@@ -54,7 +54,7 @@ if (isset($_POST["submit"])) {
 
   if ($conn->query($sql) === TRUE) {
     // Profile successfully updated
-    header("Location: profile.php");
+    header("Location: profile2.php");
     exit;
   } else {
     echo "Error updating profile: " . $conn->error;
