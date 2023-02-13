@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 // Retrieve user data
-$sql = "SELECT * FROM users WHERE id = 1"; // Replace with the user's ID
+$sql = "SELECT * FROM user WHERE id = 1001"; // Replace with the user's ID
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
