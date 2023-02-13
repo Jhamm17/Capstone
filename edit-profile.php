@@ -22,9 +22,9 @@ if ($conn->connect_error) {
 }
 
 // Update user data
-$sql = "UPDATE profile SET GradYear = ?  WHERE userid = 1001"; // Replace with the user's ID
+$sql = "UPDATE profile SET GradYear = ? WHERE userid = 1001";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("ssisssi", $_POST["GradYear"], $userid);
+$stmt->bind_param("si", $_POST["GradYear"], $userid);
 $stmt->execute();
 
 // Close the database connection
