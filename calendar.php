@@ -14,6 +14,15 @@
       });
 
     </script>
+    <style>
+          #calendar {
+    width: 50%;
+  }
+
+  .fc-view-container {
+    height: 200px; 
+  }
+    </style>
   </head>
   <link rel="stylesheet" href="css/styles.css">
   <body>
