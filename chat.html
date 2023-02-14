@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    #chat-container {
+        width: 500px;
+        height: 300px;
+        border: 1px solid black;
+        overflow: scroll;
+      }
+      
+      #chat-messages {
+        height: 250px;
+        padding: 10px;
+      }
+      
+      #chat-input {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        margin-top: 10px;
+      }</style>
+</head>
+<script>
+    // Get references to the chat container, messages, and input elements
+const chatContainer = document.getElementById('chat-container');
+const chatMessages = document.getElementById('chat-messages');
+const chatInput = document.getElementById('chat-input');
+
+// Function to display a message in the chat interface
+function displayMessage(message) {
+  const messageElement = document.createElement('div');
+  messageElement.innerText = message;
+  chatMessages.appendChild(messageElement);
+  chatContainer.scrollTop = chatContainer.scrollHeight;
+}
+
+// Event listener for the chat input field
+chatInput.addEventListener('keydown', event => {
+  if (event.key === 'Enter') {
+    const message = chatInput.value;
+    displayMessage(message);
+    chatInput.value = '';
+  }
+});
+
+</script>
+<body>
+    
+</body>
+</html>
+  
+
+
+<div id="chat-container">
+    <div id="chat-messages">
+      <!-- messages will be displayed here -->
+    </div>
+    <input id="chat-input" type="text" placeholder="Type your message here...">
+</div>
+  
