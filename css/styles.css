@@ -40,18 +40,12 @@
   .descriptors {
     font-weight: bold;
     margin-right: 10px;
-    align-items: center;
   }
   
   .elements {
     color: red;
-    align-items: center;
-    text-align: center;
   }
-  .profile{
-    text-align: center;
-    align-items: center;
-  }
+
   
 
  
