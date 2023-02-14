@@ -24,13 +24,11 @@
   body{
     background-color: #FFFDD0;
   }
-  .profile p{
+  .profile {
     text-align: center;
-    justify-content: center; 
-    justify-items: center;  
-    align-items: center;
-    align-content: center;
-    color:#DC143C;
   }
-
+  
+  .profile p {
+    color: red;
+  }
   
