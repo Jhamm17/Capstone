@@ -23,8 +23,8 @@
 
     <h3>Login</h3>
     <form action="" method="POST">
-        First Name: <input type="text" name="fname" required><br>
-        Last Name: <input type="text" name="lname" required><br>
+        First Name: <input type="text" name="Fname" required><br>
+        Last Name: <input type="text" name="Lname" required><br>
         email: <input type="text" name="email" required><br>
 
         <button type="submit" name="login">submit</button>
