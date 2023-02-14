@@ -8,23 +8,30 @@
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth'
+          initialView: 'dayGridMonth',
+          events: {
+            url: 'get-events.php',
+            method: 'POST',
+            failure: function() {
+              console.log('Failed to load events');
+            }
+          }
         });
         calendar.render();
       });
-
     </script>
     <style>
-          #calendar {
-    width: 65%;
-    padding-top: 1rem;
-  }
+      #calendar {
+        width: 65%;
+        padding-top: 1rem;
+      }
 
-  .fc-view-container {
-    height: 150px; 
-  }
+      .fc-view-container {
+        height: 150px;
+      }
     </style>
   </head>
+
   <link rel="stylesheet" href="css/styles.css">
   <body>
   <div class="topnav">
@@ -38,9 +45,11 @@
         <a href="profile2.php">Profile</a>
         <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/loign.php">Log-In</a> 
     </div>
+
     <center><div id='calendar'></div></center>
   </body>
 </html>
+
 
 
 
