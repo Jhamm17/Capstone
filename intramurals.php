@@ -14,6 +14,8 @@
         <a href="polls.php">Polls</a>
         <a href="profile2.php">Profile</a>
         <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/loign.php">Log-In</a> 
+        <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
+
     </div>
         <h1><center>Intramural Home Page!</center></h1>
         <div>
