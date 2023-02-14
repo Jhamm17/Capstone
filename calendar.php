@@ -27,7 +27,7 @@
       }
 
       .fc-view-container {
-        height: 150px;
+        height: 175px;
       }
     </style>
   </head>
