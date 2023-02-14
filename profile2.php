@@ -57,13 +57,13 @@ $conn->close();
         <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/loign.php">Log-In</a> 
     </div>
     <div class="profile">
-    <h1><?php echo $name ?>'s Profile</h1>
-    <h2>Contact Me</h2>
-    <p>Email: <?php echo $email ?></p>
-    <p>Graduation Year: <?php echo $grad ?></p>
-    <p>About Me:<?php echo $bio ?></p>
-    <p>Favorite Team: <?php echo $favteam ?></p>
-    <p>Favorite Sport: <?php echo $favsport ?></p>
+      <h1><?php echo $name ?>'s Profile</h1>
+      <h2>Contact Me</h2>
+      <p>Email: <?php echo $email ?></p>
+      <p>Graduation Year: <?php echo $grad ?></p>
+      <p>About Me:<?php echo $bio ?></p>
+      <p>Favorite Team: <?php echo $favteam ?></p>
+      <p>Favorite Sport: <?php echo $favsport ?></p>
     </div>
     <a href="profile.php">Edit Profile</a>
   </body>
