@@ -44,27 +44,27 @@ if ($conn->connect_error) {
 if(isset($_POST['login'] )){
     $flag = 1;
     $fname = test_input($_POST["Fname"]);
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$fname)) {
-      $fnameErr = "Only letters and white space allowed";
-      echo $fnameErr;
-      $flag = 0;
-    }    
+  //  if (!preg_match("/^[a-zA-Z-' ]*$/",$fname)) {
+   //   $fnameErr = "Only letters and white space allowed";
+   //   echo $fnameErr;
+   //   $flag = 0;
+ //   }    
     echo '<br>';
     $lname = test_input($_POST["Lname"]);
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$lname)) {
-      $lnameErr = "Only letters and white space allowed";
-      echo $lnameErr;
-      $flag = 0;
-    }
+    //if (!preg_match("/^[a-zA-Z-' ]*$/",$lname)) {
+      //$lnameErr = "Only letters and white space allowed";
+      //echo $lnameErr;
+      //$flag = 0;
+    //}
     echo '<br>';
     $email = $_POST["email"];
     $email = filter_var($email, FILTER_SANITIZE_EMAIL);
 
 
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $emailErr = "Invalid email format";
-      echo $emailErr;
-      $flag = 0;
+   // if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    //  $emailErr = "Invalid email format";
+    //  echo $emailErr;
+     // $flag = 0;
 
  
     }
@@ -79,11 +79,13 @@ if(isset($_POST['login'] )){
     //https://stackoverflow.com/questions/7719039/check-for-duplicates-before-inserting
     if ($flag == 1 AND mysql_num_rows($dupe) == 0){
         $sql = "INSERT INTO user (Fname, Lname, email) VALUES ('$fname','$lname','$email')";
-        if (mysqli_query($con,$sql)) {
+        if (mysql_query($con,$sql)) {
       
             echo "1 record added";
           
-        } else { die(mysqli_error($con)); }
+        } else { 
+            die(mysql_error($con)); 
+        }
     }
 }   
 
