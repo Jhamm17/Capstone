@@ -41,8 +41,8 @@
   //     document.getElementById('event-description').innerHTML = info.event.extendedProps.description;
   //   }
   // });
-        calendar.render();
-      });
+      //   calendar.render();
+      // });
     </script>
     <style>
       #calendar {
