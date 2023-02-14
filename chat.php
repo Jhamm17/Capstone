@@ -29,5 +29,5 @@ Send user a message: <input type="textarea" name="input" />
 <iframe src="Page1.php" width="450" height="200" scrolling="yes">
 </iframe>
 
-</body>
+</body>  
 </html>
