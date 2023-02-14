@@ -67,8 +67,8 @@ if(isset($_POST['login'] )){
     }
     //https://www.w3schools.com/php/php_form_url_email.asp
     $login_data = [
-        'fname' => $fname,
-        'lname' => $lname,
+        'Fname' => $fname,
+        'Lname' => $lname,
         'email' => $email,
     ];
     $duplicate = "SELECT * FROM user where (email = '$email')";
