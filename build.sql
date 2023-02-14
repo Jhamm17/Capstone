@@ -85,7 +85,6 @@ Player_id INT not null,
 FOREIGN KEY (Team_id) REFERENCES Teams(Team_id),
 FOREIGN KEY (Player_id) REFERENCES user(userid)
 )engine=innodb;
-
 CREATE TABLE Teams(
 Team_id INT NOT NULL AUTO_INCREMENT,
 team_name VARCHAR(40),
@@ -113,36 +112,33 @@ FOREIGN KEY (Person_id) REFERENCES user(userid)
 
 Create table iulive(
 GameID INT NOT NULL AUTO_INCREMENT,
-GameClock VARCHAR (7) NOT NULL,
-Year INT(4) NOT NULL,
-Month INT(2) NOT NULL,
-Day INT(2) NOT NULL,
-GameTime TIME NOT NULL,
+GameClock VARCHAR (7),
+GameDate VarChar(11) NOT NULL,
+GameTime VARCHAR (15) NOT NULL,
 GameChannel VARCHAR (10) NOT NULL,
-GameScore VARCHAR (7) NOT NULL,
-GamePeriod VARCHAR (10) NOT NULL,
+GameScore VARCHAR (9),
+GamePeriod VARCHAR (10),
+Sport VARCHAR (20) NOT NULL,
+Team1Name VARCHAR (50) NOT NULL,
+Team1Record VARCHAR (7) NOT NULL,
+Team1ConferenceRecord VARCHAR (7) NOT NULL,
+Team2Name VARCHAR (50) NOT NULL,
+Team2Record VARCHAR (7) NOT NULL,
+Team2ConferenceRecord VARCHAR (7) NOT NULL,
 PRIMARY KEY (GameID)
 ) ENGINE = innodb;
 
-Create table team(
-Name VARCHAR (50) NOT NULL,
-Sport VARCHAR (20) NOT NULL,
-Record VARCHAR (7) NOT NULL,
-ConferenceRecord VARCHAR (7) NOT NULL,
-TeamID INT NOT NULL,
-FOREIGN KEY (TeamID) REFERENCES iulive(GameID)
-) ENGINE = innodb;
 
 
 INSERT INTO user VALUES 
-(1001, 'Jess', 'Foxworthy', 'jfox12@iu.edu'),
-(1002, 'James', 'Messer', 'jmess@iu.edu'),
-(1003, 'Taylor', 'Ham', 'tham@iu.edu'),
-(1004, 'Isaiah', 'Quinn', 'IsaiahQ@iu.edu'),
-(1005, 'Hank', 'Lights', 'HankLi33@iu.edu'),
-(1006, 'Zack', 'Klao', 'Klaoz@iu.edu'),
-(1007, 'Luke', 'Fields', 'Lfields@iu.edu'),
-(1008, 'Frank', 'Tank', 'frtank@iu.edu');
+(1001, 'Jess', 'Foxworthy', 'jfox12@iu.edu', 'FoxSox12'),
+(1002, 'James', 'Messer', 'jmess@iu.edu', 'reasd221'),
+(1003, 'Taylor', 'Ham', 'tham@iu.edu', 'Hamm123'),
+(1004, 'Isaiah', 'Quinn', 'IsaiahQ@iu.edu', 'OSUrocks2023'),
+(1005, 'Hank', 'Lights', 'HankLi33@iu.edu', 'LightsOUT3'),
+(1006, 'Zack', 'Klao', 'Klaoz@iu.edu', 'terrrpppps12'),
+(1007, 'Luke', 'Fields', 'Lfields@iu.edu', 'FlukeyLukey23'),
+(1008, 'Frank', 'Tank', 'frtank@iu.edu', 'tanks2023');
 
 INSERT INTO profile VALUES 
 ('Basketball', 'Indiana Pacers', 2023, 'A basketball fanatic that is looking for teammates to play.', 1001),
@@ -179,14 +175,7 @@ INSERT INTO calendar VALUES
 (707, 'Softball game', 2023, 05, 31);
 
 INSERT INTO calendar VALUES 
-(701,"IU men's Basketball", '2023-02-15 20:00:00', '2023-02-15 23:00:00', 'Indiana takes on NorthWestern'),
-(702,"IU Women's Basletball", '2023-02-17 21:00:00', '2023-02-17 23:00:00', 'Indiana women takes on NorthWestern'),
-(703,'IU Gymnastics', '2023-02-18 19:00:00', '2023-02-18 21:00:00', 'Indiana gymnastic meet at Assembly Hall'),
-(704,"IU Women's Basketball", '2023-02-19 20:00:00', '2023-02-19 22:00:00', 'Indiana takes on Purdue'),
-(705,"IU men's Basketball", '2023-02-19 22:00:00', '2023-02-19 23:00:00', 'Indiana takes on Iowa'),
-(706,"IU Women's Basketball", '2023-02-20 19:00:00', '2023-02-20 21:00:00', 'Indiana starts the Big Ten Tourney'),
-(707,'IU Baseball', '2023-02-26 12:00:00', '2023-02-26 3:00:00', 'Indiana takes on Wisconsin'),
-(708,"IU men's Basketball", '2023-02-28 20:00:00', '2023-02-28 22:00:00', 'Indiana starts big ten toruney');
+(701,'IU Basketball', '2023-02-15 20:00:00', '2023-02-15 22:00:00', 'Indiana takes on NorthWestern');
 
 INSERT INTO privateEvent VALUES
 (801, 'Watch Party', 2023, 02, 21),
@@ -245,14 +234,13 @@ INSERT INTO community_people VALUES
 (303, 1003);
 
 
-
-
 INSERT INTO iulive VALUES
-(2002, '5:07', 2021, 10, 22, '12:00:00', 'BTN', '7-14', '2nd'),
-(2003, '1:11', 2021, 10, 29, '7:00:00', 'ABC', '21-21', '4th'),
-(2004, '11:59', 2021, 09, 11, '3:00:00', 'FOX', '0-0', '1st'),
-(2005, '18:12', 2021, 12, 14, '9:00:00', 'CBS', '4-12', '1st'),
-(2006, '3:32', 2021, 12, 23, '12:00:00', 'ESPN', '89-82', '2nd');
+(1, '5:07', '10/22/2021', '3:00 PM', 'BTN', '7-14', '2nd', 'Football', 'Indiana Hoosiers', '5-4', '1-2', 'Rutgers Scarlet Knights', '4-5', '0-3'),
+(2, '1:11', '10/22/2021', '12:00 PM', 'ABC', '21-21', '4th', 'Football', 'Michigan State Spartans', '7-2', '2-1', 'Maryland Terrapins', '3-6', '0-3'),
+(3, '11:59', '10/22/2021', '5:00 PM', 'FOX', '0-0', '1st', 'Football', 'Ohio State Buckeyes', '8-1', '3-0', 'Nebraska Cornhuskers', '4-5', '1-2'),
+(4, '', '10/22/2021', '7:00 PM', 'NBC', '', '', 'Football', 'Michigan Wolverines', '8-1', '3-0', 'Wisconsin Badgers', '7-2', '2-1'),
+(5, '18:12', '12/23/2021', '9:00 PM', 'CBS', '', '', 'Basketball', 'Indiana Hoosiers', '11-2', '1-0', 'Butler Bulldogs', '8-5', '0-2'),
+(6, '3:32', '12/23/2021', '12:00 PM', 'ESPN', '89-92', '2nd', 'Basketball', 'Iowa Hawkeyes', '9-4', '0-1', 'Arizona Wildcats', '12-1', '1-1');
 
 
 INSERT INTO team VALUES
@@ -262,37 +250,6 @@ INSERT INTO team VALUES
 ('Indiana Hoosiers', 'Basketball', '10-2', '1-1', 2005),
 ('Rutgers Scarlet Knights', 'Basketball', '9-3', '1-1', 2006);
 
-create table polls (
-id INT NOT NULL AUTO_INCREMENT,
-title VARCHAR(255) NOT NULL,
-pollID int NOT NULL,
-userID INT NOT NULL,
-FOREIGN KEY (userID) REFERENCES user(userid),
-PRIMARY KEY (id)
-) ENGINE=INNODB;
-
-create table questions (
-id INT NOT NULL AUTO_INCREMENT,
-question VARCHAR (50) NOT NULL,
-votes INT NOT NULL,
-pollID INT NOT NULL,
-FOREIGN KEY (pollID) REFERENCES polls(id),
-PRIMARY KEY (id)
-) ENGINE=INNODB;
-
-INSERT INTO polls VALUES  
-(1, 'Test Poll', 1, 1001),
-(2, 'Test Poll', 2, 1002),
-(3, 'Test Poll', 3, 1003);
-
-
-INSERT INTO questions VALUES  
-(1, 'Indiana Hoosiers', 1, 1),
-(2, 'Rutgers Scarlett Knights', 0, 1),
-(3, 'Michigan Wolverines', 2, 2),
-(4, 'Michigan State Spartans', 0, 2),
-(5, 'Wisconsin Badgers', 0, 3),
-(6, 'Iowa Hawkeyes', 3, 3);
 
 CREATE TABLE polls (
     id INT AUTO_INCREMENT PRIMARY KEY,

@@ -45,26 +45,43 @@ $conn->close();
   <link rel="stylesheet" href="css/styles.css">
   
   <body>
-  <div class="topnav">
+  <div class="topnav"> 
         <a href="home.html"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
         <a href="calendar.php">Calendar</a>
         <a href="chat.php">Chat</a> 
-        <a href="community.html">Community</a> 
+        <a href="community.php">Community</a> 
         <a href="intramurals.php">Intramural Sports</a> 
-        <a href="live.html">IU Live</a>   
+        <a href="live.php">IU Live</a>   
         <a href="polls.php">Polls</a>
         <a href="profile2.php">Profile</a>
         <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/loign.php">Log-In</a> 
     </div>
     <div class="profile">
-    <h1><?php echo $name ?>'s Profile</h1>
-    <h2>Contact Me</h2>
-    <p>Email: <?php echo $email ?></p>
-    <p>Graduation Year: <?php echo $grad ?></p>
-    <p>About Me:<?php echo $bio ?></p>
-    <p>Favorite Team: <?php echo $favteam ?></p>
-    <p>Favorite Sport: <?php echo $favsport ?></p>
+      <h1><?php echo $name ?>'s Profile</h1>
+      <h2>Contact Me</h2>
+      <div class="info">
+        <p class="descriptors">Email:</p>
+        <p class="elements"><?php echo $email ?></p>
+      </div>
+      <div class="info">
+        <p class="descriptors">Graduation Year:</p>
+        <p class="elements"><?php echo $grad ?></p>
+      </div>
+      <div class="info">
+        <p class="descriptors">About Me:</p>
+        <p class="elements"><?php echo $bio ?></p>
+      </div>
+      <div class="info">
+        <p class="descriptors">Favorite Team:</p>
+        <p class="elements"><?php echo $favteam ?></p>
+      </div>
+      <div class="info">
+        <p class="descriptors">Favorite Sport: </p>
+        <p class="elements"><?php echo $favsport ?></p>
+      </div>
+      <a href="profile.php">Edit Profile</a>
     </div>
-    <a href="profile.php">Edit Profile</a>
+
+    
   </body>
 </html>
