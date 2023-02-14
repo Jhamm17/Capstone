@@ -203,13 +203,10 @@ main footer textarea::placeholder{
 <div id="container">
     <main>
         <header>
-            <img src="https://s3-us-west-2.amazonaws.com/
-             s.cdpn.io/1940306/ico_star.png" alt="">
             <div>
                 <h2>GROUP CHAT</h2>
             </div>
-            <img src="https://s3-us-west-2.amazonaws.com/
-            s.cdpn.io/1940306/ico_star.png" alt="">
+          
         </header>
  
 <script>
@@ -267,7 +264,7 @@ if($row['uname']!=$first['uname'])
  <div>
   <span style="color:black;float:right;
           font-size:10px;clear:both;">
-  <?php echo $row['uname']; ?>,
+  <?php echo 'henry'; ?>,
         <?php echo $row['dt']; ?>
  </span>
 </div>
