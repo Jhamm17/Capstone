@@ -31,6 +31,13 @@
     </form>
 
 <?php
+$servername = "db.luddy.indiana.edu";
+$username = "i494f22_team36";
+$password = "my+sql=i494f22_team36";
+$dbname = "i494f22_team36";
+
+$con = new mysqli($servername, $username, $password, $dbname);
+
 if(isset($_POST['login'] )){
     $flag = 1;
     $fname = test_input($_POST["fname"]);
