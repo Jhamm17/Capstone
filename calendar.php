@@ -17,7 +17,7 @@
     },
     eventClick: function(info) {
       document.getElementById('event-title').innerHTML = info.event.title;
-      document.getElementById('event-description').innerHTML = info.event.extendedProps.description;
+      document.getElementById('event-description').innerHTML = info.event.description;
     }
   });
   calendar.render();
@@ -30,7 +30,7 @@
       }
 
       .fc-view-container {
-        height: 175px;
+        height: 150px;
       }
     </style>
   </head>
