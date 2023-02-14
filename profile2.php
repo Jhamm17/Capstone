@@ -59,12 +59,28 @@ $conn->close();
     <div class="profile">
       <h1><?php echo $name ?>'s Profile</h1>
       <h2>Contact Me</h2>
-      <p class="descriptors">Email:</p> <p class="elemen"><?php echo $email ?></p>
-      <p class="descriptors">Graduation Year:</p><p class="elemen"> <?php echo $grad ?></p>
-      <p class="descriptors">About Me:</p><p class="elemen"><?php echo $bio ?></p>
-      <p class="descriptors">Favorite Team:</p><p class="elemen"> <?php echo $favteam ?></p>
-      <p class="descriptors">Favorite Sport: </p><p class="elemen"><?php echo $favsport ?></p>
+      <div class="info">
+        <p class="descriptors">Email:</p>
+        <p class="elements"><?php echo $email ?></p>
+      </div>
+      <div class="info">
+        <p class="descriptors">Graduation Year:</p>
+        <p class="elements"><?php echo $grad ?></p>
+      </div>
+      <div class="info">
+        <p class="descriptors">About Me:</p>
+        <p class="elements"><?php echo $bio ?></p>
+      </div>
+      <div class="info">
+        <p class="descriptors">Favorite Team:</p>
+        <p class="elements"><?php echo $favteam ?></p>
+      </div>
+      <div class="info">
+        <p class="descriptors">Favorite Sport: </p>
+        <p class="elements"><?php echo $favsport ?></p>
+      </div>
     </div>
+
     <a href="profile.php">Edit Profile</a>
   </body>
 </html>

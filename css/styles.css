@@ -31,11 +31,18 @@
     background-color: #FFFDD0;
   }
 
-  .profile {
-    text-align: center;
+  .info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
   }
   
-  .elemen {
+  .descriptors {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .elements {
     color: red;
   }
   
