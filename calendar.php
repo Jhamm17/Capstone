@@ -52,7 +52,7 @@
 
     <center><div id='calendar'></div></center>
     <h3 id="event-title"></h3>
-    <p id="event-description"></p>
+    <h3 id="event-description"></h3>
 
   </body>
 </html>
