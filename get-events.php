@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 // Retrieve events from the database
-$sql = "SELECT title, start, end FROM calendar";
+$sql = "SELECT title, start, end, description FROM calendar";
 $result = $conn->query($sql);
 
 // Format the events as JSON
