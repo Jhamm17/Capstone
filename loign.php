@@ -42,6 +42,9 @@ $dbname = "i494f22_team36";
 
 $con = new mysqli($servername, $username, $password, $dbname);
 
+if (!$con) {
+    die("Connection Failed: " . mysqli_connect_error());
+}
 if(isset($_POST['login'] )){
     $flag = 1;
     $fname = test_input($_POST["Fname"]);
@@ -76,15 +79,19 @@ if(isset($_POST['login'] )){
         'email' => $email,
     ];
     $duplicate = "SELECT * FROM user where (email = '$email')";
-    $dupe = mysql_query($duplicate);
+    $dupe = mysqli_query($con, $duplicate);
     //https://stackoverflow.com/questions/7719039/check-for-duplicates-before-inserting
-    if ($flag == 1 AND mysql_num_rows($dupe) > 0){
-        $sql = "INSERT INTO user (userid, Fname, Lname, email) VALUES ('$fname','$lname','$email')";
-        if (mysqli_query($con,$sql)) {
+    if ($flag == 1 AND mysqli_num_rows($dupe) > 0){
+        $stmt = mysqli_prepare($con, "INSERT INTO user (Fname, Lname, email) VALUES (?, ?, ?)";);
+        mysqli_stmt_bing_param($stmt, "sss", $fname, $lname, $email);
+        if (mysqli_stmt_execute($stmt)) {
       
-            echo "1 record added";
+            echo "record added succesfully";
           
-        } else { die(mysqli_error($con)); }
+        } else {
+            echo "error adding record: " . mysqli_error($con);
+        }
+        mysqli_stmt_close($stmt);
     }
 }   
 
