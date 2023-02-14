@@ -22,27 +22,6 @@
   });
   calendar.render();
 });
-
-
-  //     document.addEventListener('DOMContentLoaded', function() {
-  //       var calendarEl = document.getElementById('calendar');
-  //       var calendar = new FullCalendar.Calendar(calendarEl, {
-  //         initialView: 'dayGridMonth',
-  //         events: {
-  //           url: 'get-events.php',
-  //           method: 'POST',
-  //           failure: function() {
-  //             console.log('Failed to load events');
-  //           }
-  //         }
-  //       });
-  //       eventClick: function(info) {
-  //     document.getElementById('event-title').innerHTML = info.event.title;
-  //     document.getElementById('event-description').innerHTML = info.event.extendedProps.description;
-  //   }
-  // });
-      //   calendar.render();
-      // });
     </script>
     <style>
       #calendar {
