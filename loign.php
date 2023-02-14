@@ -86,7 +86,8 @@ if(isset($_POST['login'] )){
             echo "1 record added";
           
         } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn) }
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
     }
 }   
 
