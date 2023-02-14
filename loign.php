@@ -27,25 +27,32 @@ session_start();
     <br>
     <h3>Login</h3>
     <form action="" method="POST">
-        First Name: <input type="text" name="fname" required><br>
-        Last Name: <input type="text" name="lname" required><br>
+        First Name: <input type="text" name="Fname" required><br>
+        Last Name: <input type="text" name="Lname" required><br>
         email: <input type="text" name="email" required><br>
         <button type="submit" name="login">submit</button>
     </form>
     <!-- parsing examples and help with part three of itp found here: https://code.tutsplus.com/tutorials/how-to-parse-json-in-php--cms-36994 -->
 <?php
-$con = mysqli_connect("db.luddy.indiana.edu","i494f22_hstarnes","my+sql=i494f22_hstarnes","i494f22_hstarnes");
+$servername = "db.luddy.indiana.edu";
+$username = "i494f22_team36";
+$password = "my+sql=i494f22_team36";
+$dbname = "i494f22_team36";
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+uf (!$conn){
+    die("Connection Failed: " . mysqli_connect_error());
+}
 
 if(isset($_POST['login'] )){
     $flag = 1;
-    $fname = test_input($_POST["fname"]);
+    $fname = test_input($_POST["Fname"]);
     if (!preg_match("/^[a-zA-Z-' ]*$/",$fname)) {
       $fnameErr = "Only letters and white space allowed";
       echo $fnameErr;
       $flag = 0;
     }    
     echo '<br>';
-    $lname = test_input($_POST["lname"]);
+    $lname = test_input($_POST["Lname"]);
     if (!preg_match("/^[a-zA-Z-' ]*$/",$lname)) {
       $lnameErr = "Only letters and white space allowed";
       echo $lnameErr;
@@ -65,20 +72,21 @@ if(isset($_POST['login'] )){
     }
     //https://www.w3schools.com/php/php_form_url_email.asp
     $login_data = [
-        'fname' => $fname,
-        'lname' => $lname,
+        'Fname' => $fname,
+        'Lname' => $lname,
         'email' => $email,
     ];
     $duplicate = "SELECT * FROM user where (email = '$email')";
     $dupe = mysql_query($duplicate);
     //https://stackoverflow.com/questions/7719039/check-for-duplicates-before-inserting
     if ($flag == 1 AND mysql_num_rows($dupe) > 0){
-        $sql = "INSERT INTO user (fname, lname, email) VALUES ('$fname','$lname','$email')";
-        if (mysqli_query($con,$sql)) {
+        $sql = "INSERT INTO user (Fname, Lname, email) VALUES ('$fname','$lname','$email')";
+        if (mysqli_query($conn,$sql)) {
       
             echo "1 record added";
           
-        } else { die(mysqli_error($con)); }
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn) }
     }
 }   
 
@@ -106,7 +114,7 @@ if (isset($_GET["ticket"])){
        // echo $IUemail;
        // echo $IUemail;
        $compare = "SELECT * FROM user WHERE email=" . "'" . $IUemail . "'";
-       $query = mysqli_query($con,$compare);
+       $query = mysqli_query($conn,$compare);
         if (mysqli_num_rows($query == 0)){
             echo "fill out login first";
 
@@ -148,7 +156,7 @@ function test_input($data) {
     return $data;
 }
 
-mysqli_close($con);
+mysqli_close($conn);
 
 //code above from W3 schools https://www.w3schools.com/php/php_form_url_email.asp
 
