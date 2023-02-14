@@ -85,6 +85,7 @@ Player_id INT not null,
 FOREIGN KEY (Team_id) REFERENCES Teams(Team_id),
 FOREIGN KEY (Player_id) REFERENCES user(userid)
 )engine=innodb;
+
 CREATE TABLE Teams(
 Team_id INT NOT NULL AUTO_INCREMENT,
 team_name VARCHAR(40),
@@ -134,14 +135,14 @@ FOREIGN KEY (TeamID) REFERENCES iulive(GameID)
 
 
 INSERT INTO user VALUES 
-(1001, 'Jess', 'Foxworthy', 'jfox12@iu.edu', 'FoxSox12'),
-(1002, 'James', 'Messer', 'jmess@iu.edu', 'reasd221'),
-(1003, 'Taylor', 'Ham', 'tham@iu.edu', 'Hamm123'),
-(1004, 'Isaiah', 'Quinn', 'IsaiahQ@iu.edu', 'OSUrocks2023'),
-(1005, 'Hank', 'Lights', 'HankLi33@iu.edu', 'LightsOUT3'),
-(1006, 'Zack', 'Klao', 'Klaoz@iu.edu', 'terrrpppps12'),
-(1007, 'Luke', 'Fields', 'Lfields@iu.edu', 'FlukeyLukey23'),
-(1008, 'Frank', 'Tank', 'frtank@iu.edu', 'tanks2023');
+(1001, 'Jess', 'Foxworthy', 'jfox12@iu.edu'),
+(1002, 'James', 'Messer', 'jmess@iu.edu'),
+(1003, 'Taylor', 'Ham', 'tham@iu.edu'),
+(1004, 'Isaiah', 'Quinn', 'IsaiahQ@iu.edu'),
+(1005, 'Hank', 'Lights', 'HankLi33@iu.edu'),
+(1006, 'Zack', 'Klao', 'Klaoz@iu.edu'),
+(1007, 'Luke', 'Fields', 'Lfields@iu.edu'),
+(1008, 'Frank', 'Tank', 'frtank@iu.edu');
 
 INSERT INTO profile VALUES 
 ('Basketball', 'Indiana Pacers', 2023, 'A basketball fanatic that is looking for teammates to play.', 1001),

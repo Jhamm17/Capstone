@@ -40,14 +40,14 @@ $con = new mysqli($servername, $username, $password, $dbname);
 
 if(isset($_POST['login'] )){
     $flag = 1;
-    $fname = test_input($_POST["fname"]);
+    $fname = test_input($_POST["Fname"]);
     if (!preg_match("/^[a-zA-Z-' ]*$/",$fname)) {
       $fnameErr = "Only letters and white space allowed";
       echo $fnameErr;
       $flag = 0;
     }    
     echo '<br>';
-    $lname = test_input($_POST["lname"]);
+    $lname = test_input($_POST["Lname"]);
     if (!preg_match("/^[a-zA-Z-' ]*$/",$lname)) {
       $lnameErr = "Only letters and white space allowed";
       echo $lnameErr;
