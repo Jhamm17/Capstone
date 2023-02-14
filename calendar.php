@@ -16,8 +16,8 @@
       }
     },
     eventClick: function(info) {
-      document.getElementById('event-title').innerHTML = info.event.title;
       document.getElementById('event-description').innerHTML = info.event.description;
+      document.getElementById('event-description').innerHTML = info.event.extendedProps.description;
     }
   });
   calendar.render();
