@@ -59,7 +59,7 @@
         }
 
         // Select all rows from the "iulive" table where the sport is football
-        $sql = "SELECT * FROM iulive WHERE sport='Football'";
+        $sql = "SELECT * FROM iulive WHERE sport='Basketball'";
         $result = mysqli_query($conn, $sql);
 
         // Check if there are any rows in the result set
