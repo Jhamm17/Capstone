@@ -79,8 +79,9 @@ $conn->close();
         <p class="descriptors">Favorite Sport: </p>
         <p class="elements"><?php echo $favsport ?></p>
       </div>
+      <a href="profile.php">Edit Profile</a>
     </div>
 
-    <a href="profile.php">Edit Profile</a>
+    
   </body>
 </html>
