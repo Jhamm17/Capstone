@@ -9,7 +9,6 @@ if (!$conn){
 }
 
 if(isset($_POST['login'] )){
-    $flag = 1;
    // $fname = test_input($_POST["Fname"]);
    // if (!preg_match("/^[a-zA-Z-' ]*$/",$fname)) {
     //  $fnameErr = "Only letters and white space allowed";
@@ -24,6 +23,7 @@ if(isset($_POST['login'] )){
     //  $flag = 0;
    // }
    // echo '<br>';
+    $flag = 1;
 
     $fname = $_POST["Fname"];
     $lname = $_POST["Lname"];
@@ -39,24 +39,23 @@ if(isset($_POST['login'] )){
  
     //}
     //https://www.w3schools.com/php/php_form_url_email.asp
-    $login_data = [
-        'Fname' => $fname,
-        'Lname' => $lname,
-        'email' => $email,
-    ];
-    $duplicate = "SELECT * FROM user where (email = '$email')";
-    $dupe = mysql_query($duplicate);
+     $login_data = [
+         'Fname' => $fname,
+         'Lname' => $lname,
+         'email' => $email,
+     ];
+     $duplicate = "SELECT * FROM user where (email = '$email')";
+     $dupe = mysql_query($duplicate);
     //https://stackoverflow.com/questions/7719039/check-for-duplicates-before-inserting
-    if ($flag == 1 AND mysql_num_rows($dupe) > 0){
-        $sql = "INSERT INTO user (Fname, Lname, email) VALUES ('$fname','$lname','$email')";
-        if (mysqli_query($conn,$sql)) {
+         $sql = "INSERT INTO user (Fname, Lname, email) VALUES ('$fname','$lname','$email')";
+         if (mysqli_query($conn,$sql)) {
       
-            echo "1 record added";
+             echo "1 record added";
           
-        } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        }
-    }
+         } else {
+             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+         }
+    
 }   
 
 if (isset($_GET["ticket"])){
