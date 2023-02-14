@@ -30,59 +30,95 @@
         <button type="submit" name="login">submit</button>
     </form>
 
-    <?php
+<?php
 $servername = "db.luddy.indiana.edu";
 $username = "i494f22_team36";
 $password = "my+sql=i494f22_team36";
 $dbname = "i494f22_team36";
 
-// Connect to the database
-$con = mysqli_connect($servername, $username, $password, $dbname);
+$con = new mysqli($servername, $username, $password, $dbname);
 
-// Check the connection
-if (!$con) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-if (isset($_POST['login'])) {
+if(isset($_POST['login'] )){
     $flag = 1;
     $fname = test_input($_POST["Fname"]);
-    if (!preg_match("/^[a-zA-Z-' ]*$/", $fname)) {
-        $fnameErr = "Only letters and white space allowed";
-        echo $fnameErr;
-        $flag = 0;
+    if (!preg_match("/^[a-zA-Z-' ]*$/",$fname)) {
+      $fnameErr = "Only letters and white space allowed";
+      echo $fnameErr;
+      $flag = 0;
     }    
     echo '<br>';
     $lname = test_input($_POST["Lname"]);
-    if (!preg_match("/^[a-zA-Z-' ]*$/", $lname)) {
-        $lnameErr = "Only letters and white space allowed";
-        echo $lnameErr;
-        $flag = 0;
+    if (!preg_match("/^[a-zA-Z-' ]*$/",$lname)) {
+      $lnameErr = "Only letters and white space allowed";
+      echo $lnameErr;
+      $flag = 0;
     }
     echo '<br>';
     $email = $_POST["email"];
     $email = filter_var($email, FILTER_SANITIZE_EMAIL);
 
+
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $emailErr = "Invalid email format";
-        echo $emailErr;
-        $flag = 0;
+      $emailErr = "Invalid email format";
+      echo $emailErr;
+      $flag = 0;
+
+ 
     }
+    //https://www.w3schools.com/php/php_form_url_email.asp
+    $login_data = [
+        'Fname' => $fname,
+        'Lname' => $lname,
+        'email' => $email,
+    ];
+    $duplicate = "SELECT * FROM user where (email = '$email')";
+    $dupe = mysql_query($duplicate);
+    //https://stackoverflow.com/questions/7719039/check-for-duplicates-before-inserting
+    if ($flag == 1 AND mysql_num_rows($dupe) > 0){
+        $sql = "INSERT INTO user (Fname, Lname, email) VALUES ('$fname','$lname','$email')";
+        if (mysqli_query($con,$sql)) {
+      
+            echo "1 record added";
+          
+        } else { die(mysqli_error($con)); }
+    }
+}   
 
-    $duplicate = "SELECT * FROM user WHERE email='$email'";
-    $dupe = mysqli_query($con, $duplicate);
+if (isset($_GET["ticket"])){
+    $tic = $_GET["ticket"];
+    $request = "https://idp.login.iu.edu/idp/profile/cas/serviceValidate?ticket=" . $tic . "&service=https://cgi.luddy.indiana.edu/~team36/loign.php";
+    $file = file_get_contents($request);
+   // echo $file;
+    //var_dump($file);
+    $dom = new DomDocument();
+    $dom->loadXML($file);
+    $xpath = new DomXPath($dom);
+    $node = $xpath->query("//cas:user");
+    // office hours thursday with makejari
+    if ($node->length){
+        $username=$node[0]->textContent;
+        
+        $_SESSION['username'] = $username;
+        //echo $username;
+        $emailend ='@iu.edu';
+        //$user = substr($file,0,-50);
+        //echo strrev($user);
+        $IUemail =$username.$emailend;
+        //echo $IUemail;
+       // echo $IUemail;
+       // echo $IUemail;
+       $compare = "SELECT * FROM user WHERE email=" . "'" . $IUemail . "'";
+       $query = mysqli_query($con,$compare);
+        if (mysqli_num_rows($query == 0)){
+            echo "fill out login first";
 
-    if ($flag == 1 AND mysqli_num_rows($dupe) > 0) {
-        $stmt = mysqli_prepare($con, "INSERT INTO user (Fname, Lname, email) VALUES (?, ?, ?)");
-        mysqli_stmt_bind_param($stmt, "sss", $fname, $lname, $email);
-        if (mysqli_stmt_execute($stmt)) {
-            echo "Record added successfully";
-        } else {
-            echo "Error adding record: " . mysqli_error($con);
+        }else{
+            echo "logged in";
         }
-        mysqli_stmt_close($stmt);
-    }
 
+    }
+  
+}
 //if ($IUemail)
 //https://idp.login.iu.edu/idp/profile/cas/logout
 
