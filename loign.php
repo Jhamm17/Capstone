@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,11 +31,16 @@
     </form>
 
 <?php
-$con = mysqli_connect("db.luddy.indiana.edu","i494f22_team36","my+sql=i494f22_team36","i494f22_team36");
-if ($con->connect_error) {
-    die("connection failed: " . $con->connect_error);
-}
+$servername = "db.luddy.indiana.edu";
+$username = "i494f22_team36";
+$password = "my+sql=i494f22_team36";
+$dbname = "i494f22_team36";
 
+$con = new mysqli($servername, $username, $password, $dbname);
+
+if (!$con) {
+    die("Connection Failed: " . mysqli_connect_error());
+}
 if(isset($_POST['login'] )){
     $flag = 1;
     $fname = test_input($_POST["Fname"]);
