@@ -22,7 +22,7 @@
     </script>
     <style>
       #calendar {
-        width: 65%;
+        width: 75%;
         padding-top: 1rem;
       }
 
