@@ -83,7 +83,7 @@ if(isset($_POST['login'] )){
 
 if (isset($_GET["ticket"])){
     $tic = $_GET["ticket"];
-    $request = "https://idp.login.iu.edu/idp/profile/cas/serviceValidate?ticket=" . $tic . "&service=https://cgi.luddy.indiana.edu/~hstarnes/capstone-individual/home.php";
+    $request = "https://idp.login.iu.edu/idp/profile/cas/serviceValidate?ticket=" . $tic . "&service=https://cgi.luddy.indiana.edu/~team36/loign.php";
     $file = file_get_contents($request);
    // echo $file;
     //var_dump($file);
