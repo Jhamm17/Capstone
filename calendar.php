@@ -4,19 +4,43 @@
     <meta charset='utf-8' />
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.js'></script>
     <script>
-
       document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth',
-          events: {
-            url: 'get-events.php',
-            method: 'POST',
-            failure: function() {
-              console.log('Failed to load events');
-            }
-          }
-        });
+  var calendarEl = document.getElementById('calendar');
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'dayGridMonth',
+    events: {
+      url: 'get-events.php',
+      method: 'POST',
+      failure: function() {
+        console.log('Failed to load events');
+      }
+    },
+    eventClick: function(info) {
+      document.getElementById('event-title').innerHTML = info.event.title;
+      document.getElementById('event-description').innerHTML = info.event.extendedProps.description;
+    }
+  });
+  calendar.render();
+});
+
+
+  //     document.addEventListener('DOMContentLoaded', function() {
+  //       var calendarEl = document.getElementById('calendar');
+  //       var calendar = new FullCalendar.Calendar(calendarEl, {
+  //         initialView: 'dayGridMonth',
+  //         events: {
+  //           url: 'get-events.php',
+  //           method: 'POST',
+  //           failure: function() {
+  //             console.log('Failed to load events');
+  //           }
+  //         }
+  //       });
+  //       eventClick: function(info) {
+  //     document.getElementById('event-title').innerHTML = info.event.title;
+  //     document.getElementById('event-description').innerHTML = info.event.extendedProps.description;
+  //   }
+  // });
         calendar.render();
       });
     </script>
@@ -47,6 +71,9 @@
     </div>
 
     <center><div id='calendar'></div></center>
+    <h3 id="event-title"></h3>
+    <p id="event-description"></p>
+
   </body>
 </html>
 
