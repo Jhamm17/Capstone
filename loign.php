@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +48,7 @@ if (!$con) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-if (isset($_POST['login'])) {
+if (isset($_POST['login'])){
     $flag = 1;
     $fname = test_input($_POST["Fname"]);
     if (!preg_match("/^[a-zA-Z-' ]*$/", $fname)) {
@@ -82,41 +86,5 @@ if (isset($_POST['login'])) {
         }
         mysqli_stmt_close($stmt);
     }
-
-//if ($IUemail)
-//https://idp.login.iu.edu/idp/profile/cas/logout
-
-
-// $authenticated = 'https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~hstarnes/capstone-individual/home.php'
-// if ($authenticated) {      
-//     //validate since authenticated   
-//     if (isset($_GET["ticket"])) {
-
-//     }
-//}
-// 3:00 office hour help for flag stuff
-
-//     $sql = "INSERT INTO user (fname, lname, email) VALUES ('$fname','$lname','$email')";
-
-//     if (mysqli_query($con,$sql)) {
-      
-//         echo "1 record added";
-      
-//     } else { die(mysqli_error($con)); }
-// }
-
-
-
-function test_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
 }
-
-mysqli_close($con);
-?>
-
-</body>
-
-</html>
+    
