@@ -39,7 +39,7 @@ $username = "i494f22_team36";
 $password = "my+sql=i494f22_team36";
 $dbname = "i494f22_team36";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
-uf (!$conn){
+if (!$conn){
     die("Connection Failed: " . mysqli_connect_error());
 }
 
