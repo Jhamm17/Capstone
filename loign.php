@@ -67,7 +67,7 @@ if(isset($_POST['login'] )){
      // $flag = 0;
 
  
-    }
+   // }
     //https://www.w3schools.com/php/php_form_url_email.asp
     $login_data = [
         'Fname' => $fname,
