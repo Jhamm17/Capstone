@@ -26,12 +26,12 @@
     </script>
     <style>
       #calendar {
-        width: 75%;
+        width: 60%;
         padding-top: 1rem;
       }
 
       .fc-view-container {
-        height: 150px;
+        height: 100px;
       }
     </style>
   </head>
