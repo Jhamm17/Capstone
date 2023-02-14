@@ -14,7 +14,7 @@
       failure: function() {
         console.log('Failed to load events');
       }
-    };
+    },
     eventClick: function(info) {
   document.getElementById('event-title').innerHTML = info.event.title;
   document.getElementById('event-description').innerHTML = info.event.extendedProps.description;
