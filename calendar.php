@@ -17,7 +17,7 @@
     },
     eventClick: function(info) {
   document.getElementById('event-title').innerHTML = info.event.title;
-  document.getElementById('event-description').innerHTML = info.event.extendedProps.description;
+  document.getElementById('event-start').innerHTML = info.event.extendedProps.start;
 }
 
   });
@@ -52,7 +52,7 @@
 
     <center><div id='calendar'></div></center>
     <h3 id="event-title"></h3>
-    <h3 id="event-description"></h3>
+    <h3 id="event-start"></h3>
 
   </body>
 </html>
