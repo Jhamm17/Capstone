@@ -16,9 +16,10 @@
       }
     },
     eventClick: function(info) {
-      document.getElementById('event-title').innerHTML = info.event.title;
-      document.getElementById('event-description').innerHTML = info.event.description;
-    }
+  document.getElementById('event-title').innerHTML = info.event.title;
+  document.getElementById('event-description').innerHTML = info.event.extendedProps.description;
+}
+
   });
   calendar.render();
 });
@@ -51,7 +52,7 @@
 
     <center><div id='calendar'></div></center>
     <h3 id="event-title"></h3>
-    <p id="event-description"></p>
+    <h3 id="event-description"></h3>
 
   </body>
 </html>
