@@ -179,7 +179,14 @@ INSERT INTO calendar VALUES
 (707, 'Softball game', 2023, 05, 31);
 
 INSERT INTO calendar VALUES 
-(701,'IU Basketball', '2023-02-15 20:00:00', '2023-02-15 22:00:00', 'Indiana takes on NorthWestern');
+(701,"IU men's Basketball", '2023-02-15 20:00:00', '2023-02-15 23:00:00', 'Indiana takes on NorthWestern'),
+(702,"IU Women's Basletball", '2023-02-17 21:00:00', '2023-02-17 23:00:00', 'Indiana women takes on NorthWestern'),
+(703,'IU Gymnastics', '2023-02-18 19:00:00', '2023-02-18 21:00:00', 'Indiana gymnastic meet at Assembly Hall'),
+(704,"IU Women's Basketball", '2023-02-19 20:00:00', '2023-02-19 22:00:00', 'Indiana takes on Purdue'),
+(705,"IU men's Basketball", '2023-02-19 22:00:00', '2023-02-19 23:00:00', 'Indiana takes on Iowa'),
+(706,"IU Women's Basketball", '2023-02-20 19:00:00', '2023-02-20 21:00:00', 'Indiana starts the Big Ten Tourney'),
+(707,'IU Baseball', '2023-02-26 12:00:00', '2023-02-26 3:00:00', 'Indiana takes on Wisconsin'),
+(708,"IU men's Basketball", '2023-02-28 20:00:00', '2023-02-28 22:00:00', 'Indiana starts big ten toruney');
 
 INSERT INTO privateEvent VALUES
 (801, 'Watch Party', 2023, 02, 21),
