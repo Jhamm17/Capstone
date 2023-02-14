@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,7 +79,7 @@ if(isset($_POST['login'] )){
     $dupe = mysql_query($duplicate);
     //https://stackoverflow.com/questions/7719039/check-for-duplicates-before-inserting
     if ($flag == 1 AND mysql_num_rows($dupe) > 0){
-        $sql = "INSERT INTO user (Fname, Lname, email) VALUES ('$fname','$lname','$email')";
+        $sql = "INSERT INTO user (userid, Fname, Lname, email) VALUES ('$fname','$lname','$email')";
         if (mysqli_query($con,$sql)) {
       
             echo "1 record added";
