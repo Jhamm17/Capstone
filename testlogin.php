@@ -1,73 +1,46 @@
-</div>
-    <br>
-    <h3>Login</h3>
-    <!-- parsing examples and help with part three of itp found here: https://code.tutsplus.com/tutorials/how-to-parse-json-in-php--cms-36994 -->
-
-    <?php
-// Start a PHP session
+<?php
 session_start();
 
-// Check if the user is already authenticated
-if (isset($_SESSION['username'])) {
-    echo "You are already logged in as " . $_SESSION['username'];
-} else {
-    // If the user is not authenticated, check if a CAS ticket was received
-    if (isset($_GET['ticket'])) {
-        $ticket = $_GET['ticket'];
-        $service_url = 'https://cgi.luddy.indiana.edu/~team36/loign.php';
-        $cas_url = 'https://idp.login.iu.edu/idp/profile/cas/serviceValidate';
+if (isset($_GET["ticket"])){
+    $tic = $_GET["ticket"];
+    $request = "https://idp.login.iu.edu/idp/profile/cas/serviceValidate?ticket=" . $tic . "&service=https://cgi.luddy.indiana.edu/~team36/loign.php";
+    $file = file_get_contents($request);
+    $dom = new DomDocument();
+    $dom->loadXML($file);
+    $xpath = new DomXPath($dom);
+    $node = $xpath->query("//cas:user");
+    
+    if ($node->length){
+        $username = $node[0]->textContent;
+        $_SESSION['username'] = $username;
         
-        // Validate the ticket with the CAS server
-        $validate_url = $cas_url . '?ticket=' . $ticket . '&service=' . urlencode($service_url);
-        $response = file_get_contents($validate_url);
+        $emailend = '@iu.edu';
+        $IUemail = $username . $emailend;
         
-        // Parse the response and extract the username
-        $xml = simplexml_load_string($response);
-        $namespaces = $xml->getDocNamespaces();
-        $cas_ns = $xml->children($namespaces['cas']);
-        $user = (string) $cas_ns->authenticationSuccess->user;
-        
-        // Store the username in the session
-        $_SESSION['username'] = $user;
-
         // Connect to the database
         $host = 'localhost';
-        $user = 'username';
-        $password = 'password';
-        $database = 'database_name';
+        $user = 'your_username';
+        $password = 'your_password';
+        $database = 'your_database_name';
         $conn = mysqli_connect($host, $user, $password, $database);
-
-        // Retrieve the user data from the database
-        $query = "SELECT * FROM user WHERE email='" . $user . "@iu.edu'";
-        $result = mysqli_query($conn, $query);
         
-        if (mysqli_num_rows($result) == 0) {
-            // If the user does not exist, display a form to collect their information
-            echo '<form method="POST" action="insert.php">';
-            echo 'First Name: <input type="text" name="Fname" required><br>';
-            echo 'Last Name: <input type="text" name="Lname" required><br>';
-            echo 'Email: <input type="text" name="email" value="' . $user . '@iu.edu" readonly><br>';
-            echo '<button type="submit" name="login">Submit</button>';
-            echo '</form>';
+        // Check if the user exists in the database
+        $compare = "SELECT * FROM user WHERE email='" . $IUemail . "'";
+        $query = mysqli_query($conn, $compare);
+        
+        if (mysqli_num_rows($query) == 0){
+            // If the user does not exist, display the form to collect their information
+            echo '
+            <form action="inserttest.php" method="POST">
+                First Name: <input type="text" name="Fname" required><br>
+                Last Name: <input type="text" name="Lname" required><br>
+                email: <input type="text" name="email" value="' . $IUemail . '" readonly><br>
+                <button type="submit" name="login">submit</button>
+            </form>';
         } else {
-            // If the user already exists, display their information
-            $row = mysqli_fetch_assoc($result);
-            $id = $row['id'];
-            $fname = $row['Fname'];
-            $lname = $row['Lname'];
-            $email = $row['email'];
+            // If the user already exists, show a message
+            echo "You are logged in as " . $username;
         }
-        ?>
-            <p>You are logged in as <?php echo $user; ?>.</p>
-            <p>User Data:</p>
-            <ul>
-                <li>ID: <?php echo $id; ?></li>
-                <li>First Name: <?php echo $fname; ?></li>
-                <li>Last Name: <?php echo $lname; ?></li>
-                <li>Email: <?php echo $email; ?></li>
-            </ul>
-
-
-
-</body>
-</html>
+    }
+}
+?>
