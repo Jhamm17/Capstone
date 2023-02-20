@@ -56,6 +56,7 @@ if (isset($_SESSION['username'])) {
             $fname = $row['Fname'];
             $lname = $row['Lname'];
             $email = $row['email'];
+        }
         ?>
             <p>You are logged in as <?php echo $user; ?>.</p>
             <p>User Data:</p>
