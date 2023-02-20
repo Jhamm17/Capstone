@@ -3,7 +3,7 @@ session_start();
 
 if (isset($_GET["ticket"])){
     $tic = $_GET["ticket"];
-    $request = "https://idp.login.iu.edu/idp/profile/cas/serviceValidate?ticket=" . $tic . "&service=https://cgi.luddy.indiana.edu/~team36/loign.php";
+    $request = "https://idp.login.iu.edu/idp/profile/cas/serviceValidate?ticket=" . $tic . "&service=https://cgi.luddy.indiana.edu/~team36/login.php";
     $file = file_get_contents($request);
     $dom = new DomDocument();
     $dom->loadXML($file);
