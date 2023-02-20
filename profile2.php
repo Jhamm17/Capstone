@@ -34,7 +34,7 @@ if ($result->num_rows > 0) {
   }
 } else {
   // Redirect the user to the login page or show an error message
-  header('Location: login.php');
+  header('Location: loign.php');
   exit();
 }
 
