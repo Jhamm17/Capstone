@@ -1,4 +1,6 @@
 <?php
+session_start(); // Start a new session or resume an existing session
+
 $servername = "db.luddy.indiana.edu";
 $username = "i494f22_team36";
 $password = "my+sql=i494f22_team36";
@@ -9,7 +11,17 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-$sql = "SELECT * FROM user WHERE userid = 1001"; 
+
+// Check if the user is authenticated, i.e. if the session variable 'userid' is set
+if (isset($_SESSION['userid'])) {
+  $userid = $_SESSION['userid'];
+} else {
+  // Redirect the user to the login page or show an error message
+  header('Location: login.php');
+  exit();
+}
+
+$sql = "SELECT * FROM user WHERE userid = $userid"; 
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -23,9 +35,9 @@ if ($result->num_rows > 0) {
   // Redirect the user to the login page or show an error message
   header('Location: login.php');
   exit();
-} //https://7topics.com/creating-user-profile-page-using-php-and-mysql.html was used as a refresher to see how to properly set up connections and see how to call each variable
+}
 
-$sql = "SELECT * FROM profile WHERE userid = 1001"; 
+$sql = "SELECT * FROM profile WHERE userid = $userid"; 
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
