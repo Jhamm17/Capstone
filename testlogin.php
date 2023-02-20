@@ -1,12 +1,6 @@
 </div>
     <br>
     <h3>Login</h3>
-    <form action="insert.php" method="POST">
-        First Name: <input type="text" name="Fname" required><br>
-        Last Name: <input type="text" name="Lname" required><br>
-        email: <input type="text" name="email" required><br>
-        <button type="submit" name="login">submit</button>
-    </form>
     <!-- parsing examples and help with part three of itp found here: https://code.tutsplus.com/tutorials/how-to-parse-json-in-php--cms-36994 -->
 
     <?php
@@ -43,10 +37,10 @@ if (isset($_SESSION['username'])) {
         $database = 'database_name';
         $conn = mysqli_connect($host, $user, $password, $database);
 
-        // Check if the user already exists in the database
+        // Retrieve the user data from the database
         $query = "SELECT * FROM user WHERE email='" . $user . "@iu.edu'";
         $result = mysqli_query($conn, $query);
-
+        
         if (mysqli_num_rows($result) == 0) {
             // If the user does not exist, display a form to collect their information
             echo '<form method="POST" action="insert.php">';
@@ -58,7 +52,15 @@ if (isset($_SESSION['username'])) {
         } else {
             // If the user already exists, display a message
             echo "You are logged in as " . $user . ".";
+            $row = mysqli_fetch_assoc($result);
+            echo "<br>";
+            echo "User Data: <br>";
+            echo "ID: " . $row['id'] . "<br>";
+            echo "First Name: " . $row['Fname'] . "<br>";
+            echo "Last Name: " . $row['Lname'] . "<br>";
+            echo "Email: " . $row['email'] . "<br>";
         }
+        
     } else {
         // If the user is not authenticated and no CAS ticket was received, redirect them to the CAS login page
         $login_url = 'https://idp.login.iu.edu/idp/profile/cas/login?service=' . urlencode('https://cgi.luddy.indiana.edu/~team36/loign.php');
