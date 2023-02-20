@@ -1,71 +1,85 @@
+</div>
+    <br>
+    <h3>Login</h3>
+    <form action="insert.php" method="POST">
+        First Name: <input type="text" name="Fname" required><br>
+        Last Name: <input type="text" name="Lname" required><br>
+        email: <input type="text" name="email" required><br>
+        <button type="submit" name="login">submit</button>
+    </form>
+    <!-- parsing examples and help with part three of itp found here: https://code.tutsplus.com/tutorials/how-to-parse-json-in-php--cms-36994 -->
+
 <?php
-// User's login information
-$username = $_POST['username'];
-$password = $_POST['password'];
+if (isset($_GET["ticket"])){
+    $tic = $_GET["ticket"];
+    $request = "https://idp.login.iu.edu/idp/profile/cas/serviceValidate?ticket=" . $tic . "&service=https://cgi.luddy.indiana.edu/~team36/loign.php";
+    $file = file_get_contents($request);
+   // echo $file;
+    //var_dump($file);
+    $dom = new DomDocument();
+    $dom->loadXML($file);
+    $xpath = new DomXPath($dom);
+    $node = $xpath->query("//cas:user");
+    // office hours thursday with makejari
+    if ($node->length){
+        $username=$node[0]->textContent;
+        
+        $_SESSION['username'] = $username;
+        //echo $username;
+        $emailend ='@iu.edu';
+        //$user = substr($file,0,-50);
+        //echo strrev($user);
+        $IUemail =$username.$emailend;
+        //echo $IUemail;
+       // echo $IUemail;
+       // echo $IUemail;
+       $compare = "SELECT * FROM user WHERE email=" . "'" . $IUemail . "'";
+       $query = mysqli_query($conn,$compare);
+        if (mysqli_num_rows($query == 0)){
+            echo "fill out login first";
 
-// API endpoint
-$url = "https://idp.login.iu.edu/idp/profile/cas/login";
+        }else{
+            echo "logged in";
+        }
 
-// Data to be sent with the request
-$data = array(
-    'username' => $username,
-    'password' => $password
-);
+    }
+  
+}
+//if ($IUemail)
+//https://idp.login.iu.edu/idp/profile/cas/logout
 
-// Create a new cURL resource
-$ch = curl_init();
 
-// Set the URL and other options for the request
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+// $authenticated = 'https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~hstarnes/capstone-individual/home.php'
+// if ($authenticated) {      
+//     //validate since authenticated   
+//     if (isset($_GET["ticket"])) {
 
-// Send the request and get the response
-$response = curl_exec($ch);
+//     }
+//}
+// 3:00 office hour help for flag stuff
 
-// Check for errors
-if(curl_errno($ch)) {
-    echo 'Error: ' . curl_error($ch);
+//     $sql = "INSERT INTO user (fname, lname, email) VALUES ('$fname','$lname','$email')";
+
+//     if (mysqli_query($con,$sql)) {
+      
+//         echo "1 record added";
+      
+//     } else { die(mysqli_error($con)); }
+// }
+
+
+
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
 }
 
-// Close the cURL resource
-curl_close($ch);
-
-// Handle the response from the API
-// For example, if the response is in JSON format
-$user_data = json_decode($response, true);
-
-// Connect to the database and insert the user information
-// (See previous code example)
-
-
-
-// Connect to the MySQL database
-$servername = "db.luddy.indiana.edu";
-$username = "i494f22_team36";
-$password = "my+sql=i494f22_team36";
-$dbname = "i494f22_team36";
-
-$conn = mysqli_connect($host, $username, $password, $dbname);
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-// Create an SQL INSERT statement
-$first_name = mysqli_real_escape_string($conn, $user_data['first_name']);
-$last_name = mysqli_real_escape_string($conn, $user_data['last_name']);
-$email = mysqli_real_escape_string($conn, $user_data['email']);
-
-$sql = "INSERT INTO user_table (first_name, last_name, email) VALUES ('$first_name', '$last_name', '$email')";
-
-// Execute the SQL INSERT statement
-if (mysqli_query($conn, $sql)) {
-    echo "User information inserted successfully.";
-} else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
-
-// Close the database connection
 mysqli_close($conn);
+
 ?>
+
+
+</body>
+</html>
