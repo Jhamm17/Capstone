@@ -9,6 +9,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
+
 session_start();
 
 // Check if the user is logged in
@@ -18,6 +19,7 @@ if (isset($_SESSION['userid'])) {
   // Query the database with the user ID
   $sql = "SELECT * FROM user WHERE userid = $userid";
   $result = $conn->query($sql);
+
 // $userid = 1001;
 // $sql = "SELECT * FROM user WHERE userid = $userid";
 // $result = $conn->query($sql);

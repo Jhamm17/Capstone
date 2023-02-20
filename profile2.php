@@ -9,9 +9,17 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
+session_start();
 
-$sql = "SELECT * FROM user WHERE userid = $userid"; 
-$result = $conn->query($sql);
+// Check if the user is logged in
+if (isset($_SESSION['userid'])) {
+  $userid = $_SESSION['userid'];
+
+  // Query the database with the user ID
+  $sql = "SELECT * FROM user WHERE userid = $userid";
+  $result = $conn->query($sql);
+// $sql = "SELECT * FROM user WHERE userid = $userid"; 
+// $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
@@ -21,9 +29,12 @@ if ($result->num_rows > 0) {
     $email = $row["email"];
   }
 } else {
-  echo "0 results"; //https://7topics.com/creating-user-profile-page-using-php-and-mysql.html was used as a refresher to see how to properly set up connections and see how to call each variable
-}
-$sql = "SELECT * FROM profile WHERE userid = 1001"; 
+  // Redirect the user to the login page or show an error message
+  header('Location: login.php');
+  exit();
+} //https://7topics.com/creating-user-profile-page-using-php-and-mysql.html was used as a refresher to see how to properly set up connections and see how to call each variable
+
+$sql = "SELECT * FROM profile WHERE userid = $userid"; 
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
