@@ -4,7 +4,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 // API endpoint
-$url = "https://idp.login.iu.edu/idp/profile/cas/serviceValidate?ticket=" . $tic . "&service=https://cgi.luddy.indiana.edu/~team36/loign.php";
+$url = "https://idp.login.iu.edu/idp/profile/cas/login";
 
 // Data to be sent with the request
 $data = array(
@@ -39,9 +39,7 @@ $user_data = json_decode($response, true);
 // Connect to the database and insert the user information
 // (See previous code example)
 
-// Retrieve user information from the API
-// For example, if the user information is in JSON format
-$user_data = json_decode($api_response, true);
+
 
 // Connect to the MySQL database
 $servername = "db.luddy.indiana.edu";
