@@ -28,13 +28,14 @@
   }
 
   body{
-    background-color: ;
+    background-color: #FFFDD0;
   }
 
   .info {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+    border: 2px red;
   }
   
   .descriptors {
