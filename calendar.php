@@ -4,7 +4,7 @@
     <meta charset='utf-8' />
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.js'></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('DOMContentLoaded', function() { //https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event used site in order to determine how to properly display events on calendar through fullcalendar.io
   var calendarEl = document.getElementById('calendar');
   var calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: 'dayGridMonth',
@@ -19,7 +19,7 @@
   document.getElementById('event-title').innerHTML = info.event.title;
   document.getElementById('event-description').innerHTML = info.event.extendedProps.description;
   document.getElementById('event-start').innerHTML = info.event.start;
-}
+} //https://stackoverflow.com/questions/71176603/fullcalendar-add-custom-fields-from-json-feed-to-javascript-object Go information on how to call variables ot page in order to properly display when clicked
 
   });
   calendar.render();

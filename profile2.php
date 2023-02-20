@@ -21,7 +21,7 @@ if ($result->num_rows > 0) {
     $email = $row["email"];
   }
 } else {
-  echo "0 results";
+  echo "0 results"; //https://7topics.com/creating-user-profile-page-using-php-and-mysql.html was used as a refresher to see how to properly set up connections and see how to call each variable
 }
 $sql = "SELECT * FROM profile WHERE userid = 1001"; 
 $result = $conn->query($sql);
@@ -84,8 +84,8 @@ $conn->close();
         <p class="elements"><?php echo $favsport ?></p>
       </div>
       <a href="profile.php">Edit Profile</a>
-    </div>
-
+    </div> 
+<!-- https://7topics.com/creating-user-profile-page-using-php-and-mysql.html used to see how to properly echo onto page -->
     
   </body>
 </html>

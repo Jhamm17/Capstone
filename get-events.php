@@ -28,7 +28,7 @@ if ($result->num_rows > 0) {
 $events = json_encode($events);
 
 
-header('Content-Type: application/json');
+header('Content-Type: application/json'); //https://stackoverflow.com/questions/20620300/http-content-type-header-and-json Retrieved function from this site to see how to be able to proper call events that were set above
 echo $events;
 
 $conn->close();
