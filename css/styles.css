@@ -35,7 +35,6 @@
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-    border: 2px red;
   }
   
   .descriptors {
@@ -53,6 +52,11 @@
     text-align: center;
   }
   
+  .profile-section {
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+  }
   
 
  
