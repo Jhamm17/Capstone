@@ -60,8 +60,19 @@ if (isset($_GET["ticket"])){
         if (mysqli_num_rows($query == 0)){
             echo "fill out login first";
 
-        }else{
-            echo "logged in";
+        } else {
+            $compare = "SELECT * FROM user WHERE email=" . "'" . $IUemail . "'";
+            $query = mysqli_query($conn,$compare);
+            if (mysqli_num_rows($query) == 0){
+                $insert = "INSERT INTO user (Fname, Lname, email) VALUES ('$fname', '$lname', '$IUemail')";
+                if ($conn->query($insert) === TRUE) {
+                    echo "User added to database";
+                } else {
+                    echo "Error: " . $insert . "<br>" . $conn->error;
+                }
+            } else {
+                echo "User already exists in database";
+            }
         }
 
     }
