@@ -14,7 +14,7 @@ session_start();
 
 if (!isset($_SESSION['userid'])) {
   // Redirect the user to the login page or show an error message
-  header('Location: login.php');
+  header('Location: loign.php');
   exit();
 }
 
