@@ -31,42 +31,42 @@
     </form>
     <!-- parsing examples and help with part three of itp found here: https://code.tutsplus.com/tutorials/how-to-parse-json-in-php--cms-36994 -->
 
-    <?php
+<?php
 if (isset($_GET["ticket"])){
     $tic = $_GET["ticket"];
     $request = "https://idp.login.iu.edu/idp/profile/cas/serviceValidate?ticket=" . $tic . "&service=https://cgi.luddy.indiana.edu/~team36/loign.php";
     $file = file_get_contents($request);
-
+   // echo $file;
+    //var_dump($file);
     $dom = new DomDocument();
     $dom->loadXML($file);
     $xpath = new DomXPath($dom);
     $node = $xpath->query("//cas:user");
-
+    // office hours thursday with makejari
     if ($node->length){
-        $username = $node[0]->textContent;
+        $username=$node[0]->textContent;
+        
         $_SESSION['username'] = $username;
-        $emailend = '@iu.edu';
-        $IUemail = $username.$emailend;
+        //echo $username;
+        $emailend ='@iu.edu';
+        //$user = substr($file,0,-50);
+        //echo strrev($user);
+        $IUemail =$username.$emailend;
+        //echo $IUemail;
+       // echo $IUemail;
+       // echo $IUemail;
+       $compare = "SELECT * FROM user WHERE email=" . "'" . $IUemail . "'";
+       $query = mysqli_query($conn,$compare);
+        if (mysqli_num_rows($query == 0)){
+            echo "fill out login first";
 
-        $compare = "SELECT * FROM user WHERE email=" . "'" . $IUemail . "'";
-        $query = mysqli_query($conn, $compare);
-        if (mysqli_num_rows($query) == 0){
-            // User doesn't exist in the database, so insert the user
-            $fname = "first_name_from_outside_api"; // Replace this with the actual first name of the user from the outside API
-            $lname = "last_name_from_outside_api"; // Replace this with the actual last name of the user from the outside API
-            $insert = "INSERT INTO user (Fname, Lname, email) VALUES ('$fname', '$lname', '$IUemail')";
-            if ($conn->query($insert) === TRUE) {
-                echo "User added to database";
-            } else {
-                echo "Error: " . $insert . "<br>" . $conn->error;
-            }
-        } else {
-            echo "User already exists in database";
+        }else{
+            echo "logged in";
         }
-    }
-}
 
+    }
   
+}
 //if ($IUemail)
 //https://idp.login.iu.edu/idp/profile/cas/logout
 
