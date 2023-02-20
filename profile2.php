@@ -10,7 +10,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM user WHERE userid = 1001"; 
+$sql = "SELECT * FROM user WHERE userid = "$userid""; 
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
