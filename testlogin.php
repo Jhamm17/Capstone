@@ -18,10 +18,10 @@ if (isset($_GET["ticket"])){
         $IUemail = $username . $emailend;
         
         // Connect to the database
-        $host = 'localhost';
-        $user = 'your_username';
-        $password = 'your_password';
-        $database = 'your_database_name';
+        $servername = "db.luddy.indiana.edu";
+        $username = "i494f22_team36";
+        $password = "my+sql=i494f22_team36";
+        $dbname = "i494f22_team36";
         $conn = mysqli_connect($host, $user, $password, $database);
         
         // Check if the user exists in the database
