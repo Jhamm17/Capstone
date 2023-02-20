@@ -6,6 +6,14 @@ email VARCHAR(50) NOT NULL,
 PRIMARY KEY (userid)
 ) ENGINE=INNODB;
 
+create table user_table (
+userid INT AUTO_INCREMENT NOT NULL,
+Fname VARCHAR(50) NOT NULL,
+Lname VARCHAR(50) NOT NULL,
+email VARCHAR(50) NOT NULL,
+PRIMARY KEY (userid)
+) ENGINE=INNODB;
+
 create table profile (
 FavSport VARCHAR(50),
 FavTeam VARCHAR(50),
