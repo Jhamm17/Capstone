@@ -1,10 +1,10 @@
 <?php
 // Connect to the database
-$host = 'localhost';
-$user = 'username';
-$password = 'password';
-$database = 'database_name';
-$conn = mysqli_connect($host, $user, $password, $database);
+$servername = "db.luddy.indiana.edu";
+$username = "i494f22_team36";
+$password = "my+sql=i494f22_team36";
+$dbname = "i494f22_team36";
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
 // Check if the form was submitted
 if (isset($_POST['login'])) {
