@@ -9,20 +9,24 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
+
 session_start();
 
-// Check if the user is logged in
-if (isset($_SESSION['userid'])) {
-  $userid = $_SESSION['userid'];
+if (!isset($_SESSION['userid'])) {
+  // Redirect the user to the login page or show an error message
+  header('Location: login.php');
+  exit();
+}
 
-  // Query the database with the user ID
-  $sql = "SELECT * FROM user WHERE userid = $userid";
-  $result = $conn->query($sql);
-// $sql = "SELECT * FROM user WHERE userid = $userid"; 
-// $result = $conn->query($sql);
+$userid = $_SESSION['userid'];
+
+$stmt = $conn->prepare("SELECT * FROM user WHERE userid = ?");
+$stmt->bind_param("i", $userid);
+$stmt->execute();
+$result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
-  while($row = $result->fetch_assoc()) {
+  while ($row = $result->fetch_assoc()) {
     $fname = $row["Fname"];
     $lname = $row["Lname"];
     $name = $fname . ' ' . $lname;
@@ -32,22 +36,9 @@ if ($result->num_rows > 0) {
   // Redirect the user to the login page or show an error message
   header('Location: login.php');
   exit();
-} //https://7topics.com/creating-user-profile-page-using-php-and-mysql.html was used as a refresher to see how to properly set up connections and see how to call each variable
-
-$sql = "SELECT * FROM profile WHERE userid = $userid"; 
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-  while($row = $result->fetch_assoc()) {
-    $favteam = $row["FavTeam"];
-    $favsport = $row["FavSport"];
-    $grad = $row["GradYear"];
-    $bio = $row["bio"];
-  }
-} else {
-  echo "0 results";
 }
 
+$stmt->close();
 $conn->close();
 ?>
 
@@ -74,7 +65,7 @@ $conn->close();
     <div class="profile">
       <h1><?php echo $name ?>'s Profile</h1>
       <h2>Contact Me</h2>
-      <div class="info">
+      <!-- <div class="info">
         <p class="descriptors">Email:</p>
         <p class="elements"><?php echo $email ?></p>
       </div>
@@ -95,7 +86,7 @@ $conn->close();
         <p class="elements"><?php echo $favsport ?></p>
       </div>
       <a href="profile.php">Edit Profile</a>
-    </div> 
+    </div>  -->
 <!-- https://7topics.com/creating-user-profile-page-using-php-and-mysql.html used to see how to properly echo onto page -->
     
   </body>
