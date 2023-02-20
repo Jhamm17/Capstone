@@ -18,6 +18,8 @@
     eventClick: function(info) {
   document.getElementById('event-title').innerHTML = info.event.title;
   document.getElementById('event-description').innerHTML = info.event.extendedProps.description;
+  document.getElementById('event-start').innerHTML = info.event.extendedProps.start;
+  document.getElementById('event-end').innerHTML = info.event.extendedProps.end;
 }
 
   });
@@ -53,6 +55,8 @@
     </div>
     <h3 id="event-title"></h3>
     <h3 id="event-description"></h3>
+    <h3 id="event-start"></h3>
+    <h3 id="event-end"></h3>
     <center><div id='calendar'></div></center>
 
 
