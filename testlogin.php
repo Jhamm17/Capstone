@@ -50,24 +50,21 @@ if (isset($_SESSION['username'])) {
             echo '<button type="submit" name="login">Submit</button>';
             echo '</form>';
         } else {
-            // If the user already exists, display a message
-            echo "You are logged in as " . $user . ".";
+            // If the user already exists, display their information
             $row = mysqli_fetch_assoc($result);
-            echo "<br>";
-            echo "User Data: <br>";
-            echo "ID: " . $row['id'] . "<br>";
-            echo "First Name: " . $row['Fname'] . "<br>";
-            echo "Last Name: " . $row['Lname'] . "<br>";
-            echo "Email: " . $row['email'] . "<br>";
-        }
-        
-    } else {
-        // If the user is not authenticated and no CAS ticket was received, redirect them to the CAS login page
-        $login_url = 'https://idp.login.iu.edu/idp/profile/cas/login?service=' . urlencode('https://cgi.luddy.indiana.edu/~team36/loign.php');
-        header('Location: ' . $login_url);
-    }
-}
-?>
+            $id = $row['id'];
+            $fname = $row['Fname'];
+            $lname = $row['Lname'];
+            $email = $row['email'];
+        ?>
+            <p>You are logged in as <?php echo $user; ?>.</p>
+            <p>User Data:</p>
+            <ul>
+                <li>ID: <?php echo $id; ?></li>
+                <li>First Name: <?php echo $fname; ?></li>
+                <li>Last Name: <?php echo $lname; ?></li>
+                <li>Email: <?php echo $email; ?></li>
+            </ul>
 
 
 
