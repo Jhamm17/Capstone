@@ -13,7 +13,7 @@
         <a href="home.html"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
         <a href="cal.php">Calendar</a>
         <a href="chat.php">Chat</a> 
-        <a href="community.html">Community</a> 
+        <a href="community.php">Community</a> 
         <a href="intramurals.php">Intramural Sports</a> 
         <a href="live.html">IU Live</a>   
         <a href="polls.php">Polls</a>
