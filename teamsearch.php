@@ -28,13 +28,14 @@
                 mysqli_query($db, $query1) or die('Error querying database.');
                 $result = mysqli_query($db, $query1);
                 $row = mysqli_fetch_array($result);
-                echo '<tr><th>Team Name</th><th>Sport</th><th>League</th><th>Number of Players</th></tr>';
+                echo '<tr><th>Team Name</th><th>Sport</th><th>League</th><th>Number of Players</th><th>View Team</th></tr>';
                 while($row = mysqli_fetch_array($result)){
                     echo "<tr>";
                     echo "<td>" . $row['team_name'] . "</td>";
                     echo "<td>" . $row['Sport'] . "</td>";
                     echo "<td>" . $row['League'] . "</td>";
                     echo "<td>" . $row['Num_players'] . "</td>";
+                    echo "<td><a href=\"viewteam.php?id=" . $row['Team_id'] . "\">View</a></td>";
                     echo "</tr>";
                 }
                 mysqli_close($db);
