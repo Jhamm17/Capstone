@@ -32,7 +32,7 @@
                     echo '<tr><th>Community Name</th><th>Subject</th><th>Bio</th><th>Join?</th></tr>';
                     while($row = mysqli_fetch_array($result)){
                         echo "<tr>";
-                        echo "<td>" . $row['comm_name'] . "</td>";
+                        echo "<td><a href=viewcommunity.php.php?id=1>" . $row['comm_name'] . "</td></a>";
                         echo "<td>" . $row['comm_subject'] . "</td>";
                         echo "<td>" . $row['comm_bio'] . "</td>";
                         echo "<td>Request to Join</td>";
