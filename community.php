@@ -4,19 +4,6 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-<<<<<<< HEAD
-        <div class="topnav">
-            <a href="home.html"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
-            <a href="cal.php">Calendar</a>
-            <a href="chat.php">Chat</a> 
-            <a href="community.php">Community</a> 
-            <a href="intramurals.php">Intramural Sports</a> 
-            <a href="live.html">IU Live</a>   
-            <a href="polls.php">Polls</a>
-            <a href="profile.php">Profile</a>
-            <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/loign.php">Log-In</a> 
-        </div>
-=======
     <div class="topnav"> 
         <a href="home.html"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
         <a href="cal.php">Calendar</a>
@@ -29,7 +16,6 @@
         <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/loign.php">Log-In</a> 
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
     </div>
->>>>>>> 646af3eedaa41cfb27996fa91ef81d9d18e6a475
         <h1>Communities: </h1>
         <center><a href="createcommunity.php"><button class="comm">Create</button></a><a href="viewcommunities.php"><button class="comm">Your Communities</button></a></center>
         <center>
@@ -43,11 +29,12 @@
                     mysqli_query($db, $query1) or die('Error querying database.');
                     $result = mysqli_query($db, $query1);
                     $row = mysqli_fetch_array($result);
-                    echo '<tr><th>Community Name</th><th>Subject</th><th>Join?</th></tr>';
+                    echo '<tr><th>Community Name</th><th>Subject</th><th>Bio</th><th>Join?</th></tr>';
                     while($row = mysqli_fetch_array($result)){
                         echo "<tr>";
                         echo "<td>" . $row['comm_name'] . "</td>";
                         echo "<td>" . $row['comm_subject'] . "</td>";
+                        echo "<td>" . $row['comm_bio'] . "</td>";
                         echo "<td>Request to Join</td>";
                         echo "</tr>";
                     }
