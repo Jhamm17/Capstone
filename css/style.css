@@ -57,5 +57,6 @@ table, th, td{
 .comm{
     background-color: red;
     margin: 20px 10px;
-    padding: 5px 5px;
+    padding: 30px 30px;
+    border-radius: 20px;
 }

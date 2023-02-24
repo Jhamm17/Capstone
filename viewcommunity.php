@@ -16,6 +16,25 @@
             <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/loign.php">Log-In</a> 
             <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
         </div>
-        
+        <center>
+            <br>
+            <br>
+            <br>
+            <?php
+            $id = $_GET["id"];
+            $db = mysqli_connect("db.luddy.indiana.edu","i494f22_samanort","my+sql=i494f22_samanort","i494f22_samanort") or die("Error connecting to MySQL server.");
+            if (mysqli_connect_errno()){
+                echo 'failed to connect to SQL';
+            }
+            $query = "SELECT * FROM community WHERE comm_id='$id'";
+            mysqli_query($db, $query) or die('Error querying database.');
+            $result = mysqli_query($db, $query);
+            while($row=mysqli_fetch_array($result)){
+                echo 'Name: ' . $row["comm_name"] . '<br>';
+                echo 'Bio: ' . $row["comm_bio"] . '<br>';
+                echo 'Subject: ' . $row["comm_subject"] . '<br>';
+            }
+        ?></center>
+        <center><button>Request to Join!</button></center>
     </body>
 </html>
