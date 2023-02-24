@@ -15,8 +15,8 @@
             <a href="profile.php">Profile</a>
             <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/loign.php">Log-In</a> 
         </div>
-        <h1>Create a Community!<h1>
-        <form name="commcreate" method="POST" action="">
+        <center><h1>Create a Community!<h1></center>
+        <center><form name="commcreate" method="POST" action="">
             <label for="commname">Community Name</label>
             <input type="text" name="commname"></input><br>
             <label for="commsub">Subject</label>
@@ -28,7 +28,7 @@
                 <option value="private">Private</option>
                 <option value="public">Public</option><br>
             <input type="submit" value="submit" name="submit">
-        </form>
+        </form></center>
         <?php 
             $db = mysqli_connect("db.luddy.indiana.edu","i494f22_samanort","my+sql=i494f22_samanort","i494f22_samanort") or die("Error connecting to MySQL server.");
             if(isset($_POST['submit'])){
