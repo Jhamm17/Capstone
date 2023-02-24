@@ -89,7 +89,7 @@
     // Execute the query
     $result = $conn->query($sql);
 
-    echo "<container class='polls-vote'>"
+    echo "<container class='polls-vote'>";
     // Check if the query returned any results
     if ($result->num_rows > 0) {
         // Loop through the result set and display each poll
@@ -113,7 +113,7 @@
     } else {
         echo "No polls found.";
     }
-    echo "</container>"
+    echo "</container>";
     // Close the database connection
     $conn->close();
     ?>
