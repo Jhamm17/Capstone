@@ -22,12 +22,14 @@
     </div>
 
     <h3>Login</h3>
+    <div class="login">
     <form action="" method="POST">
         First Name: <input type="text" name="fname" required><br>
         Last Name: <input type="text" name="lname" required><br>
         email: <input type="text" name="email" required><br>
         <button type="submit" name="login">submit</button>
     </form>
+    </div>
 
 <?php
 if(isset($_POST['login'] )){
