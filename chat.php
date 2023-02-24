@@ -10,19 +10,18 @@
 
 
 <body>
-<div class="topnav"> 
+<div class="topnav">
         <a href="home.html"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
-        <a href="calendar.php">Calendar</a>
+        <a href="cal.php">Calendar</a>
         <a href="chat.php">Chat</a> 
         <a href="community.php">Community</a> 
         <a href="intramurals.php">Intramural Sports</a> 
-        <a href="live.php">IU Live</a>   
+        <a href="live.html">IU Live</a>   
         <a href="polls.php">Polls</a>
-        <a href="profile2.php">Profile</a>
+        <a href="profile.php">Profile</a>
         <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/loign.php">Log-In</a> 
-        <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
+</div>
 
-    </div>
 <form method="post" action="Page2.php">
 Send user a message: <input type="textarea" name="input" />
 <input type="submit" value="Send" /> <br/> <br/> 
@@ -30,5 +29,5 @@ Send user a message: <input type="textarea" name="input" />
 <iframe src="Page1.php" width="450" height="200" scrolling="yes">
 </iframe>
 
-</body>  
+</body>
 </html>

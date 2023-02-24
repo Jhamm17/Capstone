@@ -6,7 +6,7 @@
     <body>
     <div class="topnav"> 
         <a href="home.html"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
-        <a href="calendar.php">Calendar</a>
+        <a href="cal.php">Calendar</a>
         <a href="chat.php">Chat</a> 
         <a href="community.php">Community</a> 
         <a href="intramurals.php">Intramural Sports</a> 
@@ -16,7 +16,7 @@
         <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/loign.php">Log-In</a> 
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
     </div>
-        <h1>Communities: </h1>
+        <center><h1>Communities: </h1></center>
         <center><a href="createcommunity.php"><button class="comm">Create</button></a><a href="viewcommunities.php"><button class="comm">Your Communities</button></a></center>
         <center>
             <table class="tabledesign">
@@ -29,12 +29,13 @@
                     mysqli_query($db, $query1) or die('Error querying database.');
                     $result = mysqli_query($db, $query1);
                     $row = mysqli_fetch_array($result);
-                    echo '<tr><th>Community Name</th><th>Subject</th><th>Join?</th></tr>';
+                    echo '<tr><th>Community Name</th><th>Subject</th><th>Bio</th><th>Join?</th></tr>';
                     while($row = mysqli_fetch_array($result)){
                         echo "<tr>";
-                        echo "<td>" . $row['comm_name'] . "</td>";
+                        echo "<td>" . $row['comm_name'] . "</td></a>";
                         echo "<td>" . $row['comm_subject'] . "</td>";
-                        echo "<td>Request to Join</td>";
+                        echo "<td>" . $row['comm_bio'] . "</td>";
+                        echo "<td><a href=\"viewcommunity.php?id=" . $row['comm_id'] . "\">Request to Join</a></td>";
                         echo "</tr>";
                     }
                 ?>
