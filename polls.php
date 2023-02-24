@@ -103,8 +103,7 @@
             $answer_2_sql = "SELECT COUNT(*) FROM poll_responses WHERE poll_id = " . $row["id"] . " AND answer = '" . $row["answer_2"] . "'";
             $answer_2_result = $conn->query($answer_2_sql);
             $answer_2_count = $answer_2_result->fetch_row()[0];
-            echo "<form action='#' method='post'>";
-            echo "<div class='poll-area'>";
+            echo "<form action='#' method='post' class='poll-area'>";
                 echo "<input type='radio' name='answer' id='opt-1' value='" . $row["answer_1"] . "'>";
                 echo "<label for='opt-1' class='opt-1'>";
                     echo "<div class='row'>";
@@ -129,7 +128,6 @@
                 echo "</label>";
                 echo "<input type='hidden' name='poll_id' value='" . $row["id"] . "'>";
                 echo "<input type='submit' name='submit' value='Vote'>";
-            echo "</div>";
             echo "</form>";
         }
     } else {
