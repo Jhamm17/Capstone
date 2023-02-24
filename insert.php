@@ -14,7 +14,7 @@ if(isset($_POST['login'] )){
     //  $fnameErr = "Only letters and white space allowed";
     //  echo $fnameErr;
     //  $flag = 0;
-   // }    
+   // }    h
    // echo '<br>';
   //  $lname = test_input($_POST["Lname"]);
    // if (!preg_match("/^[a-zA-Z-' ]*$/",$lname)) {
