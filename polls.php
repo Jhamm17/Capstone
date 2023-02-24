@@ -105,8 +105,7 @@
             $answer_2_count = $answer_2_result->fetch_row()[0];
             echo "<form action='#' method='post'>";
             echo "<div class='poll-area'>";
-                echo "<input type='radio' name='answer' id='opt-1'>";
-                echo "<input type='radio' name='answer' id='opt-2'>";
+                echo "<input type='radio' name='answer' id='opt-1' value='" . $row["answer_1"] . "'>";
                 echo "<label for='opt-1' class='opt-1'>";
                     echo "<div class='row'>";
                     echo "<div class='column'>";
@@ -117,7 +116,8 @@
                     echo "</div>";
                     echo "<div class='progress' style='--w:30;'></div>";
                 echo "</label>";
-                echo "<label for='opt-1' class='opt-1'>";
+                echo "<input type='radio' name='answer' id='opt-2' value='" . $row["answer_2"] . "'>";
+                echo "<label for='opt-2' class='opt-2'>";
                     echo "<div class='row'>";
                     echo "<div class='column'>";
                         echo "<span class='circle'></span>";
