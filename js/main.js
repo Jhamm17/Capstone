@@ -1,56 +1,37 @@
-let poll = {
-    question:"What's your favorite programming language",
-    answers:[
-        "C", "Java", "PHP", "JavaScript"
-    ],
-    pollCount:20,
-    answersWeight:[4, 4, 2, 10],
-    selectedAnswer:-1
-};
-
-let pollDOM = {
-    question:document.querySelector(".poll .question"),
-    answers:document.querySelector(".poll .answers")
-};
-
-pollDOM.question.innerText = poll.question;
-pollDOM.answers.innerHTML = poll.answers.map(function(answer,i){
-    return (
-        `
-        
-            <div class="answer" onclick="markAnswer('${i}')">
-                ${answer}
-                <span class="percentage-bar"></span>
-                <span class="percentage-value"></span>
-            </div>
-        `
-    );
-}).join("");
-
-function markAnswer(i){
-    poll.selectedAnswer = +i;
-    try {
-        document.querySelector(".poll .answer .answer.selected").classList.remove("selected");
-    } catch(msg){}
-    document.querySelectorAll(".poll .answer .answer.selected")[+1].classList.remove("selected");
-    showResults();
-}
-
-function showResults(){
-    let answers = document.querySelectorAll(".poll .answers .answer");
-    for(let i=0;i<answers.length;i++){
-        let percentage = 0;
-        if(i == poll.selectedAnswer){
-            percentage = Math.round(
-                (poll.answerWeight[i]+1) * 100 / (poll.pollCount+1)
-            );
-        } else {
-            percentage = Math.round(
-                (poll.answerWeight[i]) * 100 / (poll.pollCount+1)
-            );
-        }
-
-        answers[i].querySelector(".percentage-bar").style.width = percentage + "%";
-        answers[i].querySelector(".percentage-value").innerText = percentage + "%";
+const options = document.querySelectorAll("label");
+for (let i = 0; i < options.length; i++) {
+  options[i].addEventListener("click", ()=>{
+    for (let j = 0; j < options.length; j++) {
+      if(options[j].classList.contains("selected")){
+        options[j].classList.remove("selected");
+      }
     }
+
+    options[i].classList.add("selected");
+    for (let k = 0; k < options.length; k++) {
+      options[k].classList.add("selectall");
+    }
+
+    let forVal = options[i].getAttribute("for");
+    let selectInput = document.querySelector("#"+forVal);
+    let getAtt = selectInput.getAttribute("type");
+    if(getAtt == "checkbox"){
+      selectInput.setAttribute("type", "radio");
+    }else if(selectInput.checked == true){
+      options[i].classList.remove("selected");
+      selectInput.setAttribute("type", "checkbox");
+    }
+
+    let array = [];
+    for (let l = 0; l < options.length; l++) {
+      if(options[l].classList.contains("selected")){
+        array.push(l);
+      }
+    }
+    if(array.length == 0){
+      for (let m = 0; m < options.length; m++) {
+        options[m].removeAttribute("class");
+      }
+    }
+  });
 }
