@@ -63,10 +63,9 @@ $conn->close();
   <link rel="stylesheet" href="css/styles.css">
   
   <body>
-<<<<<<< HEAD
   <div class="topnav">
         <a href="home.html"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
-        <a href="cal.php">Calendar</a>
+        <a href="calendar.php">Calendar</a>
         <a href="chat.php">Chat</a> 
         <a href="community.php">Community</a> 
         <a href="intramurals.php">Intramural Sports</a> 
@@ -76,9 +75,6 @@ $conn->close();
         <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/loign.php">Log-In</a> 
     </div>
     <div class="profile">
-=======
-  <div class="profile">
->>>>>>> 646af3eedaa41cfb27996fa91ef81d9d18e6a475
     <h1><?php echo $name ?>'s Profile</h1>
     <h2>Edit Your Profile</h2>
     <form action="profile.php" method="post">

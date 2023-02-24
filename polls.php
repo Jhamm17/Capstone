@@ -89,7 +89,7 @@
     // Execute the query
     $result = $conn->query($sql);
 
-
+    echo "<container class='wrapper'>";
     // Check if the query returned any results
     if ($result->num_rows > 0) {
         // Loop through the result set and display each poll
@@ -103,22 +103,43 @@
             $answer_2_sql = "SELECT COUNT(*) FROM poll_responses WHERE poll_id = " . $row["id"] . " AND answer = '" . $row["answer_2"] . "'";
             $answer_2_result = $conn->query($answer_2_sql);
             $answer_2_count = $answer_2_result->fetch_row()[0];
-            echo "<form action='#' method='post'>";
-            echo "<input type='radio' name='answer' value='" . $row["answer_1"] . "'>" . $row["answer_1"] . " (" . $answer_1_count . " votes)<br>";
-            echo "<input type='radio' name='answer' value='" . $row["answer_2"] . "'>" . $row["answer_2"] . " (" . $answer_2_count . " votes)<br>";
-            echo "<input type='hidden' name='poll_id' value='" . $row["id"] . "'>";
-            echo "<input type='submit' name='submit' value='Vote'>";
+            echo "<form action='#' method='post' class='poll-area'>";
+                echo "<input type='radio' name='answer' id='opt-1' value='" . $row["answer_1"] . "'>";
+                echo "<label for='opt-1' class='opt-1'>";
+                    echo "<div class='row'>";
+                    echo "<div class='column'>";
+                        echo "<span class='circle'></span>";
+                        echo "<span class='text'>" . $row["answer_1"] . "</span>";
+                    echo "</div>";
+                    echo "<span class='percent'>(" . $answer_1_count . " votes)</span>";
+                    echo "</div>";
+                    echo "<div class='progress' style='--w:30;'></div>";
+                echo "</label>";
+                echo "<input type='radio' name='answer' id='opt-2' value='" . $row["answer_2"] . "'>";
+                echo "<label for='opt-2' class='opt-2'>";
+                    echo "<div class='row'>";
+                    echo "<div class='column'>";
+                        echo "<span class='circle'></span>";
+                        echo "<span class='text'>" . $row["answer_2"] . "</span>";
+                    echo "</div>";
+                    echo "<span class='percent'>(" . $answer_2_count . " votes)</span>";
+                    echo "</div>";
+                    echo "<div class='progress' style='--w:30;'></div>";
+                echo "</label>";
+                echo "<input type='hidden' name='poll_id' value='" . $row["id"] . "'>";
+                echo "<input type='submit' name='submit' value='Vote'>";
             echo "</form>";
         }
     } else {
         echo "No polls found.";
     }
-
+    echo "</div>";
     // Close the database connection
     $conn->close();
     ?>
 
 
 </container>
+<script src="main.js"></script>
 </body>
 </html>
