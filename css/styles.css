@@ -27,30 +27,40 @@
     padding: 0%;
   }
 
-    .cal {
-        display:flex;
-        justify-content:center;
-        align-items:center;      
-    }
-    .sports p {
-        color: black;
-        text-align: center;
-    }
-    .sports button{
-        font-size: large;
-        font-weight: 600;
-        background-color: #DC143C;
-        color: black;
-        text-align: center;
-    }
-  .sports {
-    padding-bottom: 1rem;
-    color:#DC143C;
-    text-align: center;
-  }
-
   body{
     background-color: #FFFDD0;
   }
+
+  .info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .descriptors {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .elements {
+    color: red;
+  }
+/* 
+  .profile {
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+  } */
+  
+  .profile {
+    width: 800px;
+    margin: 35px auto; /* centers content */
+    border: 1px solid black;
+    padding: 50px;
+    background-color: white;
+}
+  
+
+ 
 
   
