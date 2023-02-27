@@ -257,17 +257,17 @@ CREATE TABLE poll_responses (
 );
 
 INSERT INTO polls VALUES  
-('Poll 1', 'Rutgers Scarlett Knights', 'Indiana Hoosiers'),
-('Poll 2', 'Michigan Wolverines', 'Michigan State Spartans'),
-('Poll 3', 'Wisconsin Badgers', 'Iowa Hawkeyes'),
-('Poll 4', 'Purdue Boilermakers', 'Nebraska Cornhuskers'),
-('Poll 5', 'Kansas Jayhawks', 'Oklahoma Sooners'),
-('Poll 6', 'Auburn Tigers', 'LSU Tigers');
+(2001,'Poll 1', 'Rutgers Scarlett Knights', 'Indiana Hoosiers'),
+(2002,'Poll 2', 'Michigan Wolverines', 'Michigan State Spartans'),
+(2003,'Poll 3', 'Wisconsin Badgers', 'Iowa Hawkeyes'),
+(2004,'Poll 4', 'Purdue Boilermakers', 'Nebraska Cornhuskers'),
+(2005,'Poll 5', 'Kansas Jayhawks', 'Oklahoma Sooners'),
+(2006,'Poll 6', 'Auburn Tigers', 'LSU Tigers');
 
 INSERT INTO poll_responses VALUES
-(1, '')
-(2, '')
-(3, '')
-(4, '')
-(5, '')
-(6, '')
+(2001, 1, ''),
+(2002,2, ''),
+(2003, 3, ''),
+(2004, 4, ''),
+(2005, 5, ''),
+(2006, 6, '');

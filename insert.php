@@ -51,7 +51,7 @@ if(isset($_POST['login'] )){
          'FavTeam' => $FavTeam,
          'FavSport' => $FavSport,
          'GradYear' => $FavSport,
-         'bio' => $bio,
+         'bio' => $bio
      ];
    //  $duplicate = "SELECT * FROM user where (email = '$email')";
     // $dupe = mysqli_query($duplicate);
