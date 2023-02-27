@@ -1,6 +1,5 @@
 <?php
 session_start();
-include('loign.php'); 
 $servername = "db.luddy.indiana.edu";
 $username = "i494f22_team36";
 $password = "my+sql=i494f22_team36";
@@ -11,7 +10,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-$_SESSION['email'] = $IUemail;
+//$_SESSION['email'] = $IUemail;
 $sql = "SELECT * FROM user WHERE email = " . $_SESSION['email']; 
 $result = $conn->query($sql);
 

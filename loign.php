@@ -23,7 +23,7 @@
 </div>
     <br>
     <h3>Sign-Up</h3>
-    
+
     <form action="insert.php" method="POST">
         First Name: <input type="text" name="Fname" required><br>
         Last Name: <input type="text" name="Lname" required><br>
@@ -122,13 +122,13 @@ if ($conn->connect_error) {
      if ($node->length){
          $username=$node[0]->textContent;
         
-         $_SESSION['username'] = $username;
+         $_SESSION["username"] = $username;
          //echo $username;
          $emailend ='@iu.edu';
          //$user = substr($file,0,-50);
          //echo strrev($user);
          $IUemail =$username.$emailend;
-         $_SESSION['email'] = $IUemail;
+         $_SESSION["email"] = $IUemail;
          //echo $IUemail;
         // echo $IUemail;
         // echo $IUemail;
