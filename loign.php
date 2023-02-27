@@ -34,9 +34,9 @@
 
 <?php
 session_start();
-if(!isset($_SESSION['CAS'])){
-    header('Location: home.html');
-}
+//if(!isset($_SESSION['CAS'])){
+  //  header('Location: home.html');
+//}
 $servername = "db.luddy.indiana.edu";
 $username = "i494f22_team36";
 $password = "my+sql=i494f22_team36";
