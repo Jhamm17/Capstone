@@ -182,7 +182,7 @@ body{
   transition: all 0.2s ease;
 }
 .poll-area label:hover{
-  border-color: #ddd;
+  border-color: crimson;
 }
 label.selected{
   border-color: #6665ee!important;
