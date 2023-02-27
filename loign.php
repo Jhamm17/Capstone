@@ -33,6 +33,16 @@
 
 <?php
 session_start();
+$servername = "db.luddy.indiana.edu";
+$username = "i494f22_team36";
+$password = "my+sql=i494f22_team36";
+$dbname = "i494f22_team36";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
 
 // function cas_authenticate(){
 //     $sid = SID; //SESSION ID
@@ -128,6 +138,10 @@ session_start();
          }else{
              echo "logged in";
          }
+         if (isset($_SESSION['userid'])){
+            header("Location: calender.php");
+        };
+        
 
      }
   
