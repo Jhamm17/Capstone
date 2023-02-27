@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 // $userid = 1001;
 // $sql = "SELECT * FROM user WHERE userid = $userid";
 // $result = $conn->query($sql);
-// $email = trim($_SESSION['email']);
+$email = trim($_SESSION['email']);
 $sql = "SELECT * FROM user WHERE email = '$email'";
 $result = $conn->query($sql);
 //https://www.w3schools.com/php/func_mysqli_query.asp used to help gett proper setup
@@ -82,7 +82,7 @@ $conn->close();
         <a href="intramurals.php">Intramural Sports</a> 
         <a href="live.html">IU Live</a>   
         <a href="polls.php">Polls</a>
-        <a href="profile.php">Profile</a>
+        <a href="profile2.php">Profile</a>
         <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/loign.php">Log-In</a> 
     </div>
     <div class="profile">
