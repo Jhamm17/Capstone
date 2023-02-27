@@ -136,14 +136,14 @@ PRIMARY KEY (GameID)
 
 
 INSERT INTO user VALUES 
-(1001, 'Jess', 'Foxworthy', 'jfox12@iu.edu', 'FoxSox12'),
-(1002, 'James', 'Messer', 'jmess@iu.edu', 'reasd221'),
-(1003, 'Taylor', 'Ham', 'tham@iu.edu', 'Hamm123'),
-(1004, 'Isaiah', 'Quinn', 'IsaiahQ@iu.edu', 'OSUrocks2023'),
-(1005, 'Hank', 'Lights', 'HankLi33@iu.edu', 'LightsOUT3'),
-(1006, 'Zack', 'Klao', 'Klaoz@iu.edu', 'terrrpppps12'),
-(1007, 'Luke', 'Fields', 'Lfields@iu.edu', 'FlukeyLukey23'),
-(1008, 'Frank', 'Tank', 'frtank@iu.edu', 'tanks2023');
+(1001, 'Jess', 'Foxworthy', 'jfox12@iu.edu', 'Basketball', 'Indiana Pacers', 2023, 'A basketball fanatic that is looking for teammates to play.'),
+(1002, 'James', 'Messer', 'jmess@iu.edu', 'Baseball', 'Chicago Cubs', 2025, 'I love the cubs and also sometimes watch the bears.'),
+(1003, 'Taylor', 'Ham', 'tham@iu.edu','Lacrosse', 'Duke University', 2025, 'Looking for people to throw the lax ball with.'),
+(1004, 'Isaiah', 'Quinn', 'IsaiahQ@iu.edu', 'Football', 'Chicago Bears', 2024, 'Want to watch the bears win the superbowl with  some other bears fans this year.'),
+(1005, 'Hank', 'Lights', 'HankLi33@iu.edu', 'Soccer', 'USA Soccer', 2026, 'Trying to find players for a soccer team.'),
+(1006, 'Zack', 'Klao', 'Klaoz@iu.edu','Basketball', 'Lakers', 2024, 'Informatics major who wants to become more active.'),
+(1007, 'Luke', 'Fields', 'Lfields@iu.edu','Softball', 'Sparks', 2023, 'I love playing softball, but cannot find people to play with.'),
+(1008, 'Frank', 'Tank', 'frtank@iu.edu','Baseball', 'Chicago Cubs', 2024, 'Cubs fan, from Chicago, looking for people to come to a few games this spring.');
 
 -- INSERT INTO profile VALUES 
 -- ('Basketball', 'Indiana Pacers', 2023, 'A basketball fanatic that is looking for teammates to play.', 1001),
@@ -155,20 +155,6 @@ INSERT INTO user VALUES
 -- ('Softball', 'Sparks', 2023, 'I love playing softball, but cannot find people to play with.', 1007),
 -- ('Baseball', 'Chicago Cubs', 2024, 'Cubs fan, from Chicago, looking for people to come to a few games this spring.', 1008);
 
-INSERT INTO room VALUES 
-(601,'workout partner'),
-(602,'');
-
-INSERT INTO participants VALUES 
-(901, 1001, 601),
-(902, 1002, 601),
-(903,1001, 602),
-(904, 1003, 602);
-
-INSERT INTO chatMessage VALUES
-(2001,'lets go workout',1001, 601),
-(2002,'bet leaving in 5',1002, 601),
-(2003,'bett',1001, 601);
 
 INSERT INTO calendar VALUES
 (701, 'Baseball game', 2023, 02, 21),
