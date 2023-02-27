@@ -10,24 +10,35 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-// $userid = 1001;
-// $sql = "SELECT * FROM user WHERE userid = $userid";
-// $result = $conn->query($sql);
 $email = trim($_SESSION['email']);
 $sql = "SELECT * FROM user WHERE email = '$email'";
 $result = $conn->query($sql);
-//https://www.w3schools.com/php/func_mysqli_query.asp used to help gett proper setup
+
 if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
-    $name = $row["Fname"];
+    $fname = $row["Fname"];
+    $lname = $row["Lname"];
+    $name = $fname . ' ' . $lname;
     $email = $row["email"];
-    $favteam = $row["FavTeam"];
-    $favsport = $row["FavSport"];
-    $grad = $row["GradYear"];
-    $bio = $row["bio"];
   }
+// $userid = 1001;
+// $sql = "SELECT * FROM user WHERE userid = $userid";
+// $result = $conn->query($sql);
+// $email = trim($_SESSION['email']);
+// $sql = "SELECT * FROM user WHERE email = '$email'";
+// $result = $conn->query($sql);
+// //https://www.w3schools.com/php/func_mysqli_query.asp used to help gett proper setup
+// if ($result->num_rows > 0) {
+//   while($row = $result->fetch_assoc()) {
+//     $name = $row["Fname"];
+//     $email = $row["email"];
+//     $favteam = $row["FavTeam"];
+//     $favsport = $row["FavSport"];
+//     $grad = $row["GradYear"];
+//     $bio = $row["bio"];
+//   }
 } else {
-  echo "0 results";
+  printf("Error: %s\n", mysqli_error($conn));
 }
 if (!$result) {
   printf("Error: %s\n", mysqli_error($conn));
