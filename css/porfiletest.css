@@ -24,7 +24,6 @@ body{
 
 
 .wrapper .right{
-    padding-top: 2em;
   width: 65%;
   background: #fff;
   padding: 30px 25px;
@@ -75,7 +74,9 @@ body{
     background-color: #DC143C;
     overflow: hidden;
     padding:0;
-  }
+    position: relative;
+    z-index: 1;
+}
   
   /* Style the links inside the navigation bar */
   .topnav a {
