@@ -56,7 +56,6 @@ $query = "SELECT Intramurals.user_email, Intramurals.Preferred_sport, Intramural
 </div>
     <div class="profile">
       <h1><?php echo $row['full_name'] ?>'s Profile</h1>
-      <h2>Contact Me</h2>
       <div class="info">
         <p class="descriptors">Email:</p>
         <p class="elements"><?php echo $email ?></p>
