@@ -34,7 +34,6 @@
     background-color: #fff;
   }
   
-  /* Add spacing from top navigation */
   .profile {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -52,6 +51,7 @@
     border-radius: 5px;
     margin: 0 auto 20px;
     width: 50%;
+    white-space: nowrap;
   }
   
   /* Style the descriptors */
@@ -62,12 +62,12 @@
     font-size: 16px;
     display: inline-block;
     width: 100px;
+    margin-bottom: 10px;
   }
   
   /* Style the elements */
   .elements {
     font-size: 16px;
-    display: inline-block;
   }
   
   /* Add spacing between elements */
@@ -93,6 +93,7 @@
     background-color: #fff;
     color: #990000;
   }
+  
   
   
    
