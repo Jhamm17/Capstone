@@ -32,7 +32,7 @@
             <h1 class="polls-title-h1"> Polls </h1>
         </div>
     </container>
-    <container>
+    <container class="polls-content">
     <?php
 
     session_start();

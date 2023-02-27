@@ -159,6 +159,11 @@ body{
   color: #fff;
   background: #6665ee;
 }
+
+.poll-content {
+  margin-top: 30px;
+}
+
 .wrapper{
   background: #fff;
   border-radius: 15px;
@@ -166,7 +171,6 @@ body{
   max-width: 680px;
   width: 100%;
   box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
-  margin-top: 30px;
 }
 .wrapper header{
   font-size: 22px;
