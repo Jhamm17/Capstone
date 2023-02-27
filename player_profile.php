@@ -38,14 +38,29 @@ $query = "SELECT Intramurals.user_email, Intramurals.Preferred_sport, Intramural
     } else {
     echo "0 results";
     }
-
-    // Finally, display the user and profile information
-    echo "User Email: " . $row['user_email'] . "<br>";
-    echo "Full Name: " . $row['full_name'] . "<br>";
-    echo "Preferred Sport: " . $row['Preferred_sport'] . "<br>";
-    echo "On Team: " . $row['On_team'] . "<br>";
-    echo "Favorite Team: " . $favteam . "<br>";
-    echo "Favorite Sport: " . $favsport . "<br>";
-    echo "Graduation Year: " . $grad . "<br>";
-    echo "Bio: " . $bio . "<br>";
-
+    ?>
+    <div class="profile">
+      <h1><?php echo $name ?>'s Profile</h1>
+      <h2>Contact Me</h2>
+      <div class="info">
+        <p class="descriptors">Email:</p>
+        <p class="elements"><?php echo $email ?></p>
+      </div>
+      <div class="info">
+        <p class="descriptors">Graduation Year:</p>
+        <p class="elements"><?php echo $grad ?></p>
+      </div>
+      <div class="info">
+        <p class="descriptors">About Me:</p>
+        <p class="elements"><?php echo $bio ?></p>
+      </div>
+      <div class="info">
+        <p class="descriptors">Favorite Team:</p>
+        <p class="elements"><?php echo $favteam ?></p>
+      </div>
+      <div class="info">
+        <p class="descriptors">Favorite Sport: </p>
+        <p class="elements"><?php echo $favsport ?></p>
+      </div>
+      <a href="profile.php">Edit Profile</a>
+    </div> 
