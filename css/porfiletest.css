@@ -102,6 +102,6 @@ body{
   }
   body {
     background-color: #f3f3f3;
-    padding-top: 1000px; /* adjust this value to create enough space for the navigation bar */
+    padding-top: 0px; /* adjust this value to create enough space for the navigation bar */
  }
  
