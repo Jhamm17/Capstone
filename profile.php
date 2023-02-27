@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 // $userid = 1001;
 // $sql = "SELECT * FROM user WHERE userid = $userid";
 // $result = $conn->query($sql);
-$email = trim($_SESSION['email']);
+// $email = trim($_SESSION['email']);
 $sql = "SELECT * FROM user WHERE email = '$email'";
 $result = $conn->query($sql);
 //https://www.w3schools.com/php/func_mysqli_query.asp used to help gett proper setup
