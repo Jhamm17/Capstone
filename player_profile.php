@@ -10,10 +10,16 @@ $query = "SELECT * FROM Intramurals WHERE user_email = '$email'";
 $query1 = "SELECT * FROM user WHERE user_email = '$email'";
 $result = mysqli_query($db, $query) or die('Error querying database.');
 $row = mysqli_fetch_array($result);
+// Run the second query to get the user's name
+$result1 = mysqli_query($db, $query1) or die('Error querying database.');
+$row1 = mysqli_fetch_array($result1);
+
+// Output the user's name
+echo "<p><b>Name:</b> " . $row1['name'] . "</p>";
 
 // Generate the HTML for the player's profile page
 echo "<h1>Player Profile</h1>";
-echo "<p><b>Name:</b> " . $row['Fname'] . "</p>";
+// echo "<p><b>Name:</b> " . $row['Fname'] . "</p>";
 echo "<p><b>Email:</b> " . $row['user_email'] . "</p>";
 echo "<p><b>Preferred Sport:</b> " . $row['Preferred_sport'] . "</p>";
 echo "<p><b>On Team:</b> " . $row['On_team'] . "</p>";
