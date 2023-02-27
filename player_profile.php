@@ -3,10 +3,18 @@
 $email = $_GET['email'];
 
 // Connect to the database
-$db = mysqli_connect("db.luddy.indiana.edu","i494f22_samanort","my+sql=i494f22_samanort","i494f22_samanort") or die("Error connecting to MySQL server.");
+$servername = "db.luddy.indiana.edu";
+$username = "i494f22_team36";
+$password = "my+sql=i494f22_team36";
+$dbname = "i494f22_team36";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
 
 // Query the database for the player's information based on the email parameter
-$query = "SELECT Intramurals.Fname, Intramurals.Preferred_sport, Intramurals.On_team, user.name 
+$query = "SELECT Intramurals.user_email, Intramurals.Preferred_sport, Intramurals.On_team, user.Fname 
           FROM Intramurals 
           JOIN user ON Intramurals.user_email = user.email
           WHERE Intramurals.user_email = '$email'";
