@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('loign.php'); 
 $servername = "db.luddy.indiana.edu";
 $username = "i494f22_team36";
 $password = "my+sql=i494f22_team36";
