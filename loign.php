@@ -151,7 +151,7 @@ if(!isset($_SESSION['CAS'])){
          }else{
             //  $userid = "SELECT userid FROM user WHERE email=" . "'" . $email . "'";
             //  $qu = mysqli_query($conn,$userid);
-            Header('location:home.html')
+            header("Location: home.html");
 
             //  $_SESSION['userid'] = $qu;
             //  echo $_SESSION['userid'];
