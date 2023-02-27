@@ -90,12 +90,14 @@
             $answer_2_sql = "SELECT COUNT(*) FROM poll_responses WHERE poll_id = " . $row["id"] . " AND answer = '" . $row["answer_2"] . "'";
             $answer_2_result = $conn->query($answer_2_sql);
             $answer_2_count = $answer_2_result->fetch_row()[0];
+
+            $percent_total = ($answer_1_count + $answer_2_count);
+            $percent1 = (($answer_1_count / $percent_total) * 100);
+            $percent2 = (($answer_1_count / $percent_total) * 100);
+            $percent1_answer = (round($percent1));
+            $percent2_answer = (round($percent2));
+
             echo "<form action='#' method='post' class='poll-area'>";
-                $percent_total = ($answer_1_count + $answer_2_count);
-                $percent1 = (($answer_1_count / $percent_total) * 100);
-                $percent2 = (($answer_1_count / $percent_total) * 100);
-                $percent1_answer = (round($percent1));
-                $percent2_answer = (round($percent2));
                 echo "<input type='checkbox' name='answer' id='opt-1' value='" . $row["answer_1"] . "'>";
                 echo "<label for='opt-1' class='opt-1'>";
                     echo "<div class='row'>";
@@ -103,7 +105,7 @@
                         echo "<span class='circle'></span>";
                         echo "<span class='text'>" . $row["answer_1"] . "</span>";
                     echo "</div>";
-                    echo "<span class='percent'>(" . $percent1_answer . "%)</span>";
+                    echo "<span class='percent'>(" . $percent1_answer . ")%</span>";
                     echo "</div>";
                     echo "<div class='progress' style='--w:" . $percent2_answer . ";'></div>";
                 echo "</label>";
@@ -114,7 +116,7 @@
                         echo "<span class='circle'></span>";
                         echo "<span class='text'>" . $row["answer_2"] . "</span>";
                     echo "</div>";
-                    echo "<span class='percent'>(" . $percent2_answer . "%)</span>";
+                    echo "<span class='percent'>(" . $percent2_answer . ")%</span>";
                     echo "</div>";
                     echo "<div class='progress' style='--w:" . $percent2_answer . ";'></div>";
                 echo "</label>";
