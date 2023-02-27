@@ -145,7 +145,7 @@ if(!isset($_SESSION['CAS'])){
 
         $compare = "SELECT * FROM user WHERE email=" . "'" . $email . "'";
         $query = mysqli_query($conn,$compare);
-         if (mysqli_num_rows($query == 0)){
+         if (mysqli_num_rows($query) == 0){
              echo "fill out login first";
 
          }else{

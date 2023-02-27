@@ -56,7 +56,7 @@ if(isset($_POST['login'] )){
    //  $duplicate = "SELECT * FROM user where (email = '$email')";
     // $dupe = mysqli_query($duplicate);
     //https://stackoverflow.com/questions/7719039/check-for-duplicates-before-inserting
-         $sql = "INSERT INTO user (Fname, Lname, email) VALUES ('$fname','$lname','$email','$FavTeam','$FavSport','$GradYear','$bio')";
+         $sql = "INSERT INTO user (Fname, Lname, email, FavTeam, FavSport, GradYear, bio) VALUES ('$fname','$lname','$email','$FavTeam','$FavSport','$GradYear','$bio')";
          if (mysqli_query($conn,$sql)) {
       
              echo "1 record added";
@@ -67,7 +67,6 @@ if(isset($_POST['login'] )){
     
 }   
 
-if
 mysqli_close($conn);
 
 
