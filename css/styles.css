@@ -31,7 +31,7 @@
     background-color: #FFFDD0;
   }
 
-  .info {
+  /* .info {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
@@ -44,21 +44,53 @@
   
   .elements {
     color: red;
-  }
+  } */
 /* 
   .profile {
     width: 500px;
     margin: 0 auto;
     text-align: center;
   } */
-  
+/*   
   .profile {
     width: 800px;
-    margin: 35px auto; /* centers content */
+    margin: 35px auto; 
     border: 1px solid black;
     padding: 50px;
     background-color: white;
+} */
+
+.profile {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
+
+.profile h1, .profile h2 {
+  text-align: center;
+}
+
+.profile h2 {
+  margin-top: 30px;
+}
+
+.profile .info {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.profile .descriptors {
+  width: 150px;
+  font-weight: bold;
+}
+
+.profile .elements {
+  flex-grow: 1;
+}
+
   
 
  
