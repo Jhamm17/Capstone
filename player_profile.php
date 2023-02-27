@@ -18,7 +18,7 @@ $query = "SELECT Intramurals.user_email, Intramurals.Preferred_sport, Intramural
           FROM Intramurals 
           JOIN user ON Intramurals.user_email = user.email
           WHERE Intramurals.user_email = '$email'";
-$result = mysqli_query($db, $query) or die('Error querying database.');
+$result = mysqli_query($conn, $query) or die('Error querying database.');
 $row = mysqli_fetch_array($result);
 
 // Generate the HTML for the player's profile page
