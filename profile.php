@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "db.luddy.indiana.edu";
 $username = "i494f22_team36";
 $password = "my+sql=i494f22_team36";
@@ -10,35 +11,24 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$email = trim($_SESSION['email']);
-$sql = "SELECT * FROM user WHERE email = '$email'";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-  while($row = $result->fetch_assoc()) {
-    $fname = $row["Fname"];
-    $lname = $row["Lname"];
-    $name = $fname . ' ' . $lname;
-    $email = $row["email"];
-  }
 // $userid = 1001;
 // $sql = "SELECT * FROM user WHERE userid = $userid";
 // $result = $conn->query($sql);
-// $email = trim($_SESSION['email']);
-// $sql = "SELECT * FROM user WHERE email = '$email'";
-// $result = $conn->query($sql);
-// //https://www.w3schools.com/php/func_mysqli_query.asp used to help gett proper setup
-// if ($result->num_rows > 0) {
-//   while($row = $result->fetch_assoc()) {
-//     $name = $row["Fname"];
-//     $email = $row["email"];
-//     $favteam = $row["FavTeam"];
-//     $favsport = $row["FavSport"];
-//     $grad = $row["GradYear"];
-//     $bio = $row["bio"];
-//   }
+$email = trim($_SESSION['email']);
+$sql = "SELECT * FROM user WHERE email = '$email'";
+$result = $conn->query($sql);
+//https://www.w3schools.com/php/func_mysqli_query.asp used to help gett proper setup
+if ($result->num_rows > 0) {
+  while($row = $result->fetch_assoc()) {
+    $name = $row["Fname"];
+    $email = $row["email"];
+    $favteam = $row["FavTeam"];
+    $favsport = $row["FavSport"];
+    $grad = $row["GradYear"];
+    $bio = $row["bio"];
+  }
 } else {
-  printf("Error: %s\n", mysqli_error($conn));
+  echo "0 results";
 }
 if (!$result) {
   printf("Error: %s\n", mysqli_error($conn));
