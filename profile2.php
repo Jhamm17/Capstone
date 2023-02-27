@@ -11,7 +11,8 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM user WHERE email = " . trim($_SESSION['email']); 
+$email = trim($_SESSION['email']);
+$sql = "SELECT * FROM user WHERE email = '$email'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
