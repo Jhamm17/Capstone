@@ -10,7 +10,6 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$userid = 1001;
 $sql = "SELECT * FROM user WHERE userid = $userid";
 $result = $conn->query($sql);
 //https://www.w3schools.com/php/func_mysqli_query.asp used to help gett proper setup
