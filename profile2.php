@@ -64,6 +64,7 @@ $conn->close();
 
     </div>
     <div class="profile">
+      <div class="profile-box">
       <h1><?php echo $name ?>'s Profile</h1>
       <h2>Contact Me</h2>
       <div class="info">
@@ -87,6 +88,7 @@ $conn->close();
         <p class="elements"><?php echo $favsport ?></p>
       </div>
       <a class="editprofilebutton" href="profile.php">Edit Profile</a>
+    </div> 
     </div> 
 <!-- https://7topics.com/creating-user-profile-page-using-php-and-mysql.html used to see how to properly echo onto page -->
 
