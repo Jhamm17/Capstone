@@ -24,8 +24,8 @@ $query = "SELECT Intramurals.user_email, Intramurals.Preferred_sport, Intramural
     $row = mysqli_fetch_array($result);
 
     // Then, retrieve the user profile information based on user ID
-    $user_id = $row['user_id'];
-    $sql = "SELECT * FROM profile WHERE userid = '$user_id'"; 
+    $userid = $row['userid'];
+    $sql = "SELECT * FROM profile WHERE userid = '$userid'"; 
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
