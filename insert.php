@@ -1,5 +1,5 @@
 <?php
-session_start(),
+
 $servername = "db.luddy.indiana.edu";
 $username = "i494f22_team36";
 $password = "my+sql=i494f22_team36";
@@ -10,20 +10,7 @@ if (!$conn){
 }
 
 if(isset($_POST['login'] )){
-   // $fname = test_input($_POST["Fname"]);
-   // if (!preg_match("/^[a-zA-Z-' ]*$/",$fname)) {
-    //  $fnameErr = "Only letters and white space allowed";
-    //  echo $fnameErr;
-    //  $flag = 0;
-   // }    h
-   // echo '<br>';
-  //  $lname = test_input($_POST["Lname"]);
-   // if (!preg_match("/^[a-zA-Z-' ]*$/",$lname)) {
-     // $lnameErr = "Only letters and white space allowed";
-     // echo $lnameErr;
-    //  $flag = 0;
-   // }
-   // echo '<br>';
+
     $flag = 1;
 
     $fname = $_POST["Fname"];
@@ -33,16 +20,7 @@ if(isset($_POST['login'] )){
     $FavSport = $_POST["FavSport"];
     $GradYear = $_POST["GradYear"];
     $bio = $_POST["bio"];
-   // $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-
-
-   // if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    //  $emailErr = "Invalid email format";
-    //  echo $emailErr;
-    //  $flag = 0;
-
- 
-    //}
+   
     //https://www.w3schools.com/php/php_form_url_email.asp
      $login_data = [
          'Fname' => $fname,
