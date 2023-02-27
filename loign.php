@@ -40,7 +40,7 @@ function cas_authenticate(){
     //Because SESSIONS are used, I default set it to false to make them login. 
     //Watch out with this. I used it because I just wanted to authenticate that they are a student
     //But if you plan to use CAS for the login method, this is a bad idea most likley.
-    $_SESSION['CAS'] = false;
+    //$_SESSION['CAS'] = false;
   
     $authenticated = $_SESSION['CAS'];
     //Make sure that your code redirects back to here or else you will get an error.
