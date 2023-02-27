@@ -90,11 +90,11 @@ $conn->close();
     <h1><?php echo $name ?>'s Profile</h1>
     <h2>Edit Your Profile</h2>
     <form action="profile.php" method="post">
-      <label for="favteam">Favorite Team:</label>
-      <input type="text" id="favteam" name="favteam" value="<?php echo $FavTeam ?>"><br>
+      <label for="FavTeam">Favorite Team:</label>
+      <input type="text" id="FavTeam" name="FavTeam" value="<?php echo $FavTeam ?>"><br>
 
-      <label for="favsport">Favorite Sport:</label>
-      <input type="text" id="favsport" name="favsport" value="<?php echo $FavSport ?>"><br>
+      <label for="FavSport">Favorite Sport:</label>
+      <input type="text" id="FavSport" name="FavSport" value="<?php echo $FavSport ?>"><br>
 
       <label for="grad">Graduation Year:</label>
       <input type="text" id="grad" name="grad" value="<?php echo $grad ?>"><br>
