@@ -32,7 +32,7 @@ if ($result->num_rows > 0) {
   echo $result;
 } //https://7topics.com/creating-user-profile-page-using-php-and-mysql.html was used as a refresher to see how to properly set up connections and see how to call each variable
 
-$sql = "SELECT * FROM profile WHERE userid = $userid"; 
+$sql = "SELECT * FROM profile WHERE userid = ". $_SESSION['userid']; 
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
