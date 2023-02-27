@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 
 // Query the database for the player's information based on the email parameter
 // First, retrieve the user information and join with the profile table
-$query = "SELECT Intramurals.user_email, Intramurals.Preferred_sport, Intramurals.On_team, CONCAT(Fname, ' ', Lname) AS full_name, user.id AS user_id
+$query = "SELECT Intramurals.user_email, Intramurals.Preferred_sport, Intramurals.On_team, CONCAT(Fname, ' ', Lname) AS full_name, user.userid AS userid
           FROM Intramurals 
           JOIN user ON Intramurals.user_email = user.email
           WHERE Intramurals.user_email = '$email'";
