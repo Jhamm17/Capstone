@@ -49,12 +49,12 @@ if (!$result) {
 // }
 
 if (isset($_POST["submit"])) {
-  $favteam = $_POST["favteam"];
-  $favsport = $_POST["favsport"];
+  $FavTeam = $_POST["FavTeam"];
+  $FavSport = $_POST["FavSport"];
   $grad = $_POST["grad"];
   $bio = $_POST["bio"];
 
-  $sql = "UPDATE profile SET FavTeam = '$favteam', FavSport = '$favsport', GradYear = '$grad', bio = '$bio' WHERE email = $email";
+  $sql = "UPDATE user SET FavTeam = '$FavTeam', FavSport = '$FavSport', GradYear = '$grad', bio = '$bio' WHERE email = '$email'";
 
   if ($conn->query($sql) === TRUE) {
     header("Location: profile2.php");
