@@ -43,9 +43,7 @@
   .profile h1, .profile h2, .profile h3, .profile h4, .profile a {
     color: #fff;
   }
-  .profile p{
-    color:black;
-  }
+  
   
   /* Add borders to the profile information */
   .profile-box {
@@ -66,11 +64,13 @@
     display: inline-block;
     width: 100px;
     margin-bottom: 10px;
+    color:#fff;
   }
   
   /* Style the elements */
   .elements {
     font-size: 16px;
+    color:black;
   }
   
   /* Add spacing between elements */
