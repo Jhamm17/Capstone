@@ -3,25 +3,22 @@ userid INT AUTO_INCREMENT NOT NULL,
 Fname VARCHAR(50) NOT NULL,
 Lname VARCHAR(50) NOT NULL,
 email VARCHAR(50) NOT NULL,
-PRIMARY KEY (userid)
-) ENGINE=INNODB;
-
-create table user_table (
-userid INT AUTO_INCREMENT NOT NULL,
-Fname VARCHAR(50) NOT NULL,
-Lname VARCHAR(50) NOT NULL,
-email VARCHAR(50) NOT NULL,
-PRIMARY KEY (userid)
-) ENGINE=INNODB;
-
-create table profile (
 FavSport VARCHAR(50),
 FavTeam VARCHAR(50),
 GradYear INT(4),
 bio VARCHAR(200),
-userid INT NOT NULL,
-FOREIGN KEY (userid) REFERENCES user(userid)
-) ENGINE=INNODB; 
+PRIMARY KEY (userid)
+) ENGINE=INNODB;
+
+
+-- create table profile (
+-- FavSport VARCHAR(50),
+-- FavTeam VARCHAR(50),
+-- GradYear INT(4),
+-- bio VARCHAR(200),
+-- userid INT NOT NULL,
+-- FOREIGN KEY (userid) REFERENCES user(userid)
+-- ) ENGINE=INNODB; 
 
 create table room (
 id INT NOT NULL AUTO_INCREMENT,
@@ -148,15 +145,15 @@ INSERT INTO user VALUES
 (1007, 'Luke', 'Fields', 'Lfields@iu.edu', 'FlukeyLukey23'),
 (1008, 'Frank', 'Tank', 'frtank@iu.edu', 'tanks2023');
 
-INSERT INTO profile VALUES 
-('Basketball', 'Indiana Pacers', 2023, 'A basketball fanatic that is looking for teammates to play.', 1001),
-( 'Baseball', 'Chicago Cubs', 2025, 'I love the cubs and also sometimes watch the bears.', 1002),
-('Lacrosse', 'Duke University', 2025, 'Looking for people to throw the lax ball with.', 1003),
-('Football', 'Chicago Bears', 2024, 'Want to watch the bears win the superbowl with  some other bears fans this year.', 1004),
-('Soccer', 'USA Soccer', 2026, 'Trying to find players for a soccer team.', 1005),
-('Basketball', 'Lakers', 2024, 'Informatics major who wants to become more active.', 1006),
-('Softball', 'Sparks', 2023, 'I love playing softball, but cannot find people to play with.', 1007),
-('Baseball', 'Chicago Cubs', 2024, 'Cubs fan, from Chicago, looking for people to come to a few games this spring..', 1008);
+-- INSERT INTO profile VALUES 
+-- ('Basketball', 'Indiana Pacers', 2023, 'A basketball fanatic that is looking for teammates to play.', 1001),
+-- ( 'Baseball', 'Chicago Cubs', 2025, 'I love the cubs and also sometimes watch the bears.', 1002),
+-- ('Lacrosse', 'Duke University', 2025, 'Looking for people to throw the lax ball with.', 1003),
+-- ('Football', 'Chicago Bears', 2024, 'Want to watch the bears win the superbowl with  some other bears fans this year.', 1004),
+-- ('Soccer', 'USA Soccer', 2026, 'Trying to find players for a soccer team.', 1005),
+-- ('Basketball', 'Lakers', 2024, 'Informatics major who wants to become more active.', 1006),
+-- ('Softball', 'Sparks', 2023, 'I love playing softball, but cannot find people to play with.', 1007),
+-- ('Baseball', 'Chicago Cubs', 2024, 'Cubs fan, from Chicago, looking for people to come to a few games this spring.', 1008);
 
 INSERT INTO room VALUES 
 (601,'workout partner'),
