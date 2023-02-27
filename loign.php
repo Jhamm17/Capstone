@@ -127,11 +127,11 @@ session_start();
 
          }else{
              echo "logged in";
-//         }
+         }
 
-//     }
+     }
   
-// }
+ }
 //if ($IUemail)
 //https://idp.login.iu.edu/idp/profile/cas/logout
 
