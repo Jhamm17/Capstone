@@ -22,7 +22,7 @@
 
 </div>
     <br>
-    <h3>Login</h3>
+    <h3>Sign-Up</h3>
     <form action="insert.php" method="POST">
         First Name: <input type="text" name="Fname" required><br>
         Last Name: <input type="text" name="Lname" required><br>
@@ -138,9 +138,9 @@ if ($conn->connect_error) {
          }else{
              echo "logged in";
          }
-         if (isset($_SESSION['userid'])){
-            header("Location: calender.php");
-        };
+         //if (isset($_SESSION['userid'])){
+         //   header("Location: calender.php");
+       // };
         
 
      }
