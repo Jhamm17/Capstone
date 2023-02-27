@@ -40,6 +40,6 @@ if(!$_SESSION['authenticated']){
     header('Location: loign.php');
 }
 else{
-    header('Location: calendar.php')
+    header('Location: calendar.php');
 }
 ?>
