@@ -30,13 +30,13 @@
                 $result = mysqli_query($db, $query1);
                 $row = mysqli_fetch_array($result);
 
-                echo '<tr><th>Preferred Sport</th><th>On Team?</th><th>User Email</th><th>Player ID</th></tr>';
+                echo '<tr><th>Preferred Sport</th><th>On Team?</th><th>Contact Me</th><th>Player ID</th></tr>';
                 while($row = mysqli_fetch_array($result)){
                     echo "<tr>";
                     echo "<td>" . $row['Preferred_sport'] . "</td>";
                     echo "<td>" . $row['On_team'] . "</td>";
                     // echo "<td>" . $row['user_email'] . "</td>";
-                    echo "<td><a href='" . $row['profile_url'] . "'>" . "Contact Me" . "</a></td>";
+                    echo "<td><a href='" . $row['profile_url'] . "'>" . "Profile" . "</a></td>";
                     echo "<td>" . $row['player_id'] . "</td>";
                     echo "</tr>";
                 }
