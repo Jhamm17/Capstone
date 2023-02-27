@@ -20,14 +20,23 @@
         <h1><center>Intramural Player Search Page!</center></h1>
         <center><table class="tabledesign">
             <?php
-                $db = mysqli_connect("db.luddy.indiana.edu","i494f22_samanort","my+sql=i494f22_samanort","i494f22_samanort") or die("Error connecting to MySQL server.");
-                if (mysqli_connect_errno()){
-                    echo 'failed to connect to SQL';
+                // $db = mysqli_connect("db.luddy.indiana.edu","i494f22_samanort","my+sql=i494f22_samanort","i494f22_samanort") or die("Error connecting to MySQL server.");
+                // if (mysqli_connect_errno()){
+                //     echo 'failed to connect to SQL';
+                // }
+                $servername = "db.luddy.indiana.edu";
+                $username = "i494f22_team36";
+                $password = "my+sql=i494f22_team36";
+                $dbname = "i494f22_team36";
+
+                $conn = new mysqli($servername, $username, $password, $dbname);
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
                 }
                 // $query1 = "SELECT * FROM Intramurals";
                 $query1 = "SELECT Preferred_sport, On_team, user_email, player_id, CONCAT('player_profile.php?email=', user_email) AS profile_url FROM Intramurals";
-                mysqli_query($db, $query1) or die('Error querying database.');
-                $result = mysqli_query($db, $query1);
+                mysqli_query($conn, $query1) or die('Error querying database.');
+                $result = mysqli_query($conn, $query1);
                 $row = mysqli_fetch_array($result);
 
                 echo '<tr><th>Preferred Sport</th><th>On Team?</th><th>Contact Me</th></tr>';
