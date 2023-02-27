@@ -127,6 +127,7 @@ if ($conn->connect_error) {
          //$user = substr($file,0,-50);
          //echo strrev($user);
          $IUemail =$username.$emailend;
+
          //echo $IUemail;
         // echo $IUemail;
         // echo $IUemail;
@@ -137,6 +138,7 @@ if ($conn->connect_error) {
 
          }else{
              echo "logged in";
+             echo $IUemail;
          }
          //if (isset($_SESSION['userid'])){
          //   header("Location: calender.php");
