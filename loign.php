@@ -108,6 +108,7 @@ if ($conn->connect_error) {
 //   //gets the username from the SESSION and assigns it to username.
 //   $username = $_SESSION['user'];
 //   $email_address = $_SESSION['email_address'];
+
 $_SESSION['CAS'] = false;
 if(!isset($_SESSION['CAS'])){
     header('Location: calender.php');
@@ -130,7 +131,6 @@ if(!isset($_SESSION['CAS'])){
          //echo $username;
          $emailend ='@iu.edu';
          //$user = substr($file,0,-50);
-         $_SESSION['authenticated']=true;
          //echo strrev($user);
          $IUemail =$username.$emailend;
          $_SESSION["email"] = $IUemail;
@@ -146,6 +146,8 @@ if(!isset($_SESSION['CAS'])){
              echo "logged in";
              echo $IUemail;
          }
+         $_SESSION['authenticated']=true;
+
          //if (isset($_SESSION['userid'])){
          //   header("Location: calender.php");
        // };
