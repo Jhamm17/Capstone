@@ -43,7 +43,7 @@ body {
 
 /* Change text color to white */
 .profile h1, .profile h2, .profile p, .profile a {
-  color: #fff;
+  color: #990000;
 }
 
 /* Add borders to the profile information */
@@ -74,11 +74,11 @@ body {
 
 /* Style the edit profile link */
 .editprofilebutton{
-  color: #fff;
+  color: #990000;
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
-  border: 2px solid #fff;
+  border: 2px solid #990000;
   padding: 10px 20px;
   border-radius: 5px;
   display: inline-block;
