@@ -20,6 +20,7 @@
             <br>
             <br>
             <br>
+        <table>
             <?php
             $id = $_GET["id"];
             $db = mysqli_connect("db.luddy.indiana.edu","i494f22_samanort","my+sql=i494f22_samanort","i494f22_samanort") or die("Error connecting to MySQL server.");
@@ -30,10 +31,14 @@
             mysqli_query($db, $query) or die('Error querying database.');
             $result = mysqli_query($db, $query);
             echo "<h1>Team Roster</h1>";
+            echo "<tr><th>Player Name</th><th>Email</th></tr>";
             while($row=mysqli_fetch_array($result)){
-                echo 'Teamid' . $row["Team_id"] . '<br>';
-                echo 'Player email: ' . $row["email"] . '<br>';
+                echo '<tr>';
+                echo '<td>' . $row["Fname"] . "  " . $row["Lname"] . " </td> ";
+                echo '<td>' . $row["email"] . '</td>';
+                echo '</tr>'; 
             }
-        ?></center>
+        ?>
+        </table></center>
     </body>
 </html>

@@ -34,9 +34,7 @@
 
 <?php
 session_start();
-//if(!isset($_SESSION['CAS'])){
-  //  header('Location: home.html');
-//}
+
 $servername = "db.luddy.indiana.edu";
 $username = "i494f22_team36";
 $password = "my+sql=i494f22_team36";
@@ -110,7 +108,10 @@ if ($conn->connect_error) {
 //   //gets the username from the SESSION and assigns it to username.
 //   $username = $_SESSION['user'];
 //   $email_address = $_SESSION['email_address'];
-
+$_SESSION['CAS'] = false;
+if(!isset($_SESSION['CAS'])){
+    header('Location: calender.php');
+}
  if (isset($_GET["ticket"])){
      $tic = $_GET["ticket"];
      $request = "https://idp.login.iu.edu/idp/profile/cas/serviceValidate?ticket=" . $tic . "&service=https://cgi.luddy.indiana.edu/~team36/loign.php";
