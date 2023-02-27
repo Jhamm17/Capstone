@@ -29,6 +29,10 @@ if ($result->num_rows > 0) {
 } else {
   echo "0 results";
 }
+if (!$result) {
+  printf("Error: %s\n", mysqli_error($conn));
+  exit();
+}
 
 // $sql = "SELECT * FROM profile WHERE userid = $userid";
 // $result = $conn->query($sql);
@@ -50,7 +54,7 @@ if (isset($_POST["submit"])) {
   $grad = $_POST["grad"];
   $bio = $_POST["bio"];
 
-  $sql = "UPDATE profile SET FavTeam = '$favteam', FavSport = '$favsport', GradYear = '$grad', bio = '$bio' WHERE userid = $userid";
+  $sql = "UPDATE profile SET FavTeam = '$favteam', FavSport = '$favsport', GradYear = '$grad', bio = '$bio' WHERE email = $email";
 
   if ($conn->query($sql) === TRUE) {
     header("Location: profile2.php");
