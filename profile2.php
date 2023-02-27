@@ -11,6 +11,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
+$_SESSION['email'] = $IUemail;
 $sql = "SELECT * FROM user WHERE email = " . $_SESSION['email']; 
 $result = $conn->query($sql);
 

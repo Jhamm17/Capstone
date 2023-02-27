@@ -23,6 +23,7 @@
 </div>
     <br>
     <h3>Sign-Up</h3>
+    
     <form action="insert.php" method="POST">
         First Name: <input type="text" name="Fname" required><br>
         Last Name: <input type="text" name="Lname" required><br>
