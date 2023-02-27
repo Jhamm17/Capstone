@@ -24,10 +24,10 @@ body{
 
 
 .wrapper .right{
-    padding-top: 2em;
-  width: 65%;
+  width: 100%;
   background: #fff;
-  padding: 30px 25px;
+  padding-top: 300px;
+  /* padding: 30px 25px; */
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -75,7 +75,9 @@ body{
     background-color: #DC143C;
     overflow: hidden;
     padding:0;
-  }
+    position: relative;
+    z-index: 1;
+}
   
   /* Style the links inside the navigation bar */
   .topnav a {
@@ -99,3 +101,8 @@ body{
     height: 60px;
     padding: 0%;
   }
+  body {
+    background-color: #f3f3f3;
+    padding-top: 0px; /* adjust this value to create enough space for the navigation bar */
+ }
+ 

@@ -52,8 +52,7 @@ $conn->close();
   <link rel="stylesheet" href="css/porfiletest.css">
 	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
   
-  <body>
-  <div class="topnav"> 
+    <div class="topnav"> 
         <a href="home.html"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
         <a href="calendar.php">Calendar</a>
         <a href="chat.php">Chat</a> 
@@ -66,43 +65,44 @@ $conn->close();
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
 
     </div>
+    <body>
    
 <!-- https://7topics.com/creating-user-profile-page-using-php-and-mysql.html used to see how to properly echo onto page -->
-<div class="wrapper">
-    <div class="left">
-        <h4><?php echo $name ?></h4>
-    </div>
-    <div class="right">
-        <div class="info">
-            <h3>Information</h3>
-            <div class="info_data">
-                 <div class="data">
-                    <h4>Email</h4>
-                    <p><?php echo $email ?></p>
-                 </div>
-                 <div class="data">
-                   <h4>Graduation Year</h4>
-                    <p><?php echo $grad ?></p>
-              </div>
+        <div class="wrapper">
+            <div class="left">
+                <h4><?php echo $name ?></h4>
             </div>
-        </div>
-      
-      <div class="projects">
-            <h3>About Me</h3>
-            <div class="projects_data">
-                 <div class="data">
-                    <h4>Bio</h4>
-                    <p><?php echo $bio ?></p>
-                 </div>
-                 <div class="data">
-                   <h4>Favorite Team</h4>
-                    <p><?php echo $favteam ?></p>
-              </div>
-              <div class="data">
-                <h4>Favorite Sport</h4>
-                 <p><?php echo $favsport ?></p>
-           </div>
-            </div>
-        </div>
+            <div class="right">
+                <div class="info">
+                    <h3>Information</h3>
+                    <div class="info_data">
+                        <div class="data">
+                            <h4>Email</h4>
+                            <p><?php echo $email ?></p>
+                        </div>
+                        <div class="data">
+                        <h4>Graduation Year</h4>
+                            <p><?php echo $grad ?></p>
+                    </div>
+                    </div>
+                </div>
+            
+            <div class="projects">
+                    <h3>About Me</h3>
+                    <div class="projects_data">
+                        <div class="data">
+                            <h4>Bio</h4>
+                            <p><?php echo $bio ?></p>
+                        </div>
+                        <div class="data">
+                        <h4>Favorite Team</h4>
+                            <p><?php echo $favteam ?></p>
+                    </div>
+                    <div class="data">
+                        <h4>Favorite Sport</h4>
+                        <p><?php echo $favsport ?></p>
+                </div>
+                    </div>
+                </div>
   </body>
 </html>
