@@ -150,7 +150,8 @@ if(!isset($_SESSION['CAS'])){
 
 
              $_SESSION['userid'] = $qu;
-             header('Location: profile2.php');
+             echo $_SESSION['userid'];
+             //header('Location: profile2.php');
         
 
              //echo $IUemail;
