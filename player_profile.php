@@ -7,12 +7,13 @@ $db = mysqli_connect("db.luddy.indiana.edu","i494f22_samanort","my+sql=i494f22_s
 
 // Query the database for the player's information based on the email parameter
 $query = "SELECT * FROM Intramurals WHERE user_email = '$email'";
+$query = "SELECT * FROM user WHERE user_email = '$email'";
 $result = mysqli_query($db, $query) or die('Error querying database.');
 $row = mysqli_fetch_array($result);
 
 // Generate the HTML for the player's profile page
 echo "<h1>Player Profile</h1>";
-echo "<p><b>Name:</b> " . $row['player_name'] . "</p>";
+echo "<p><b>Name:</b> " . $row['Fname'] . "</p>";
 echo "<p><b>Email:</b> " . $row['user_email'] . "</p>";
 echo "<p><b>Preferred Sport:</b> " . $row['Preferred_sport'] . "</p>";
 echo "<p><b>On Team:</b> " . $row['On_team'] . "</p>";
