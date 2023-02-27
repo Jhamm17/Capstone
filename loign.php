@@ -17,7 +17,7 @@
         <a href="live.php">IU Live</a>   
         <a href="polls.php">Polls</a>
         <a href="profile2.php">Profile</a>
-        <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/loign.php">Log-In</a> 
+        <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/calender.php">Log-In</a> 
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
 
 </div>
@@ -44,7 +44,7 @@ function cas_authenticate(){
   
     $authenticated = $_SESSION['CAS'];
     //Make sure that your code redirects back to here or else you will get an error.
-    $casurl = "cgi.luddy.indiana.edu/~team36/loign.php";
+    $casurl = "cgi.luddy.indiana.edu/~team36/calender.php";
   
     //send user to CAS login if not authenticated
     if (!$authenticated) {
