@@ -14,10 +14,11 @@ if ($conn->connect_error) {
   }
 
 // Query the database for the player's information based on the email parameter
-$query = "SELECT Intramurals.user_email, Intramurals.Preferred_sport, Intramurals.On_team, CONCAT(Fname, ' ', Lname) AS full_name FROM user
+$query = "SELECT Intramurals.user_email, Intramurals.Preferred_sport, Intramurals.On_team, CONCAT(Fname, ' ', Lname) AS full_name 
           FROM Intramurals 
           JOIN user ON Intramurals.user_email = user.email
           WHERE Intramurals.user_email = '$email'";
+
 $result = mysqli_query($conn, $query) or die('Error querying database.');
 $row = mysqli_fetch_array($result);
 
