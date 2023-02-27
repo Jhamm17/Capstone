@@ -125,7 +125,7 @@ if(!isset($_SESSION['CAS'])){
      $node = $xpath->query("//cas:user");
      // office hours thursday with makejari
      if ($node->length){
-         $username=$node[0]->textContent;
+         $username=trim($node[0]->textContent);
         
          $_SESSION["username"] = $username;
          //echo $username;
