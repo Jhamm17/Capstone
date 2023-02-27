@@ -26,6 +26,7 @@ body{
 .wrapper .right{
   width: 100%;
   background: #fff;
+  padding-top: 300px;
   /* padding: 30px 25px; */
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
