@@ -137,7 +137,9 @@ if(!isset($_SESSION['CAS'])){
          //echo $IUemail;
         // echo $IUemail;
         // echo $IUemail;
-        $compare = "SELECT * FROM user WHERE email=" . "'" . $IUemail . "'";
+        $email = trim($_SESSION['email']);
+
+        $compare = "SELECT * FROM user WHERE email=" . "'" . $email . "'";
         $query = mysqli_query($conn,$compare);
          if (mysqli_num_rows($query == 0)){
              echo "fill out login first";
