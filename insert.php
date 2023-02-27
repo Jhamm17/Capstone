@@ -50,7 +50,7 @@ if(isset($_POST['login'] )){
          'email' => $email,
          'FavTeam' => $FavTeam,
          'FavSport' => $FavSport,
-         'GradYear' => $FavSport,
+         'GradYear' => $GradYear,
          'bio' => $bio
      ];
    //  $duplicate = "SELECT * FROM user where (email = '$email')";
