@@ -89,7 +89,7 @@
     // Execute the query
     $result = $conn->query($sql);
 
-    echo "<container class='wrapper'>";
+    echo "<div class='wrapper'>";
     // Check if the query returned any results
     if ($result->num_rows > 0) {
         // Loop through the result set and display each poll
