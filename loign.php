@@ -128,6 +128,10 @@ session_start();
          }else{
              echo "logged in";
          }
+         if (isset($_SESSION['userid'])){
+            header("Location: calender.php");
+        };
+        
 
      }
   
