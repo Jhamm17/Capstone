@@ -145,9 +145,13 @@ if(!isset($_SESSION['CAS'])){
              echo "fill out login first";
 
          }else{
-             header('Location: profile2.php');
              $userid = "SELECT userid FROM user WHERE email=" . "'" . $email . "'";
-             $_SESSION['userid'] = $userid;
+             $qu = mysqli_query($conn,$userid);
+
+
+             $_SESSION['userid'] = $qu;
+             header('Location: profile2.php');
+        
 
              //echo $IUemail;
          }
