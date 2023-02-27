@@ -7,7 +7,7 @@ $db = mysqli_connect("db.luddy.indiana.edu","i494f22_samanort","my+sql=i494f22_s
 
 // Query the database for the player's information based on the email parameter
 $query = "SELECT * FROM Intramurals WHERE user_email = '$email'";
-$query1 = "SELECT * FROM user WHERE email = '$email'";
+$query1 = "SELECT * FROM user WHERE user_email = '$email'";
 $result = mysqli_query($db, $query) or die('Error querying database.');
 $row = mysqli_fetch_array($result);
 
