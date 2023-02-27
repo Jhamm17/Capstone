@@ -10,7 +10,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM user WHERE userid = 1001"; 
+$sql = "SELECT * FROM user WHERE email = " . $_SESSION['email']; 
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -22,8 +22,10 @@ if ($result->num_rows > 0) {
   }
 } else {
   // Redirect the user to the login page or show an error message
-  header('Location: login.php');
-  exit();
+  // header('Location: loign.php');
+  // exit();
+  echo $_SESSION['email'];
+  echo $result;
 } //https://7topics.com/creating-user-profile-page-using-php-and-mysql.html was used as a refresher to see how to properly set up connections and see how to call each variable
 
 $sql = "SELECT * FROM profile WHERE userid = 1001"; 
