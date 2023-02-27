@@ -149,12 +149,12 @@ if(!isset($_SESSION['CAS'])){
              echo "fill out login first";
 
          }else{
-             $userid = "SELECT userid FROM user WHERE email=" . "'" . $email . "'";
-             $qu = mysqli_query($conn,$userid);
+            //  $userid = "SELECT userid FROM user WHERE email=" . "'" . $email . "'";
+            //  $qu = mysqli_query($conn,$userid);
+            Header('location:home.html')
 
-
-             $_SESSION['userid'] = $qu;
-             echo $_SESSION['userid'];
+            //  $_SESSION['userid'] = $qu;
+            //  echo $_SESSION['userid'];
              //header('Location: profile2.php');
         
 
