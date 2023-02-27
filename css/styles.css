@@ -28,34 +28,7 @@
   }
 
 
-  /* .info {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .descriptors {
-    font-weight: bold;
-    margin-right: 10px;
-  }
-  
-  .elements {
-    color: red;
-  } */
-/* 
-  .profile {
-    width: 500px;
-    margin: 0 auto;
-    text-align: center;
-  } */
-/*   
-  .profile {
-    width: 800px;
-    margin: 35px auto; 
-    border: 1px solid black;
-    padding: 50px;
-    background-color: white;
-} */
+
 
 /* Set background color to IU's crimson */
 body {
@@ -74,10 +47,11 @@ body {
 }
 
 /* Add borders to the profile information */
-.info {
-  border-bottom: 1px solid #fff;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
+.profile-box {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 /* Style the descriptors */
