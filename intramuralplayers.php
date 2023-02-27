@@ -24,16 +24,19 @@
                 if (mysqli_connect_errno()){
                     echo 'failed to connect to SQL';
                 }
-                $query1 = "SELECT * FROM Intramurals";
+                // $query1 = "SELECT * FROM Intramurals";
+                $query1 = "SELECT Preferred_sport, On_team, user_email, player_id, CONCAT('player_profile.php?email=', user_email) AS profile_url FROM Intramurals";
                 mysqli_query($db, $query1) or die('Error querying database.');
                 $result = mysqli_query($db, $query1);
                 $row = mysqli_fetch_array($result);
+
                 echo '<tr><th>Preferred Sport</th><th>On Team?</th><th>User Email</th><th>Player ID</th></tr>';
                 while($row = mysqli_fetch_array($result)){
                     echo "<tr>";
                     echo "<td>" . $row['Preferred_sport'] . "</td>";
                     echo "<td>" . $row['On_team'] . "</td>";
-                    echo "<td>" . $row['user_email'] . "</td>";
+                    // echo "<td>" . $row['user_email'] . "</td>";
+                    echo "<td><a href='" . $row['profile_url'] . "'>" . $row['user_email'] . "</a></td>";
                     echo "<td>" . $row['player_id'] . "</td>";
                     echo "</tr>";
                 }
