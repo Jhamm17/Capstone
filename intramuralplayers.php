@@ -36,7 +36,7 @@
                     echo "<td>" . $row['Preferred_sport'] . "</td>";
                     echo "<td>" . $row['On_team'] . "</td>";
                     // echo "<td>" . $row['user_email'] . "</td>";
-                    echo "<td><a href='" . $row['profile_url'] . "'>" . $row['user_email'] . "</a></td>";
+                    echo "<td><a href='" . $row['profile_url'] . "'>" . "Contact Me" . "</a></td>";
                     echo "<td>" . $row['player_id'] . "</td>";
                     echo "</tr>";
                 }
