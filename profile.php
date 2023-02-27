@@ -10,24 +10,17 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$userid = 1001;
-$sql = "SELECT * FROM user WHERE userid = $userid";
+// $userid = 1001;
+// $sql = "SELECT * FROM user WHERE userid = $userid";
+// $result = $conn->query($sql);
+$email = trim($_SESSION['email']);
+$sql = "SELECT * FROM user WHERE email = '$email'";
 $result = $conn->query($sql);
 //https://www.w3schools.com/php/func_mysqli_query.asp used to help gett proper setup
 if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
     $name = $row["Fname"];
     $email = $row["email"];
-  }
-} else {
-  echo "0 results";
-}
-
-$sql = "SELECT * FROM profile WHERE userid = $userid";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-  while($row = $result->fetch_assoc()) {
     $favteam = $row["FavTeam"];
     $favsport = $row["FavSport"];
     $grad = $row["GradYear"];
@@ -36,6 +29,20 @@ if ($result->num_rows > 0) {
 } else {
   echo "0 results";
 }
+
+// $sql = "SELECT * FROM profile WHERE userid = $userid";
+// $result = $conn->query($sql);
+
+// if ($result->num_rows > 0) {
+//   while($row = $result->fetch_assoc()) {
+//     $favteam = $row["FavTeam"];
+//     $favsport = $row["FavSport"];
+//     $grad = $row["GradYear"];
+//     $bio = $row["bio"];
+//   }
+// } else {
+//   echo "0 results";
+// }
 
 if (isset($_POST["submit"])) {
   $favteam = $_POST["favteam"];
