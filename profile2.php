@@ -66,7 +66,6 @@ $conn->close();
     <div class="profile">
       <div class="profile-box">
       <h1><?php echo $name ?>'s Profile</h1>
-      <h2>Contact Me</h2>
       <div class="info">
         <p class="descriptors">Email:</p>
         <p class="elements"><?php echo $email ?></p>
