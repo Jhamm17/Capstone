@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 //$_SESSION['email'] = $IUemail;
 // $sql = "SELECT * FROM user WHERE email = " . $_SESSION['email']; 
 // $result = $conn->query($sql);
-
+$sql = "SELECT * FROM user WHERE userid = "1001;
 if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
     $fname = $row["Fname"];
