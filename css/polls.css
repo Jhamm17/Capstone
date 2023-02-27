@@ -221,7 +221,7 @@ label .row .circle::after{
 }
 .poll-area label:hover .row .circle::after{
   display: block;
-  background: #e6e6e6;
+  background: crimson;
 }
 label.selected .row .circle::after{
   display: block;
