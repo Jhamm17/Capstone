@@ -2,7 +2,6 @@
 
 *{
   margin: 0;
-  padding-top: 3em;
   box-sizing: border-box;
   list-style: none;
   font-family: 'Josefin Sans', sans-serif;
@@ -25,9 +24,10 @@ body{
 
 
 .wrapper .right{
+    padding-top: 2em;
   width: 65%;
   background: #fff;
-  /* padding: 30px 25px; */
+  padding: 30px 25px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
