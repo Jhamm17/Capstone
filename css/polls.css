@@ -212,13 +212,13 @@ label .row .circle{
   position: relative;
 }
 label.selected .row .circle{
-  border-color: #6665ee;
+  border-color: crimson;
 }
 label .row .circle::after{
   content: "";
   height: 11px;
   width: 11px;
-  background: #6665ee;
+  background: crimson;
   border-radius: inherit;
   position: absolute;
   left: 2px;
@@ -260,7 +260,7 @@ label .progress:after{
   transition: all 0.2s ease;
 }
 label.selected .progress::after{
-  background: #6665ee;
+  background: crimson;
 }
 label.selectall .progress,
 label.selectall .row .percent{
