@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
   }
 } else {
   // Redirect the user to the login page or show an error message
-  header('Location: login.php');
+  header('Location: loign.php');
   exit();
 } //https://7topics.com/creating-user-profile-page-using-php-and-mysql.html was used as a refresher to see how to properly set up connections and see how to call each variable
 
