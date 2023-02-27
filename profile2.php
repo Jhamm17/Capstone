@@ -1,5 +1,4 @@
 <?php
-session_start();
 $servername = "db.luddy.indiana.edu";
 $username = "i494f22_team36";
 $password = "my+sql=i494f22_team36";
@@ -10,8 +9,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-//$_SESSION['email'] = $IUemail;
-$sql = "SELECT * FROM user WHERE email = " . $_SESSION['email']; 
+
+$sql = "SELECT * FROM user WHERE userid = 1001"; 
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -23,11 +22,11 @@ if ($result->num_rows > 0) {
   }
 } else {
   // Redirect the user to the login page or show an error message
-  header('Location: loign.php');
+  header('Location: login.php');
   exit();
 } //https://7topics.com/creating-user-profile-page-using-php-and-mysql.html was used as a refresher to see how to properly set up connections and see how to call each variable
 
-$sql = "SELECT * FROM profile WHERE email = " . $_SESSION['email']; 
+$sql = "SELECT * FROM profile WHERE userid = 1001"; 
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -41,7 +40,6 @@ if ($result->num_rows > 0) {
   echo "0 results";
 }
 
-
 $conn->close();
 ?>
 
@@ -49,9 +47,8 @@ $conn->close();
 <html>
     <head> 
     </head>
-  <link rel="stylesheet" href="css/porfiletest.css">
-	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-  
+  <link rel="stylesheet" href="css/styles.css">
+
   <body>
   <div class="topnav"> 
         <a href="home.html"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
@@ -66,43 +63,32 @@ $conn->close();
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
 
     </div>
-   
+    <div class="profile">
+      <h1><?php echo $name ?>'s Profile</h1>
+      <h2>Contact Me</h2>
+      <div class="info">
+        <p class="descriptors">Email:</p>
+        <p class="elements"><?php echo $email ?></p>
+      </div>
+      <div class="info">
+        <p class="descriptors">Graduation Year:</p>
+        <p class="elements"><?php echo $grad ?></p>
+      </div>
+      <div class="info">
+        <p class="descriptors">About Me:</p>
+        <p class="elements"><?php echo $bio ?></p>
+      </div>
+      <div class="info">
+        <p class="descriptors">Favorite Team:</p>
+        <p class="elements"><?php echo $favteam ?></p>
+      </div>
+      <div class="info">
+        <p class="descriptors">Favorite Sport: </p>
+        <p class="elements"><?php echo $favsport ?></p>
+      </div>
+      <a href="profile.php">Edit Profile</a>
+    </div> 
 <!-- https://7topics.com/creating-user-profile-page-using-php-and-mysql.html used to see how to properly echo onto page -->
-<div class="wrapper">
-    <div class="left">
-        <h4><?php echo $name ?></h4>
-    </div>
-    <div class="right">
-        <div class="info">
-            <h3>Information</h3>
-            <div class="info_data">
-                 <div class="data">
-                    <h4>Email</h4>
-                    <p><?php echo $email ?></p>
-                 </div>
-                 <div class="data">
-                   <h4>Graduation Year</h4>
-                    <p><?php echo $grad ?></p>
-              </div>
-            </div>
-        </div>
-      
-      <div class="projects">
-            <h3>About Me</h3>
-            <div class="projects_data">
-                 <div class="data">
-                    <h4>Bio</h4>
-                    <p><?php echo $bio ?></p>
-                 </div>
-                 <div class="data">
-                   <h4>Favorite Team</h4>
-                    <p><?php echo $favteam ?></p>
-              </div>
-              <div class="data">
-                <h4>Favorite Sport</h4>
-                 <p><?php echo $favsport ?></p>
-           </div>
-            </div>
-        </div>
+
   </body>
 </html>
