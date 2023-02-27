@@ -67,7 +67,6 @@ if(isset($_POST['login'] )){
     
 }   
 
-if
 mysqli_close($conn);
 
 
