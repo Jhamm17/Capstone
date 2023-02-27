@@ -29,6 +29,10 @@ if ($result->num_rows > 0) {
 } else {
   echo "0 results";
 }
+if (!$result) {
+  printf("Error: %s\n", mysqli_error($conn));
+  exit();
+}
 
 // $sql = "SELECT * FROM profile WHERE userid = $userid";
 // $result = $conn->query($sql);
@@ -50,7 +54,7 @@ if (isset($_POST["submit"])) {
   $grad = $_POST["grad"];
   $bio = $_POST["bio"];
 
-  $sql = "UPDATE profile SET FavTeam = '$favteam', FavSport = '$favsport', GradYear = '$grad', bio = '$bio' WHERE userid = $userid";
+  $sql = "UPDATE profile SET FavTeam = '$favteam', FavSport = '$favsport', GradYear = '$grad', bio = '$bio' WHERE email = $email";
 
   if ($conn->query($sql) === TRUE) {
     header("Location: profile2.php");
@@ -78,7 +82,7 @@ $conn->close();
         <a href="intramurals.php">Intramural Sports</a> 
         <a href="live.html">IU Live</a>   
         <a href="polls.php">Polls</a>
-        <a href="profile.php">Profile</a>
+        <a href="profile2.php">Profile</a>
         <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/loign.php">Log-In</a> 
     </div>
     <div class="profile">
