@@ -50,9 +50,9 @@
                     echo "<td>" . $row['On_team'] . "</td>";
                     echo "<td><a href='" . $row['profile_url'] . "'>" . "Profile" . "</a></td>";
                     echo "</tr>";
-}
+                }
 
-                mysqli_close($db);
+                mysqli_close($conn);
             ?>
         </table></center>
     </body>
