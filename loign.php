@@ -146,6 +146,9 @@ if(!isset($_SESSION['CAS'])){
 
          }else{
              echo "logged in, don't worry about sign-up form";
+             $userid = "SELECT userid FROM user WHERE email=" . "'" . $email . "'";
+             $_SESSION['userid'] = $userid;
+
              //echo $IUemail;
          }
          $_SESSION['authenticated']=true;
