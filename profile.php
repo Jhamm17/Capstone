@@ -75,6 +75,7 @@ $conn->close();
         <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/loign.php">Log-In</a> 
     </div>
     <div class="profile">
+    <div class="profile-box">
     <h1><?php echo $name ?>'s Profile</h1>
     <h2>Edit Your Profile</h2>
     <form action="profile.php" method="post">
@@ -92,5 +93,6 @@ $conn->close();
 
       <input type="submit" name="submit" value="Update Profile">
     </form>
+  </div>
   </div>
 </body>
