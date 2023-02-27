@@ -6,7 +6,7 @@
     <body>
         <div class="topnav"> 
             <a href="home.html"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
-            <a href="calender.php">Calendar</a>
+            <a href="calendar.php">Calendar</a>
             <a href="chat.php">Chat</a> 
             <a href="community.php">Community</a> 
             <a href="intramurals.php">Intramural Sports</a> 

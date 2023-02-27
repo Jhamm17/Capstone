@@ -33,3 +33,8 @@
         </div>
     </body>
 </html>
+
+<?php
+if(!$_SESSION['authenticated']){
+    header('Location: loign.php');
+}
