@@ -24,7 +24,7 @@
 
     </div>
 <form method="post" action="Page2.php">
-Send user a message: <input type="textarea" name="input" />
+Send user a message: <input type="textarea" name="message" />
 <input type="submit" value="Send" /> <br/> <br/> 
 </form>
 <iframe src="Page1.php" width="450" height="200" scrolling="yes">

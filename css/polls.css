@@ -46,6 +46,7 @@ body{
     flex-direction: row;
     justify-content: center;
     margin-top: 45px;
+    padding-bottom: 30px;
 }
 
 .polls-title-h1 {
@@ -158,6 +159,11 @@ body{
   color: #fff;
   background: #6665ee;
 }
+
+.poll-content {
+  margin-top: 30px;
+}
+
 .wrapper{
   background: #fff;
   border-radius: 15px;
@@ -206,13 +212,13 @@ label .row .circle{
   position: relative;
 }
 label.selected .row .circle{
-  border-color: #6665ee;
+  border-color: crimson;
 }
 label .row .circle::after{
   content: "";
   height: 11px;
   width: 11px;
-  background: #6665ee;
+  background: crimson;
   border-radius: inherit;
   position: absolute;
   left: 2px;
@@ -254,7 +260,7 @@ label .progress:after{
   transition: all 0.2s ease;
 }
 label.selected .progress::after{
-  background: #6665ee;
+  background: crimson;
 }
 label.selectall .progress,
 label.selectall .row .percent{

@@ -1,4 +1,5 @@
 <?php
+session_start(),
 $servername = "db.luddy.indiana.edu";
 $username = "i494f22_team36";
 $password = "my+sql=i494f22_team36";
@@ -58,6 +59,7 @@ if(isset($_POST['login'] )){
     
 }   
 
+if
 mysqli_close($conn);
 
 

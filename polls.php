@@ -28,24 +28,11 @@
     </div>
 
     <container class="polls-title">
-        <div class="dropdown">
-            <button class="dropbtn">Sports</button>
-            <div class="dropdown-content">
-                <a href="#">Football</a>
-                <a href="#">Women's Basketball</a>
-                <a href="#">Men's Basketball</a>
-                <a href="#">Volleyball</a>
-                <a href="#">Soccer</a>
-            </div>
-        </div>
         <div>
             <h1 class="polls-title-h1"> Polls </h1>
         </div>
-        <div>
-            <button class="leaderboard"> Leaderboard </button>
-        </div>
     </container>
-    <container>
+    <container class="polls-content">
     <?php
 
     session_start();
