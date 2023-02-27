@@ -86,7 +86,7 @@ $conn->close();
         <p class="descriptors">Favorite Sport: </p>
         <p class="elements"><?php echo $favsport ?></p>
       </div>
-      <a href="profile.php">Edit Profile</a>
+      <a class="editprofilebutton" href="profile.php">Edit Profile</a>
     </div> 
 <!-- https://7topics.com/creating-user-profile-page-using-php-and-mysql.html used to see how to properly echo onto page -->
 

@@ -27,9 +27,6 @@
     padding: 0%;
   }
 
-  body{
-    background-color: #FFFDD0;
-  }
 
   /* .info {
     display: flex;
@@ -102,7 +99,7 @@ body {
 }
 
 /* Style the edit profile link */
-a {
+.editprofilebutton{
   color: #fff;
   font-weight: bold;
   text-transform: uppercase;
@@ -115,7 +112,7 @@ a {
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-a:hover {
+.editprofilebutton:hover {
   background-color: #fff;
   color: #990000;
 }
