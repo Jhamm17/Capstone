@@ -38,7 +38,7 @@ if ($result->num_rows > 0) {
 //     $bio = $row["bio"];
 //   }
 } else {
-  echo "0 results";
+  printf("Error: %s\n", mysqli_error($conn));
 }
 if (!$result) {
   printf("Error: %s\n", mysqli_error($conn));
