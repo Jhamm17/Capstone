@@ -133,7 +133,7 @@ if(!isset($_SESSION['CAS'])){
          //$user = substr($file,0,-50);
          //echo strrev($user);
          $IUemail =$username.$emailend;
-         $_SESSION["email"] = $IUemail;
+         $_SESSION["email"] = trim($IUemail);
          //echo $IUemail;
         // echo $IUemail;
         // echo $IUemail;

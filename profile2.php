@@ -26,6 +26,8 @@ if ($result->num_rows > 0) {
   // header('Location: loign.php');
   // exit();
   echo $_SESSION['email'];
+  echo strlen($_SESSION['email']);
+  echo strlen($query);
   echo $result;
 } //https://7topics.com/creating-user-profile-page-using-php-and-mysql.html was used as a refresher to see how to properly set up connections and see how to call each variable
 
