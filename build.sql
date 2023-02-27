@@ -195,11 +195,11 @@ INSERT INTO privateEvent VALUES
 (807, 'Catch with football', 2023, 05, 31);
 
 INSERT INTO Intramurals VALUES
-( 'Basketball', 'N', 'jsmith@iu.edu',1001), 
-( 'Football', 'Y', 'hjohns@iu.edu', 1002), 
-( 'Volleyball', 'N', 'rands@iu.edu',1003),
-( 'Basketball','N', 'norths@iu.edu',1004),
-( 'Badminton', 'N', 'pharold@iu.edu', 1005);
+( 'Basketball', 'N', 'jfox12@iu.edu',1001), 
+( 'Football', 'Y', 'jmess@iu.edu', 1002), 
+( 'Volleyball', 'N', 'tham@iu.edu',1003),
+( 'Basketball','N', 'IsaiahQ@iu.edu',1004),
+( 'Badminton', 'N', 'HankLi33@iu.edu', 1005);
 
 INSERT INTO polls VALUES  
 (501, 'Indiana Hoosiers', 'Illinois Orangmen', 'Basketball', 68, 57, 102, 103, 205),
