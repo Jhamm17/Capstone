@@ -143,8 +143,8 @@ if(!isset($_SESSION['CAS'])){
              echo "fill out login first";
 
          }else{
-             echo "logged in";
-             echo $IUemail;
+             echo "logged in, don't worry about sign-up form";
+             //echo $IUemail;
          }
          $_SESSION['authenticated']=true;
 
