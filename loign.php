@@ -34,6 +34,9 @@
 
 <?php
 session_start();
+if(!isset($_SESSION['CAS'])){
+    header('Location: cgi.luddy.indiana.edu/~team36/home.html')
+}
 $servername = "db.luddy.indiana.edu";
 $username = "i494f22_team36";
 $password = "my+sql=i494f22_team36";
@@ -126,6 +129,7 @@ if ($conn->connect_error) {
          //echo $username;
          $emailend ='@iu.edu';
          //$user = substr($file,0,-50);
+         $_SESSION['authenticated']=true;
          //echo strrev($user);
          $IUemail =$username.$emailend;
          $_SESSION["email"] = $IUemail;
