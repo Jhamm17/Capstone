@@ -47,13 +47,16 @@ body {
 }
 
 /* Add borders to the profile information */
+/* Add borders to the profile information */
 .profile-box {
   background-color: #990000;
   padding: 20px;
   border-radius: 5px;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
   width: 50%;
+  text-align: center;
 }
+
 
 /* Style the descriptors */
 .descriptors {
