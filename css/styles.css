@@ -84,7 +84,7 @@
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
-    border: 2px solid #fff;
+    border: 2px solid #990000;
     padding: 10px 20px;
     border-radius: 5px;
     display: inline-block;
@@ -93,8 +93,8 @@
   }
   
   .editprofilebutton:hover {
-    background-color: #fff;
-    color: #990000;
+    background-color: #990000;
+    color: black;
   }
   
   
