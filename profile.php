@@ -21,7 +21,6 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   while($row = $result->fetch_assoc()) {
     $name = $row["Fname"];
-    $email = $row["email"];
     $favteam = $row["FavTeam"];
     $favsport = $row["FavSport"];
     $grad = $row["GradYear"];
