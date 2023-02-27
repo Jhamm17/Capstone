@@ -17,7 +17,7 @@
         <a href="live.php">IU Live</a>   
         <a href="polls.php">Polls</a>
         <a href="profile2.php">Profile</a>
-        <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/calender.php">Log-In</a> 
+        <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/loign.php">Log-In</a> 
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
 
 </div>
@@ -44,7 +44,7 @@ function cas_authenticate(){
   
     $authenticated = $_SESSION['CAS'];
     //Make sure that your code redirects back to here or else you will get an error.
-    $casurl = "cgi.luddy.indiana.edu/~team36/calender.php";
+    $casurl = "cgi.luddy.indiana.edu/~team36/loign.php";
   
     //send user to CAS login if not authenticated
     if (!$authenticated) {
@@ -56,12 +56,12 @@ function cas_authenticate(){
     }
   
     if ($authenticated) {
-      if (isset($_GET["casticket"])) {
+      if (isset($_GET["ticket"])) {
         //set up validation URL to ask CAS if ticket is good
         $_url = 'https://cas.iu.edu/cas/validate';
         $cassvc = 'IU';
   
-        $params = "cassvc=$cassvc&casticket=$_GET[casticket]&casurl=$casurl";
+        $params = "cassvc=$cassvc&casticket=$_GET[ticket]&casurl=$casurl";
         $urlNew = "$_url?$params";
   
         //CAS sending response on 2 lines. First line contains "yes" or "no". If "yes", second line contains username (otherwise, it is empty).
