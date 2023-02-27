@@ -28,6 +28,10 @@
         First Name: <input type="text" name="Fname" required><br>
         Last Name: <input type="text" name="Lname" required><br>
         email: <input type="text" name="email" required><br>
+        Favorite Team:<input type="text" name="FavTeam" required><br>
+        Favorite Sport:<input type="text" name="FavSport" required><br>
+        Graduation Year (Please Enter #):<input type="text" name="GradYear" required><br>
+        Biography:<input type="text" name="bio" required><br>
         <button type="submit" name="login">submit</button>
     </form>
     <!-- parsing examples and help with part three of itp found here: https://code.tutsplus.com/tutorials/how-to-parse-json-in-php--cms-36994 -->
