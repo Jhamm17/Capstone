@@ -39,8 +39,10 @@ $query = "SELECT Intramurals.user_email, Intramurals.Preferred_sport, Intramural
     echo "0 results";
     }
     ?>
+    <link rel="stylesheet" href="css/styles.css">
+<body>
     <div class="profile">
-      <h1><?php echo $name ?>'s Profile</h1>
+      <h1><?php echo $full_name ?>'s Profile</h1>
       <h2>Contact Me</h2>
       <div class="info">
         <p class="descriptors">Email:</p>
@@ -64,3 +66,4 @@ $query = "SELECT Intramurals.user_email, Intramurals.Preferred_sport, Intramural
       </div>
       <a href="profile.php">Edit Profile</a>
     </div> 
+</body>
