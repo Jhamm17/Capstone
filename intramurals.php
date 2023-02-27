@@ -38,3 +38,4 @@
 if(!$_SESSION['authenticated']){
     header('Location: loign.php');
 }
+?>
