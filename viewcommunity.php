@@ -20,21 +20,26 @@
             <br>
             <br>
             <br>
+        <table>
             <?php
             $id = $_GET["id"];
             $db = mysqli_connect("db.luddy.indiana.edu","i494f22_samanort","my+sql=i494f22_samanort","i494f22_samanort") or die("Error connecting to MySQL server.");
             if (mysqli_connect_errno()){
                 echo 'failed to connect to SQL';
             }
-            $query = "SELECT * FROM community WHERE comm_id='$id'";
+            $query = "SELECT * FROM community INNER JOIN community_people ON community.comm_id=community_people.Comm_id INNER JOIN user ON user.userid=community_people.Person_id WHERE community.comm_id='$id'";
             mysqli_query($db, $query) or die('Error querying database.');
             $result = mysqli_query($db, $query);
+            echo "<h1>People within the Community</h1>";
+            echo "<tr><th>Name</th><th>Email</th></tr>";
             while($row=mysqli_fetch_array($result)){
-                echo 'Name: ' . $row["comm_name"] . '<br>';
-                echo 'Bio: ' . $row["comm_bio"] . '<br>';
-                echo 'Subject: ' . $row["comm_subject"] . '<br>';
+                echo '<tr>';
+                echo '<td>' .  $row["Fname"] . '  ' . $row["Lname"] . '</td>';
+                echo '<td>' . $row["email"] . '</td>';
+                echo '</tr>';
             }
-        ?></center>
+        ?>
+        </table></center>
         <center><button>Request to Join!</button></center>
     </body>
 </html>

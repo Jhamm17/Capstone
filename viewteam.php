@@ -19,6 +19,14 @@
             <center>
             <br>
             <br>
+            <?php
+                $id = $_GET["id"];
+                $new_query = "SELECT * FROM Teams WHERE Team_id='$id'";
+                $result3 = mysqli_query($db, $new_query);
+                while($row=mysqli_fetch_array($result3)){
+                    echo 'Team Name: ' . $row["team_name"] . '<br>';
+                }
+            ?>
             <br>
         <table>
             <?php
