@@ -145,7 +145,7 @@ if(!isset($_SESSION['CAS'])){
              echo "fill out login first";
 
          }else{
-             echo "logged in, don't worry about sign-up form";
+             header('Location: profile2.php');
              $userid = "SELECT userid FROM user WHERE email=" . "'" . $email . "'";
              $_SESSION['userid'] = $userid;
 
