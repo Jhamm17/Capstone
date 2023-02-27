@@ -145,7 +145,15 @@ if(!isset($_SESSION['CAS'])){
              echo "fill out login first";
 
          }else{
-             echo "logged in, don't worry about sign-up form";
+             $userid = "SELECT userid FROM user WHERE email=" . "'" . $email . "'";
+             $qu = mysqli_query($conn,$userid);
+
+
+             $_SESSION['userid'] = $qu;
+             echo $_SESSION['userid'];
+             //header('Location: profile2.php');
+        
+
              //echo $IUemail;
          }
          $_SESSION['authenticated']=true;
