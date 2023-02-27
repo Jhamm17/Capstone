@@ -14,7 +14,7 @@ if ($conn->connect_error) {
   }
 
 // Query the database for the player's information based on the email parameter
-$query = "SELECT Intramurals.user_email, Intramurals.Preferred_sport, Intramurals.On_team, user.Fname 
+$query = "SELECT Intramurals.user_email, Intramurals.Preferred_sport, Intramurals.On_team, CONCAT(Fname, ' ', Lname) AS full_name FROM user
           FROM Intramurals 
           JOIN user ON Intramurals.user_email = user.email
           WHERE Intramurals.user_email = '$email'";
@@ -23,7 +23,7 @@ $row = mysqli_fetch_array($result);
 
 // Generate the HTML for the player's profile page
 echo "<h1>Player Profile</h1>";
-echo "<p><b>Name:</b> " . $row['Fname'] . "</p>";
+echo "<p><b>Name:</b> " . $row['full_name'] . "</p>";
 echo "<p><b>Email:</b> " . $row['user_email'] . "</p>";
 echo "<p><b>Preferred Sport:</b> " . $row['Preferred_sport'] . "</p>";
 echo "<p><b>On Team:</b> " . $row['On_team'] . "</p>";
