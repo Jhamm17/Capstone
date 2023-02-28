@@ -55,7 +55,7 @@
     // Check if the form has been submitted
     if (isset($_POST["submit"])) {
         // Check if the user has already voted for this poll
-        $user_id = $_SESSION["user_id"];
+        // $user_id = $_SESSION["user_id"];
         $email = trim($_SESSION['email']);
         $poll_id = $_POST["poll_id"];
         $sql = "SELECT * FROM poll_responses WHERE poll_id = $poll_id";
