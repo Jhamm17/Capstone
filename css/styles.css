@@ -103,7 +103,8 @@
   .descript{
     font-size: 20px;
     color:#990000;
-    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
     text-align: center;
   }
   
