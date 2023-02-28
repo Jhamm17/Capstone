@@ -252,21 +252,24 @@ CREATE TABLE poll_responses (
     id INT AUTO_INCREMENT PRIMARY KEY,
     poll_id INT NOT NULL,
     answer VARCHAR(255) NOT NULL,
+    user_id INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES user(userid),
     FOREIGN KEY (poll_id) REFERENCES polls(id)
 );
 
+
 INSERT INTO polls VALUES  
-(2001,'Poll 1', 'Rutgers Scarlett Knights', 'Indiana Hoosiers'),
-(2002,'Poll 2', 'Michigan Wolverines', 'Michigan State Spartans'),
-(2003,'Poll 3', 'Wisconsin Badgers', 'Iowa Hawkeyes'),
-(2004,'Poll 4', 'Purdue Boilermakers', 'Nebraska Cornhuskers'),
-(2005,'Poll 5', 'Kansas Jayhawks', 'Oklahoma Sooners'),
-(2006,'Poll 6', 'Auburn Tigers', 'LSU Tigers');
+(1,'Poll 1', 'Rutgers Scarlett Knights', 'Indiana Hoosiers'),
+(2,'Poll 2', 'Michigan Wolverines', 'Michigan State Spartans'),
+(3,'Poll 3', 'Wisconsin Badgers', 'Iowa Hawkeyes'),
+(4,'Poll 4', 'Purdue Boilermakers', 'Nebraska Cornhuskers'),
+(5,'Poll 5', 'Kansas Jayhawks', 'Oklahoma Sooners'),
+(6,'Poll 6', 'Auburn Tigers', 'LSU Tigers');
 
 INSERT INTO poll_responses VALUES
-(2001, 1, ''),
-(2002,2, ''),
-(2003, 3, ''),
-(2004, 4, ''),
-(2005, 5, ''),
-(2006, 6, '');
+(1, 1, 'Indiana Hoosiers', 1009),
+(2,2, 'Michigan Wolverines', 1006),
+(3, 3, 'Iowa Hawkeyes', 1005),
+(4, 4, 'Purdue Boilermakers', 1004),
+(5, 5, 'Kansas Jayhawks', 1011),
+(6, 6, 'LSU Tigers', 1011);

@@ -54,23 +54,28 @@
 
     // Check if the form has been submitted
     if (isset($_POST["submit"])) {
-        // Check if the user has already voted
-        if (!isset($_SESSION["voted"])) {
+        // Check if the user has already voted for this poll
+        $user_id = $_SESSION["user_id"];
+        $poll_id = $_POST["poll_id"];
+        $sql = "SELECT * FROM poll_responses WHERE user_id = $user_id AND poll_id = $poll_id";
+
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            echo "You have already voted in this poll.";
+        } else {
             // Store the user's response in the database
-            $poll_id = $_POST["poll_id"];
             $answer = $_POST["answer"];
-            $sql = "INSERT INTO poll_responses (poll_id, answer) VALUES ($poll_id, '$answer')";
+            $sql = "INSERT INTO poll_responses (user_id, poll_id, answer) VALUES ($user_id, $poll_id, '$answer')";
 
             if ($conn->query($sql) === TRUE) {
-                $_SESSION["voted"] = true;
                 echo "Your vote has been recorded. Thank you for participating!";
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }
-        } else {
-            echo "You have already voted.";
         }
     }
+
 
     // Define the query to retrieve 6 polls from the database
     $sql = "SELECT * FROM polls LIMIT 6";
