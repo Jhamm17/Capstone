@@ -67,7 +67,7 @@
             echo "You have already voted in this poll.";
         } else {
             // Store the user's response in the database
-            $answer = $_POST["answer"];
+            $answer = $_POST["answer_$poll_id"];
             $sql = "INSERT INTO poll_responses (user_id, poll_id, answer) VALUES ($user_id, $poll_id, '$answer')";
 
             if ($conn->query($sql) === TRUE) {
@@ -102,7 +102,7 @@
 
             $percent_total = ($answer_1_count + $answer_2_count);
             $percent1 = (($answer_1_count / $percent_total) * 100);
-            $percent2 = (($answer_1_count / $percent_total) * 100);
+            $percent2 = (($answer_2_count / $percent_total) * 100);
             $percent1_answer = (round($percent1));
             $percent2_answer = (round($percent2));
 

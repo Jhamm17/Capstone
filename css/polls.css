@@ -8,13 +8,13 @@
 
 body{
   min-height: 100vh;
-  background: crimson;
+  background:#DC143C
 }
 
 /* Nav */
 
 .topnav {
-    background-color: #DC143C;
+    background-color: #990000;
     overflow: hidden;
 }
  
