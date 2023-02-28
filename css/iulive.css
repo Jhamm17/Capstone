@@ -110,3 +110,8 @@ body{
       border-radius: 40px;
       width: 350px;
   }
+
+  table {
+    border: 1px, solid, #990000;
+    border-collapse: collapse;
+  }
