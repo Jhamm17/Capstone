@@ -113,7 +113,7 @@
   }
   
   .box:not(:last-child) {
-    margin-right: 20px; /* add a margin-right to all boxes except the last one */
+    margin-right: 2px; /* add a margin-right to all boxes except the last one */
   }
   
   .box img {
