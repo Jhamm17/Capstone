@@ -42,6 +42,6 @@ if ($result->num_rows > 0) {
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
 </div>
 <body>
-  <h2> Welcome <?php echo $name ?> to Social Sports! </h2>
+  <h2> Welcome <?php echo $name ?> to  Sports Social! </h2>
 </body>
 </html>
