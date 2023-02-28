@@ -59,7 +59,7 @@
         $email = trim($_SESSION['email']);
         $poll_id = $_POST["poll_id"];
         $sql = "SELECT * FROM poll_responses WHERE poll_id = $poll_id";
-        $sql = "SELECT userid FROM user WHERE email = $email";
+        $sql .= " AND user_id = $user_id";
 
         $result = $conn->query($sql);
 

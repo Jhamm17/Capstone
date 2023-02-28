@@ -117,6 +117,7 @@ $_SESSION['CAS'] = false;
 if(!isset($_SESSION['CAS'])){
     header('Location: calender.php');
 }
+
  if (isset($_GET["ticket"])){
      $tic = $_GET["ticket"];
      $request = "https://idp.login.iu.edu/idp/profile/cas/serviceValidate?ticket=" . $tic . "&service=https://cgi.luddy.indiana.edu/~team36/loign.php";
@@ -160,6 +161,10 @@ if(!isset($_SESSION['CAS'])){
 
              //echo $IUemail;
          }
+         if (mysqli_num_rows($query) == 1) {
+            $row = mysqli_fetch_assoc($query);
+            $_SESSION['user_id'] = $row['userid'];
+        }
          $_SESSION['authenticated']=true;
 
          //if (isset($_SESSION['userid'])){
