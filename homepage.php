@@ -26,6 +26,7 @@ if ($result->num_rows > 0) {
     $name = $fname . ' ' . $lname;
     $email = $row["email"];
   }
+}
 ?>
 <link rel="stylesheet" href="css/styles.css">
 <div class="topnav"> 
@@ -42,6 +43,5 @@ if ($result->num_rows > 0) {
 </div>
 <body>
   <h2> Welcome <?php echo $name ?> to Social Sports! </h2>
-    
 </body>
 </html>
