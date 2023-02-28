@@ -99,4 +99,19 @@
   .welcometext {
     text-align: center; 
   }
+  .container2 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .box {
+    width: calc(33.33% - 10px); /* 10px is the total margin */
+    margin-bottom: 20px;
+  }
+  
+  .box img {
+    max-width: 100%;
+  }
+  
   
