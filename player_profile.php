@@ -77,7 +77,7 @@ $query = "SELECT Intramurals.user_email, Intramurals.Preferred_sport, Intramural
         <p class="descriptors">Favorite Sport: </p>
         <p class="elements"><?php echo $FavSport ?></p>
       </div>
-      <a class="editprofilebutton" href="intramuralpayers.php">Return to Player Search</a>
+      <a class="editprofilebutton" href="intramuralplayers.php">Return to Player Search</a>
     </div> 
     </div> 
 </body>
