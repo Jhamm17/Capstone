@@ -137,9 +137,6 @@
         echo "No polls found.";
     }
     echo "</div>";
-    echo "<p>Just for Demo Day</p>";
-    echo "<div>IU Votes: ('.$answer_1_result.')</div>";
-    echo "<div>Percent of Total Votes: ('.$percent1_answer.')</div>";
     // Close the database connection
     $conn->close();
     ?>
