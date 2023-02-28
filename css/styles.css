@@ -106,8 +106,9 @@
   }
   
   .box {
-    width: calc(33.33% - 10px); /* 10px is the total margin */
+    width: calc(30.33% - 10px); /* 10px is the total margin */
     margin-bottom: 20px;
+    padding: 20px; 
   }
   
   .box img {
