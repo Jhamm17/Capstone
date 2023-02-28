@@ -25,15 +25,15 @@ $query = "SELECT Intramurals.user_email, Intramurals.Preferred_sport, Intramural
 
     // Then, retrieve the user profile information based on user ID
     $userid = $row['userid'];
-    $sql = "SELECT * FROM profile WHERE userid = '$userid'"; 
+    $sql = "SELECT * FROM user WHERE userid = '$userid'"; 
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-    while($row_profile = $result->fetch_assoc()) {
-        $favteam = $row_profile["FavTeam"];
-        $favsport = $row_profile["FavSport"];
-        $grad = $row_profile["GradYear"];
-        $bio = $row_profile["bio"];
+    while($row_user= $result->fetch_assoc()) {
+        $FavTeam = $row_user["FavTeam"];
+        $FavSport = $row_user["FavSport"];
+        $grad = $row_user["GradYear"];
+        $bio = $row_user["bio"];
     }
     } else {
     echo "0 results";
@@ -71,13 +71,13 @@ $query = "SELECT Intramurals.user_email, Intramurals.Preferred_sport, Intramural
       </div>
       <div class="info">
         <p class="descriptors">Favorite Team:</p>
-        <p class="elements"><?php echo $favteam ?></p>
+        <p class="elements"><?php echo $FavTeam ?></p>
       </div>
       <div class="info">
         <p class="descriptors">Favorite Sport: </p>
-        <p class="elements"><?php echo $favsport ?></p>
+        <p class="elements"><?php echo $FavSport ?></p>
       </div>
-      <a class="editprofilebutton" href="intramuralpayers.php">Return to Player Search</a>
+      <a class="editprofilebutton" href="intramuralplayers.php">Return to Player Search</a>
     </div> 
     </div> 
 </body>
