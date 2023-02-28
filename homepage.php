@@ -29,7 +29,7 @@ if ($result->num_rows > 0) {
 ?>
 <link rel="stylesheet" href="css/styles.css">
 <div class="topnav"> 
-        <a href="home.php"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
+        <a href="homepage.php"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
         <a href="calendar.php">Calendar</a>
         <a href="chat.php">Chat</a> 
         <a href="community.php">Community</a> 
