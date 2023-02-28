@@ -156,17 +156,16 @@ INSERT INTO user VALUES
 -- ('Baseball', 'Chicago Cubs', 2024, 'Cubs fan, from Chicago, looking for people to come to a few games this spring.', 1008);
 
 
-INSERT INTO calendar VALUES
-(701, 'Baseball game', 2023, 02, 21),
-(702, 'Men Basketball game', 2023, 02, 27),
-(703, 'Women Basketball game', 2023, 03, 16),
-(704, 'Men Baseball game', 2023, 04, 03),
-(705, 'Softball game', 2023, 04, 05),
-(706, 'Men Baseball game', 2023, 04, 30),
-(707, 'Softball game', 2023, 05, 31);
+
 
 INSERT INTO calendar VALUES 
-(701,'IU Basketball', '2023-02-15 20:00:00', '2023-02-15 22:00:00', 'Indiana takes on NorthWestern');
+(701,'IU Basketball', '2023-02-15 20:00:00', '2023-02-15 22:00:00', 'Indiana takes on Northwestern.'),
+(702,'IU Baseball', '2023-02-27 10:00:00', '2023-02-27 17:00:00', 'Indiana baseball challenges Auburn in a double-header.'),
+(703,'IU Basketball', '2023-02-25 21:00:00', '2023-02-25 23:00:00', 'Indiana takes on Purdue in a rivarly match-up.'),
+(704,"IU Women's Basketball", '2023-02-19 20:00:00', '2023-02-19 22:00:00', "Indiana Women's takes on Iowa in a must win game."),
+(705,'IU Baseball', '2023-03-01 18:00:00', '2023-02-18 22:00:00', 'Indiana baseball hopes to improve their record against Iowa.'),
+(706,'IU Basketball', '2023-02-28 20:00:00', '2023-02-15 22:00:00', 'Indiana basketball hopes to continue their hot streak at home agaisnt the Hawkeyes of Iowa.'),
+(707,"IU Women's Basketball", '2023-03-04 10:00:00', '2023-03-04 12:00:00', "Indiana Women's basketball starts their hope to win a BigTen tournament as a #1 seed.");
 
 INSERT INTO privateEvent VALUES
 (801, 'Watch Party', 2023, 02, 21),
@@ -253,21 +252,24 @@ CREATE TABLE poll_responses (
     id INT AUTO_INCREMENT PRIMARY KEY,
     poll_id INT NOT NULL,
     answer VARCHAR(255) NOT NULL,
+    user_id INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES user(userid),
     FOREIGN KEY (poll_id) REFERENCES polls(id)
 );
 
+
 INSERT INTO polls VALUES  
-(2001,'Poll 1', 'Rutgers Scarlett Knights', 'Indiana Hoosiers'),
-(2002,'Poll 2', 'Michigan Wolverines', 'Michigan State Spartans'),
-(2003,'Poll 3', 'Wisconsin Badgers', 'Iowa Hawkeyes'),
-(2004,'Poll 4', 'Purdue Boilermakers', 'Nebraska Cornhuskers'),
-(2005,'Poll 5', 'Kansas Jayhawks', 'Oklahoma Sooners'),
-(2006,'Poll 6', 'Auburn Tigers', 'LSU Tigers');
+(1,'Poll 1', 'Rutgers Scarlett Knights', 'Indiana Hoosiers'),
+(2,'Poll 2', 'Michigan Wolverines', 'Michigan State Spartans'),
+(3,'Poll 3', 'Wisconsin Badgers', 'Iowa Hawkeyes'),
+(4,'Poll 4', 'Purdue Boilermakers', 'Nebraska Cornhuskers'),
+(5,'Poll 5', 'Kansas Jayhawks', 'Oklahoma Sooners'),
+(6,'Poll 6', 'Auburn Tigers', 'LSU Tigers');
 
 INSERT INTO poll_responses VALUES
-(2001, 1, ''),
-(2002,2, ''),
-(2003, 3, ''),
-(2004, 4, ''),
-(2005, 5, ''),
-(2006, 6, '');
+(1, 1, 'Indiana Hoosiers', 1009),
+(2,2, 'Michigan Wolverines', 1006),
+(3, 3, 'Iowa Hawkeyes', 1005),
+(4, 4, 'Purdue Boilermakers', 1004),
+(5, 5, 'Kansas Jayhawks', 1011),
+(6, 6, 'LSU Tigers', 1011);

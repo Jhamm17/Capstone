@@ -11,10 +11,12 @@
      <script src="https://kit.fontawesome.com/bf37eaf948.js" crossorigin="anonymous"></script>
     <!-- custom styles -->
     <link rel="stylesheet" type="text/css" href="css/polls.css">
+    <!-- Link to JavaScript -->
+    <script src="main.js"></script>
 </head>
 <body>
     <div class="topnav"> 
-        <a href="home.html"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
+        <a href="homepage.php"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
         <a href="calendar.php">Calendar</a>
         <a href="chat.php">Chat</a> 
         <a href="community.php">Community</a> 
@@ -52,23 +54,30 @@
 
     // Check if the form has been submitted
     if (isset($_POST["submit"])) {
-        // Check if the user has already voted
-        if (!isset($_SESSION["voted"])) {
+        // Check if the user has already voted for this poll
+        $user_id = $_SESSION['user_id'];
+        $email = trim($_SESSION['email']);
+        $poll_id = $_POST["poll_id"];
+        $sql = "SELECT * FROM poll_responses WHERE poll_id = $poll_id";
+        $sql .= " AND user_id = $user_id";
+
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            echo "You have already voted in this poll.";
+        } else {
             // Store the user's response in the database
-            $poll_id = $_POST["poll_id"];
             $answer = $_POST["answer"];
-            $sql = "INSERT INTO poll_responses (poll_id, answer) VALUES ($poll_id, '$answer')";
+            $sql = "INSERT INTO poll_responses (user_id, poll_id, answer) VALUES ($user_id, $poll_id, '$answer')";
 
             if ($conn->query($sql) === TRUE) {
-                $_SESSION["voted"] = true;
                 echo "Your vote has been recorded. Thank you for participating!";
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }
-        } else {
-            echo "You have already voted.";
         }
     }
+
 
     // Define the query to retrieve 6 polls from the database
     $sql = "SELECT * FROM polls LIMIT 6";
@@ -134,6 +143,5 @@
 
 
 </container>
-<script src="main.js"></script>
 </body>
 </html>
