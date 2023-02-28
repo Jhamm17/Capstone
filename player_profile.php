@@ -71,11 +71,11 @@ $query = "SELECT Intramurals.user_email, Intramurals.Preferred_sport, Intramural
       </div>
       <div class="info">
         <p class="descriptors">Favorite Team:</p>
-        <p class="elements"><?php echo $favteam ?></p>
+        <p class="elements"><?php echo $FavTeam ?></p>
       </div>
       <div class="info">
         <p class="descriptors">Favorite Sport: </p>
-        <p class="elements"><?php echo $favsport ?></p>
+        <p class="elements"><?php echo $FavSport ?></p>
       </div>
       <a class="editprofilebutton" href="intramuralpayers.php">Return to Player Search</a>
     </div> 
