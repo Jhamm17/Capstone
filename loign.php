@@ -28,15 +28,17 @@
         First Name: <input type="text" name="Fname" required><br>
         Last Name: <input type="text" name="Lname" required><br>
         email: <input type="text" name="email" required><br>
+        Favorite Team:<input type="text" name="FavTeam" required><br>
+        Favorite Sport:<input type="text" name="FavSport" required><br>
+        Graduation Year (Please Enter #):<input type="text" name="GradYear" required><br>
+        Biography:<input type="text" name="bio" required><br>
         <button type="submit" name="login">submit</button>
     </form>
     <!-- parsing examples and help with part three of itp found here: https://code.tutsplus.com/tutorials/how-to-parse-json-in-php--cms-36994 -->
 
 <?php
 session_start();
-//if(!isset($_SESSION['CAS'])){
-  //  header('Location: home.html');
-//}
+
 $servername = "db.luddy.indiana.edu";
 $username = "i494f22_team36";
 $password = "my+sql=i494f22_team36";
@@ -111,6 +113,10 @@ if ($conn->connect_error) {
 //   $username = $_SESSION['user'];
 //   $email_address = $_SESSION['email_address'];
 
+$_SESSION['CAS'] = false;
+if(!isset($_SESSION['CAS'])){
+    header('Location: calender.php');
+}
  if (isset($_GET["ticket"])){
      $tic = $_GET["ticket"];
      $request = "https://idp.login.iu.edu/idp/profile/cas/serviceValidate?ticket=" . $tic . "&service=https://cgi.luddy.indiana.edu/~team36/loign.php";
@@ -123,28 +129,39 @@ if ($conn->connect_error) {
      $node = $xpath->query("//cas:user");
      // office hours thursday with makejari
      if ($node->length){
-         $username=$node[0]->textContent;
+         $username=trim($node[0]->textContent);
         
          $_SESSION["username"] = $username;
          //echo $username;
-         $emailend ='@iu.edu';
+         $emailend =trim('@iu.edu');
          //$user = substr($file,0,-50);
-         $_SESSION['authenticated']=true;
          //echo strrev($user);
          $IUemail =$username.$emailend;
-         $_SESSION["email"] = $IUemail;
+         $_SESSION["email"] = trim($IUemail);
          //echo $IUemail;
         // echo $IUemail;
         // echo $IUemail;
-        $compare = "SELECT * FROM user WHERE email=" . "'" . $IUemail . "'";
+        $email = trim($_SESSION['email']);
+
+        $compare = "SELECT * FROM user WHERE email=" . "'" . $email . "'";
         $query = mysqli_query($conn,$compare);
-         if (mysqli_num_rows($query == 0)){
+         if (mysqli_num_rows($query) == 0){
              echo "fill out login first";
 
          }else{
-             echo "logged in";
-             echo $IUemail;
+            //  $userid = "SELECT userid FROM user WHERE email=" . "'" . $email . "'";
+            //  $qu = mysqli_query($conn,$userid);
+            header("Location: home.html");
+
+            //  $_SESSION['userid'] = $qu;
+            //  echo $_SESSION['userid'];
+             //header('Location: profile2.php');
+        
+
+             //echo $IUemail;
          }
+         $_SESSION['authenticated']=true;
+
          //if (isset($_SESSION['userid'])){
          //   header("Location: calender.php");
        // };

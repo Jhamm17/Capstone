@@ -1,5 +1,5 @@
 <?php
-session_start(),
+
 $servername = "db.luddy.indiana.edu";
 $username = "i494f22_team36";
 $password = "my+sql=i494f22_team36";
@@ -10,45 +10,31 @@ if (!$conn){
 }
 
 if(isset($_POST['login'] )){
-   // $fname = test_input($_POST["Fname"]);
-   // if (!preg_match("/^[a-zA-Z-' ]*$/",$fname)) {
-    //  $fnameErr = "Only letters and white space allowed";
-    //  echo $fnameErr;
-    //  $flag = 0;
-   // }    h
-   // echo '<br>';
-  //  $lname = test_input($_POST["Lname"]);
-   // if (!preg_match("/^[a-zA-Z-' ]*$/",$lname)) {
-     // $lnameErr = "Only letters and white space allowed";
-     // echo $lnameErr;
-    //  $flag = 0;
-   // }
-   // echo '<br>';
+
     $flag = 1;
 
     $fname = $_POST["Fname"];
     $lname = $_POST["Lname"];
     $email = $_POST["email"];
-   // $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-
-
-   // if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    //  $emailErr = "Invalid email format";
-    //  echo $emailErr;
-    //  $flag = 0;
-
- 
-    //}
+    $FavTeam = $_POST["FavTeam"];
+    $FavSport = $_POST["FavSport"];
+    $GradYear = $_POST["GradYear"];
+    $bio = $_POST["bio"];
+   
     //https://www.w3schools.com/php/php_form_url_email.asp
      $login_data = [
          'Fname' => $fname,
          'Lname' => $lname,
          'email' => $email,
+         'FavTeam' => $FavTeam,
+         'FavSport' => $FavSport,
+         'GradYear' => $GradYear,
+         'bio' => $bio,
      ];
    //  $duplicate = "SELECT * FROM user where (email = '$email')";
     // $dupe = mysqli_query($duplicate);
     //https://stackoverflow.com/questions/7719039/check-for-duplicates-before-inserting
-         $sql = "INSERT INTO user (Fname, Lname, email) VALUES ('$fname','$lname','$email')";
+         $sql = "INSERT INTO user (Fname, Lname, email, FavTeam, FavSport, GradYear, bio) VALUES ('$fname','$lname','$email','$FavTeam','$FavSport','$GradYear','$bio')";
          if (mysqli_query($conn,$sql)) {
       
              echo "1 record added";
@@ -59,7 +45,6 @@ if(isset($_POST['login'] )){
     
 }   
 
-if
 mysqli_close($conn);
 
 

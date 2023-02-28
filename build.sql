@@ -3,25 +3,22 @@ userid INT AUTO_INCREMENT NOT NULL,
 Fname VARCHAR(50) NOT NULL,
 Lname VARCHAR(50) NOT NULL,
 email VARCHAR(50) NOT NULL,
-PRIMARY KEY (userid)
-) ENGINE=INNODB;
-
-create table user_table (
-userid INT AUTO_INCREMENT NOT NULL,
-Fname VARCHAR(50) NOT NULL,
-Lname VARCHAR(50) NOT NULL,
-email VARCHAR(50) NOT NULL,
-PRIMARY KEY (userid)
-) ENGINE=INNODB;
-
-create table profile (
 FavSport VARCHAR(50),
 FavTeam VARCHAR(50),
 GradYear INT(4),
 bio VARCHAR(200),
-userid INT NOT NULL,
-FOREIGN KEY (userid) REFERENCES user(userid)
-) ENGINE=INNODB; 
+PRIMARY KEY (userid)
+) ENGINE=INNODB;
+
+
+-- create table profile (
+-- FavSport VARCHAR(50),
+-- FavTeam VARCHAR(50),
+-- GradYear INT(4),
+-- bio VARCHAR(200),
+-- userid INT NOT NULL,
+-- FOREIGN KEY (userid) REFERENCES user(userid)
+-- ) ENGINE=INNODB; 
 
 create table room (
 id INT NOT NULL AUTO_INCREMENT,
@@ -139,39 +136,25 @@ PRIMARY KEY (GameID)
 
 
 INSERT INTO user VALUES 
-(1001, 'Jess', 'Foxworthy', 'jfox12@iu.edu', 'FoxSox12'),
-(1002, 'James', 'Messer', 'jmess@iu.edu', 'reasd221'),
-(1003, 'Taylor', 'Ham', 'tham@iu.edu', 'Hamm123'),
-(1004, 'Isaiah', 'Quinn', 'IsaiahQ@iu.edu', 'OSUrocks2023'),
-(1005, 'Hank', 'Lights', 'HankLi33@iu.edu', 'LightsOUT3'),
-(1006, 'Zack', 'Klao', 'Klaoz@iu.edu', 'terrrpppps12'),
-(1007, 'Luke', 'Fields', 'Lfields@iu.edu', 'FlukeyLukey23'),
-(1008, 'Frank', 'Tank', 'frtank@iu.edu', 'tanks2023');
+(1001, 'Jess', 'Foxworthy', 'jfox12@iu.edu', 'Basketball', 'Indiana Pacers', 2023, 'A basketball fanatic that is looking for teammates to play.'),
+(1002, 'James', 'Messer', 'jmess@iu.edu', 'Baseball', 'Chicago Cubs', 2025, 'I love the cubs and also sometimes watch the bears.'),
+(1003, 'Taylor', 'Ham', 'tham@iu.edu','Lacrosse', 'Duke University', 2025, 'Looking for people to throw the lax ball with.'),
+(1004, 'Isaiah', 'Quinn', 'IsaiahQ@iu.edu', 'Football', 'Chicago Bears', 2024, 'Want to watch the bears win the superbowl with  some other bears fans this year.'),
+(1005, 'Hank', 'Lights', 'HankLi33@iu.edu', 'Soccer', 'USA Soccer', 2026, 'Trying to find players for a soccer team.'),
+(1006, 'Zack', 'Klao', 'Klaoz@iu.edu','Basketball', 'Lakers', 2024, 'Informatics major who wants to become more active.'),
+(1007, 'Luke', 'Fields', 'Lfields@iu.edu','Softball', 'Sparks', 2023, 'I love playing softball, but cannot find people to play with.'),
+(1008, 'Frank', 'Tank', 'frtank@iu.edu','Baseball', 'Chicago Cubs', 2024, 'Cubs fan, from Chicago, looking for people to come to a few games this spring.');
 
-INSERT INTO profile VALUES 
-('Basketball', 'Indiana Pacers', 2023, 'A basketball fanatic that is looking for teammates to play.', 1001),
-( 'Baseball', 'Chicago Cubs', 2025, 'I love the cubs and also sometimes watch the bears.', 1002),
-('Lacrosse', 'Duke University', 2025, 'Looking for people to throw the lax ball with.', 1003),
-('Football', 'Chicago Bears', 2024, 'Want to watch the bears win the superbowl with  some other bears fans this year.', 1004),
-('Soccer', 'USA Soccer', 2026, 'Trying to find players for a soccer team.', 1005),
-('Basketball', 'Lakers', 2024, 'Informatics major who wants to become more active.', 1006),
-('Softball', 'Sparks', 2023, 'I love playing softball, but cannot find people to play with.', 1007),
-('Baseball', 'Chicago Cubs', 2024, 'Cubs fan, from Chicago, looking for people to come to a few games this spring..', 1008);
+-- INSERT INTO profile VALUES 
+-- ('Basketball', 'Indiana Pacers', 2023, 'A basketball fanatic that is looking for teammates to play.', 1001),
+-- ( 'Baseball', 'Chicago Cubs', 2025, 'I love the cubs and also sometimes watch the bears.', 1002),
+-- ('Lacrosse', 'Duke University', 2025, 'Looking for people to throw the lax ball with.', 1003),
+-- ('Football', 'Chicago Bears', 2024, 'Want to watch the bears win the superbowl with  some other bears fans this year.', 1004),
+-- ('Soccer', 'USA Soccer', 2026, 'Trying to find players for a soccer team.', 1005),
+-- ('Basketball', 'Lakers', 2024, 'Informatics major who wants to become more active.', 1006),
+-- ('Softball', 'Sparks', 2023, 'I love playing softball, but cannot find people to play with.', 1007),
+-- ('Baseball', 'Chicago Cubs', 2024, 'Cubs fan, from Chicago, looking for people to come to a few games this spring.', 1008);
 
-INSERT INTO room VALUES 
-(601,'workout partner'),
-(602,'');
-
-INSERT INTO participants VALUES 
-(901, 1001, 601),
-(902, 1002, 601),
-(903,1001, 602),
-(904, 1003, 602);
-
-INSERT INTO chatMessage VALUES
-(2001,'lets go workout',1001, 601),
-(2002,'bet leaving in 5',1002, 601),
-(2003,'bett',1001, 601);
 
 INSERT INTO calendar VALUES
 (701, 'Baseball game', 2023, 02, 21),
@@ -274,17 +257,17 @@ CREATE TABLE poll_responses (
 );
 
 INSERT INTO polls VALUES  
-('Poll 1', 'Rutgers Scarlett Knights', 'Indiana Hoosiers'),
-('Poll 2', 'Michigan Wolverines', 'Michigan State Spartans'),
-('Poll 3', 'Wisconsin Badgers', 'Iowa Hawkeyes'),
-('Poll 4', 'Purdue Boilermakers', 'Nebraska Cornhuskers'),
-('Poll 5', 'Kansas Jayhawks', 'Oklahoma Sooners'),
-('Poll 6', 'Auburn Tigers', 'LSU Tigers');
+(2001,'Poll 1', 'Rutgers Scarlett Knights', 'Indiana Hoosiers'),
+(2002,'Poll 2', 'Michigan Wolverines', 'Michigan State Spartans'),
+(2003,'Poll 3', 'Wisconsin Badgers', 'Iowa Hawkeyes'),
+(2004,'Poll 4', 'Purdue Boilermakers', 'Nebraska Cornhuskers'),
+(2005,'Poll 5', 'Kansas Jayhawks', 'Oklahoma Sooners'),
+(2006,'Poll 6', 'Auburn Tigers', 'LSU Tigers');
 
 INSERT INTO poll_responses VALUES
-(1, '')
-(2, '')
-(3, '')
-(4, '')
-(5, '')
-(6, '')
+(2001, 1, ''),
+(2002,2, ''),
+(2003, 3, ''),
+(2004, 4, ''),
+(2005, 5, ''),
+(2006, 6, '');

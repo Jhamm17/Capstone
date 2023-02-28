@@ -55,6 +55,7 @@ $query = "SELECT Intramurals.user_email, Intramurals.Preferred_sport, Intramural
 
 </div>
     <div class="profile">
+      <div class="profile-box">
       <h1><?php echo $row['full_name'] ?>'s Profile</h1>
       <div class="info">
         <p class="descriptors">Email:</p>
@@ -76,6 +77,7 @@ $query = "SELECT Intramurals.user_email, Intramurals.Preferred_sport, Intramural
         <p class="descriptors">Favorite Sport: </p>
         <p class="elements"><?php echo $favsport ?></p>
       </div>
-      <a href="intramuralplayers.php">Return to Player Search</a>
+      <a class="editprofilebutton" href="intramuralpayers.php">Return to Player Search</a>
+    </div> 
     </div> 
 </body>
