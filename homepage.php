@@ -48,26 +48,7 @@ if ($result->num_rows > 0) {
 <div class="welcometext">
 <h2> Welcome <?php echo $name ?> to  Sports Social! </h2>
 </div>
-<div class="container2">
-  <div class="box">
-    <img src="Images/calendar.png">
-  </div>
-  <div class="box">
-    <img src="Images/calendar.png">
-  </div>
-  <div class="box">
-    <img src="Images/calendar.png">
-  </div>
-  <div class="box">
-    <img src="Images/calendar.png">
-  </div>
-  <div class="box">
-    <img src="Images/calendar.png">
-  </div>
-  <div class="box">
-    <img src="Images/calendar.png">
-  </div>
-</div>
+
 
 </body>
 </html>

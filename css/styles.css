@@ -100,29 +100,6 @@
     text-align: center; 
   }
 
-  .container2 {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding-top: 3rem;
-  }
-  
-  .box {
-    width: calc(30.33% - 8px);
-    margin-bottom: 30px;
-    padding: 0; /* remove padding */
-  }
-  
-  .box:not(:last-child) {
-    margin-right: 2px; /* add a margin-right to all boxes except the last one */
-  }
-  
-  .box img {
-    max-width: 100%;
-    display: block; /* make the image a block element */
-    margin: auto; /* center the image horizontally */
-  }
-  
   
   
   
