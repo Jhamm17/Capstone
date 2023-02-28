@@ -107,7 +107,7 @@
   
   .box {
     width: calc(25% - 10px); /* 10px is the total margin */
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding: 10px; 
   }
   
