@@ -30,7 +30,7 @@
             <input type="submit" value="submit" name="submit">
         </form></center>
         <?php 
-            $db = mysqli_connect("db.luddy.indiana.edu","i494f22_samanort","my+sql=i494f22_samanort","i494f22_samanort") or die("Error connecting to MySQL server.");
+            $db = mysqli_connect("db.luddy.indiana.edu","i494f22_team36","my+sql=i494f22_team36","i494f22_team36") or die("Error connecting to MySQL server.");
             if(isset($_POST['submit'])){
                 $commname = $_REQUEST["commname"];
                 $commsub = $_REQUEST["commsub"];
