@@ -39,7 +39,7 @@
             <h1 class="polls-title-h1"> IU Live </h1>
         </div>
         <div>
-            <button onclick="polls.php" class="leaderboard"> Vote Who Will Win </button>
+            <button onclick="window.location.href=polls.php" class="leaderboard"> Vote Who Will Win </button>
         </div>
     </container>
 
