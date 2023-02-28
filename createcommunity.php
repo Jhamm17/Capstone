@@ -18,15 +18,15 @@
         <center><h1>Create a Community!<h1></center>
         <center><form name="commcreate" method="POST" action="">
             <label for="commname">Community Name</label>
-            <input type="text" name="commname"></input><br>
+            <input type="text" name="commname"></input><br><br>
             <label for="commsub">Subject</label>
-            <input type="text" name="commsub"></input><br>
+            <input type="text" name="commsub"></input><br><br>
             <label for="commbio">Bio</label>
-            <input type="text" name="commbio"></input>
+            <input type="text" name="commbio"></input><br><br>
             <label for="commprivacy">Privacy</label>
             <select name="commprivacy" id="commprivacy">
                 <option value="private">Private</option>
-                <option value="public">Public</option><br>
+                <option value="public">Public</option><br><br>
             <input type="submit" value="submit" name="submit">
         </form></center>
         <?php 

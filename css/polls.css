@@ -157,7 +157,7 @@ body{
 
 ::selection{
   color: #fff;
-  background: #6665ee;
+  background: crimson;
 }
 
 .poll-content {
@@ -169,6 +169,7 @@ body{
   border-radius: 15px;
   padding: 25px;
   max-width: 680px;
+  margin-left: 300px;
   width: 100%;
   box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
 }
@@ -191,7 +192,7 @@ body{
   border-color: crimson;
 }
 label.selected{
-  border-color: #6665ee!important;
+  border-color: crimson;
 }
 label .row{
   display: flex;
@@ -231,7 +232,7 @@ label .row .circle::after{
 }
 label.selected .row .circle::after{
   display: block;
-  background: #6665ee!important;
+  background: crimson;
 }
 label .row span{
   font-size: 16px;

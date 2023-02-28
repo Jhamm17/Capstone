@@ -21,7 +21,7 @@
         <center>
             <table class="tabledesign">
                 <?php
-                    $db = mysqli_connect("db.luddy.indiana.edu","i494f22_samanort","my+sql=i494f22_samanort","i494f22_samanort") or die("Error connecting to MySQL server.");
+                    $db = mysqli_connect("db.luddy.indiana.edu","i494f22_team36","my+sql=i494f22_team36","i494f22_team36") or die("Error connecting to MySQL server.");
                     if (mysqli_connect_errno()){
                         echo 'failed to connect to SQL';
                     }
@@ -35,7 +35,7 @@
                         echo "<td>" . $row['comm_name'] . "</td></a>";
                         echo "<td>" . $row['comm_subject'] . "</td>";
                         echo "<td>" . $row['comm_bio'] . "</td>";
-                        echo "<td><a href=\"viewcommunity.php?id=" . $row['comm_id'] . "\">Request to Join</a></td>";
+                        echo "<td><a href=\"viewcommunity.php?id=" . $row['comm_id'] . "\">Join</a></td>";
                         echo "</tr>";
                     }
                 ?>
