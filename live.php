@@ -69,7 +69,7 @@
         // Check if there are any rows in the result set
         if (mysqli_num_rows($result) > 0) {
             // Output the data in a table
-            echo "<table>";
+            echo "<table class="tabledesign">";
             echo "<tr><th>Team 1</th><th>Score</th><th>Team 2</th><th>Time</th><th>Date</th><th>Team 1 Record</th><th>Team 1 Conference Record</th><th>Team 2 Conference Record</th><th>Team 2 Record</th><th>Period</th><th>Channel</th></tr>";
             while ($row = mysqli_fetch_assoc($result)) {
                 echo "<tr>";

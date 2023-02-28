@@ -111,6 +111,10 @@ body{
       width: 350px;
   }
 
-  table {
+  table tr td {
     border: 3px, solid, #990000;
   }
+
+.tabledesign {
+    border: 3px, solid, #990000;
+}
