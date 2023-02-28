@@ -58,7 +58,7 @@
         $user_id = $_SESSION["user_id"];
         $poll_id = $_POST["poll_id"];
         $sql = "SELECT * FROM poll_responses WHERE poll_id = $poll_id";
-        $sql = "SELECT userid FROM user WHERE userid = "$user_id";
+        $sql = "SELECT userid FROM user WHERE userid = $user_id";
 
         $result = $conn->query($sql);
 
