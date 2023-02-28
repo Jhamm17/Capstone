@@ -11,6 +11,8 @@
      <script src="https://kit.fontawesome.com/bf37eaf948.js" crossorigin="anonymous"></script>
     <!-- custom styles -->
     <link rel="stylesheet" type="text/css" href="css/polls.css">
+    <!-- Link to JavaScript -->
+    <script src="main.js"></script>
 </head>
 <body>
     <div class="topnav"> 
@@ -134,6 +136,5 @@
 
 
 </container>
-<script src="main.js"></script>
 </body>
 </html>
