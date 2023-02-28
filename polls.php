@@ -116,7 +116,7 @@
                     echo "</div>";
                     echo "<span class='percent'>(" . $percent1_answer . ")%</span>";
                     echo "</div>";
-                    echo "<div class='progress' style='--w:" . $percent2_answer . ";'></div>";
+                    echo "<div class='progress' style='--w:" . $percent1_answer . ";'></div>";
                 echo "</label>";
                 echo "<input type='checkbox' name='answer' id='opt-2' value='" . $row["answer_2"] . "'>";
                 echo "<label for='opt-2' class='opt-2'>";
@@ -137,6 +137,9 @@
         echo "No polls found.";
     }
     echo "</div>";
+    echo "<p>Just for Demo Day</p>"
+    echo "<div>IU Votes: (' . $answer_1_count . ')</div>"
+    echo "<div>Percent of Total Votes: (' . $percent1_answer . ')</div>"
     // Close the database connection
     $conn->close();
     ?>
