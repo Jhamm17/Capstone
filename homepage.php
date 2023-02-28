@@ -48,6 +48,7 @@ if ($result->num_rows > 0) {
 <div class="welcometext">
 <h2> Welcome <?php echo $name ?> to  Sports Social! </h2>
 </div>
+</div>
 <div class="descript">
   <p>Sport's Social is a website aimed to help Indiana University 
     students connect through sports. Whether that be watching, playing, or just talking about them this is the place where you can find it all!</p>
