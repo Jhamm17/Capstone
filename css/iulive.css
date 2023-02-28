@@ -98,3 +98,15 @@ body{
   .dropdown:hover .dropbtn {
     background-color: rgba(220, 20, 60, 0.85);
   }
+
+  .leaderboard {
+    margin-top: 15px;
+      background-color: white;
+      color: black;
+      padding: 16px;
+      font-size: 24px;
+      border: solid 2px crimson;
+      cursor: pointer;
+      border-radius: 40px;
+      width: 350px;
+  }
