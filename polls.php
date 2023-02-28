@@ -53,28 +53,29 @@
     } 
 
     // Check if the form has been submitted
-    if (isset($_POST["submit"])) {
-        // Check if the user has already voted for this poll
-        // $user_id = $_SESSION["user_id"];
-        $email = trim($_SESSION['email']);
-        $poll_id = $_POST["poll_id"];
-        $sql = "SELECT * FROM poll_responses WHERE poll_id = $poll_id";
-        $sql = "SELECT userid FROM user WHERE email = $email";
-
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            echo "You have already voted in this poll.";
+    $email = trim($_SESSION['email']);
+    $poll_id = $_POST["poll_id"];
+    
+    // Retrieve the user ID using the user's email
+    $user_id_sql = "SELECT userid FROM user WHERE email = '$email'";
+    $user_id_result = $conn->query($user_id_sql);
+    $user_id = $user_id_result->fetch_row()[0];
+    
+    // Check if the user has already voted in the poll
+    $poll_response_sql = "SELECT * FROM poll_responses WHERE poll_id = $poll_id AND user_id = $user_id";
+    $poll_response_result = $conn->query($poll_response_sql);
+    
+    if ($poll_response_result->num_rows > 0) {
+        echo "You have already voted in this poll.";
+    } else {
+        // Store the user's response in the database
+        $answer = $_POST["answer"];
+        $insert_sql = "INSERT INTO poll_responses (user_id, poll_id, answer) VALUES ($user_id, $poll_id, '$answer')";
+    
+        if ($conn->query($insert_sql) === TRUE) {
+            echo "Your vote has been recorded. Thank you for participating!";
         } else {
-            // Store the user's response in the database
-            $answer = $_POST["answer"];
-            $sql = "INSERT INTO poll_responses (user_id, poll_id, answer) VALUES ($user_id, $poll_id, '$answer')";
-
-            if ($conn->query($sql) === TRUE) {
-                echo "Your vote has been recorded. Thank you for participating!";
-            } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
-            }
+            echo "Error: " . $insert_sql . "<br>" . $conn->error;
         }
     }
 
