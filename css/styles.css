@@ -108,7 +108,7 @@
   .box {
     width: calc(25% - 10px); /* 10px is the total margin */
     margin-bottom: 20px;
-    padding: 20px; 
+    padding: 10px; 
   }
   
   .box img {
