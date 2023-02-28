@@ -66,11 +66,16 @@
 
         // Check if there are any rows in the result set
         if (mysqli_num_rows($result) > 0) {
-            // Output the data for each row
+            // Output the data in a table
+            echo "<table>";
+            echo "<tr><th>Team 1</th><th>Score</th><th>Team 2</th><th>Time</th><th>Date</th><th>Team 1 Record</th><th>Team 1 Conference Record</th><th>Team 2 Conference Record</th><th>Team 2 Record</th><th>Period</th><th>Channel</th></tr>";
             while ($row = mysqli_fetch_assoc($result)) {
-                echo "Team 1: " . $row["Team1Name"] . " Score: " . $row["GameScore"] . " Team 2: " . $row["Team2Name"] . " Time: " . $row["GameTime"] . " Date: " . $row["GameDate"];
-                echo "Record: " . $row["Team1Record"] . " Conference: " . $row["Team1ConferenceRecord"] . "   " . " Conference: " . $row["Team2ConferenceRecord"] . " Record: " . $row["Team2Record"] . " Period: " . $row["GamePeriod"] . " Channel: " . $row["GameChannel"] . "<br>";
+                echo "<tr>";
+                echo "<td>" . $row["Team1Name"] . "</td><td>" . $row["GameScore"] . "</td><td>" . $row["Team2Name"] . "</td><td>" . $row["GameTime"] . "</td><td>" . $row["GameDate"] . "</td>";
+                echo "<td>" . $row["Team1Record"] . "</td><td>" . $row["Team1ConferenceRecord"] . "</td><td>" . $row["Team2ConferenceRecord"] . "</td><td>" . $row["Team2Record"] . "</td><td>" . $row["GamePeriod"] . "</td><td>" . $row["GameChannel"] . "</td>";
+                echo "</tr>";
             }
+            echo "</table>";
         } else {
             echo "No football game information found in the database.";
         }
