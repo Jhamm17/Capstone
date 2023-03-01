@@ -68,7 +68,7 @@
         } else {
             // Store the user's response in the database
             $poll_id = $_POST["poll_id"];
-            $answer = $_POST["answer"]
+            $answer = $_POST["answer"];
             $sql = "INSERT INTO poll_responses (user_id, poll_id, answer) VALUES ($user_id, $poll_id, '$answer')";
 
 
