@@ -68,7 +68,8 @@
         } else {
             // Store the user's response in the database
             $poll_id = $_POST["answer_$poll_id"];
-            $sql = "INSERT INTO poll_responses (user_id, poll_id, answer) VALUES ($user_id, $poll_id, '$answer')";
+            $sql = "INSERT INTO poll_responses (user_id, poll_id, answer) VALUES ($user_id, $poll_id, '".$_POST["answer_$poll_id"]."')";
+
 
             if ($conn->query($sql) === TRUE) {
                 echo "Your vote has been recorded. Thank you for participating!";
