@@ -130,7 +130,7 @@
                     echo "<div class='progress' style='--w:" . $percent2_answer . ";'></div>";
                 echo "</label>";
                 echo "<input type='hidden' name='poll_id' value='" . $row["id"] . "'>";
-                echo "<input type='submit' name='submit' value='Vote'>";
+                echo "<input type='submit' name='submit' value='Vote' class='vote-button'>";
             echo "</form>";
         }
     } else {
