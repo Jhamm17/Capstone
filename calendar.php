@@ -113,7 +113,7 @@ if(!isset($_SESSION['CAS'])){
          }else{
             //  $userid = "SELECT userid FROM user WHERE email=" . "'" . $email . "'";
             //  $qu = mysqli_query($conn,$userid);
-            header("Location: homepage.php");
+            header("Location: calendar.php");
 
 
 
