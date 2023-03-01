@@ -62,13 +62,58 @@
 </html>
 <?php
 session_start();
-if(!$_SESSION['authenticated']){
-    header('Location: loign.php');
+
+$servername = "db.luddy.indiana.edu";
+$username = "i494f22_team36";
+$password = "my+sql=i494f22_team36";
+$dbname = "i494f22_team36";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
 }
-  else{
-    header('Location: calendar.php');
-  }
-?>
+
+$_SESSION['CAS'] = false;
+if(!isset($_SESSION['CAS'])){
+    header('Location: calender.php');
+}
+
+ if (isset($_GET["ticket"])){
+     $tic = $_GET["ticket"];
+     $request = "https://idp.login.iu.edu/idp/profile/cas/serviceValidate?ticket=" . $tic . "&service=https://cgi.luddy.indiana.edu/~team36/loign.php";
+     $file = file_get_contents($request);
+    // echo $file;
+     //var_dump($file);
+     $dom = new DomDocument();
+     $dom->loadXML($file);
+     $xpath = new DomXPath($dom);
+     $node = $xpath->query("//cas:user");
+     // office hours thursday with makejari
+     if ($node->length){
+         $username=trim($node[0]->textContent);
+        
+         $_SESSION["username"] = $username;
+         //echo $username;
+         $emailend =trim('@iu.edu');
+         //$user = substr($file,0,-50);
+         //echo strrev($user);
+         $IUemail =$username.$emailend;
+         $_SESSION["email"] = trim($IUemail);
+         //echo $IUemail;
+        // echo $IUemail;
+        // echo $IUemail;
+        $email = trim($_SESSION['email']);
+
+        $compare = "SELECT * FROM user WHERE email=" . "'" . $email . "'";
+        $query = mysqli_query($conn,$compare);
+         if (mysqli_num_rows($query) == 0){
+             echo "fill out login first";
+
+         }else{
+            //  $userid = "SELECT userid FROM user WHERE email=" . "'" . $email . "'";
+            //  $qu = mysqli_query($conn,$userid);
+            header("Location: homepage.php");
 
 
 
