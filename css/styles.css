@@ -111,7 +111,7 @@
   }
   
   
-  .editprofilebutton{
+  .loginbutton{
     color: white;
     background-color: #990000;
     font-weight: bold;
@@ -125,8 +125,8 @@
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   }
   
-  .editprofilebutton:hover {
+  .loginbuttton:hover {
     background-color: white;
     border: 2px solid #990000;
-    color: #fff;
+    color: #990000;
   }
