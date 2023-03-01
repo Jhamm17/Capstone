@@ -53,29 +53,28 @@
     } 
 
     // Check if the form has been submitted
-    $email = trim($_SESSION['email']);
-    $poll_id = $_POST["poll_id"];
-    
-    // Retrieve the user ID using the user's email
-    $user_id_sql = "SELECT userid FROM user WHERE email = '$email'";
-    $user_id_result = $conn->query($user_id_sql);
-    $user_id = $user_id_result->fetch_row()[0];
-    
-    // Check if the user has already voted in the poll
-    $poll_response_sql = "SELECT * FROM poll_responses WHERE poll_id = $poll_id AND user_id = $user_id";
-    $poll_response_result = $conn->query($poll_response_sql);
-    
-    if ($poll_response_result->num_rows > 0) {
-        echo "You have already voted in this poll.";
-    } else {
-        // Store the user's response in the database
-        $answer = $_POST["answer"];
-        $insert_sql = "INSERT INTO poll_responses (user_id, poll_id, answer) VALUES ($user_id, $poll_id, '$answer')";
-    
-        if ($conn->query($insert_sql) === TRUE) {
-            echo "Your vote has been recorded. Thank you for participating!";
+    if (isset($_POST["submit"])) {
+        // Check if the user has already voted for this poll
+        $user_id = $_SESSION['user_id'];
+        $email = trim($_SESSION['email']);
+        $poll_id = $_POST["poll_id"];
+        $sql = "SELECT * FROM poll_responses WHERE poll_id = $poll_id";
+        $sql .= " AND user_id = $user_id";
+
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            echo "You have already voted in this poll.";
         } else {
-            echo "Error: " . $insert_sql . "<br>" . $conn->error;
+            // Store the user's response in the database
+            $answer = $_POST["answer_$poll_id"];
+            $sql = "INSERT INTO poll_responses (user_id, poll_id, answer) VALUES ($user_id, $poll_id, '$answer')";
+
+            if ($conn->query($sql) === TRUE) {
+                echo "Your vote has been recorded. Thank you for participating!";
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
         }
     }
 
@@ -103,7 +102,7 @@
 
             $percent_total = ($answer_1_count + $answer_2_count);
             $percent1 = (($answer_1_count / $percent_total) * 100);
-            $percent2 = (($answer_1_count / $percent_total) * 100);
+            $percent2 = (($answer_2_count / $percent_total) * 100);
             $percent1_answer = (round($percent1));
             $percent2_answer = (round($percent2));
 
@@ -117,7 +116,7 @@
                     echo "</div>";
                     echo "<span class='percent'>(" . $percent1_answer . ")%</span>";
                     echo "</div>";
-                    echo "<div class='progress' style='--w:" . $percent2_answer . ";'></div>";
+                    echo "<div class='progress' style='--w:" . $percent1_answer . ";'></div>";
                 echo "</label>";
                 echo "<input type='checkbox' name='answer' id='opt-2' value='" . $row["answer_2"] . "'>";
                 echo "<label for='opt-2' class='opt-2'>";
