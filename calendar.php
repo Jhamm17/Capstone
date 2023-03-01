@@ -25,6 +25,12 @@
   calendar.render();
 });
     </script>
+    <?php
+  session_start();
+  if(!$_SESSION['authenticated']){
+    header('Location: homepage.php')
+  }
+?>
     <style>
       #calendar {
         width: 60%;
@@ -60,9 +66,3 @@
 
   </body>
 </html>
-<?php
-session_start();
-if(!$_SESSION['authenticated']){
-  header('Location: homepage.php')
-}
-?>
