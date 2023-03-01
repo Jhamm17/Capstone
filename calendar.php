@@ -114,6 +114,21 @@ if(!isset($_SESSION['CAS'])){
             //  $userid = "SELECT userid FROM user WHERE email=" . "'" . $email . "'";
             //  $qu = mysqli_query($conn,$userid);
             header("Location: calendar.php");
+          }
+          if (mysqli_num_rows($query) == 1) {
+             $row = mysqli_fetch_assoc($query);
+             $_SESSION['user_id'] = $row['userid'];
+         }
+          $_SESSION['authenticated']=true;
+ 
+          //if (isset($_SESSION['userid'])){
+          //   header("Location: calender.php");
+        // };
+         
+ 
+      }
+   
+  }
 
 
 
