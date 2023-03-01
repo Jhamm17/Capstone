@@ -52,8 +52,7 @@ if ($result->num_rows > 0) {
 <div class="descript">
   <p>Sport's Social is a website aimed to help Indiana University 
     students connect through sports. Whether that be watching, playing, or just talking about them this is the place where you can find it all!</p>
-  
 </div>
-
+<a class="editprofilebutton" href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/loign.php">Login</a>
 </body>
 </html>
