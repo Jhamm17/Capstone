@@ -28,7 +28,7 @@
 <?php
 session_start();
 if(!$_SESSION['authenticated']){
-    header('Location: homepage.php');
+    header('Location: homelogin.php');
 }
 //else{
   //  header('Location: calendar.php');
