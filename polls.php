@@ -67,9 +67,8 @@
             echo "You have already voted in this poll.";
         } else {
             // Store the user's response in the database
-            $poll_id = $_POST["poll_id"];
-            $answer = $_POST["answer"];
-            $sql = "INSERT INTO poll_responses (user_id, poll_id, answer) VALUES ($user_id, $poll_id, '$answer')";
+            $poll_id = $_POST["answer_$poll_id"];
+            $sql = "INSERT INTO poll_responses (user_id, poll_id, answer) VALUES ($user_id, $poll_id, '".$_POST["answer_$poll_id"]."')";
 
 
             if ($conn->query($sql) === TRUE) {
@@ -109,7 +108,7 @@
             $percent2_answer = (round($percent2));
 
             echo "<form action='#' method='post' class='poll-area'>";
-            echo "<input type='checkbox' name='answer_" . {$row['id']} . "' id='opt-1' value='" . $row["answer_1"] . "'>";
+                echo "<input type='checkbox' name='answer' id='opt-1' value='" . $row["answer_1"] . "'>";
                 echo "<label for='opt-1' class='opt-1'>";
                     echo "<div class='row'>";
                     echo "<div class='column'>";
@@ -120,7 +119,7 @@
                     echo "</div>";
                     echo "<div class='progress' style='--w:" . $percent1_answer . ";'></div>";
                 echo "</label>";
-                echo "<input type='checkbox' name='answer_" . {$row['id']} . "' id='opt-2' value='" . $row["answer_2"] . "'>";
+                echo "<input type='checkbox' name='answer' id='opt-2' value='" . $row["answer_2"] . "'>";
                 echo "<label for='opt-2' class='opt-2'>";
                     echo "<div class='row'>";
                     echo "<div class='column'>";
