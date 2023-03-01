@@ -67,7 +67,8 @@
             echo "You have already voted in this poll.";
         } else {
             // Store the user's response in the database
-            $answer = $_POST["answer_$poll_id"];
+            $answer = $_POST["$answer"]
+            $poll_id = $_POST["$poll_id"];
             $sql = "INSERT INTO poll_responses (user_id, poll_id, answer) VALUES ($user_id, $poll_id, '$answer')";
 
             if ($conn->query($sql) === TRUE) {
