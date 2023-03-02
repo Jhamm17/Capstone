@@ -87,12 +87,12 @@
     $result = $conn->query($sql);
 
     echo "<div class='wrapper'>";
-    $i = 0;
+    // $i = 0;
     // Check if the query returned any results
     if ($result->num_rows > 0) {
         // Loop through the result set and display each poll
         while($row = $result->fetch_assoc()) {
-            $i++ name;
+            // $i++ name;
             echo "<h3>" . $row["question"] . "</h3>";
             // Retrieve the count of votes for each answer
             $answer_1_sql = "SELECT COUNT(*) FROM poll_responses WHERE poll_id = " . $row["id"] . " AND answer = '" . $row["answer_1"] . "'";
