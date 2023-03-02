@@ -107,7 +107,7 @@
             $percent1_answer = (round($percent1));
             $percent2_answer = (round($percent2));
 
-            echo "<form action='#' method='post' class='poll-area'>";
+            echo "<form action='#' method='get' class='poll-area'>";
                 echo "<input type='checkbox' name='answer' id='opt-1' value='" . $row["answer_1"] . "'>";
                 echo "<label for='opt-1' class='opt-1'>";
                     echo "<div class='row'>";
