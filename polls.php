@@ -109,7 +109,7 @@
             $percent1_answer = (round($percent1));
             $percent2_answer = (round($percent2));
 
-            echo "<form action='#' method='get' id='poll" . $row["id"] . "' class='poll-area'>";
+            echo "<form action='#' method='post' id='poll" . $row["id"] . "' class='poll-area'>";
                 echo "<input type='radio' name='answer' id='poll" . $row["id"] . "opt-1' value='" . $row["answer_1"] . "'>";
                 echo "<label for='poll" . $row["id"] . "opt-1' class='opt-1'>";
                     echo "<div class='row'>";
