@@ -87,10 +87,12 @@
     $result = $conn->query($sql);
 
     echo "<div class='wrapper'>";
+    $i = 0;
     // Check if the query returned any results
     if ($result->num_rows > 0) {
         // Loop through the result set and display each poll
         while($row = $result->fetch_assoc()) {
+            $i++ name;
             echo "<h3>" . $row["question"] . "</h3>";
             // Retrieve the count of votes for each answer
             $answer_1_sql = "SELECT COUNT(*) FROM poll_responses WHERE poll_id = " . $row["id"] . " AND answer = '" . $row["answer_1"] . "'";
@@ -107,7 +109,7 @@
             $percent1_answer = (round($percent1));
             $percent2_answer = (round($percent2));
 
-            echo "<form action='#' method='get' class='poll-area'>";
+            echo "<form action='#' method='get' name='poll" . $i . "' class='poll-area'>";
                 echo "<input type='checkbox' name='answer' id='opt-1' value='" . $row["answer_1"] . "'>";
                 echo "<label for='opt-1' class='opt-1'>";
                     echo "<div class='row'>";
