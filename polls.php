@@ -119,7 +119,7 @@
                     echo "</div>";
                     echo "<div class='progress' style='--w:" . $percent1_answer . ";'></div>";
                 echo "</label>";
-            echo "</form>"
+            echo "</form>";
             echo "<form action='#' method='get' class='poll-area'>";
                 echo "<input type='checkbox' name='answer' id='opt-2' value='" . $row["answer_2"] . "'>";
                 echo "<label for='opt-2' class='opt-2'>";
