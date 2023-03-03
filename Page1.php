@@ -17,7 +17,7 @@ if ($con->connect_error) {
 }
 
 $sql = "SELECT * FROM chat";
-$result = $conn->query($sql);
+$result = $con->query($sql);
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()){
