@@ -16,12 +16,12 @@ if ($con->connect_error) {
     die("connection failed: " . $con->connect_error);
 }
 
-$sql = "SELECT 'msg' FROM chat";
+$sql = "SELECT * FROM chat";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()){
-        echo "".$row["msg"]. "<br><br>";
+        echo $row["msg"]. "<br><br>";
     }
 } else {
     echo "no messages have been exchanged yet";
