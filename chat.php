@@ -23,12 +23,30 @@
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
 
     </div>
+<br>
+<br>
+<center><iframe src="Page1.php" width="450" height="300" style="border: 5px solid black;" scrolling="yes"><center>
+</iframe>
 <form method="post" action="Page2.php">
-Send user a message: <input type="textarea" name="message" />
+<center>Send user a message: <input type="textarea" name="msg" /><center>
 <input type="submit" value="Send" /> <br/> <br/> 
 </form>
-<iframe src="Page1.php" width="450" height="200" scrolling="yes">
-</iframe>
 
+<style>
+    input[type=submit] {
+    padding:5px 15px; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+input[type=textarea] {
+    padding:5px; 
+    border:2px solid #ccc; 
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+</style>
 </body>  
 </html>

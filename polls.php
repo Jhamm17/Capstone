@@ -67,8 +67,9 @@
             echo "You have already voted in this poll.";
         } else {
             // Store the user's response in the database
-            $poll_id = $_POST["answer_$poll_id"];
+            $answer = $_POST['answer'];
             $sql = "INSERT INTO poll_responses (user_id, poll_id, answer) VALUES ($user_id, $poll_id, '$answer')";
+
 
             if ($conn->query($sql) === TRUE) {
                 echo "Your vote has been recorded. Thank you for participating!";
@@ -86,10 +87,12 @@
     $result = $conn->query($sql);
 
     echo "<div class='wrapper'>";
+    $i = 0;
     // Check if the query returned any results
     if ($result->num_rows > 0) {
         // Loop through the result set and display each poll
         while($row = $result->fetch_assoc()) {
+            $i++;
             echo "<h3>" . $row["question"] . "</h3>";
             // Retrieve the count of votes for each answer
             $answer_1_sql = "SELECT COUNT(*) FROM poll_responses WHERE poll_id = " . $row["id"] . " AND answer = '" . $row["answer_1"] . "'";
@@ -106,9 +109,9 @@
             $percent1_answer = (round($percent1));
             $percent2_answer = (round($percent2));
 
-            echo "<form action='#' method='post' class='poll-area'>";
-                echo "<input type='checkbox' name='answer' id='opt-1' value='" . $row["answer_1"] . "'>";
-                echo "<label for='opt-1' class='opt-1'>";
+            echo "<form action='#' method='post' id='poll" . $row["id"] . "' class='poll-area'>";
+                echo "<input type='radio' name='answer' id='poll" . $row["id"] . "opt-1' value='" . $row["answer_1"] . "'>";
+                echo "<label for='poll" . $row["id"] . "opt-1' class='opt-1'>";
                     echo "<div class='row'>";
                     echo "<div class='column'>";
                         echo "<span class='circle'></span>";
@@ -118,8 +121,8 @@
                     echo "</div>";
                     echo "<div class='progress' style='--w:" . $percent1_answer . ";'></div>";
                 echo "</label>";
-                echo "<input type='checkbox' name='answer' id='opt-2' value='" . $row["answer_2"] . "'>";
-                echo "<label for='opt-2' class='opt-2'>";
+                echo "<input type='radio' name='answer' id='poll" . $row["id"] . "opt-2' value='" . $row["answer_2"] . "'>";
+                echo "<label for='poll" . $row["id"] . "opt-2' class='opt-2'>";
                     echo "<div class='row'>";
                     echo "<div class='column'>";
                         echo "<span class='circle'></span>";

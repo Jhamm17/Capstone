@@ -277,8 +277,8 @@ input[type="checkbox"]{
   color: #fff;
   box-shadow: 0 0 40px 40px #990000 inset, 0 0 0 0 #990000;
   transition: all 150ms ease-in-out;
+}
   
-  &:hover {
-    box-shadow: 0 0 10px 0 #990000 inset, 0 0 10px 4px #990000;
-  }
+.vote-button:hover {
+  box-shadow: 0 0 10px 0 #990000 inset, 0 0 10px 4px #990000;
 }
