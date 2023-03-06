@@ -25,7 +25,7 @@
     </div>
 <br>
 <br>
-<center><iframe src="Page1.php" width="450" height="300" scrolling="yes"><center>
+<center><iframe src="Page1.php" width="450" height="300" style="border: 5px solid black;" scrolling="yes"><center>
 </iframe>
 <form method="post" action="Page2.php">
 <center>Send user a message: <input type="textarea" name="msg" /><center>
@@ -46,9 +46,7 @@ input[type=textarea] {
     -webkit-border-radius: 5px;
     border-radius: 5px;
 }
-iframe {
-    border:2px black;
-}
+
 </style>
 </body>  
 </html>
