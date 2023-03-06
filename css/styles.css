@@ -120,11 +120,10 @@
     border: 2px solid #990000;
     padding: 10px 20px;
     border-radius: 5px;
-
-    justify-content: center;
-    align-items: center;
+      display: block;
+    margin: 0 auto;
     margin-top: 20px;
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    
   }
   
   .loginbuttton:hover {
