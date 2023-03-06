@@ -51,9 +51,7 @@
             </form>
         <?php
             $userid = $_SESSION['user_id'];
-            echo $userid;
             $commid = $_GET["id"];
-            echo $commid;
             if(isset($_POST["submit"])){ 
                 $newquery = "INSERT IGNORE INTO community_people VALUES ('$commid', '$userid')";
                 if(mysqli_query($db, $newquery)){
