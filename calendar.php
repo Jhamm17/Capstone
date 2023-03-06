@@ -62,7 +62,6 @@ if(!$_SESSION['authenticated']){
     </div>
     <h3 id="event-title"></h3>
     <p id="event-description"></p>
-    <p id="event-start"></p>
     <center><div id='calendar'></div></center>
 
 
