@@ -47,13 +47,15 @@
         </table></center>
         <center>
             <form action="" method="POST">
-                <input type="text" name="id">To join, please type your user ID</input>
                 <input type="submit" name="submit" value="submit"></input></center>
             </form>
         <?php
+            $userid = $_SESSION["user_id"];
+            echo $userid;
             if(isset($_POST["submit"])){ 
-                $personid = $_REQUEST["id"]; 
-                $newquery = "INSERT IGNORE INTO community_people VALUES ('$id', '$personid')";
+                $commid = $id;
+                echo $commid; 
+                $newquery = "INSERT IGNORE INTO community_people VALUES ('$commid', '$userid')";
                 if(mysqli_query($db, $newquery)){
                     echo "You have successfully joined the community!";
                 }
