@@ -50,8 +50,6 @@
                 <input type="submit" name="submit" value="submit"></input></center>
             </form>
         <?php
-            $userid = $_SESSION["user_id"];
-            echo $userid;
             $commid = $_GET["id"];
             echo $commid;
             if(isset($_POST["submit"])){ 
