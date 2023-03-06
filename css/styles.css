@@ -68,7 +68,7 @@
     color:black;
   }
   
-  /* Add spacing between elements */
+  /* Add a space between the elements for styling */
   .elements + .elements {
     margin-left: 20px;
   }
@@ -120,10 +120,11 @@
     border: 2px solid #990000;
     padding: 10px 20px;
     border-radius: 5px;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 20px;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-    align-items: center;
   }
   
   .loginbuttton:hover {
