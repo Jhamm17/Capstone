@@ -42,10 +42,10 @@
         </table></center>
         <center>
             <form action="" method="POST">
-                <input type="text" name="id">To join, please type your user ID</input>
                 <input type="submit" name="submit" value="submit"></input></center>
             </form>
         <?php
+            $id = $_SESSION["user_id"];
             if(isset($_POST["submit"])){ 
                 $personid = $_REQUEST["id"]; 
                 $newquery = "INSERT IGNORE INTO community_people VALUES ('$id', '$personid')";
