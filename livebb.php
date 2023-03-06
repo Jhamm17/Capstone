@@ -10,11 +10,17 @@
      <!-- link to Font Awesome icon font -->
      <script src="https://kit.fontawesome.com/bf37eaf948.js" crossorigin="anonymous"></script>
     <!-- custom styles -->
-    <link rel="stylesheet" type="text/css" href="css/polls.css">
+    <link rel="stylesheet" type="text/css" href="css/iulive.css">
 </head>
+<?php
+session_start();
+if(!$_SESSION['authenticated']){
+    header('Location: homelogin.php');
+}
+?>
 <body>
     <div class="topnav"> 
-        <a href="home.html"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
+        <a href="homepage.php"><img class="homeImg" src="Images/smallLogo.png" alt="Home"></a>
         <a href="calendar.php">Calendar</a>
         <a href="chat.php">Chat</a> 
         <a href="community.php">Community</a> 
@@ -22,7 +28,6 @@
         <a href="live.php">IU Live</a>   
         <a href="polls.php">Polls</a>
         <a href="profile2.php">Profile</a>
-        <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/loign.php">Log-In</a> 
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
 
     </div>
@@ -39,7 +44,9 @@
             <h1 class="polls-title-h1"> IU Live </h1>
         </div>
         <div>
-            <button class="leaderboard"> Placeholder </button>
+            <form action="polls.php">
+                <button class="leaderboard"> Vote Who Will Win </button>
+            </form>   
         </div>
     </container>
 
@@ -66,11 +73,16 @@
 
         // Check if there are any rows in the result set
         if (mysqli_num_rows($result) > 0) {
-            // Output the data for each row
+            // Output the data in a table
+            echo "<table>";
+            echo "<tr><th>Team 1</th><th>Score</th><th>Team 2</th><th>Time</th><th>Date</th><th>Team 1 Record</th><th>Team 1 Conference Record</th><th>Team 2 Conference Record</th><th>Team 2 Record</th><th>Period</th><th>Channel</th></tr>";
             while ($row = mysqli_fetch_assoc($result)) {
-                echo "Team 1: " . $row["Team1Name"] . " Score: " . $row["GameScore"] . " Team 2: " . $row["Team2Name"] . " Time: " . $row["GameTime"] . " Date: " . $row["GameDate"];
-                echo "Record: " . $row["Team1Record"] . " Conference: " . $row["Team1ConferenceRecord"] . "   " . " Conference: " . $row["Team2ConferenceRecord"] . " Record: " . $row["Team2Record"] . " Period: " . $row["GamePeriod"] . " Channel: " . $row["GameChannel"] . "<br>";
+                echo "<tr>";
+                echo "<td>" . $row["Team1Name"] . "</td><td>" . $row["GameScore"] . "</td><td>" . $row["Team2Name"] . "</td><td>" . $row["GameTime"] . "</td><td>" . $row["GameDate"] . "</td>";
+                echo "<td>" . $row["Team1Record"] . "</td><td>" . $row["Team1ConferenceRecord"] . "</td><td>" . $row["Team2ConferenceRecord"] . "</td><td>" . $row["Team2Record"] . "</td><td>" . $row["GamePeriod"] . "</td><td>" . $row["GameChannel"] . "</td>";
+                echo "</tr>";
             }
+            echo "</table>";
         } else {
             echo "No football game information found in the database.";
         }

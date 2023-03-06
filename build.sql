@@ -45,6 +45,12 @@ FOREIGN KEY (userID) REFERENCES user(userid),
 FOREIGN KEY (roomID) REFERENCES room(id)
 ) ENGINE=INNODB;
 
+CREATE TABLE chat (
+  msgid INT AUTO_INCREMENT NOT NULL,
+  msg VARCHAR(255),
+  PRIMARY KEY (msgid)
+)ENGINE=INNODB;
+
 CREATE TABLE calendar (
   calid INT AUTO_INCREMENT NOT NULL,
   title VARCHAR(255) NOT NULL,
@@ -165,7 +171,10 @@ INSERT INTO calendar VALUES
 (704,"IU Women's Basketball", '2023-02-19 20:00:00', '2023-02-19 22:00:00', "Indiana Women's takes on Iowa in a must win game."),
 (705,'IU Baseball', '2023-03-01 18:00:00', '2023-02-18 22:00:00', 'Indiana baseball hopes to improve their record against Iowa.'),
 (706,'IU Basketball', '2023-02-28 20:00:00', '2023-02-15 22:00:00', 'Indiana basketball hopes to continue their hot streak at home agaisnt the Hawkeyes of Iowa.'),
-(707,"IU Women's Basketball", '2023-03-04 10:00:00', '2023-03-04 12:00:00', "Indiana Women's basketball starts their hope to win a BigTen tournament as a #1 seed.");
+(707,"IU Women's Basketball", '2023-03-04 10:00:00', '2023-03-04 12:00:00', "Indiana Women's basketball starts their hope to win a BigTen tournament as a #1 seed."),
+(708,'IU Basketball', '2023-03-10 21:00:00', '2023-03-10 23:00:00', 'Indiana starts the BigTen tournament opponent TBD.'),
+(709,'IU Baseball', '2023-03-08 12:00:00', '2023-03-08 17:00:00', 'Indiana baseball challenges Purdue Fort Wayne in a double-header.'),
+(710,"IU Baseball", '2023-03-14 10:00:00', '2023-03-14 12:00:00', "Indiana baseball looks to improve their record while facing Kentucky.");
 
 INSERT INTO privateEvent VALUES
 (801, 'Watch Party', 2023, 02, 21),

@@ -14,9 +14,15 @@
     <!-- Link to JavaScript -->
     <script src="main.js"></script>
 </head>
+<?php
+session_start();
+if(!$_SESSION['authenticated']){
+    header('Location: homelogin.php');
+}
+?>
 <body>
     <div class="topnav"> 
-        <a href="homepage.php"><img class="homeImg" src="Images/homebutton.png" alt="Home"></a>
+        <a href="homepage.php"><img class="homeImg" src="Images/smallLogo.png" alt="Home"></a>
         <a href="calendar.php">Calendar</a>
         <a href="chat.php">Chat</a> 
         <a href="community.php">Community</a> 
@@ -24,9 +30,7 @@
         <a href="live.php">IU Live</a>   
         <a href="polls.php">Polls</a>
         <a href="profile2.php">Profile</a>
-        <a href="https://idp.login.iu.edu/idp/profile/cas/login?service=https://cgi.luddy.indiana.edu/~team36/loign.php">Log-In</a> 
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
-
     </div>
 
     <container class="polls-title">
@@ -67,8 +71,9 @@
             echo "You have already voted in this poll.";
         } else {
             // Store the user's response in the database
-            $answer = $_POST["answer"];
+            $answer = $_POST['answer'];
             $sql = "INSERT INTO poll_responses (user_id, poll_id, answer) VALUES ($user_id, $poll_id, '$answer')";
+
 
             if ($conn->query($sql) === TRUE) {
                 echo "Your vote has been recorded. Thank you for participating!";
@@ -86,10 +91,12 @@
     $result = $conn->query($sql);
 
     echo "<div class='wrapper'>";
+    $i = 0;
     // Check if the query returned any results
     if ($result->num_rows > 0) {
         // Loop through the result set and display each poll
         while($row = $result->fetch_assoc()) {
+            $i++;
             echo "<h3>" . $row["question"] . "</h3>";
             // Retrieve the count of votes for each answer
             $answer_1_sql = "SELECT COUNT(*) FROM poll_responses WHERE poll_id = " . $row["id"] . " AND answer = '" . $row["answer_1"] . "'";
@@ -102,35 +109,31 @@
 
             $percent_total = ($answer_1_count + $answer_2_count);
             $percent1 = (($answer_1_count / $percent_total) * 100);
-            $percent2 = (($answer_1_count / $percent_total) * 100);
+            $percent2 = (($answer_2_count / $percent_total) * 100);
             $percent1_answer = (round($percent1));
             $percent2_answer = (round($percent2));
 
-            echo "<form action='#' method='post' class='poll-area'>";
-                echo "<input type='checkbox' name='answer' id='opt-1' value='" . $row["answer_1"] . "'>";
-                echo "<label for='opt-1' class='opt-1'>";
+            echo "<form action='#' method='post' id='poll" . $row["id"] . "' class='poll-area'>";
+                echo "<container class='opt-1'>";
                     echo "<div class='row'>";
                     echo "<div class='column'>";
-                        echo "<span class='circle'></span>";
-                        echo "<span class='text'>" . $row["answer_1"] . "</span>";
+                        echo "<input type='radio' name='answer' id='poll" . $row["id"] . "opt-1' value='" . $row["answer_1"] . "'>";
+                        echo "<span class='text'>"  . $row["answer_1"] . "</span>";
+                        echo "<span class='percent'> " . $answer_1_count . " Votes</span>";
                     echo "</div>";
-                    echo "<span class='percent'>(" . $percent1_answer . ")%</span>";
                     echo "</div>";
-                    echo "<div class='progress' style='--w:" . $percent2_answer . ";'></div>";
-                echo "</label>";
-                echo "<input type='checkbox' name='answer' id='opt-2' value='" . $row["answer_2"] . "'>";
-                echo "<label for='opt-2' class='opt-2'>";
+                echo "</container>";
+                echo "<container class='opt-2'>";
                     echo "<div class='row'>";
                     echo "<div class='column'>";
-                        echo "<span class='circle'></span>";
-                        echo "<span class='text'>" . $row["answer_2"] . "</span>";
+                        echo "<input type='radio' name='answer' id='poll" . $row["id"] . "opt-2' value='" . $row["answer_2"] . "'>";
+                        echo "<span class='text'>"  . $row["answer_2"] . "</span>";
+                        echo "<span class='percent'> " . $answer_2_count . " Votes</span>";
                     echo "</div>";
-                    echo "<span class='percent'>(" . $percent2_answer . ")%</span>";
                     echo "</div>";
-                    echo "<div class='progress' style='--w:" . $percent2_answer . ";'></div>";
-                echo "</label>";
+                echo "</container>";
                 echo "<input type='hidden' name='poll_id' value='" . $row["id"] . "'>";
-                echo "<input type='submit' name='submit' value='Vote'>";
+                echo "<input type='submit' name='submit' value='Vote' class='vote-button'>";
             echo "</form>";
         }
     } else {
@@ -140,6 +143,43 @@
     // Close the database connection
     $conn->close();
     ?>
+
+    
+    
+    <!-- //         echo "<form action='#' method='post' id='poll" . $row["id"] . "' class='poll-area'>";
+    //             echo "<input type='radio' name='answer' id='poll" . $row["id"] . "opt-1' value='" . $row["answer_1"] . "'>";
+    //             echo "<label for='poll" . $row["id"] . "opt-1' class='opt-1'>";
+    //                 echo "<div class='row'>";
+    //                 echo "<div class='column'>";
+    //                     echo "<span class='circle'></span>";
+    //                     echo "<span class='text'>" . $row["answer_1"] . "</span>";
+    //                 echo "</div>";
+    //                 echo "<span class='percent'>(" . $percent1_answer . ")%</span>";
+    //                 echo "</div>";
+    //                 echo "<div class='progress' style='--w:" . $percent1_answer . ";'></div>";
+    //             echo "</label>";
+    //             echo "<input type='radio' name='answer' id='poll" . $row["id"] . "opt-2' value='" . $row["answer_2"] . "'>";
+    //             echo "<label for='poll" . $row["id"] . "opt-2' class='opt-2'>";
+    //                 echo "<div class='row'>";
+    //                 echo "<div class='column'>";
+    //                     echo "<span class='circle'></span>";
+    //                     echo "<span class='text'>" . $row["answer_2"] . "</span>";
+    //                 echo "</div>";
+    //                 echo "<span class='percent'>(" . $percent2_answer . ")%</span>";
+    //                 echo "</div>";
+    //                 echo "<div class='progress' style='--w:" . $percent2_answer . ";'></div>";
+    //             echo "</label>";
+    //             echo "<input type='hidden' name='poll_id' value='" . $row["id"] . "'>";
+    //             echo "<input type='submit' name='submit' value='Vote' class='vote-button'>";
+    //         echo "</form>";
+    //     }
+    // } else {
+    //     echo "No polls found.";
+    // }
+    // echo "</div>";
+    // // Close the database connection
+    // $conn->close();
+    // ?> -->
 
 
 </container>
