@@ -38,13 +38,3 @@
         </div>
     </body>
 </html>
-
-<?php
-session_start();
-if(!$_SESSION['authenticated']){
-    header('Location: loign.php');
-}
-//else{
-  //  header('Location: calendar.php');
-//}
-?>

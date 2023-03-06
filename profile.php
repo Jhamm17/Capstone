@@ -72,7 +72,12 @@ $conn->close();
     <head> 
     </head>
   <link rel="stylesheet" href="css/styles.css">
-  
+  <?php
+  session_start();
+  if(!$_SESSION['authenticated']){
+      header('Location: homelogin.php');
+  }
+  ?>
   <body>
   <div class="topnav">
         <a href="homepage.php"><img class="homeImg" src="Images/smallLogo.png" alt="Home"></a>

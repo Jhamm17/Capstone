@@ -1,5 +1,11 @@
 <?php
 session_start();
+if(!$_SESSION['authenticated']){
+    header('Location: homelogin.php');
+}
+?>
+<?php
+session_start();
 $servername = "db.luddy.indiana.edu";
 $username = "i494f22_team36";
 $password = "my+sql=i494f22_team36";
@@ -48,12 +54,7 @@ if ($result->num_rows > 0) {
 
 $conn->close();
 ?>
-<?php
-session_start();
-if(!$_SESSION['authenticated']){
-    header('Location: homelogin.php');
-}
-?>
+
 <!DOCTYPE html>
 <html>
     <head> 
