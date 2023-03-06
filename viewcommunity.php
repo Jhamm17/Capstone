@@ -46,9 +46,11 @@
         ?>
         </table></center>
         <center>
-            <form action="" method="POST">
+            <!-- <form action="" method="POST">
                 <input type="submit" name="submit" value="submit"></input></center>
-            </form>
+            </form> -->
+        <a class="editprofilebutton" href="NBAcommunity.php">Join Community!</a>
+
         <?php
             $userid = $_SESSION['user_id'];
             $commid = $_GET["id"];
