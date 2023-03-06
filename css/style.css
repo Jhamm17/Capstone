@@ -71,11 +71,11 @@ table, th, td{
     border-radius: 20px;
 }
 .editprofilebutton{
-    color: #fff;
+    color: #990000;
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
-    border: 2px solid #990000;
+    border: 2px solid #fff;
     padding: 10px 20px;
     border-radius: 5px;
     display: inline-block;
@@ -84,6 +84,6 @@ table, th, td{
   }
   
   .editprofilebutton:hover {
-    background-color: #990000;
-    color: #fff;
+    background-color: #FFFDD0;
+    color: #990000;
   }
