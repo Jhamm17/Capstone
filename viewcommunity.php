@@ -50,10 +50,10 @@
                 <input type="submit" name="submit" value="submit"></input></center>
             </form>
         <?php
-            $id = $_SESSION["user_id"];
+            $userid = $_SESSION["user_id"];
             if(isset($_POST["submit"])){ 
-                $personid = $_REQUEST["id"]; 
-                $newquery = "INSERT IGNORE INTO community_people VALUES ('$id', '$personid')";
+                $commid = $id; 
+                $newquery = "INSERT IGNORE INTO community_people VALUES ('$commid', '$userid')";
                 if(mysqli_query($db, $newquery)){
                     echo "You have successfully joined the community!";
                 }
