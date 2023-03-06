@@ -22,23 +22,7 @@
       background-color: #FFFDD0;
       color: #990000;
     }
-    
-    .loginbutton{
-    color: white;
-    background-color: #990000;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 2px solid #990000;
-    padding: 10px 20px;
-    border-radius: 5px;
-    display: block;
-    margin: 0 auto;
-    align-items: center;
-    text-align: center;
-    margin-top: 20px;
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  }
+  
   .homeImg{
     width: 120px;
     height: 75px;
@@ -127,6 +111,23 @@
   }
   
   
+ .loginbutton{
+    color: white;
+    background-color: #990000;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid #990000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    width: 150px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
 
   
   .loginbuttton:hover {
