@@ -64,3 +64,24 @@
 
         ?>
     </div>
+    <center><iframe src="Page1.php" width="450" height="300" style="border: 5px solid black;" scrolling="yes"><center>
+</iframe>
+<form method="post" action="Page2.php">
+<center>Send user a message: <input type="textarea" name="msg" /><center>
+<input type="submit" value="Send" /> <br/> <br/> 
+</form>
+
+<style>
+    input[type=submit] {
+    padding:5px 15px; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+input[type=textarea] {
+    padding:5px; 
+    border:2px solid #ccc; 
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
