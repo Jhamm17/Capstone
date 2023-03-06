@@ -113,7 +113,7 @@
                     echo "<div class='column'>";
                         echo "<input type='radio' name='answer' id='poll" . $row["id"] . "opt-1' value='" . $row["answer_1"] . "'>";
                         echo "<span class='text'>" . $row["answer_1"] . "</span>";
-                        echo "<span class='percent'>(" . $percent1_answer . ")%</span>";
+                        echo "<span class='percent'>(" . $answer_1_count . ")%</span>";
                     echo "</div>";
                     echo "</div>";
                 echo "</container>";
@@ -122,7 +122,7 @@
                     echo "<div class='column'>";
                         echo "<input type='radio' name='answer' id='poll" . $row["id"] . "opt-2' value='" . $row["answer_2"] . "'>";
                         echo "<span class='text'>" . $row["answer_2"] . "</span>";
-                        echo "<span class='percent'>(" . $percent1_answer . ")%</span>";
+                        echo "<span class='percent'>(" . $answer_2_count . ")%</span>";
                     echo "</div>";
                     echo "</div>";
                 echo "</container>";
