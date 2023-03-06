@@ -13,7 +13,8 @@
             <a href="live.php">IU Live</a>   
             <a href="polls.php">Polls</a>
             <a href="profile2.php">Profile</a>
-            <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a></div>
+            <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
+        </div>
             <center>
             <br>
             <br>
