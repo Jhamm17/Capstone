@@ -267,10 +267,6 @@ label.selectall .progress,
 label.selectall .row .percent{
   display: block;
 }
-input[type="radio"],
-input[type="checkbox"]{
-  display: none;
-}
 
 .vote-button {
   border-color: #990000;
@@ -278,7 +274,7 @@ input[type="checkbox"]{
   box-shadow: 0 0 40px 40px #990000 inset, 0 0 0 0 #990000;
   transition: all 150ms ease-in-out;
 }
-  
+
 .vote-button:hover {
   box-shadow: 0 0 10px 0 #990000 inset, 0 0 10px 4px #990000;
 }
