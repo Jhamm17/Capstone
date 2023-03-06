@@ -24,10 +24,10 @@
 
     </div>
 <form method="post" action="Page2.php">
-Send user a message: <input type="textarea" name="msg" />
+<center>Send user a message: <input type="textarea" name="msg" /><center>
 <input type="submit" value="Send" /> <br/> <br/> 
 </form>
-<iframe src="Page1.php" width="450" height="200" scrolling="yes">
+<center><iframe src="Page1.php" width="450" height="200" scrolling="yes"><center>
 </iframe>
 
 </body>  
