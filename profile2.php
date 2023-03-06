@@ -48,7 +48,12 @@ if ($result->num_rows > 0) {
 
 $conn->close();
 ?>
-
+<?php
+session_start();
+if(!$_SESSION['authenticated']){
+    header('Location: homelogin.php');
+}
+?>
 <!DOCTYPE html>
 <html>
     <head> 

@@ -2,6 +2,12 @@
     <head>
         <title>Intramural Page</title>
     </head>
+    <?php
+    session_start();
+    if(!$_SESSION['authenticated']){
+        header('Location: homelogin.php');
+    }
+    ?>
     <link rel="stylesheet" href="css/style.css">
     <body>
     <div class="topnav"> 

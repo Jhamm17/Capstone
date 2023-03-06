@@ -7,6 +7,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 <div class="topnav"> 
         <a href="homepage.php"><img class="homeImg" src="Images/smallLogo.png" alt="Home"></a>

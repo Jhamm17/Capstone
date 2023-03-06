@@ -12,6 +12,12 @@
     <!-- custom styles -->
     <link rel="stylesheet" type="text/css" href="css/iulive.css">
 </head>
+<?php
+session_start();
+if(!$_SESSION['authenticated']){
+    header('Location: homelogin.php');
+}
+?>
 <body>
     <div class="topnav"> 
         <a href="homepage.php"><img class="homeImg" src="Images/smallLogo.png" alt="Home"></a>

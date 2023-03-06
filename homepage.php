@@ -28,6 +28,12 @@ if ($result->num_rows > 0) {
   }
 }
 ?>
+<?php
+session_start();
+if(!$_SESSION['authenticated']){
+    header('Location: homelogin.php');
+}
+?>
 <link rel="stylesheet" href="css/styles.css">
 <div class="topnav"> 
         <a href="homepage.php"><img class="homeImg" src="Images/smallLogo.png" alt="Home"></a>
