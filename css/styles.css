@@ -1,5 +1,9 @@
-
-    .topnav {
+body {
+  margin: 0;
+  padding: 0;
+}
+   
+   .topnav {
       background-color: #990000;
       overflow: hidden;
       margin: 0;
