@@ -23,8 +23,9 @@
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
 
     </div>
-
-<center><iframe src="Page1.php" width="450" height="200" scrolling="yes"><center>
+<br>
+<br>
+<center><iframe src="Page1.php" width="450" height="300" scrolling="yes"><center>
 </iframe>
 <form method="post" action="Page2.php">
 <center>Send user a message: <input type="textarea" name="msg" /><center>
@@ -44,6 +45,9 @@ input[type=textarea] {
     border:2px solid #ccc; 
     -webkit-border-radius: 5px;
     border-radius: 5px;
+}
+iframe {
+    border:2px black;
 }
 </style>
 </body>  
