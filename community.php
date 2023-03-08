@@ -21,6 +21,7 @@
         <a href="profile2.php">Profile</a>
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
     </div>
+    <div class="iu">
         <center><h1>Communities: </h1></center>
         <center><a href="createcommunity.php"><button class="comm">Create</button></a><a href="viewcommunities.php"><button class="comm">Your Communities</button></a></center>
         <center>
@@ -47,5 +48,6 @@
                 ?>
             </table>
         </center>
+    </div>
     </body>
 </html>
