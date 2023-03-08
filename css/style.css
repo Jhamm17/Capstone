@@ -71,17 +71,17 @@ table, th, td{
     border-collapse: collapse;
     width: 80%;
 }
-.tabledesign > tr > th:nth-child(1){
-    width: 20%;
+tr th:nth-child(1){
+    width:20%;
 }
-.tabledesign > tr > th:nth-child(2){
-    width: 20%;
+tr th:nth-child(2){
+    width:20%;
 }
-.tabledesign > tr > th:nth-child(3){
-    width: 40%;
+tr th:nth-child(3){
+    width:40%;
 }
-.tabledesign > tr > th:nth-child(4){
-    width: 20%;
+tr th:nth-child(4){
+    width:20%;
 }
 
 .comm{
