@@ -73,16 +73,16 @@ table, th, td{
     border-spacing: 0 15px;
     width: 80%;
 }
-.commname{
+tr th:nth-child(1){
     width:20%;
 }
-.commsub{
+tr th:nth-child(2){
     width: 20%;
 }
-.commbio{
+tr th:nth-child(3){
     width:40%;
 }
-.join{
+tr th:nth-child(4){
     width: 20%;
 }
 
