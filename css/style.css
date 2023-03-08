@@ -36,11 +36,6 @@ width: 120px;
 height: 75px;
 padding: 0%;
 }
-.iu{
-    background-image: url("iupic.jpg");
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
-}
 
 button{
     color: white;
