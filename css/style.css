@@ -69,7 +69,8 @@ table, th, td{
 .tabledesign{
     border: 1px solid;
     border-collapse: collapse;
-    width: 80%;
+    table-layout: fixed;
+    width: 100%;
 }
 .commname{
     width:20%;
