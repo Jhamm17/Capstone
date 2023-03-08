@@ -47,10 +47,10 @@ button{
     cursor: pointer;
 }
 button:hover{
-    background-color: orangered;
+    background-color: rgb(182, 76, 37);
 }
 button:active{
-    background-color: orangered;
+    background-color: rgb(182, 76, 37);
 }
 h1{
     margin: 25px 10px;
