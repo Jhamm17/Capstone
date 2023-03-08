@@ -86,10 +86,10 @@ tr th:nth-child(4){
     width: 20%;
 }
 tr:nth-child(odd){
-    background-color: gray;
+    background-color: lightgray;
 }
 tr:nth-child(even){
-    background-color: red;
+    background-color: lightsalmon;
 }
 
 .comm{
