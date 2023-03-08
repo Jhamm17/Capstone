@@ -38,14 +38,14 @@
                     ?>
                     <tr><th>Community Name</th><th>Subject</th><th>Bio</th><th>Join?</th></tr>
                     <?php 
-                    while($row = mysqli_fetch_array($result)){
-                        echo "<tr>";
-                        echo "<td>" . $row['comm_name'] . "</td></a>";
-                        echo "<td>" . $row['comm_subject'] . "</td>";
-                        echo "<td>" . $row['comm_bio'] . "</td>";
-                        echo "<td><a href=\"viewcommunity.php?id=" . $row['comm_id'] . "\">Join</a></td>";
-                        // echo "<td><a href=\"NBAcommunity.php\">View</a></td>";
-                        echo "</tr>";
+                    while($row = mysqli_fetch_array($result)){ ?>
+                        <tr>
+                        <td><?php echo $row['comm_name'];?></td>
+                        <td><?php echo $row['comm_subject']; ?></td>
+                        <td><?php echo $row['comm_bio']; ?></td>
+                        <td><a href="viewcommunity.php?id=" <?php $row['comm_id']; ?>>Join</a></td>
+                        <!-- // echo "<td><a href=\"NBAcommunity.php\">View</a></td>"; -->
+                        </tr><?php
                     }
                 ?>
             </table>
