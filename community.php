@@ -43,7 +43,7 @@
                         <td><?php echo $row['comm_name'];?></td>
                         <td><?php echo $row['comm_subject']; ?></td>
                         <td><?php echo $row['comm_bio']; ?></td>
-                        <td><a href="viewcommunity.php?id=" <?php $row['comm_id']; ?>>Join</a></td>
+                        <td><a href="viewcommunity.php?id="<?php $row['comm_id']; ?>>Join</a></td>
                         <!-- // echo "<td><a href=\"NBAcommunity.php\">View</a></td>"; -->
                         </tr><?php
                     }
