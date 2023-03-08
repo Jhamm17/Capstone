@@ -62,7 +62,8 @@ table, th, td{
 }
 .tabledesign{
     border: 1px solid;
-    width: 50%;
+    border-collapse: collapse;
+    width: 80%;
 }
 .comm{
     background-color: #990000;
