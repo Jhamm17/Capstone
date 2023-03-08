@@ -71,17 +71,17 @@ table, th, td{
     border-collapse: collapse;
     width: 80%;
 }
-table tr th:nth-child(1){
+.commname{
     width:20%;
 }
-table tr th:nth-child(2){
-    width:20%;
+.commsub{
+    width: 20%;
 }
-table tr th:nth-child(3){
+.commbio{
     width:40%;
 }
-table tr th:nth-child(4){
-    width:20%;
+.join{
+    width: 20%;
 }
 
 .comm{
