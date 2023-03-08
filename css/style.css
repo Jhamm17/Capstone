@@ -76,6 +76,9 @@ thead th:nth-child(3){
 thead th:nth-child(4){
     width: 20%;
 }
+thead{
+    background-color: red;
+}
 
 .comm{
     background-color: #990000;
