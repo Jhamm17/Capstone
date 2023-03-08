@@ -39,11 +39,14 @@
                     <tr><th class="commname">Community Name</th><th class="commsub">Subject</th><th class="commbio">Bio</th><th class="join">Join?</th></tr>
                     <?php 
                     while($row = mysqli_fetch_array($result)){ ?>
+                        <?php 
+                        $commid = $row['comm_id'];
+                        ?>
                         <tr>
                         <td><?php echo $row['comm_name'];?></td>
                         <td><?php echo $row['comm_subject']; ?></td>
                         <td><?php echo $row['comm_bio']; ?></td>
-                        <td><a href="viewcommunity.php?id="<?php echo $row['comm_id']; ?>>Join</a></td>
+                        <td><a href="viewcommunity.php?id="<?php echo $commid; ?>>Join</a></td>
                         <!-- // echo "<td><a href=\"NBAcommunity.php\">View</a></td>"; -->
                         </tr><?php
                     }
