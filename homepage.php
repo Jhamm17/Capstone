@@ -60,10 +60,10 @@ if(!$_SESSION['authenticated']){
 </div>
 <div class="homescreenimage">
   <div class="imagelinks">
-  <a href="https://www.idsnews.com/section/sports">
-  <img src="Images/IDSsports.jpeg" alt="IDS">
+  <a href="https://cgi.luddy.indiana.edu/~team36/community.php">
+  <img src="Images/IUlogo.png" alt="Iulogo">
   </a>
-  <p>Click to check out Indiana Daily students sports reports.</p>
+  <p>Click the image to check out some communities and talk sports.</p>
   </div>
   <div class="imagelinks">
   <a href="https://cgi.luddy.indiana.edu/~team36/calendar.php">
