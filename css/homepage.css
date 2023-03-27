@@ -167,3 +167,10 @@ body {
   .imagelinks p {
     margin-top: 10px;
   }
+
+  footer {
+    background-color: #990000;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+  }

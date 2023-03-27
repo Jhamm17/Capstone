@@ -78,5 +78,8 @@ if(!$_SESSION['authenticated']){
   <p>Click to check out Indiana Daily students sports reports.</p>
   </div>
 </div>
+<footer>
+    <p>Copyright &copy; Sports Social 2023</p>
+</footer>
 </body>
 </html>
