@@ -18,7 +18,7 @@
 <body>
 <div>
 <h1>About Us</h1>
-<h2> Our Story <h2>
+<h2> Our Story </h2>
 <p> We decided to create a website due to people coming to Indiana University from all across the world and making friends can be difficult.</p> 
 <p>We hope to help Indiana students connect with one another through talking, watching, and playing sports together.</p>
 <h2> Meet the Team <h2>
