@@ -14,7 +14,7 @@
         <a href="profile2.php">Profile</a>
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
 </div>
-<link rel="stylesheet" href="css/homepage.css">
+<link rel="stylesheet" href="css/styles.css">
 <body>
 <div>
 <center>
