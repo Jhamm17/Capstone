@@ -80,7 +80,7 @@ if(!$_SESSION['authenticated']){
 </div>
 <footer>
 <footer>
-    <p>&copy; 2023 All Rights to Sports Social. | <a href="https://www.idsnews.com/section/sports">About Us</a></p>
+    <p>&copy; 2023 Rights Reserved to Sports Social | <a href="https://www.idsnews.com/section/sports">About Us</a></p>
 </footer>
 
 
