@@ -66,10 +66,10 @@ if(!$_SESSION['authenticated']){
   <p>Click to check out Indiana Daily students sports reports.</p>
   </div>
   <div class="imagelinks">
-  <a href="https://www.idsnews.com/section/sports">
-  <img src="Images/IDSsports.jpeg" alt="IDS">
+  <a href="https://cgi.luddy.indiana.edu/~team36/calendar.php">
+  <img src="Images/trayce.jpeg" alt="IDS">
   </a>
-  <p>Click to check out Indiana Daily students sports reports.</p>
+  <p>Want to know when the upcoming games are? Check out our calendar by clicking above.</p>
   </div>
   <div class="imagelinks">
   <a href="https://www.idsnews.com/section/sports">
