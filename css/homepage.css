@@ -169,7 +169,14 @@ body {
   }
 
   footer {
+    display: flex;
+    justify-content: space-between;
     background-color: #990000;
     color: #fff;
     padding: .5em;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
   }
