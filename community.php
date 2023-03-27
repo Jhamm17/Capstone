@@ -21,6 +21,7 @@
         <a href="profile2.php">Profile</a>
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
     </div>
+    <div class="iu">
         <center><h1>Communities: </h1></center>
         <center><a href="createcommunity.php"><button class="comm">Create</button></a><a href="viewcommunities.php"><button class="comm">Your Communities</button></a></center>
         <center>
@@ -34,18 +35,24 @@
                     mysqli_query($db, $query1) or die('Error querying database.');
                     $result = mysqli_query($db, $query1);
                     $row = mysqli_fetch_array($result);
-                    echo '<tr><th>Community Name</th><th>Subject</th><th>Bio</th><th>Join?</th></tr>';
-                    while($row = mysqli_fetch_array($result)){
-                        echo "<tr>";
-                        echo "<td>" . $row['comm_name'] . "</td></a>";
-                        echo "<td>" . $row['comm_subject'] . "</td>";
-                        echo "<td>" . $row['comm_bio'] . "</td>";
-                        echo "<td><a href=\"viewcommunity.php?id=" . $row['comm_id'] . "\">Join</a></td>";
-                        // echo "<td><a href=\"NBAcommunity.php\">View</a></td>";
-                        echo "</tr>";
+                    ?>
+                    <tr><th class="commname">Community Name</th><th class="commsub">Subject</th><th class="commbio">Bio</th><th class="join">Join?</th></tr>
+                    <?php 
+                    while($row = mysqli_fetch_array($result)){ ?>
+                        <?php 
+                        $commid = $row['comm_id'];
+                        ?>
+                        <tr>
+                        <td><?php echo $row['comm_name'];?></td>
+                        <td><?php echo $row['comm_subject']; ?></td>
+                        <td><?php echo $row['comm_bio']; ?></td>
+                        <td><a href="viewcommunity.php?id=<?php echo $commid; ?>">Join</a></td>
+                        <!-- // echo "<td><a href=\"NBAcommunity.php\">View</a></td>"; -->
+                        </tr><?php
                     }
                 ?>
             </table>
         </center>
+    </div>
     </body>
 </html>
