@@ -3,6 +3,7 @@ body {
   padding: 0;
   background-image: url('Images/background.jpeg');
   background-repeat: no-repeat;
+  height: 100vh;
 }
    
    .topnav {
