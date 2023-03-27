@@ -170,22 +170,8 @@ body {
 
   footer {
     display: flex;
-   
     background-color: #990000;
     color: #fff;
     text-align: center;
     padding: .5em;
-  }
-  
-  .footer-left {
-    display: inline-block;
-  }
-  
-  .footer-left nav a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .footer-right {
-    display: inline-block;
   }

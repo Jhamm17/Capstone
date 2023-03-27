@@ -79,9 +79,6 @@ if(!$_SESSION['authenticated']){
   </div>
 </div>
 <footer>
-<nav>
-<a href="https://www.idsnews.com/section/sports">About Us</a>
-</nav>
     <p>Copyright &copy; Sports Social 2023</p>
 </footer>
 </body>
