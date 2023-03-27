@@ -168,10 +168,3 @@ body {
     margin-top: 10px;
   }
 
-  footer {
-    display: flex;
-    background-color: #990000;
-    color: #fff;
-    text-align: center;
-    padding: .5em;
-  }
