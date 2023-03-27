@@ -79,7 +79,7 @@ if(!$_SESSION['authenticated']){
   </div>
 </div>
 <footer>
-    <p>Copyright &copy; Sports Social 2023</p> <p> <a href="https://www.idsnews.com/section/sports"> About Us </p>
+    <p>Copyright &copy; Sports Social 2023 <p> <a href="https://www.idsnews.com/section/sports"> About Us </p></p>
 </footer>
 </body>
 </html>
