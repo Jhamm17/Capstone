@@ -158,8 +158,8 @@ body {
   }
   
   .imagelinks img {
-    border-radius: 50%;
-    width: 350px;
+    border-radius: 10%;
+    width: 320px;
     height: 400px;
   }
   
