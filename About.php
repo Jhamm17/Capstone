@@ -24,7 +24,6 @@
 <p>We hope to help Indiana students connect with one another through talking, watching, and playing sports together.</p>
 </center>
 </div>
-<center><h2> Meet the Team </h2></center>
 <div class="homescreenimage">
     
   <div class="imagelinks">
