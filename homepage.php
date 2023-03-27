@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style>
-body {
-  background-image: url('Images/iupic.jpeg');
-  background-repeat: no-repeat;
-}
-</style>
 </head>
 <?php
 session_start();
@@ -40,7 +34,7 @@ if(!$_SESSION['authenticated']){
     header('Location: homelogin.php');
 }
 ?>
-
+<link rel="stylesheet" href="css/homepage.css">
 <div class="topnav"> 
         <a href="homepage.php"><img class="homeImg" src="Images/smallLogo.png" alt="Home"></a>
         <a href="calendar.php">Calendar</a>
