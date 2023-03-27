@@ -57,6 +57,8 @@ if(!$_SESSION['authenticated']){
 <div class="descript">
   <p>Sport's Social is a website aimed to help Indiana University 
     students connect through sports. Whether that be watching, playing, or just talking about them this is the place where you can find it all!</p>
+  <p> Find out about the creators: </p>
+  <p href="https://www.idsnews.com/section/sports"> About Us </p>
 </div>
 <div class="homescreenimage">
   <div class="imagelinks">
