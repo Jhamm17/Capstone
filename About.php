@@ -14,7 +14,7 @@
         <a href="profile2.php">Profile</a>
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
 </div>
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/homepage.css">
 <body>
 <div>
 <h1>About Us</h1>
@@ -22,10 +22,32 @@
 <p> We decided to create a website due to people coming to Indiana University from all across the world and making friends can be difficult.</p> 
 <p>We hope to help Indiana students connect with one another through talking, watching, and playing sports together.</p>
 <h2> Meet the Team </h2>
-<p> Zac Bradtmiller </p>
-<p> Jackson Hamm </p>
-<p> Sam Northquist </p>
-<p> Henry Starnes </p>
+</div>
+<div class="homescreenimage">
+  <div class="imagelinks">
+  <p> Zac Bradtmiller </p>
+  <img src="Images/Zac.JPEG" alt="Iulogo">
+  </a>
+  <p>A fourth year Informatics student that created the profile and calendar epics. Skills include CSS, Ethics, & PHP</p>
+  </div>
+  <div class="imagelinks">
+  <p> Jackson Hamm </p>
+  <img src="Images/IUlogo.png" alt="Iulogo">
+  </a>
+  <p>A fourth year Informatics student that created the IU live and polls epics. Skills include HTML, HCI, & Python</p>
+  </div>
+  <div class="imagelinks">
+  <p> Sam Northquist </p>
+  <img src="Images/IUlogo.png" alt="Iulogo">
+  </a>
+  <p>A fourth year Informatics student that created the community and intramural sports epics. Skills include MySQL, Ethics, & Python</p>
+  </div>
+  <div class="imagelinks">
+  <p> Henry Starnes </p>
+  <img src="Images/IUlogo.png" alt="Iulogo">
+  </a>
+  <p>A fourth year Informatics student that created the chat and autofill epics. Skills include PHP, MySQL, & Python</p>
+  </div>
 </div>
 <footer>
 <p>&copy; 2023 Rights Reserved to Sports Social | <a href="https://cgi.luddy.indiana.edu/~team36/About.php">About Us</a></p>
