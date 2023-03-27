@@ -17,36 +17,38 @@
 <link rel="stylesheet" href="css/homepage.css">
 <body>
 <div>
+<center>
 <h1>About Us</h1>
 <h2> Our Story </h2>
 <p> We decided to create a website due to people coming to Indiana University from all across the world and making friends can be difficult.</p> 
 <p>We hope to help Indiana students connect with one another through talking, watching, and playing sports together.</p>
 <h2> Meet the Team </h2>
+</center>
 </div>
 <div class="homescreenimage">
   <div class="imagelinks">
-  <p> Zac Bradtmiller </p>
+  <h4> Zac Bradtmiller </h4>
   <img src="Images/Zac.JPEG" alt="Iulogo">
   </a>
   <p>A fourth year Informatics student that created the profile and calendar epics. Skills include CSS, Ethics, & PHP</p>
   </div>
   <div class="imagelinks">
-  <p> Jackson Hamm </p>
+  <h4> Jackson Hamm </h4>
   <img src="Images/IUlogo.png" alt="Iulogo">
   </a>
   <p>A fourth year Informatics student that created the IU live and polls epics. Skills include HTML, HCI, & Python</p>
   </div>
   <div class="imagelinks">
-  <p> Sam Northquist </p>
+  <h4> Sam Northquist </h4>
   <img src="Images/IUlogo.png" alt="Iulogo">
   </a>
   <p>A fourth year Informatics student that created the community and intramural sports epics. Skills include MySQL, Ethics, & Python</p>
   </div>
   <div class="imagelinks">
-  <p> Henry Starnes </p>
+  <h4> Henry Starnes </h4>
   <img src="Images/IUlogo.png" alt="Iulogo">
   </a>
-  <p>A fourth year Informatics student that created the chat and autofill epics. Skills include PHP, MySQL, & Python</p>
+  <p>A third year Informatics student that created the chat and autofill epics. Skills include PHP, MySQL, & Python</p>
   </div>
 </div>
 <footer>

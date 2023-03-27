@@ -164,7 +164,7 @@ body {
     height: 420px;
   }
   
-  .imagelinks p {
+  .imagelinks p, h4 {
     margin-top: 10px;
   }
 
