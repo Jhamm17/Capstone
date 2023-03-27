@@ -59,7 +59,9 @@ if(!$_SESSION['authenticated']){
     students connect through sports. Whether that be watching, playing, or just talking about them this is the place where you can find it all!</p>
 </div>
 <div>
-  <button>
+<a href="https://www.idsnews.com/section/sports">
+  <img src="Images/IDSsports.jpeg" alt="IDS">
+</a>
 </div>
 </body>
 </html>
