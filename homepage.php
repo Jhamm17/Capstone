@@ -79,11 +79,7 @@ if(!$_SESSION['authenticated']){
   </div>
 </div>
 <footer>
-<footer>
-    <p>&copy; 2023 Rights Reserved to Sports Social | <a href="https://www.idsnews.com/section/sports">About Us</a></p>
-</footer>
-
-
+    <p>&copy; 2023 Rights Reserved to Sports Social | <a href="https://cgi.luddy.indiana.edu/~team36/About.php">About Us</a></p>
 </footer>
 </body>
 </html>
