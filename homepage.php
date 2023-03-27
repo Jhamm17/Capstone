@@ -58,10 +58,25 @@ if(!$_SESSION['authenticated']){
   <p>Sport's Social is a website aimed to help Indiana University 
     students connect through sports. Whether that be watching, playing, or just talking about them this is the place where you can find it all!</p>
 </div>
-<div>
-<a href="https://www.idsnews.com/section/sports">
+<div class="homescreenimage">
+  <div class="imagelinks">
+  <a href="https://www.idsnews.com/section/sports">
   <img src="Images/IDSsports.jpeg" alt="IDS">
-</a>
+  </a>
+  <p>Click to check out Indiana Daily students sports reports.</p>
+  </div>
+  <div class="imagelinks">
+  <a href="https://www.idsnews.com/section/sports">
+  <img src="Images/IDSsports.jpeg" alt="IDS">
+  </a>
+  <p>Click to check out Indiana Daily students sports reports.</p>
+  </div>
+  <div class="imagelinks">
+  <a href="https://www.idsnews.com/section/sports">
+  <img src="Images/IDSsports.jpeg" alt="IDS">
+  </a>
+  <p>Click to check out Indiana Daily students sports reports.</p>
+  </div>
 </div>
 </body>
 </html>
