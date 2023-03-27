@@ -34,7 +34,7 @@ if(!$_SESSION['authenticated']){
     header('Location: homelogin.php');
 }
 ?>
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/homepage.css">
 <div class="topnav"> 
         <a href="homepage.php"><img class="homeImg" src="Images/smallLogo.png" alt="Home"></a>
         <a href="calendar.php">Calendar</a>
@@ -57,6 +57,9 @@ if(!$_SESSION['authenticated']){
 <div class="descript">
   <p>Sport's Social is a website aimed to help Indiana University 
     students connect through sports. Whether that be watching, playing, or just talking about them this is the place where you can find it all!</p>
+</div>
+<div>
+  <button>
 </div>
 </body>
 </html>
