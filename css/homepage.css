@@ -168,3 +168,18 @@ body {
     margin-top: 10px;
   }
 
+  footer {
+    background-color: #f2f2f2;
+    color: #333;
+    text-align: center;
+    padding: 1em;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  footer a {
+    color: #333;
+    text-decoration: none;
+  }
