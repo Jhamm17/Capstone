@@ -158,8 +158,8 @@ body {
   }
   
   .imagelinks img {
-    width: 100%;
-    height: auto;
+    width: 120px;
+    height: 180px;
   }
   
   .imagelinks p {
