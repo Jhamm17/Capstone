@@ -67,7 +67,7 @@ if(!$_SESSION['authenticated']){
   </div>
   <div class="imagelinks">
   <a href="https://cgi.luddy.indiana.edu/~team36/calendar.php">
-  <img src="Images/trayce.jpeg" alt="IDS">
+  <img src="Images/IUathlete.png" alt="IU">
   </a>
   <p>Want to know when the upcoming games are? Check out our calendar by clicking above.</p>
   </div>
