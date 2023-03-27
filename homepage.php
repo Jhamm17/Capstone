@@ -47,9 +47,9 @@ if(!$_SESSION['authenticated']){
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
 </div>
 <body>
-<div class="Logo">
+<!-- <div class="Logo">
 <img src="Images/SportsSocialLogo.png" alt="Logo"></a>
-</div>
+</div> -->
 <div class="welcometext">
 <h2> Welcome <?php echo $name ?> to  Sports Social! </h2>
 </div>
