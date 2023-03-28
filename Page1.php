@@ -26,7 +26,7 @@ $result = $con->query($sql);
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()){
-        echo $row["Fname"] . $row["Lname"] . "<br>"
+        echo $row["Fname"] + $row["Lname"] . "<br>";
         echo $row["msg"]. "<br><br>";
     }
 } else {
