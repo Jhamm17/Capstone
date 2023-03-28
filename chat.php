@@ -28,7 +28,7 @@ if(!$_SESSION['authenticated']){
 
     </div>
 <br>
-<br>
+
 <center><h2>chat with other IU studetns!</h2><center>
 <center><iframe src="Page1.php" width="450" height="300" style="border: 5px solid black;" scrolling="yes"><center>
 </iframe>
