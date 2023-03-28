@@ -20,35 +20,35 @@ PRIMARY KEY (userid)
 -- FOREIGN KEY (userid) REFERENCES user(userid)
 -- ) ENGINE=INNODB; 
 
-create table room (
-id INT NOT NULL AUTO_INCREMENT,
-roomName varchar(50),
-PRIMARY KEY (id)
-)engine = innodb;
+--create table room (
+--id INT NOT NULL AUTO_INCREMENT,
+--roomName varchar(50),
+--PRIMARY KEY (id)
+--)engine = innodb;
 
-create table participants (
-id INT NOT NULL AUTO_INCREMENT,
-userID INT NOT NULL,
-roomID INT NOT NULL,
-PRIMARY KEY (id),
-FOREIGN KEY (userID) REFERENCES user(userid),
-FOREIGN KEY (roomID) REFERENCES room(id)
-) ENGINE=INNODB;
+--create table participants (
+--id INT NOT NULL AUTO_INCREMENT,
+--userID INT NOT NULL,
+--roomID INT NOT NULL,
+--PRIMARY KEY (id),
+--FOREIGN KEY (userID) REFERENCES user(userid),
+--FOREIGN KEY (roomID) REFERENCES room(id)
+--) ENGINE=INNODB;
 
-create table chatMessage (
-id INT AUTO_INCREMENT NOT NULL,
-userMessage varchar(250),
-userID INT NOT NULL,
-roomID INT NOT NULL,
-PRIMARY KEY (id),
-FOREIGN KEY (userID) REFERENCES user(userid),
-FOREIGN KEY (roomID) REFERENCES room(id)
-) ENGINE=INNODB;
+--create table chatMessage (
+--id INT AUTO_INCREMENT NOT NULL,
+--userMessage varchar(250),
+--userID INT NOT NULL,
+--roomID INT NOT NULL,
+--PRIMARY KEY (id),
+--FOREIGN KEY (userID) REFERENCES user(userid),
+--FOREIGN KEY (roomID) REFERENCES room(id)
+--) ENGINE=INNODB;
 
 CREATE TABLE chat (
-  msgid INT AUTO_INCREMENT NOT NULL,
+  id INT NOT NULL AUTO_INCREMENT,
   msg VARCHAR(255),
-  PRIMARY KEY (msgid)
+  FOREIGN KEY (id) REFERENCES user(userid)
 )ENGINE=INNODB;
 
 CREATE TABLE calendar (
