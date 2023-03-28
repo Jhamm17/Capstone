@@ -54,5 +54,6 @@
             </table>
         </center>
     </div>
+    <!-- need to make community page show specific community-->
     </body>
 </html>
