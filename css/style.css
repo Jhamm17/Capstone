@@ -73,6 +73,7 @@ table, th, td{
     border-spacing: 0 15px;
     width: 80%;
     border-radius: 5px 5px 0 0;
+    overflow: hidden;
 }
 .tabledesign tr th{ 
     background-color: #990000;
