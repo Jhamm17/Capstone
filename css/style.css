@@ -73,23 +73,8 @@ table, th, td{
     border-spacing: 0 15px;
     width: 80%;
 }
-.tabledesign thead tr{
+.tabledesign thead{
     background-color: blue;
-}
-tr th:nth-child(1){
-    width:20%;
-}
-tr th:nth-child(2){
-    width: 20%;
-}
-tr th:nth-child(3){
-    width:40%;
-}
-tr th:nth-child(4){
-    width: 20%;
-}
-tr:nth-child(even){
-    background-color: lightsalmon;
 }
 
 .comm{
