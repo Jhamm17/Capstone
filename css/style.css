@@ -74,7 +74,7 @@ table, th, td{
     width: 80%;
 }
 .tabledesign tr th{ 
-    background-color: red;
+    background-color: #990000;
     color: white;
     text-align: left;
     font-weight: bold;
