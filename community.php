@@ -2,7 +2,15 @@
     <head>
         <title>Community Home Page</title>
         <link rel="stylesheet" href="css/style.css">
+        
     </head>
+    <style>
+        .tabledesign thead tr{
+            background-color: blue;
+            text-align: left;
+            color: white;
+        }
+    </style>
     <?php
     session_start();
     if(!$_SESSION['authenticated']){
