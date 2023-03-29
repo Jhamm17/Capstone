@@ -79,6 +79,24 @@ table, th, td{
     text-align: left;
     font-weight: bold;
 }
+tr th:nth-child(1){
+    width:20%;
+}
+tr th:nth-child(2){
+    width: 20%;
+}
+tr th:nth-child(3){
+    width:40%;
+}
+tr th:nth-child(4){
+    width: 20%;
+}
+tr:nth-child(odd){
+    background-color: lightgray;
+}
+tr:nth-child(even){
+    background-color: lightsalmon;
+}
 
 .comm{
     background-color: #990000;
