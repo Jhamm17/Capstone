@@ -79,6 +79,12 @@ table, th, td{
     text-align: left;
     font-weight: bold;
 }
+.tabledesign tr th{
+    padding: 12px 15px;
+}
+.tabledesign tr td{
+    padding: 12px 15px;
+}
 tr th:nth-child(1){
     width:20%;
 }
