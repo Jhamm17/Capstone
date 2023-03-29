@@ -75,6 +75,9 @@ table, th, td{
 }
 .tabledesign thead tr{
     background-color: blue;
+    color: white;
+    text-align: left;
+    font-weight: bold;
 }
 
 .comm{
