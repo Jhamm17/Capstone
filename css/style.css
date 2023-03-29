@@ -63,7 +63,7 @@ input[type=submit]{
     background-color:#990000;
 }
 table, th, td{
-    border: 1px solid;
+    border: 1px solid gray;
     width: 50%;
 }
 .tabledesign{
