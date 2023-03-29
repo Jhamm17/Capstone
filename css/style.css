@@ -73,7 +73,7 @@ table, th, td{
     border-spacing: 0 15px;
     width: 80%;
 }
-.tabledesign thead tr{
+.tabledesign tr th{ 
     background-color: blue;
     color: white;
     text-align: left;
