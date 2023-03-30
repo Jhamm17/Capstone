@@ -42,6 +42,7 @@
                     $query1 = "SELECT * FROM community";
                     mysqli_query($db, $query1) or die('Error querying database.');
                     $result = mysqli_query($db, $query1);
+                    $id = $_SESSION['user_id'];
                     $row = mysqli_fetch_array($result);
                     ?>
                     <tr><th class="commname">Community Name</th><th class="commsub">Subject</th><th class="commbio">Bio</th><th class="join">Join?</th></tr>
@@ -57,7 +58,7 @@
                         <td><a href="viewcommunity.php?id=<?php echo $commid; ?>">Join</a></td>
                         <!-- // echo "<td><a href=\"NBAcommunity.php\">View</a></td>"; -->
                         </tr><?php
-                    }
+                    } echo $id;
                 ?>
             </table>
         </center>
