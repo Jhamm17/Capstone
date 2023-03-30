@@ -55,10 +55,10 @@
                         <td><?php echo $row['comm_name'];?></td>
                         <td><?php echo $row['comm_subject']; ?></td>
                         <td><?php echo $row['comm_bio']; ?></td>
-                        <td><a href="viewcommunity.php?id=<?php echo $commid; ?>">Join</a></td>
+                        <td><a href="viewcommunity.php?id=<?php echo $commid; ?>"><button>Join</button></a></td>
                         <!-- // echo "<td><a href=\"NBAcommunity.php\">View</a></td>"; -->
                         </tr><?php
-                    } echo $id;
+                    }
                 ?>
             </table>
         </center>
