@@ -30,7 +30,6 @@
                         echo 'failed to connect to SQL';
                     }
                     $id = $_SESSION['user_id'];
-                    echo $id;
                     $query1 = "SELECT * FROM community INNER JOIN community_people ON community.comm_id=community_people.Comm_id WHERE Person_id='$id'";
                     mysqli_query($db, $query1) or die('Error querying database.');
                     $result = mysqli_query($db, $query1);
@@ -40,7 +39,7 @@
                         echo "<tr>";
                         echo "<td>" . $row['comm_name'] . "</td>";
                         echo "<td>" . $row['comm_subject'] . "</td>";
-                        echo "<td>Request to Join</td>";
+                        echo "<td>" . $row['comm_bio'] . "</td>";
                         echo "</tr>";
                     }
                 ?>
