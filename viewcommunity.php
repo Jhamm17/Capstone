@@ -25,7 +25,7 @@
             <br>
             <br>
             <br>
-        <table>
+        <table class="tabledesign">
             <?php
             $id = $_GET["id"];
             $db = mysqli_connect("db.luddy.indiana.edu","i494f22_team36","my+sql=i494f22_team36","i494f22_team36") or die("Error connecting to MySQL server.");
