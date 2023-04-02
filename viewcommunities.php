@@ -34,7 +34,7 @@
                     mysqli_query($db, $query1) or die('Error querying database.');
                     $result = mysqli_query($db, $query1);
                     $row = mysqli_fetch_array($result);
-                    echo '<tr><th>Community Name</th><th>Subject</th><th>Join?</th></tr>';
+                    echo '<tr><th>Community Name</th><th>Subject</th><th>Bio</th></tr>';
                     while($row = mysqli_fetch_array($result)){
                         echo "<tr>";
                         echo "<td>" . $row['comm_name'] . "</td>";
