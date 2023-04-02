@@ -26,7 +26,7 @@
             <select name="leaguefilter" id="leaguefilter">
                 <option value="Casual">Casual</option>
                 <option value="Competitive">Competitive</option>
-            <input type="submit" value="submit"></input>
+            <input type="submit" value="submit" name="submit"></input>
         </form></center>
         <center><table class="tabledesign">
             <?php
