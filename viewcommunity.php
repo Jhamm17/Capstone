@@ -47,7 +47,7 @@
         </table></center>
         <center>
             <form action="" method="POST">
-                <input type="submit" name="submit" value="submit"><a href="NBAcommunity.php">Click to Join!</a></input>
+                <input type="submit" name="submit" value="submit">Click to Join!</input>
             </form></center>
         <!--<a class="editprofilebutton" href="NBAcommunity.php"><button type="submit" value="submit">Join Community!</button></a> -->
 
