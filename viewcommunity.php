@@ -49,7 +49,7 @@
             <!-- <form action="" method="POST">
                 <input type="submit" name="submit" value="submit"></input></center>
             </form> -->
-        <a class="editprofilebutton" href="NBAcommunity.php">Join Community!</a>
+        <a class="editprofilebutton" href="NBAcommunity.php"><button type="submit" value="submit">Join Community!</button></a>
 
         <?php
             $userid = $_SESSION['user_id'];
