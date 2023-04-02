@@ -45,7 +45,7 @@
                     $id = $_SESSION['user_id'];
                     $row = mysqli_fetch_array($result);
                     ?>
-                    <tr><th class="commname">Community Name</th><th class="commsub">Subject</th><th class="commbio">Bio</th><th class="join">Join?</th></tr>
+                    <tr><th class="commname">Community Name</th><th class="commsub">Subject</th><th class="commbio">Bio</th><th>Join?</th></tr>
                     <?php 
                     while($row = mysqli_fetch_array($result)){ ?>
                         <?php 
