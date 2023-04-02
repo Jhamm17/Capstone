@@ -26,7 +26,7 @@
             <select name="leaguefilter" id="leaguefilter">
                 <option value="Casual">Casual</option>
                 <option value="Competitive">Competitive</option>
-                <option value="Casual OR Competitive">All</option>
+                <option value="Casual' OR League='Competitive'">All</option>
             <input type="submit" value="submit" name="submit"></input>
         </form></center>
         <center><table class="tabledesign">
