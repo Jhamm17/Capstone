@@ -29,11 +29,11 @@
                 <option value="Casual' OR League='Competitive">All</option>
             </select>
             <select name="sportfilter" id="sportfilter">
-                <option value="Basketball' OR Sport='basketball">Basketball</option>
-                <option value="Baseball' OR Sport='baseball">Baseball</option>
-                <option value="Football' OR Sport='football">Football</option>
-                <option value="Soccer' OR Sport='soccer">Soccer</option>
-                <option value="Badminton' OR Sport='badminton">Badminton</option>
+                <option value="Basketball">Basketball</option>
+                <option value="Baseball">Baseball</option>
+                <option value="Football">Football</option>
+                <option value="Soccer">Soccer</option>
+                <option value="Badminton">Badminton</option>
                 <option value="Basketball' OR Sport='basketball' OR Sport='Baseball' OR Sport='baseball' OR Sport='Football' OR Sport='football' OR Sport='Soccer' OR Sport='soccer' OR Sport='Badminton' OR Sport='badminton">All</option>
             </select>
             <input type="submit" value="submit" name="submit"></input>
