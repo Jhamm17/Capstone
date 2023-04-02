@@ -22,13 +22,24 @@
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
     </div>
         <h1><center>Intramural Team Search Page!</center></h1>
+        <form name="teamfilter" method="POST" action="">
+            <select name="teamfilter" id="teamfilter">
+                <option value="Casual">Casual</option>
+                <option value="Competitive">Competitive</option>
+            <input type="submit" value="submit">Submit</input>
+        </form>
         <center><table class="tabledesign">
             <?php
                 $db = mysqli_connect("db.luddy.indiana.edu","i494f22_team36","my+sql=i494f22_team36","i494f22_team36") or die("Error connecting to MySQL server.");
                 if (mysqli_connect_errno()){
                     echo 'failed to connect to SQL';
                 }
-                $query1 = "SELECT * FROM Teams";
+                if(isset($_POST["submit"])){
+                    $league = $_REQUEST["teamfilter"];
+                    $query1 = "SELECT * FROM Teams WHERE League='$league'";
+                }else{
+                    $query1 = "SELECT * FROM Teams";
+                }
                 mysqli_query($db, $query1) or die('Error querying database.');
                 $result = mysqli_query($db, $query1);
                 $row = mysqli_fetch_array($result);
