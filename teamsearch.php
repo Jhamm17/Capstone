@@ -22,36 +22,50 @@
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
     </div>
         <h1><center>Intramural Team Search Page!</center></h1>
-        <form name="teamfilter" method="POST" action="">
-            <select name="teamfilter" id="teamfilter">
+        <center><form name="teamfilter" method="POST" action="">
+            <select name="leaguefilter" id="leaguefilter">
                 <option value="Casual">Casual</option>
                 <option value="Competitive">Competitive</option>
-            <input type="submit" value="submit">Submit</input>
-        </form>
+            <input type="submit" value="submit"></input>
+        </form></center>
         <center><table class="tabledesign">
             <?php
                 $db = mysqli_connect("db.luddy.indiana.edu","i494f22_team36","my+sql=i494f22_team36","i494f22_team36") or die("Error connecting to MySQL server.");
                 if (mysqli_connect_errno()){
                     echo 'failed to connect to SQL';
                 }
+                echo '<tr><th>Team Name</th><th>Sport</th><th>League</th><th>Number of Players</th><th>View Team</th></tr>';
                 if(isset($_POST["submit"])){
-                    $league = $_REQUEST["teamfilter"];
+                    $league = $_REQUEST["leaguefilter"];
                     $query1 = "SELECT * FROM Teams WHERE League='$league'";
+                    mysqli_query($db, $query1) or die('Error querying database.');
+                    $result = mysqli_query($db, $query1);
+                    $row = mysqli_fetch_array($result);
+                    
+                    while($row = mysqli_fetch_array($result)){
+                        echo "<tr>";
+                        echo "<td>" . $row['team_name'] . "</td>";
+                        echo "<td>" . $row['Sport'] . "</td>";
+                        echo "<td>" . $row['League'] . "</td>";
+                        echo "<td>" . $row['Num_players'] . "</td>";
+                        echo "<td><a href=\"viewteam.php?id=" . $row['Team_id'] . "\">View</a></td>";
+                        echo "</tr>";
+                    }
                 }else{
                     $query1 = "SELECT * FROM Teams";
-                }
-                mysqli_query($db, $query1) or die('Error querying database.');
-                $result = mysqli_query($db, $query1);
-                $row = mysqli_fetch_array($result);
-                echo '<tr><th>Team Name</th><th>Sport</th><th>League</th><th>Number of Players</th><th>View Team</th></tr>';
-                while($row = mysqli_fetch_array($result)){
-                    echo "<tr>";
-                    echo "<td>" . $row['team_name'] . "</td>";
-                    echo "<td>" . $row['Sport'] . "</td>";
-                    echo "<td>" . $row['League'] . "</td>";
-                    echo "<td>" . $row['Num_players'] . "</td>";
-                    echo "<td><a href=\"viewteam.php?id=" . $row['Team_id'] . "\">View</a></td>";
-                    echo "</tr>";
+                    mysqli_query($db, $query1) or die('Error querying database.');
+                    $result = mysqli_query($db, $query1);
+                    $row = mysqli_fetch_array($result);
+                    
+                    while($row = mysqli_fetch_array($result)){
+                        echo "<tr>";
+                        echo "<td>" . $row['team_name'] . "</td>";
+                        echo "<td>" . $row['Sport'] . "</td>";
+                        echo "<td>" . $row['League'] . "</td>";
+                        echo "<td>" . $row['Num_players'] . "</td>";
+                        echo "<td><a href=\"viewteam.php?id=" . $row['Team_id'] . "\">View</a></td>";
+                        echo "</tr>";
+                    }
                 }
                 mysqli_close($db);
             ?>
