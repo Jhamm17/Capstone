@@ -29,7 +29,8 @@
                     if (mysqli_connect_errno()){
                         echo 'failed to connect to SQL';
                     }
-                    $query1 = "SELECT * FROM community";
+                    $id = $_SESSION['user_id'];
+                    $query1 = "SELECT * FROM community WHERE Person_id='$id'";
                     mysqli_query($db, $query1) or die('Error querying database.');
                     $result = mysqli_query($db, $query1);
                     $row = mysqli_fetch_array($result);
