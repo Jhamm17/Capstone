@@ -10,13 +10,16 @@
 <body>
 
 <?php
+session_start();
+$user_id = $_SESSION['user_id'];
+$email = trim($_SESSION['email']);
 $input = $_POST['msg'];
 $con = mysqli_connect("db.luddy.indiana.edu","i494f22_team36","my+sql=i494f22_team36","i494f22_team36");
 if ($con->connect_error) {
     die("connection failed: " . $con->connect_error);
 }
 
-$sql = "INSERT INTO chat (msg) VALUES ('$input')";
+$sql = "INSERT INTO chat (id,msg) VALUES ('$user_id','$input')";
 
 if ($con->query($sql) === TRUE) {
     header("location: chat.php");

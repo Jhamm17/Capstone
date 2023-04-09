@@ -63,7 +63,7 @@ input[type=submit]{
     background-color:#990000;
 }
 table, th, td{
-    border: 1px solid;
+    border: 1px solid gray;
     width: 50%;
 }
 .tabledesign{
@@ -72,6 +72,20 @@ table, th, td{
     table-layout: fixed;
     border-spacing: 0 15px;
     width: 80%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.tabledesign tr th{ 
+    background-color: #990000;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+.tabledesign tr th{
+    padding: 12px 15px;
+}
+.tabledesign tr td{
+    padding: 12px 15px;
 }
 tr th:nth-child(1){
     width:20%;
@@ -115,4 +129,12 @@ tr:nth-child(even){
   .editprofilebutton:hover {
     background-color: #FFFDD0;
     color: #990000;
+  }
+  .join{
+    padding: 1px;
+    margin: 2px;
+    border-radius: 20px;
+    background-color: #990000;
+    cursor: pointer;
+    font-size: 5px;
   }

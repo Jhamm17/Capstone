@@ -2,7 +2,15 @@
     <head>
         <title>Community Home Page</title>
         <link rel="stylesheet" href="css/style.css">
+        
     </head>
+    <style>
+        .tabledesign thead tr{
+            background-color: blue;
+            text-align: left;
+            color: white;
+        }
+    </style>
     <?php
     session_start();
     if(!$_SESSION['authenticated']){
@@ -34,9 +42,10 @@
                     $query1 = "SELECT * FROM community";
                     mysqli_query($db, $query1) or die('Error querying database.');
                     $result = mysqli_query($db, $query1);
+                    $id = $_SESSION['user_id'];
                     $row = mysqli_fetch_array($result);
                     ?>
-                    <tr><th class="commname">Community Name</th><th class="commsub">Subject</th><th class="commbio">Bio</th><th class="join">Join?</th></tr>
+                    <tr><th class="commname">Community Name</th><th class="commsub">Subject</th><th class="commbio">Bio</th><th>Join?</th></tr>
                     <?php 
                     while($row = mysqli_fetch_array($result)){ ?>
                         <?php 
@@ -54,5 +63,6 @@
             </table>
         </center>
     </div>
+    <!-- need to make community page show specific community-->
     </body>
 </html>

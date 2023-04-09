@@ -11,7 +11,7 @@
     ?>
     <body>
         <div class="topnav">
-            <<a href="homepage.php"><img class="homeImg" src="Images/smallLogo.png" alt="Home"></a>
+            <a href="homepage.php"><img class="homeImg" src="Images/smallLogo.png" alt="Home"></a>
             <a href="calendar.php">Calendar</a>
             <a href="chat.php">Chat</a> 
             <a href="community.php">Community</a> 

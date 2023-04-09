@@ -25,7 +25,7 @@
             <br>
             <br>
             <br>
-        <table>
+        <table class="tabledesign">
             <?php
             $id = $_GET["id"];
             $db = mysqli_connect("db.luddy.indiana.edu","i494f22_team36","my+sql=i494f22_team36","i494f22_team36") or die("Error connecting to MySQL server.");
@@ -46,14 +46,16 @@
         ?>
         </table></center>
         <center>
-            <!-- <form action="" method="POST">
-                <input type="submit" name="submit" value="submit"></input></center>
-            </form> -->
-        <a class="editprofilebutton" href="NBAcommunity.php">Join Community!</a>
+            <form action="" method="POST">
+                <input type="submit" name="submit" value="submit">Click to Join!</input>
+            </form></center>
+        <!--<a class="editprofilebutton" href="NBAcommunity.php"><button type="submit" value="submit">Join Community!</button></a> -->
 
         <?php
             $userid = $_SESSION['user_id'];
             $commid = $_GET["id"];
+            echo $userid;
+            echo $commid;
             if(isset($_POST["submit"])){ 
                 $newquery = "INSERT IGNORE INTO community_people VALUES ('$commid', '$userid')";
                 if(mysqli_query($db, $newquery)){
