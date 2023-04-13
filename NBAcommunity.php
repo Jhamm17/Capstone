@@ -44,8 +44,8 @@
         $query = "SELECT comm_subject FROM community WHERE comm_id='$id'";
         $sport = mysqli_query($conn, $query);
         $row1 = mysqli_fetch_array($sport);
-        echo $row1[0];
-        $sql = "SELECT * FROM iulive WHERE sport='Football'";
+        $comm_sport = $row1[0];
+        $sql = "SELECT * FROM iulive WHERE sport='$comm_sport'";
         $result = mysqli_query($conn, $sql);
 
         // Check if there are any rows in the result set
