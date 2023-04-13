@@ -19,22 +19,21 @@ today = datetime.now().strftime('%Y-%m-%d')
 scores = soup.find_all('div', {'class': 'game_summary nohover'})
 
 
-# # Define the MySQL configuration
-# mysql_config = {
-#     'host': 'db.luddy.indiana.edu',
-#     'user': 'i494f22_team36',
-#     'password': 'my+sql=i494f22_team36',
-#     'database': 'i494f22_team36'
-# }
+# Define the MySQL configuration
+mysql_config = {
+    'host': 'db.luddy.indiana.edu',
+    'user': 'i494f22_team36',
+    'password': 'my+sql=i494f22_team36',
+    'database': 'i494f22_team36'
+}
 
-# # Connect to the MySQL database
-# cnx = mysql.connector.connect(**mysql_config)
-# cursor = cnx.cursor()
+# Connect to the MySQL database
+cnx = mysql.connector.connect(**mysql_config)
+cursor = cnx.cursor()
 
-# # Delete all data from the iulive1 table
-# cursor.execute('DELETE FROM iulive1')
+# Delete all data from the iulive1 table
+cursor.execute('DELETE FROM iulive1')
 
-# Loop through each game and extract the required data
 # Loop through each game and extract the required data
 for game in scores:
 
@@ -61,10 +60,10 @@ for game in scores:
     if not GameScore or not Team1Name or not Team2Name:
         GameYesterday = "N"
 
-    # # Insert the extracted data into the iulive1 table
-    # insert_query = f"INSERT INTO iulive1 (GameDate, GameScore, Sport, Team1Name, Team2Name, GameYesterday) VALUES ('{GameDate}', '{GameScore}', '{Sport}', '{Team1Name}', '{Team2Name}', '{GameYesterday}')"
-    # cursor.execute(insert_query)
-    # cnx.commit()
+    # Insert the extracted data into the iulive1 table
+    insert_query = f"INSERT INTO iulive1 (GameDate, GameScore, Sport, Team1Name, Team2Name, GameYesterday) VALUES ('{GameDate}', '{GameScore}', '{Sport}', '{Team1Name}', '{Team2Name}', '{GameYesterday}')"
+    cursor.execute(insert_query)
+    cnx.commit()
 
     # Print the extracted data
     print('GameDate:', GameDate)
@@ -75,5 +74,5 @@ for game in scores:
     print('GameYesterday:', GameYesterday)
 
 # Close the MySQL connection
-# cursor.close()
-# cnx.close()
+cursor.close()
+cnx.close()
