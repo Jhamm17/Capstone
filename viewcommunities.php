@@ -33,6 +33,7 @@
                     $query1 = "SELECT * FROM community INNER JOIN community_people ON community.comm_id=community_people.Comm_id WHERE Person_id='$id'";
                     mysqli_query($db, $query1) or die('Error querying database.');
                     $result = mysqli_query($db, $query1);
+                    echo $result;
                     $row = mysqli_fetch_array($result);
                     echo '<tr><th>Community Name</th><th>Subject</th><th>Bio</th></tr>';
                     while($row = mysqli_fetch_array($result)){
