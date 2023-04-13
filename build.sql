@@ -144,9 +144,10 @@ Create table iulive1(
 GameID INT NOT NULL AUTO_INCREMENT,
 GameDate VarChar(11) NOT NULL,
 GameScore VARCHAR (9),
-Sport VARCHAR (20) NOT NULL,
-Team1Name VARCHAR (50) NOT NULL,
-Team2Name VARCHAR (50) NOT NULL,
+Sport VARCHAR (20),
+Team1Name VARCHAR (50),
+Team2Name VARCHAR (50),
+GameYesterday VARCHAR (1) NOT NULL,
 PRIMARY KEY (GameID)
 ) ENGINE = innodb;
 
