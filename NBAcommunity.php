@@ -42,8 +42,9 @@
         // Select all rows from the "iulive" table where the sport is football
         $id = $_GET["id"];
         $query = "SELECT comm_subject FROM community WHERE comm_id='$id'";
-        $sport = mysql_query($conn, $query);
-        echo $sport;
+        $sport = mysqli_query($conn, $query);
+        $row1 = mysqli_fetch_array($sport);
+        echo $row1[0];
         $sql = "SELECT * FROM iulive WHERE sport='Football'";
         $result = mysqli_query($conn, $sql);
 
