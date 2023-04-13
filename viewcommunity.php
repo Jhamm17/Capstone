@@ -46,7 +46,7 @@
         ?>
         </table></center>
         <center>
-            <form action="" method="POST">
+            <form action="NBAcommunity.php?id=<?php echo $id;?>" method="POST">
                 <input type="submit" name="submit" value="submit">Click to Join!</input>
             </form></center>
         <!--<a class="editprofilebutton" href="NBAcommunity.php"><button type="submit" value="submit">Join Community!</button></a> -->
@@ -54,8 +54,6 @@
         <?php
             $userid = $_SESSION['user_id'];
             $commid = $_GET["id"];
-            echo $userid;
-            echo $commid;
             if(isset($_POST["submit"])){ 
                 $newquery = "INSERT IGNORE INTO community_people VALUES ('$commid', '$userid')";
                 if(mysqli_query($db, $newquery)){
