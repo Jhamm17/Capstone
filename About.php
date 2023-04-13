@@ -28,25 +28,25 @@
     
   <div class="imagelinks">
   <h4> Zac Bradtmiller </h4>
-  <img src="Images/Zac.JPEG" alt="Iulogo">
+  <img src="Images/zac.png" alt="Zac">
   </a>
   <p>A fourth year Informatics student that created the profile and calendar epics. Skills include CSS, Ethics, & PHP</p>
   </div>
   <div class="imagelinks">
   <h4> Jackson Hamm </h4>
-  <img src="Images/IUlogo.png" alt="Iulogo">
+  <img src="Images/jackson.png" alt="Jackson">
   </a>
   <p>A fourth year Informatics student that created the IU live and polls epics. Skills include HTML, HCI, & Python</p>
   </div>
   <div class="imagelinks">
   <h4> Sam Northquist </h4>
-  <img src="Images/IUlogo.png" alt="Iulogo">
+  <img src="Images/sam.png" alt="Sam">
   </a>
   <p>A fourth year Informatics student that created the community and intramural sports epics. Skills include MySQL, Ethics, & Python</p>
   </div>
   <div class="imagelinks">
   <h4> Henry Starnes </h4>
-  <img src="Images/IUlogo.png" alt="Iulogo">
+  <img src="Images/henry.png" alt="Henry">
   </a>
   <p>A third year Informatics student that created the chat and autofill epics. Skills include PHP, MySQL, & Python</p>
   </div>
