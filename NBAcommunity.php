@@ -62,7 +62,7 @@
             }
             echo "</table>";
         } else {
-            echo "No football game information found in the database.";
+            echo "No $comm_sport game information found in the database.";
         }
 
         // Close the connection
