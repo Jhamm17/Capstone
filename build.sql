@@ -96,6 +96,7 @@ Player_id INT not null,
 FOREIGN KEY (Team_id) REFERENCES Teams(Team_id),
 FOREIGN KEY (Player_id) REFERENCES user(userid)
 )engine=innodb;
+
 CREATE TABLE Teams(
 Team_id INT NOT NULL AUTO_INCREMENT,
 team_name VARCHAR(40),
@@ -139,6 +140,17 @@ Team2ConferenceRecord VARCHAR (7) NOT NULL,
 PRIMARY KEY (GameID)
 ) ENGINE = innodb;
 
+Create table iulive1(
+GameID INT NOT NULL AUTO_INCREMENT,
+GameDate VarChar(11) NOT NULL,
+GameScore VARCHAR (9),
+Sport VARCHAR (20) NOT NULL,
+Team1Name VARCHAR (50) NOT NULL,
+Team1Record VARCHAR (7) NOT NULL,
+Team2Name VARCHAR (50) NOT NULL,
+Team2Record VARCHAR (7) NOT NULL,
+PRIMARY KEY (GameID)
+) ENGINE = innodb;
 
 
 INSERT INTO user VALUES 
