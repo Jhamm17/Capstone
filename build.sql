@@ -146,9 +146,7 @@ GameDate VarChar(11) NOT NULL,
 GameScore VARCHAR (9),
 Sport VARCHAR (20) NOT NULL,
 Team1Name VARCHAR (50) NOT NULL,
-Team1Record VARCHAR (7) NOT NULL,
 Team2Name VARCHAR (50) NOT NULL,
-Team2Record VARCHAR (7) NOT NULL,
 PRIMARY KEY (GameID)
 ) ENGINE = innodb;
 
