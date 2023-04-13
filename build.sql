@@ -251,6 +251,14 @@ INSERT INTO iulive VALUES
 (5, '18:12', '12/23/2021', '9:00 PM', 'CBS', '', '', 'Basketball', 'Indiana Hoosiers', '11-2', '1-0', 'Butler Bulldogs', '8-5', '0-2'),
 (6, '3:32', '12/23/2021', '12:00 PM', 'ESPN', '89-92', '2nd', 'Basketball', 'Iowa Hawkeyes', '9-4', '0-1', 'Arizona Wildcats', '12-1', '1-1');
 
+INSERT INTO iulive VALUES
+(7, '', '4/18/2023', '7:00 PM', 'TNT', '', '', 'NBA', 'Boston Celitcs', '58-24', '35-17', 'Atlanta Hawks', '41-41', '26-26'),
+(8, '', '4/16/2023', '3:00 PM', 'TNT', '', '', 'NBA', 'Los Angeles Lakers', '43-39', '27-25', 'Memphis Grizzlies', '51-31', '30-22'),
+(9, '', '4/15/2023', '8:00 PM', 'TNT', '', '', 'NBA', 'Golden State Warriors', '44-38', '30-22', 'Sacramento Kings', '48-34', '32-20'),
+(10, '', '4/13/2023', '3:00 PM', 'Paramount', '', '', 'Soccer', 'Manchester United', '17-7-5', '0', 'Sevilla FC', '8-12-8', '0'),
+(11, '', '4/30/2023', '9:00 PM', 'Stream', '', '', 'Soccer', 'MIN United FC', '3-2-1', '0', 'FC Dallas', '3-2-2', '0'),
+(12, '', '2/12/2023', '6:00 PM', 'CBS', '38-35', 'Final', 'NFL', 'Kansas City Chiefs', '17-3', '0', 'Philadelphia Eagles', '16-4', '0');
+
 
 INSERT INTO team VALUES
 ('Indiana Hoosiers', 'Football', '5-4', '1-2', 2002),

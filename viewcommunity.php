@@ -32,7 +32,7 @@
             if (mysqli_connect_errno()){
                 echo 'failed to connect to SQL';
             }
-            $query = "SELECT * FROM community INNER JOIN community_people ON community.comm_id=community_people.Comm_id INNER JOIN user ON user.userid=community_people.Person_id WHERE community.comm_id='$id'";
+            $query = "SELECT DISTINCT * FROM community INNER JOIN community_people ON community.comm_id=community_people.Comm_id INNER JOIN user ON user.userid=community_people.Person_id WHERE community.comm_id='$id'";
             mysqli_query($db, $query) or die('Error querying database.');
             $result = mysqli_query($db, $query);
             echo "<h1>People within the Community</h1>";
@@ -54,8 +54,6 @@
         <?php
             $userid = $_SESSION['user_id'];
             $commid = $_GET["id"];
-            echo $userid;
-            echo $commid;
             if(isset($_POST["submit"])){ 
                 $newquery = "INSERT IGNORE INTO community_people VALUES ('$commid', '$userid')";
                 if(mysqli_query($db, $newquery)){
@@ -64,6 +62,7 @@
                 else{
                     echo "Unable to join the community";
                 }
+                header('Location: NBAcommunity.php?id=' . $commid);
             }
             mysqli_close($db);
         ?>

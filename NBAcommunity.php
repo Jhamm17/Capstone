@@ -21,8 +21,6 @@
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
     </div>
    <center> <div>
-        <h2>Welcome to the College Football Community</h2>
-        <h4>Check out some of the upcoming games and live scores in NCAA Football:</h4>
         <?php
 
         // Connect to the database
@@ -40,8 +38,16 @@
         }
 
         // Select all rows from the "iulive" table where the sport is football
-        $sql = "SELECT * FROM iulive WHERE sport='Football'";
+        $id = $_GET["id"];
+        $query = "SELECT comm_subject FROM community WHERE comm_id='$id'";
+        $sport = mysqli_query($conn, $query);
+        $row1 = mysqli_fetch_array($sport);
+        $comm_sport = $row1[0];
+        $sql = "SELECT * FROM iulive WHERE sport='$comm_sport'";
         $result = mysqli_query($conn, $sql);
+
+        echo "<h2>Welcome to the $comm_sport Community</h2>";
+        echo "<h4>Check out some of the upcoming games and live scores in $comm_sport:</h4>";
 
         // Check if there are any rows in the result set
         if (mysqli_num_rows($result) > 0) {
@@ -56,7 +62,7 @@
             }
             echo "</table>";
         } else {
-            echo "No football game information found in the database.";
+            echo "No $comm_sport game information found in the database.";
         }
 
         // Close the connection
