@@ -17,51 +17,24 @@ today = datetime.now().strftime('%Y-%m-%d')
 # Find all the game scores for the current date
 scores = soup.find_all('div', {'class': 'game_summary expanded nohover'})
 
+# Find all the winner and loser teams
+winners = soup.find_all('tr', {'class': 'winner'})
+losers = soup.find_all('tr', {'class': 'loser'})
+
 # Loop through each game and extract the required data
-for game in scores:
+for i, game in enumerate(scores):
     # Get the game date
     GameDate = today
-    
-    # Get the final score of the game
-    GameScore = game.find('div', {'class': 'score'}).text.strip()
-    
-    # Get the name of the first team
-    Team1Name = game.find('div', {'class': 'winner'}).find('a').text.strip()
-    
-    # Get the name of the second team
-    Team2Name = game.find('div', {'class': 'loser'}).find('a').text.strip()
-    
-    # Find the NBA standings table
-    standings = soup.find('table', {'id': 'confs_standings_E'})
 
-    # Find the rows of the standings table
-    rows = standings.find_all('tr')
+    # Get the top and bottom scores of the game
+    scores = game.find_all('td', {'class': 'right'})
+    GameScore1 = scores[0].text.strip()
+    GameScore2 = scores[2].text.strip()
+    GameScore = GameScore1 + '-' + GameScore2
 
-    # Loop through each row and find the team's record
-    for row in rows:
-        # Get the team name
-        team_name = row.find('a', {'class': 'team_name'})
-        if team_name:
-            team_name = team_name.text.strip()
-
-            # Check if the team name matches Team1Name
-            if team_name == Team1Name:
-                # Get the team's W/L record
-                Team1Record = row.find_all('td')[1].text.strip()
-                break
-
-    # Loop through each row and find the second team's record
-    for row in rows:
-        # Get the team name
-        team_name = row.find('a', {'class': 'team_name'})
-        if team_name:
-            team_name = team_name.text.strip()
-
-            # Check if the team name matches Team2Name
-            if team_name == Team2Name:
-                # Get the team's W/L record
-                Team2Record = row.find_all('td')[1].text.strip()
-                break
+    # Get the team names
+    Team1Name = winners[i].find('a').text.strip()
+    Team2Name = losers[i].find('a').text.strip()
 
     # Set the Sport value as "NBA"
     Sport = "NBA"
@@ -71,6 +44,4 @@ for game in scores:
     print('GameScore:', GameScore)
     print('Team1Name:', Team1Name)
     print('Team2Name:', Team2Name)
-    print('Team1Record:', Team1Record)
-    print('Team2Record:', Team2Record)
     print('Sport:', Sport)
