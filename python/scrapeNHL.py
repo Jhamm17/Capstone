@@ -43,8 +43,13 @@ for i, game in enumerate(scores):
     GameDate = today
 
     # Get the top and bottom scores of the game
-    scores = game.find_all('td', {'class': 'right'})
-    GameScore = f"{scores[0].text.strip()}-{scores[2].text.strip()}"
+    game_scores = game.find_all('td', {'class': 'right'})
+    score1 = game_scores[0].text.strip()
+    score2 = game_scores[2].text.strip()
+    if score1 > score2:
+        GameScore = f"{score1}-{score2}"
+    else:
+        GameScore = f"{score2}-{score1}"
 
     # Get the team names
     Team1Name = winners[i].find('a').text.strip()
@@ -70,3 +75,7 @@ for i, game in enumerate(scores):
     print('Team2Name:', Team2Name)
     print('Sport:', Sport)
     print('GameYesterday:', GameYesterday)
+
+# Close the MySQL connection
+cursor.close()
+cnx.close()

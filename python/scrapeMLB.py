@@ -4,7 +4,7 @@ from datetime import datetime
 import mysql.connector
 
 # Set the URL for the website to scrape
-url = 'https://www.basketball-reference.com/'
+url = 'https://www.baseball-reference.com/?utm_source=hr&utm_medium=sr_xsite&utm_campaign=2023_01_srnav&__hstc=88549636.3a2af2aff4ba586abeac5c278c105746.1681425539662.1681425539662.1681425539662.1&__hssc=88549636.2.1681425539662&__hsfp=3000179024'
 
 # Make a request to the website and get the HTML content
 response = requests.get(url)
@@ -16,7 +16,7 @@ soup = BeautifulSoup(response.content, 'html.parser')
 today = datetime.now().strftime('%Y-%m-%d')
 
 # Find all the game scores for the current date
-scores = soup.find_all('div', {'class': 'game_summary expanded nohover'})
+scores = soup.find_all('div', {'class': 'game_summary nohover'})
 
 # Find all the winner and loser teams
 winners = soup.find_all('tr', {'class': 'winner'})
@@ -43,15 +43,20 @@ for i, game in enumerate(scores):
     GameDate = today
 
     # Get the top and bottom scores of the game
-    scores = game.find_all('td', {'class': 'right'})
-    GameScore = f"{scores[0].text.strip()}-{scores[2].text.strip()}"
+    game_scores = game.find_all('td', {'class': 'right'})
+    score1 = game_scores[0].text.strip()
+    score2 = game_scores[2].text.strip()
+    if score1 > score2:
+        GameScore = f"{score1}-{score2}"
+    else:
+        GameScore = f"{score2}-{score1}"
 
     # Get the team names
     Team1Name = winners[i].find('a').text.strip()
     Team2Name = losers[i].find('a').text.strip()
 
     # Set the Sport value as "NBA"
-    Sport = "NBA"
+    Sport = "MLB"
     GameYesterday = "Y"
 
     # Check for null values in the extracted data and update GameYesterday to 'N' if any of the values are null
