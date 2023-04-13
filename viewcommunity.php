@@ -46,7 +46,7 @@
         ?>
         </table></center>
         <center>
-            <form action="NBAcommunity.php?id=<?php echo $id;?>" method="POST">
+            <form action="" method="POST">
                 <input type="submit" name="submit" value="submit">Click to Join!</input>
             </form></center>
         <!--<a class="editprofilebutton" href="NBAcommunity.php"><button type="submit" value="submit">Join Community!</button></a> -->
@@ -62,6 +62,7 @@
                 else{
                     echo "Unable to join the community";
                 }
+                header('Location: NBAcommunity.php?id=' . $commid);
             }
             mysqli_close($db);
         ?>
