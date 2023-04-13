@@ -46,8 +46,8 @@
         $sql = "SELECT * FROM iulive WHERE sport='$comm_sport'";
         $result = mysqli_query($conn, $sql);
 
-        echo "<h2>Welcome to the College $comm_sport Community</h2>";
-        echo "<h4>Check out some of the upcoming games and live scores in NCAA Football:</h4>";
+        echo "<h2>Welcome to the $comm_sport Community</h2>";
+        echo "<h4>Check out some of the upcoming games and live scores in $comm_id:</h4>";
 
         // Check if there are any rows in the result set
         if (mysqli_num_rows($result) > 0) {
