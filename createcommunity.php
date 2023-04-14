@@ -53,5 +53,27 @@
             }
             mysqli_close($db);
         ?>
+        <a href="community.php" class="round"> &#8249 </a>
+        <style>
+            a {
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+            }
+
+            a:hover {
+            background-color: #ddd;
+            color: black;
+            }
+
+            .round {
+            border-radius: 50%;
+            position: fixed;
+            bottom: 0px;
+            right: 0px; 
+            padding: 20px;
+            }
+            
+        </style>
     </body>
 </html>

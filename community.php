@@ -63,6 +63,7 @@
             </table>
         </center>
     </div>
+    <br>
     <!-- need to make community page show specific community-->
     </body>
 </html>

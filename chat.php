@@ -38,6 +38,9 @@ if(!$_SESSION['authenticated']){
 <input type="submit" value="Send" /> <br/> <br/> 
 </form>
 
+<div class="sidebar">
+</div>
+
 <style>
     input[type=submit] {
     padding:5px 15px; 
