@@ -53,7 +53,7 @@
             }
             mysqli_close($db);
         ?>
-        <a href="community.php" class="round"> &#8249 </a>
+        <a href="community.php" class="round"> back </a>
         <style>
             a {
             text-decoration: none;
@@ -70,7 +70,7 @@
             border-radius: 50%;
             position: fixed;
             bottom: 0px;
-            right: 0px; 
+            left: 0px; 
             padding: 20px;
             }
             
