@@ -61,6 +61,7 @@
             padding: 8px 16px;
             background-color: crimson;
             color: white;
+            font-size: 30px;
             }
 
             a:hover {
