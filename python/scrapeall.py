@@ -204,3 +204,8 @@ for game in CFB_scores:
 # Close the MySQL connection
 cursor.close()
 cnx.close()
+
+# This file is uploaded on Python Anywhere
+# The file is scheduled to run daily at 11am EST
+#Username: Jphamm17
+#Password: Usual password, no need to add here.
