@@ -58,13 +58,13 @@
             a {
             text-decoration: none;
             display: inline-block;
-            padding: 8px 16px;
-            background-color: crimson;
+            padding: 8px 14px;
+            background-color: #990000;
             color: white;
             font-size: 30px;
             }
 
-            a:hover {
+            .round:hover {
             background-color: black;
             color: white;
             }
