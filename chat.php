@@ -30,7 +30,7 @@ if(!$_SESSION['authenticated']){
 <br>
 
 <center><h2>chat with other IU studetns!</h2><center>
-<center><iframe src="Page1.php" width="450" height="300" style="border: 5px solid black;" scrolling="yes"><center>
+<center><iframe src="Page1.php" width="450" height="300" style="border: 1px #990000;" scrolling="yes"><center>
 </iframe>
 <form method="post" action="Page2.php">
 <center>Send user a message: <input type="textarea" name="msg" /><center>
