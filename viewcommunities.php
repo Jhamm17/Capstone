@@ -45,5 +45,30 @@
                 ?>
             </table>
         </center>
+        <a href="community.php" class="round"> &#8249; </a>
+        <style>
+            a {
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 14px;
+            background-color: #990000;
+            color: white;
+            font-size: 30px;
+            }
+
+            .round:hover {
+            background-color: black;
+            color: white;
+            }
+
+            .round {
+            border-radius: 50%;
+            position: fixed;
+            bottom: 0px;
+            left: 0px; 
+            padding: 20px;
+            }
+            
+        </style>
     </body>
 </html>
