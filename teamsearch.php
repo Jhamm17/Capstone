@@ -26,7 +26,7 @@
             <select name="leaguefilter" id="leaguefilter">
                 <option value="Casual">Casual</option>
                 <option value="Competitive">Competitive</option>
-                <option value="Casual' OR League='Competitive">All</option>
+                <!-- <option value="Casual' OR League='Competitive">All</option> -->
             </select>
             <select name="sportfilter" id="sportfilter">
                 <option value="Basketball">Basketball</option>
@@ -34,7 +34,7 @@
                 <option value="Football">Football</option>
                 <option value="Soccer">Soccer</option>
                 <option value="Badminton">Badminton</option>
-                <option value="Basketball' OR Sport='basketball' OR Sport='Baseball' OR Sport='baseball' OR Sport='Football' OR Sport='football' OR Sport='Soccer' OR Sport='soccer' OR Sport='Badminton' OR Sport='badminton">All</option>
+                <!-- <option value="Basketball' OR Sport='basketball' OR Sport='Baseball' OR Sport='baseball' OR Sport='Football' OR Sport='football' OR Sport='Soccer' OR Sport='soccer' OR Sport='Badminton' OR Sport='badminton">All</option> -->
             </select>
             <input type="submit" value="submit" name="submit"></input>
         </form></center>
