@@ -64,7 +64,7 @@ body{
 
   .scoreboard-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: (30%, 30%, 30%);
     grid-gap: 20px;
   }
   
