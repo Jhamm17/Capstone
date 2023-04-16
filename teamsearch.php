@@ -51,7 +51,6 @@
                     $query1 = "SELECT * FROM Teams WHERE Sport='$sport' and League='$league'";
                     mysqli_query($db, $query1) or die('Error querying database.');
                     $result = mysqli_query($db, $query1); 
-                    $row = mysqli_fetch_array($result);
                     
                     while($row = mysqli_fetch_array($result)){
                         echo "<tr>";
