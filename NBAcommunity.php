@@ -65,7 +65,6 @@
         }
 
         // Close the connection
-        mysqli_close($conn);
 
         ?>
     </div><center>
@@ -97,6 +96,7 @@ if(isset($_POST['Send'])){
 
 
 };
+mysqli_close($conn);
 
 ?>
 
