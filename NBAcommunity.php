@@ -71,13 +71,7 @@
     </div><center>
         <br>
         <br>
-
-<center><iframe src="Pacer1.php" width="450" height="300" style="border: 1px solid black;" scrolling="yes"><center>
-</iframe>
-<form method="post" action="">
-<center>Make a post for the community to see: <input type="textarea" name="msg" /><center>
-<input type="submit" value="Send" /> <br/> <br/> 
-</form>
+        
 <?php
 if(isset($_POST['Send'])){
     $user_id = $_SESSION['user_id'];
@@ -98,6 +92,13 @@ if(isset($_POST['Send'])){
 }
 
 ?>
+<center><iframe src="Pacer1.php" width="450" height="300" style="border: 1px solid black;" scrolling="yes"><center>
+</iframe>
+<form method="post" action="">
+<center>Make a post for the community to see: <input type="textarea" name="msg" /><center>
+<input type="submit" value="Send" /> <br/> <br/> 
+</form>
+
 
 <style>
     input[type=submit] {
