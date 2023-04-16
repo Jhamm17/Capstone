@@ -35,7 +35,7 @@
                     $result = mysqli_query($db, $query1);
                     while($row = mysqli_fetch_array($result)){
                         echo "<tr>";
-                        echo "<td><a href=\'NBAcommunity.php?id=$row['comm_id']\'" . $row['comm_name'] . "</td>";
+                        echo "<td>" . $row['comm_name'] . "</td>";
                         echo "<td>" . $row['comm_subject'] . "</td>";
                         echo "<td>" . $row['comm_bio'] . "</td>";
                         echo "</tr>";
