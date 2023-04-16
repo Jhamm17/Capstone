@@ -48,7 +48,7 @@
                 if(isset($_POST["submit"])){
                     $league = $_REQUEST["leaguefilter"];
                     $sport = $_REQUEST["sportfilter"];
-                    $query1 = "SELECT * FROM Teams WHERE League='$league'";
+                    $query1 = "SELECT * FROM Teams WHERE Sport='$sport'";
                     mysqli_query($db, $query1) or die('Error querying database.');
                     $result = mysqli_query($db, $query1); 
                     $row = mysqli_fetch_array($result);
