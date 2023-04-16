@@ -27,7 +27,7 @@ if(!$_SESSION['authenticated']){
     </div>
 <br>
 
-<center><h2>Chat with other Pacer Fans!</h2><center>
+<center><h2>Chat</h2><center>
     <br>
 <center><iframe src="Pacer1.php" width="450" height="300" style="border: 1px solid black;" scrolling="yes"><center>
 </iframe>
