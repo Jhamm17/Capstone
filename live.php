@@ -65,23 +65,26 @@ if(!$_SESSION['authenticated']){
         }
 
         // Select all rows from the "iulive" table where the sport is football
-        $sql = "SELECT * FROM iulive WHERE sport='Football'";
+        $sql = "SELECT * FROM iulive1 WHERE Sport='MLB'";
         $result = mysqli_query($conn, $sql);
 
         // Check if there are any rows in the result set
         if (mysqli_num_rows($result) > 0) {
             // Output the data in a table
-            echo "<table class='tabledesign'>";
-            echo "<tr><th>Team 1</th><th>Score</th><th>Team 2</th><th>Time</th><th>Date</th><th>Team 1 Record</th><th>Team 1 Conference Record</th><th>Team 2 Conference Record</th><th>Team 2 Record</th><th>Period</th><th>Channel</th></tr>";
             while ($row = mysqli_fetch_assoc($result)) {
-                echo "<tr>";
-                echo "<td>" . $row["Team1Name"] . "</td><td>" . $row["GameScore"] . "</td><td>" . $row["Team2Name"] . "</td><td>" . $row["GameTime"] . "</td><td>" . $row["GameDate"] . "</td>";
-                echo "<td>" . $row["Team1Record"] . "</td><td>" . $row["Team1ConferenceRecord"] . "</td><td>" . $row["Team2ConferenceRecord"] . "</td><td>" . $row["Team2Record"] . "</td><td>" . $row["GamePeriod"] . "</td><td>" . $row["GameChannel"] . "</td>";
-                echo "</tr>";
+                $gameScore = $row["GameScore"];
+				$team1Name = $row["Team1Name"];
+				$team2Name = $row["Team2Name"];
+
+				// Display game data in scoreboard
+				echo "<div class='scoreboard'>
+						<div class='team'>$team1Name</div>
+						<div class='score'>$gameScore</div>
+						<div class='team'>$team2Name</div>
+					</div>";
             }
-            echo "</table>";
         } else {
-            echo "No football game information found in the database.";
+            echo "No MLB games yesterday";
         }
 
         // Close the connection
