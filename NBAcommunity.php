@@ -83,7 +83,7 @@ if(isset($_POST['send'])){
     $msg = $_POST['msg'];
     $msg_data = [
         'msg' => $msg,
-    ]
+    ];
     $sending = "INSERT INTO PacerChat (id,msg) VALUES ('$user_id','$msg')";
     mysqli_query($conn, $sending);
 
