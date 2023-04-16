@@ -29,12 +29,13 @@
                     }
                     $id = $_SESSION['user_id'];
                     $query1 = "SELECT DISTINCT * FROM community INNER JOIN community_people ON community.comm_id=community_people.Comm_id WHERE Person_id='$id'";
+                    $query2 = "SELECT * FROM community";
                     mysqli_query($db, $query1) or die('Error querying database.');
                     echo '<tr><th>Community Name</th><th>Subject</th><th>Bio</th></tr>';
                     $result = mysqli_query($db, $query1);
                     while($row = mysqli_fetch_array($result)){
                         echo "<tr>";
-                        echo "<td>" . $row['comm_name'] . "</td>";
+                        echo "<td><a href='NBAcommunity.php?id=$row['comm_id']'>" . $row['comm_name'] . "</td></a>";
                         echo "<td>" . $row['comm_subject'] . "</td>";
                         echo "<td>" . $row['comm_bio'] . "</td>";
                         echo "</tr>";
