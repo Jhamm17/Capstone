@@ -53,7 +53,7 @@
                     $result = mysqli_query($db, $query1);
                     $row = mysqli_fetch_array($result);
                     
-                    while($row = mysqli_fetch_array($query1)){
+                    while($row = mysqli_fetch_array($result)){
                         echo "<tr>";
                         echo "<td>" . $row['team_name'] . "</td>";
                         echo "<td>" . $row['Sport'] . "</td>";
