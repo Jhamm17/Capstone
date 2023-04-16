@@ -91,7 +91,7 @@ if(isset($_POST['Send'])){
     if (mysqli_query($conn, $sending)){
         echo "";
     } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        echo "Error: " . $sending . "<br>" . mysqli_error($conn);
     };
     
 
