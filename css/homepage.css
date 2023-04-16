@@ -17,7 +17,6 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: 'Poppins', sans-serif;
     }
     
     .topnav a {
@@ -27,14 +26,12 @@ body {
       padding: 14px 25px;
       text-decoration: none;
       font-size: 30px;
-      font-family: 'Poppins', sans-serif;
   
     }
     
     .topnav a:hover {
       background-color: #FFFDD0;
       color: #990000;
-      font-family: 'Poppins', sans-serif;
     }
   
   .homeImg{
