@@ -28,9 +28,11 @@
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
     </div>
     <div class="iu">
+        <!-- php and sql to pull community data from database using comm and user id-->
         <center><h1>Communities: </h1></center>
         <center><a href="createcommunity.php"><button class="comm">Create</button></a><a href="viewcommunities.php"><button class="comm">Your Communities</button></a></center>
         <center>
+            <!-- created a table to hold the data-->
             <table class="tabledesign">
                 <?php
                     $db = mysqli_connect("db.luddy.indiana.edu","i494f22_team36","my+sql=i494f22_team36","i494f22_team36") or die("Error connecting to MySQL server.");
@@ -62,6 +64,6 @@
         </center>
     </div>
     <br>
-    <!-- need to make community page show specific community-->
+    <!-- need to make community page show specific community--><!-- done -->
     </body>
 </html>

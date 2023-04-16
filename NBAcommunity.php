@@ -9,7 +9,8 @@
     }
     ?>
     <body>
-    <div class="topnav"> 
+        <!-- copied navbar to maintain style-->
+    <div class="topnav">  
         <a href="homepage.php"><img class="homeImg" src="Images/smallLogo.png" alt="Home"></a>
         <a href="calendar.php">Calendar</a>
         <a href="community.php">Community</a> 

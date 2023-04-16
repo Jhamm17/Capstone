@@ -2,7 +2,7 @@
     <head>
         <title>Community View Page</title>
         <link rel="stylesheet" href="css/style.css">
-    </head>
+    </head> <!-- add and authenticate session-->
     <?php
     session_start();
     if(!$_SESSION['authenticated']){
@@ -10,7 +10,7 @@
     }
     ?>
     <body>
-    <div class="topnav"> 
+    <div class="topnav"> <!-- added navbar w links-->
         <a href="homepage.php"><img class="homeImg" src="Images/smallLogo.png" alt="Home"></a>
         <a href="calendar.php">Calendar</a>
         <a href="community.php">Community</a> 
@@ -20,7 +20,7 @@
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
     </div>
         <h1>Community view </h1>
-        <center>
+        <center> <!-- queries and php to pull data from database, helped from w3schools -->
             <table class="tabledesign">
                 <?php
                     $db = mysqli_connect("db.luddy.indiana.edu","i494f22_team36","my+sql=i494f22_team36","i494f22_team36") or die("Error connecting to MySQL server.");
@@ -43,6 +43,7 @@
                 ?>
             </table>
         </center>
+        <!-- added styles to page-->
         <a href="community.php" class="round"> &#8249; </a>
         <style>
             a {
