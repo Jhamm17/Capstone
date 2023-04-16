@@ -65,7 +65,7 @@ input{
 }
 input[type=submit]{
     width: 5%;
-    background-color:#990000;
+    background-color:#fc6464;
 }
 table, th, td{
     border: 1px solid gray;

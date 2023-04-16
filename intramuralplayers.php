@@ -29,7 +29,6 @@
                 if ($conn->connect_error) {
                     die("Connection failed: " . $conn->connect_error);
                 }
-                // $query1 = "SELECT * FROM Intramurals";
                 $query1 = "SELECT i.Preferred_sport, i.On_team, i.user_email, i.player_id, 
                   CONCAT('player_profile.php?email=', i.user_email) AS profile_url, 
                   u.Fname, u.Lname

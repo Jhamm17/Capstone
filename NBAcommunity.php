@@ -71,25 +71,15 @@
         <br>
         <br>
 
-        <center><form method="post">
-    Make a post for the community to see: <textarea name="msg"></textarea>
-    <input type="submit" name="send" value="Send"><br><br>
-</form></center>
+        <center><h2>Chat</h2><center>
+    <br>
+<center><iframe src="Pacer1.php" width="450" height="300" style="border: 1px solid black;" scrolling="yes"><center>
+</iframe>
+<form method="post" action="Pacer2.php">
+<center>Type message here: <input type="textarea" name="msg" /><center>
+<input type="submit" value="Send" /> <br/> <br/> 
+</form>
 
-<?php
-session_start();
-if(isset($_POST['send'])){
-    $user_id = $_SESSION['user_id'];
-    $msg = $_POST['msg'];
-    $sending = "INSERT INTO PacerChat (id, msg) VALUES ('$user_id', '$msg')";
-    if (mysqli_query($conn, $sending)){
-        echo "";
-    } else {
-        echo "Error: " . $sending . "<br>" . mysqli_error($conn);
-    }
-}
-mysqli_close($conn);
-?>
 
 
 <style>
