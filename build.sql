@@ -174,7 +174,15 @@ INSERT INTO calendar VALUES
 (707,"IU Women's Basketball", '2023-03-04 10:00:00', '2023-03-04 12:00:00', "Indiana Women's basketball starts their hope to win a BigTen tournament as a #1 seed."),
 (708,'IU Basketball', '2023-03-10 21:00:00', '2023-03-10 23:00:00', 'Indiana starts the BigTen tournament opponent TBD.'),
 (709,'IU Baseball', '2023-03-08 12:00:00', '2023-03-08 17:00:00', 'Indiana baseball challenges Purdue Fort Wayne in a double-header.'),
-(710,"IU Baseball", '2023-03-14 10:00:00', '2023-03-14 12:00:00', "Indiana baseball looks to improve their record while facing Kentucky.");
+(710,"IU Baseball", '2023-03-14 10:00:00', '2023-03-14 12:00:00', "Indiana baseball looks to improve their record while facing Purdue."),
+(711,"IU Softball", '2023-04-04 10:00:00', '2023-04-04 12:00:00', "Indiana Softball looks to go undefeated in a double header with Florida."),
+(712,'IU Softball', '2023-04-08 21:00:00', '2023-04-08 23:00:00', 'Indiana Softball opens BigTen play against Purdue.'),
+(713,'IU Baseball', '2023-04-10 12:00:00', '2023-04-10 17:00:00', 'Indiana baseball challenges Kentucky in a double-header.'),
+(714,"IU Softball", '2023-04-14 10:00:00', '2023-04-14 12:00:00', "Indiana Softball looks to improve their record while facing Kentucky."),
+(715,"IU Track", '2023-04-04 15:00:00', '2023-04-04 12:00:00', "The track team travels to Ohio for an outdoor meeting with 10 teams."),
+(716,'IU Baseball', '2023-04-22 21:00:00', '2023-04-22 23:00:00', 'Indiana baseball plays under the lights against Memphis.'),
+(717,'IU Track', '2023-05-03 12:00:00', '2023-05-03 17:00:00', 'The track team starts the BigTen event.'),
+(718,"IU Softball", '2023-05-10 10:00:00', '2023-05-10 12:00:00', "Indiana softball starts their road to a BigTen title in the tournament.");
 
 INSERT INTO privateEvent VALUES
 (801, 'Watch Party', 2023, 02, 21),
