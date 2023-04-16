@@ -23,9 +23,9 @@
     </div>
         <h1><center>Intramural Team Search Page!</center></h1>
         <center><form name="teamfilter" method="POST" action="">
-            <!-- <select name="leaguefilter" id="leaguefilter">
+            <select name="leaguefilter" id="leaguefilter">
                 <option value="Casual">Casual</option>
-                <option value="Competitive">Competitive</option> -->
+                <option value="Competitive">Competitive</option>
                 <!-- <option value="Casual' OR League='Competitive">All</option> -->
             </select>
             <select name="sportfilter" id="sportfilter">
@@ -48,8 +48,7 @@
                 if(isset($_POST["submit"])){
                     $league = $_REQUEST["leaguefilter"];
                     $sport = $_REQUEST["sportfilter"];
-                    echo $sport;
-                    $query1 = "SELECT * FROM Teams WHERE Sport='$sport'";
+                    $query1 = "SELECT * FROM Teams WHERE Sport='$sport' and League='$league'";
                     mysqli_query($db, $query1) or die('Error querying database.');
                     $result = mysqli_query($db, $query1); 
                     $row = mysqli_fetch_array($result);
