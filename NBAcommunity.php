@@ -73,7 +73,7 @@
         <br>
         <br>
 
-    <center><iframe src="Pacer1.php" width="450" height="300" style="border: 5px solid black;" scrolling="yes"><center>
+    <center><iframe src="Pacer1.php" width="450" height="300" style="border: 1px solid black;" scrolling="yes"><center>
 </iframe>
 <form method="post" action="Pacer2.php">
 <center>Make a post for the community to see: <input type="textarea" name="msg" /><center>
