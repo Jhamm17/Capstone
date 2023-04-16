@@ -22,7 +22,7 @@ if ($con->connect_error) {
 $sql = "INSERT INTO PacerChat (id,msg) VALUES ('$user_id','$input')";
 
 if ($con->query($sql) === TRUE) {
-    header("location: chat.php");
+    header("location: PacerChat.php");
 } else {
     echo "Error: " . $sql . "<br>" . $con->error;
 }
