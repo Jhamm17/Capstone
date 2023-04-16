@@ -79,16 +79,14 @@ $conn->close();
   }
   ?>
   <body>
-  <div class="topnav">
+  <div class="topnav"> 
         <a href="homepage.php"><img class="homeImg" src="Images/smallLogo.png" alt="Home"></a>
         <a href="calendar.php">Calendar</a>
-        <a href="chat.php">Chat</a> 
         <a href="community.php">Community</a> 
-        <a href="intramurals.php">Intramural Sports</a> 
-        <a href="live.php">IU Live</a>   
+        <a href="intramurals.php">Intramural Sports</a>    
         <a href="polls.php">Polls</a>
         <a href="profile2.php">Profile</a>
-        <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a></div>
+        <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
     <div class="profile">
     <div class="profile-box">
     <h1><?php echo $name ?>'s Profile</h1>
