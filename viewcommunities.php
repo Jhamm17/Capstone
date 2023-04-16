@@ -29,6 +29,7 @@
                     }
                     $id = $_SESSION['user_id'];
                     $query1 = "SELECT DISTINCT * FROM community INNER JOIN community_people ON community.comm_id=community_people.Comm_id WHERE Person_id='$id'";
+                    $query2 = "SELECT * FROM community";
                     mysqli_query($db, $query1) or die('Error querying database.');
                     echo '<tr><th>Community Name</th><th>Subject</th><th>Bio</th></tr>';
                     $result = mysqli_query($db, $query1);
