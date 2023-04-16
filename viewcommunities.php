@@ -28,11 +28,10 @@
                         echo 'failed to connect to SQL';
                     }
                     $id = $_SESSION['user_id'];
-                    $query1 = "SELECT * FROM community INNER JOIN community_people ON community.comm_id=community_people.Comm_id WHERE Person_id='$id'";
+                    $query1 = "SELECT DISTINCT * FROM community INNER JOIN community_people ON community.comm_id=community_people.Comm_id WHERE Person_id='$id'";
                     mysqli_query($db, $query1) or die('Error querying database.');
-                    $result = mysqli_query($db, $query1);
-                    $row = mysqli_fetch_array($result);
                     echo '<tr><th>Community Name</th><th>Subject</th><th>Bio</th></tr>';
+                    $result = mysqli_query($db, $query1);
                     while($row = mysqli_fetch_array($result)){
                         echo "<tr>";
                         echo "<td>" . $row['comm_name'] . "</td>";
