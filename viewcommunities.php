@@ -37,7 +37,7 @@
                         echo "<td>" . $row['comm_name'] . "</td>";
                         echo "<td>" . $row['comm_subject'] . "</td>";
                         echo "<td>" . $row['comm_bio'] . "</td>";
-                        echo "<td><a href=\"NBAcommunity.php?id=" . $row['comm_id'] "\">View</td>";
+                        echo "<td><a href=\"NBAcommunity.php?id=" . $row['comm_id'] . "\">View</td>";
                         echo "</tr>";
                     }
                 ?>
