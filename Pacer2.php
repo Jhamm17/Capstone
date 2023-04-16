@@ -20,12 +20,11 @@ if ($con->connect_error) {
 }
 
 $sql = "INSERT INTO PacerChat (id,msg) VALUES ('$user_id','$input')";
+$message = mysqli_query($con, $sql);
 
-if ($con->query($sql) === TRUE) {
-    header("location: NBAcommunity.php");
-} else {
-    echo "Error: " . $sql . "<br>" . $con->error;
-}
+
+
+
 $con->close();
 ?>
 
