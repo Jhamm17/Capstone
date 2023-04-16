@@ -10,16 +10,14 @@
     }
     ?>
     <body>
-        <div class="topnav">
-            <a href="homepage.php"><img class="homeImg" src="Images/smallLogo.png" alt="Home"></a>
-            <a href="calendar.php">Calendar</a>
-            <a href="chat.php">Chat</a> 
-            <a href="community.php">Community</a> 
-            <a href="intramurals.php">Intramural Sports</a> 
-            <a href="live.php">IU Live</a>   
-            <a href="polls.php">Polls</a>
-            <a href="profile2.php">Profile</a>
-            <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
+    <div class="topnav"> 
+        <a href="homepage.php"><img class="homeImg" src="Images/smallLogo.png" alt="Home"></a>
+        <a href="calendar.php">Calendar</a>
+        <a href="community.php">Community</a> 
+        <a href="intramurals.php">Intramural Sports</a>    
+        <a href="polls.php">Polls</a>
+        <a href="profile2.php">Profile</a>
+        <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
         </div>
         <center><h1>Create a Community!<h1></center>
         <center><form name="commcreate" method="POST" action="">
