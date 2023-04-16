@@ -19,7 +19,7 @@ if ($con->connect_error) {
     die("connection failed: " . $con->connect_error);
 }
 
-$sql = "SELECT PacerChat.msg, user.Fname, user.Lname FROM PacerChat INNER JOIN user ON chat.id=user.userid";
+$sql = "SELECT PacerChat.msg, user.Fname, user.Lname FROM PacerChat INNER JOIN user ON PacerChat.id=user.userid";
 $result = $con->query($sql);
 
 
