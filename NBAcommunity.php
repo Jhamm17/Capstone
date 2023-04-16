@@ -78,7 +78,7 @@
 <input type="submit" value="Send" /> <br/> <br/> 
 </form>
 <?php
-if(isset($_POST['send'])){
+if(isset($_POST['Send'])){
     $user_id = $_SESSION['user_id'];
     $msg = $_POST['msg'];
     $msg_data = [
