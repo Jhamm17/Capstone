@@ -21,9 +21,9 @@ if ($con->connect_error) {
 
 $sql = "INSERT INTO PacerChat (id,msg) VALUES ('$user_id','$input')";
 $comm = "SELECT comm_id from community";
-while($row = mysqli_fetch_array($result)){
-    $commid = $row['comm_id']
-} 
+$row = mysqli_fetch_array($result);
+$commid = $row['comm_id'];
+echo $commid;
 
 
 
