@@ -82,6 +82,7 @@ if(isset($_POST['send'])){
     $user_id = $_SESSION['user_id'];
     $msg = $_POST['msg'];
     $msg_data = [
+        'id' => $user_id,
         'msg' => $msg,
     ];
     $sending = "INSERT INTO PacerChat (id,msg) VALUES ('$user_id','$msg')";
