@@ -20,16 +20,19 @@
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
         </div>
         <center>
+            <!-- added breaks to allow better formatting -->
             <br>
             <br>
             <br>
         <table class="tabledesign">
+            <!-- pulling php data from community. Uses user id to pull the data, data is put into table for view-->
             <?php
             $id = $_GET["id"];
             $db = mysqli_connect("db.luddy.indiana.edu","i494f22_team36","my+sql=i494f22_team36","i494f22_team36") or die("Error connecting to MySQL server.");
             if (mysqli_connect_errno()){
                 echo 'failed to connect to SQL';
             }
+            // query to join all necessary tables to pull required data //
             $query = "SELECT DISTINCT * FROM community INNER JOIN community_people ON community.comm_id=community_people.Comm_id INNER JOIN user ON user.userid=community_people.Person_id WHERE community.comm_id='$id'";
             mysqli_query($db, $query) or die('Error querying database.');
             $result = mysqli_query($db, $query);
@@ -48,7 +51,7 @@
                 <input type="submit" name="submit" value="submit">Click to Join!</input>
             </form></center>
         <!--<a class="editprofilebutton" href="NBAcommunity.php"><button type="submit" value="submit">Join Community!</button></a> -->
-
+        <!-- php to allow user to join specified community, uses userid from login, 'ignore' stops duplicates-->
         <?php
             $userid = $_SESSION['user_id'];
             $commid = $_GET["id"];

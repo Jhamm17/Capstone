@@ -20,6 +20,7 @@
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
     </div>
         <h1><center>Intramural Team Search Page!</center></h1>
+        <!-- select form to allow user to filter through intramural teams -->
         <center><form name="teamfilter" method="POST" action="">
             <select name="leaguefilter" id="leaguefilter">
                 <option value="Casual">Casual</option>
@@ -36,6 +37,7 @@
             </select>
             <input type="submit" value="submit" name="submit"></input>
         </form></center>
+        <!-- php to pull data specified from the user, essentially a filter option -->
         <center><table class="tabledesign">
             <?php
                 $db = mysqli_connect("db.luddy.indiana.edu","i494f22_team36","my+sql=i494f22_team36","i494f22_team36") or die("Error connecting to MySQL server.");

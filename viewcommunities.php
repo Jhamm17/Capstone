@@ -2,7 +2,7 @@
     <head>
         <title>Community View Page</title>
         <link rel="stylesheet" href="css/style.css">
-    </head>
+    </head> <!-- add and authenticate session-->
     <?php
     session_start();
     if(!$_SESSION['authenticated']){
@@ -10,7 +10,7 @@
     }
     ?>
     <body>
-    <div class="topnav"> 
+    <div class="topnav"> <!-- added navbar w links-->
         <a href="homepage.php"><img class="homeImg" src="Images/smallLogo.png" alt="Home"></a>
         <a href="calendar.php">Calendar</a>
         <a href="community.php">Community</a> 
@@ -20,7 +20,7 @@
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
     </div>
         <h1>Community view </h1>
-        <center>
+        <center> <!-- queries and php to pull data from database, helped from w3schools -->
             <table class="tabledesign">
                 <?php
                     $db = mysqli_connect("db.luddy.indiana.edu","i494f22_team36","my+sql=i494f22_team36","i494f22_team36") or die("Error connecting to MySQL server.");
@@ -29,20 +29,21 @@
                     }
                     $id = $_SESSION['user_id'];
                     $query1 = "SELECT DISTINCT * FROM community INNER JOIN community_people ON community.comm_id=community_people.Comm_id WHERE Person_id='$id'";
-                    $query2 = "SELECT * FROM community";
                     mysqli_query($db, $query1) or die('Error querying database.');
-                    echo '<tr><th>Community Name</th><th>Subject</th><th>Bio</th></tr>';
+                    echo '<tr><th>Community Name</th><th>Subject</th><th>Bio</th><th>View</th></tr>';
                     $result = mysqli_query($db, $query1);
                     while($row = mysqli_fetch_array($result)){
                         echo "<tr>";
-                        echo "<td><a href=\'NBAcommunity.php?id=$row['comm_id']\'" . $row['comm_name'] . "</td>";
+                        echo "<td>" . $row['comm_name'] . "</td>";
                         echo "<td>" . $row['comm_subject'] . "</td>";
                         echo "<td>" . $row['comm_bio'] . "</td>";
+                        echo "<td><a href=\"NBAcommunity.php?id=" . $row['comm_id'] . "\">View</td>";
                         echo "</tr>";
                     }
                 ?>
             </table>
         </center>
+        <!-- added styles to page-->
         <a href="community.php" class="round"> &#8249; </a>
         <style>
             a {
