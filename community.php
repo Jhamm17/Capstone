@@ -52,7 +52,7 @@
                         $commid = $row['comm_id'];
                         ?>
                         <tr>
-                        <td><?php echo $row['comm_name'];?></td>
+                        <td><a href="NBAcommunity.php?id=<?php echo $commid; ?>"><?php echo $row['comm_name'];?></td>
                         <td><?php echo $row['comm_subject']; ?></td>
                         <td><?php echo $row['comm_bio']; ?></td>
                         <td><a href="viewcommunity.php?id=<?php echo $commid; ?>">Join</a></td>
