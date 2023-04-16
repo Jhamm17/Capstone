@@ -37,7 +37,7 @@ if(isset($_POST['login'] )){
          $sql = "INSERT INTO user (Fname, Lname, email, FavTeam, FavSport, GradYear, bio) VALUES ('$fname','$lname','$email','$FavTeam','$FavSport','$GradYear','$bio')";
          if (mysqli_query($conn,$sql)) {
       
-             echo "1 record added";
+            header("location: homepage.php");
           
          } else {
              echo "Error: " . $sql . "<br>" . mysqli_error($conn);

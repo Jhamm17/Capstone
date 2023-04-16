@@ -51,6 +51,60 @@ CREATE TABLE chat (
   FOREIGN KEY (id) REFERENCES user(userid)
 )ENGINE=INNODB;
 
+CREATE TABLE PacerChat (
+  id INT NOT NULL AUTO_INCREMENT,
+  msg VARCHAR(255),
+  FOREIGN KEY (id) REFERENCES user(userid)
+)ENGINE=INNODB;
+
+CREATE TABLE NbaChat (
+  id INT NOT NULL AUTO_INCREMENT,
+  msg VARCHAR(255),
+  FOREIGN KEY (id) REFERENCES user(userid)
+)ENGINE=INNODB;
+
+CREATE TABLE HoosierChat (
+  id INT NOT NULL AUTO_INCREMENT,
+  msg VARCHAR(255),
+  FOREIGN KEY (id) REFERENCES user(userid)
+)ENGINE=INNODB;
+
+CREATE TABLE BettingChat (
+  id INT NOT NULL AUTO_INCREMENT,
+  msg VARCHAR(255),
+  FOREIGN KEY (id) REFERENCES user(userid)
+)ENGINE=INNODB;
+
+CREATE TABLE SoccerChat (
+  id INT NOT NULL AUTO_INCREMENT,
+  msg VARCHAR(255),
+  FOREIGN KEY (id) REFERENCES user(userid)
+)ENGINE=INNODB;
+
+CREATE TABLE PickupChat (
+  id INT NOT NULL AUTO_INCREMENT,
+  msg VARCHAR(255),
+  FOREIGN KEY (id) REFERENCES user(userid)
+)ENGINE=INNODB;
+
+CREATE TABLE WatchChat (
+  id INT NOT NULL AUTO_INCREMENT,
+  msg VARCHAR(255),
+  FOREIGN KEY (id) REFERENCES user(userid)
+)ENGINE=INNODB;
+
+CREATE TABLE NCAAfootballChat (
+  id INT NOT NULL AUTO_INCREMENT,
+  msg VARCHAR(255),
+  FOREIGN KEY (id) REFERENCES user(userid)
+)ENGINE=INNODB;
+
+CREATE TABLE NflChat (
+  id INT NOT NULL AUTO_INCREMENT,
+  msg VARCHAR(255),
+  FOREIGN KEY (id) REFERENCES user(userid)
+)ENGINE=INNODB;
+
 CREATE TABLE calendar (
   calid INT AUTO_INCREMENT NOT NULL,
   title VARCHAR(255) NOT NULL,
@@ -96,6 +150,7 @@ Player_id INT not null,
 FOREIGN KEY (Team_id) REFERENCES Teams(Team_id),
 FOREIGN KEY (Player_id) REFERENCES user(userid)
 )engine=innodb;
+
 CREATE TABLE Teams(
 Team_id INT NOT NULL AUTO_INCREMENT,
 team_name VARCHAR(40),
@@ -139,6 +194,16 @@ Team2ConferenceRecord VARCHAR (7) NOT NULL,
 PRIMARY KEY (GameID)
 ) ENGINE = innodb;
 
+Create table iulive1(
+GameID INT NOT NULL AUTO_INCREMENT,
+GameDate VarChar(11) NOT NULL,
+GameScore VARCHAR (9),
+Sport VARCHAR (20),
+Team1Name VARCHAR (50),
+Team2Name VARCHAR (50),
+GameYesterday VARCHAR (1) NOT NULL,
+PRIMARY KEY (GameID)
+) ENGINE = innodb;
 
 
 INSERT INTO user VALUES 
@@ -248,6 +313,14 @@ INSERT INTO iulive VALUES
 (4, '', '10/22/2021', '7:00 PM', 'NBC', '', '', 'Football', 'Michigan Wolverines', '8-1', '3-0', 'Wisconsin Badgers', '7-2', '2-1'),
 (5, '18:12', '12/23/2021', '9:00 PM', 'CBS', '', '', 'Basketball', 'Indiana Hoosiers', '11-2', '1-0', 'Butler Bulldogs', '8-5', '0-2'),
 (6, '3:32', '12/23/2021', '12:00 PM', 'ESPN', '89-92', '2nd', 'Basketball', 'Iowa Hawkeyes', '9-4', '0-1', 'Arizona Wildcats', '12-1', '1-1');
+
+INSERT INTO iulive VALUES
+(7, '', '4/18/2023', '7:00 PM', 'TNT', '', '', 'NBA', 'Boston Celitcs', '58-24', '35-17', 'Atlanta Hawks', '41-41', '26-26'),
+(8, '', '4/16/2023', '3:00 PM', 'TNT', '', '', 'NBA', 'Los Angeles Lakers', '43-39', '27-25', 'Memphis Grizzlies', '51-31', '30-22'),
+(9, '', '4/15/2023', '8:00 PM', 'TNT', '', '', 'NBA', 'Golden State Warriors', '44-38', '30-22', 'Sacramento Kings', '48-34', '32-20'),
+(10, '', '4/13/2023', '3:00 PM', 'Paramount', '', '', 'Soccer', 'Manchester United', '17-7-5', '0', 'Sevilla FC', '8-12-8', '0'),
+(11, '', '4/30/2023', '9:00 PM', 'Stream', '', '', 'Soccer', 'MIN United FC', '3-2-1', '0', 'FC Dallas', '3-2-2', '0'),
+(12, '', '2/12/2023', '6:00 PM', 'CBS', '38-35', 'Final', 'NFL', 'Kansas City Chiefs', '17-3', '0', 'Philadelphia Eagles', '16-4', '0');
 
 
 INSERT INTO team VALUES

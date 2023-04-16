@@ -10,16 +10,14 @@
     }
     ?>
     <body>
-        <div class="topnav"> 
-            <a href="homepage.php"><img class="homeImg" src="Images/smallLogo.png" alt="Home"></a>
-            <a href="calendar.php">Calendar</a>
-            <a href="chat.php">Chat</a> 
-            <a href="community.php">Community</a> 
-            <a href="intramurals.php">Intramural Sports</a> 
-            <a href="live.php">IU Live</a>   
-            <a href="polls.php">Polls</a>
-            <a href="profile2.php">Profile</a>
-            <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
+    <div class="topnav"> 
+        <a href="homepage.php"><img class="homeImg" src="Images/smallLogo.png" alt="Home"></a>
+        <a href="calendar.php">Calendar</a>
+        <a href="community.php">Community</a> 
+        <a href="intramurals.php">Intramural Sports</a>    
+        <a href="polls.php">Polls</a>
+        <a href="profile2.php">Profile</a>
+        <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
         </div>
         <center>
             <br>
@@ -32,7 +30,7 @@
             if (mysqli_connect_errno()){
                 echo 'failed to connect to SQL';
             }
-            $query = "SELECT * FROM community INNER JOIN community_people ON community.comm_id=community_people.Comm_id INNER JOIN user ON user.userid=community_people.Person_id WHERE community.comm_id='$id'";
+            $query = "SELECT DISTINCT * FROM community INNER JOIN community_people ON community.comm_id=community_people.Comm_id INNER JOIN user ON user.userid=community_people.Person_id WHERE community.comm_id='$id'";
             mysqli_query($db, $query) or die('Error querying database.');
             $result = mysqli_query($db, $query);
             echo "<h1>People within the Community</h1>";
@@ -54,8 +52,6 @@
         <?php
             $userid = $_SESSION['user_id'];
             $commid = $_GET["id"];
-            echo $userid;
-            echo $commid;
             if(isset($_POST["submit"])){ 
                 $newquery = "INSERT IGNORE INTO community_people VALUES ('$commid', '$userid')";
                 if(mysqli_query($db, $newquery)){
@@ -64,6 +60,7 @@
                 else{
                     echo "Unable to join the community";
                 }
+                header('Location: NBAcommunity.php?id=' . $commid);
             }
             mysqli_close($db);
         ?>

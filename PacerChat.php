@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>send message</title>
+    <title>PacerChat</title>
 </head>
 <link rel="stylesheet" href="css/styles.css">
 
@@ -27,11 +27,11 @@ if(!$_SESSION['authenticated']){
     </div>
 <br>
 
-<center><h2>Chat with other IU studetns!</h2><center>
+<center><h2>Chat with other Pacer Fans!</h2><center>
     <br>
-<center><iframe src="Page1.php" width="450" height="300" style="border: 1px solid black;" scrolling="yes"><center>
+<center><iframe src="Pacer1.php" width="450" height="300" style="border: 1px solid black;" scrolling="yes"><center>
 </iframe>
-<form method="post" action="Page2.php">
+<form method="post" action="Pacer2.php">
 <center>Type message here: <input type="textarea" name="msg" /><center>
 <input type="submit" value="Send" /> <br/> <br/> 
 </form>
@@ -60,7 +60,3 @@ iframe:focus {
 iframe[seamless] {
   display: block;
 }
-
-</style>
-</body>  
-</html>

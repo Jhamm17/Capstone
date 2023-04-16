@@ -7,10 +7,8 @@
     <div class="topnav"> 
         <a href="homepage.php"><img class="homeImg" src="Images/smallLogo.png" alt="Home"></a>
         <a href="calendar.php">Calendar</a>
-        <a href="chat.php">Chat</a> 
         <a href="community.php">Community</a> 
-        <a href="intramurals.php">Intramural Sports</a> 
-        <a href="live.php">IU Live</a>   
+        <a href="intramurals.php">Intramural Sports</a>    
         <a href="polls.php">Polls</a>
         <a href="profile2.php">Profile</a>
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
@@ -53,5 +51,30 @@
                 mysqli_close($conn);
             ?>
         </table></center>
+        <a href="intramurals.php" class="round"> &#8249; </a>
+        <style>
+            a {
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 14px;
+            background-color: #990000;
+            color: white;
+            font-size: 30px;
+            }
+
+            .round:hover {
+            background-color: black;
+            color: white;
+            }
+
+            .round {
+            border-radius: 50%;
+            position: fixed;
+            bottom: 0px;
+            left: 0px; 
+            padding: 20px;
+            }
+            
+        </style>
     </body>
 </html>

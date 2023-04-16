@@ -12,10 +12,8 @@
 <div class="topnav"> 
         <a href="homepage.php"><img class="homeImg" src="Images/smallLogo.png" alt="Home"></a>
         <a href="calendar.php">Calendar</a>
-        <a href="chat.php">Chat</a> 
         <a href="community.php">Community</a> 
-        <a href="intramurals.php">Intramural Sports</a> 
-        <a href="live.php">IU Live</a>   
+        <a href="intramurals.php">Intramural Sports</a>    
         <a href="polls.php">Polls</a>
         <a href="profile2.php">Profile</a>
         <a href="https://idp.login.iu.edu/idp/profile/cas/logout">Log-Out </a>
@@ -25,15 +23,32 @@
     <h3>Sign-Up</h3>
 
     <form action="insert.php" method="POST">
-        First Name: <input type="text" name="Fname" required><br>
-        Last Name: <input type="text" name="Lname" required><br>
-        email: <input type="text" name="email" required><br>
-        Favorite Team:<input type="text" name="FavTeam" required><br>
-        Favorite Sport:<input type="text" name="FavSport" required><br>
-        Graduation Year (Please Enter #):<input type="text" name="GradYear" required><br>
-        Biography:<input type="text" name="bio" required><br>
-        <button type="submit" name="login">submit</button>
+       <center First Name: <input type="text" name="Fname" required><br> <center>
+       <center> Last Name: <input type="text" name="Lname" required><br> <center>
+       <center> email: <input type="text" name="email" required><br> <center>
+       <center> Favorite Team:<input type="text" name="FavTeam" required><br> <center>
+      <center>  Favorite Sport:<input type="text" name="FavSport" required><br> <center>
+       <center> Graduation Year (Please Enter #):<input type="text" name="GradYear" required><br> <center>
+       <center> Biography:<input type="text" name="bio" required><br> <center>
+       <center> <button type="submit" name="login">Submit</button> <center>
     </form>
+
+    <style>
+        button[type=submit] {
+            padding:5px 15px; 
+            border:0 none;
+            cursor:pointer;
+            -webkit-border-radius: 5px;
+            border-radius: 5px; 
+        }
+
+        input[type=text] {
+            padding:5px; 
+            border:2px solid #ccc; 
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+        }
+    </style>
     <!-- parsing examples and help with part three of itp found here: https://code.tutsplus.com/tutorials/how-to-parse-json-in-php--cms-36994 -->
 
 <?php
