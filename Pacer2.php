@@ -21,12 +21,15 @@ if ($con->connect_error) {
 
 $sql = "INSERT INTO PacerChat (id,msg) VALUES ('$user_id','$input')";
 $comm = "SELECT comm_id from community";
-$commid = $_GET["id"];
+while($row = mysqli_fetch_array($result)){
+    $commid = $row['comm_id']
+} 
+
 
 
 
 if ($con->query($sql) === TRUE) {
-    header("location: NBAcommunity.php?" . $commid);
+    header("location: NBAcommunity.php?=" . $commid);
 } else {
     echo "Error: " . $sql . "<br>" . $con->error;
 }
