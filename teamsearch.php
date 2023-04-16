@@ -48,7 +48,11 @@
                 if(isset($_POST["submit"])){
                     $league = $_REQUEST["leaguefilter"];
                     $sport = $_REQUEST["sportfilter"];
-                    $query1 = "SELECT * FROM Teams WHERE League='$league' AND Sport='$sport'";
+                    $query1 = "SELECT * FROM Teams WHERE League=? AND Sport=?";
+                    $stmt = $db->prepare($sql);
+                    $stmt -> bindparam(1, $league, PDO::PARAM_STR);
+                    $stmt -> bindparam(2, $sport, PDO:: PARAM_STR); 
+                    $stmt -> execute();
                     mysqli_query($db, $query1) or die('Error querying database.');
                     $result = mysqli_query($db, $query1);
                     $row = mysqli_fetch_array($result);
