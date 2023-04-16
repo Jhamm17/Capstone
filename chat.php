@@ -29,13 +29,17 @@ if(!$_SESSION['authenticated']){
     </div>
 <br>
 
-<center><h2>chat with other IU studetns!</h2><center>
-<center><iframe src="Page1.php" width="450" height="300" style="border: 5px solid black;" scrolling="yes"><center>
+<center><h2>Chat with other IU studetns!</h2><center>
+    <br>
+<center><iframe src="Page1.php" width="450" height="300" style="border: 1px solid black;" scrolling="yes"><center>
 </iframe>
 <form method="post" action="Page2.php">
-<center>Send user a message: <input type="textarea" name="msg" /><center>
+<center>Type message here: <input type="textarea" name="msg" /><center>
 <input type="submit" value="Send" /> <br/> <br/> 
 </form>
+
+<div class="sidebar">
+</div>
 
 <style>
     input[type=submit] {
@@ -50,6 +54,13 @@ input[type=textarea] {
     border:2px solid #ccc; 
     -webkit-border-radius: 5px;
     border-radius: 5px;
+}
+iframe:focus {
+  outline: none;
+}
+
+iframe[seamless] {
+  display: block;
 }
 
 </style>
