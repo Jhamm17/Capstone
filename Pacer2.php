@@ -29,7 +29,7 @@ echo $commid;
 
 
 if ($con->query($sql) === TRUE) {
-    header("location: NBAcommunity.php?=" . $commid);
+    header("location: NBAcommunity.php");
 } else {
     echo "Error: " . $sql . "<br>" . $con->error;
 }
