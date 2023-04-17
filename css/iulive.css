@@ -61,6 +61,7 @@ body{
       font-size: 50px;
       margin-top: 15px;
   }
+
   .scoreboard-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -72,17 +73,22 @@ body{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #ccc;
+    background-color: #f2f2f2;
     padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
   }
   
-  .scoreboard .team {
-    font-size: 24px;
+  .team {
+    flex-basis: 30%;
+    text-align: center;
   }
   
-  .scoreboard .score {
-    font-size: 36px;
+  .score {
+    flex-basis: 40%;
+    text-align: center;
+    font-size: 2em;
     font-weight: bold;
+    color: #333;
   }
-  
   
