@@ -77,11 +77,13 @@ if(!$_SESSION['authenticated']){
 				$team2Name = $row["Team2Name"];
 
 				// Display game data in scoreboard
-				echo "<div class='scoreboard'>
-						<div class='team'>$team1Name</div>
-						<div class='score'>$gameScore</div>
-						<div class='team'>$team2Name</div>
-					</div>";
+				echo "<div class='scoreboard-grid'>
+                        <div class='scoreboard'>
+                            <div class='team'>$team1Name</div>
+                            <div class='score'>$gameScore</div>
+                            <div class='team'>$team2Name</div>
+                        </div>
+                    </div>";
             }
         } else {
             echo "No MLB games yesterday";

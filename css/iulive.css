@@ -64,7 +64,7 @@ body{
 
   .scoreboard-grid {
     display: grid;
-    grid-template-columns: (200px, 200px, 200px);
+    grid-template-columns: (30%, 30%, 30%);
     grid-gap: 20px;
   }
   
@@ -80,12 +80,12 @@ body{
   }
   
   .team {
-    flex-basis: auto;
+    flex-basis: 30%;
     text-align: center;
   }
   
   .score {
-    flex-basis: auto;
+    flex-basis: 40%;
     text-align: center;
     font-size: 2em;
     font-weight: bold;
