@@ -140,7 +140,7 @@ for i, game in enumerate(MCBB_scores):
         GameScore = f"{score2}-{score1}"
     Team1Name = MCBB_winners[i].find('a').text.strip()
     Team2Name = MCBB_losers[i].find('a').text.strip()
-    Sport = "MCBB"
+    Sport = "NCAAM"
     GameYesterday = "Y"
     if not GameScore or not Team1Name or not Team2Name:
         GameYesterday = "N"
@@ -150,14 +150,14 @@ for i, game in enumerate(MCBB_scores):
 
 # Scraping Women's College Basketball Scores
 
-WCBB_url = 'https://www.sports-reference.com/cbb/boxscores/index.cgi?month=04&day=2&year=2023'
-WCBB_response = requests.get(WCBB_url)
-WCBB_soup = BeautifulSoup(WCBB_response.content, 'html.parser')
+NCAAW_url = 'https://www.sports-reference.com/cbb/boxscores/index.cgi?month=04&day=2&year=2023'
+NCAAW_response = requests.get(NCAAW_url)
+NCAAW_soup = BeautifulSoup(NCAAW_response.content, 'html.parser')
 today = datetime.now().strftime('%Y-%m-%d')
-WCBB_scores = WCBB_soup.find_all('div', {'class': 'game_summary nohover gender-f'})
-WCBB_winners = WCBB_soup.find_all('tr', {'class': 'winner'})
-WCBB_losers = WCBB_soup.find_all('tr', {'class': 'loser'})
-for i, game in enumerate(WCBB_scores):
+NCAAW_scores = NCAAW_soup.find_all('div', {'class': 'game_summary nohover gender-f'})
+NCAAW_winners = NCAAW_soup.find_all('tr', {'class': 'winner'})
+NCAAW_losers = NCAAW_soup.find_all('tr', {'class': 'loser'})
+for i, game in enumerate(NCAAW_scores):
     GameDate = today
     game_scores = game.find_all('td', {'class': 'right'})
     score1 = game_scores[0].text.strip()
@@ -166,9 +166,9 @@ for i, game in enumerate(WCBB_scores):
         GameScore = f"{score2}-{score1}"
     else:
         GameScore = f"{score1}-{score2}"
-    Team1Name = WCBB_winners[i].find('a').text.strip()
-    Team2Name = WCBB_losers[i].find('a').text.strip()
-    Sport = "WCBB"
+    Team1Name = NCAAW_winners[i].find('a').text.strip()
+    Team2Name = NCAAW_losers[i].find('a').text.strip()
+    Sport = "NCAAW"
     GameYesterday = "Y"
     if not GameScore or not Team1Name or not Team2Name:
         GameYesterday = "N"
