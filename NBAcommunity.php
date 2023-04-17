@@ -42,21 +42,20 @@
         $sport = mysqli_query($conn, $query);
         $row1 = mysqli_fetch_array($sport);
         $comm_sport = $row1[0];
-        $sql = "SELECT * FROM iulive WHERE sport='$comm_sport'";
+        $sql = "SELECT * FROM iulive1 WHERE Sport='$comm_sport'";
         $result = mysqli_query($conn, $sql);
 
         echo "<h2>Welcome to the $comm_sport Community</h2>";
-        echo "<h4>Check out some of the upcoming games and live scores in $comm_sport:</h4>";
+        echo "<h4>Check out the most recent scores in $comm_sport:</h4>";
 
         // Check if there are any rows in the result set
         if (mysqli_num_rows($result) > 0) {
             // Output the data in a table
             echo "<table class='tabledesign'>";
-            echo "<tr><th>Team 1</th><th>Score</th><th>Team 2</th><th>Time</th><th>Date</th><th>Team 1 Record</th><th>Team 1 Conference Record</th><th>Team 2 Conference Record</th><th>Team 2 Record</th><th>Period</th><th>Channel</th></tr>";
+            echo "<tr><th>Team 1</th><th>Score</th><th>Team 2</th></tr>";
             while ($row = mysqli_fetch_assoc($result)) {
                 echo "<tr>";
-                echo "<td>" . $row["Team1Name"] . "</td><td>" . $row["GameScore"] . "</td><td>" . $row["Team2Name"] . "</td><td>" . $row["GameTime"] . "</td><td>" . $row["GameDate"] . "</td>";
-                echo "<td>" . $row["Team1Record"] . "</td><td>" . $row["Team1ConferenceRecord"] . "</td><td>" . $row["Team2ConferenceRecord"] . "</td><td>" . $row["Team2Record"] . "</td><td>" . $row["GamePeriod"] . "</td><td>" . $row["GameChannel"] . "</td>";
+                echo "<td>" . $row["Team1Name"] . "</td><td>" . $row["GameScore"] . "</td><td>" . $row["Team2Name"] . "</td>";
                 echo "</tr>";
             }
             echo "</table>";
